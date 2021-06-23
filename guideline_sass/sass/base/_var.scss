@@ -1,0 +1,46 @@
+//尺寸
+$text-text: 30px; //
+$ele-ele: 20px; //元件與元件間的寬度
+$mar-cont: 150px;
+$btn-radius: 23px;
+$page-radius: 5px;
+$card-radius: 20px;
+$label-input: 10px;
+
+
+//字級
+$font-h1: 45px; //標題字
+$font-h2: 42px; //測驗題目敘述
+$font-h3: 30px;
+$font-h4: 26px;
+$font-base: 18px;
+
+$font-thin: 100;
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+$font-black: 900;
+
+$font-spacing: 0.05px;
+$font-lineheight: 1.5;
+
+//顏色
+$white: #ffffff;
+$black: #313131;
+$brown: #562c2c;
+$yellow-first: #ffdc7d; //主要黃色
+$yellow-second: #ffe56e;
+// $gray-first: #9f9f9f;
+// $gray-second: #d6d6d6;
+// $gray-third: #f4f4f4;
+// $blue: #;
+$red: #d23423; //解鎖恐龍  飼養恐龍btn
+// $colors: $white, $black, $yellow-first, $yellow-second, $gray-first, $gray-second, $gray-third, $blue;
+
+// 斷點
+$breakpoint:(
+  desktop: 1200px,
+  tablet: 768px,
+  mobile: 414px,
+);
