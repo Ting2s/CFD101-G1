@@ -6,6 +6,13 @@ function php(){
     .pipe(dest("dist/php"));
 }
 
+// 移動 font字體
+function font(){
+    return src(["dev/font/*.*", "dev/font/**/*.*"])
+    .pipe(dest("dist/font"));
+}
+
+
 // sass 編譯
 const sass = require("gulp-sass");
 const cleanCSS = require("gulp-clean-css");
@@ -93,11 +100,11 @@ function browser() {
 }
 
 // 開發用
-exports.default = series(imgs_dev, includeHTML, sassStyle, babel5, php, browser);
+exports.default = series(imgs_dev,font, includeHTML, sassStyle, babel5, php, browser);
 
 //先清除舊檔案，再同時執行其他的、再壓縮圖檔
 exports.prod = series(
     clear,
     parallel(includeHTML, sassStyle, babel5, php),
-    imgs_prod
+    imgs_prod, font
 );
