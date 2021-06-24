@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'DFPLiYuan';
+    src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+}
+
+button{
+    border: none;
+    background-color: rgba(0, 255, 255, 0);
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.Menu {
+    width: 12%;
+    max-width: 120px;
+    /* background-color: cornsilk; */
+}
+
+.Menu img {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+    font-family: 'DFPLiYuan';
+    font-size: 20px;
+    font-weight: normal;
+    color: #045127;
+    letter-spacing: 3px;
+}
+
+.NavL {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 44%;
+    padding: 0 6%;
+    /* background-color: blueviolet; */
+}
+
+.NavR {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 44%;
+    padding: 0 6%;
+    /* background-color: blueviolet; */
+}
+
+.SignIn {
+    width: 17%;
+    padding: 0;
+}
+
+.SignIn img {
+    width: 100%;
+}
+
+.Island{
+    position: absolute;
+    bottom: 35px;
+    right: 45px;
+    width: 4.5%;
+}
+
+.Island img{
+    width: 100%;
+}
