@@ -16,13 +16,12 @@ body{
 }
 
 .main-content{
-  margin: 0 auto;
-
+  margin: 70px auto 0;
+  min-height: calc(100vh - 70px);
 
 .main{
   padding:1.5rem ;
   /* background: #f1f5f9; */
-  min-height: calc(100vh - 70px);
   // margin-top: 120px;
   background-image: url(../images/disscus/board3.jpg);
   background-size: cover;
@@ -43,6 +42,7 @@ body{
   overflow-x: auto;
   background-color: rgba(255, 255, 255, .77);
   border-radius: 20px;
+  padding: 10px;
 }
 .search{
   display: flex;
@@ -157,6 +157,7 @@ width: 590px;
 height: 50px;
 border-radius: 8px;
 font-size: 0;
+justify-content: unset;
 }
 nav a{
 font-size: 20px;
@@ -257,6 +258,10 @@ span.indicator.even{
   font-size: .85rem;
   color: #444;
   font-weight: 500;
+}
+
+tbody tr td{
+  vertical-align: middle;
 }
 tbody tr td:nth-child(1) div{
   position: relative;
