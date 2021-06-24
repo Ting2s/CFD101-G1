@@ -1,0 +1,150 @@
+@import 'base/font';
+
+
+body{
+  height: 100%;
+  background: lightblue;
+  box-sizing: border-box;
+}
+
+
+
+/* nav */
+button{
+  border: none;
+  background-color: rgba(0, 255, 255, 0);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+  z-index: 999;
+}
+
+.Menu {
+  width: 12%;
+  max-width: 120px;
+  /* background-color: cornsilk; */
+}
+
+.Menu img {
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+  font-family: 'DFPLiYuan';
+  font-size: 20px;
+  font-weight: normal;
+  color: #00813a;
+  letter-spacing: 3px;
+}
+
+.NavL {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 44%;
+  padding: 0 6%;
+  /* background-color: blueviolet; */
+}
+
+.NavR {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 44%;
+  padding: 0 6%;
+  /* background-color: blueviolet; */
+}
+
+.SignIn {
+  width: 17%;
+  padding: 0;
+}
+
+.SignIn img {
+  width: 100%;
+}
+
+.Island{
+  position: absolute;
+  bottom: 35px;
+  right: 45px;
+  width: 4.5%;
+}
+
+.Island img{
+  width: 100%;
+}
+
+
+/* centerboard */
+.sectionBg{
+  position: relative;
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  height: auto;
+}
+
+#background{
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+#meanBoard{
+  width: 65%;
+  max-width: 1200px;
+  //position: relative;
+  margin: 0 auto;
+  display: block;
+  padding-top: 10%;
+}
+
+.whiteBoard{
+  width: 42%;
+  height: 46%;
+  background-color: white;
+  max-width: 1200px;
+  position: absolute;
+  left: calc(50% - 15%);
+  top: 32%;
+  z-index: 999;
+  display: block;
+}
+
+.boardTitle{
+  position: absolute;
+  top: 18%;
+  max-width: 1200px;
+  left: calc(50% - 26%);
+}
+
+.size{
+  // input[type="range"] {
+  //   -webkit-appearance: slider-vertical;
+  // }
+  display: inline-block;
+  width: 20px;
+  height: 150px;
+
+  input {
+  width: 150px;
+  height: 20px;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+  }
+}
