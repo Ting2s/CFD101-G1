@@ -14,7 +14,7 @@ body{
 }
 
 .dino-sea1{
-    width: 35%; 
+    width: 40%; 
     position: absolute;
     top: 10%;
     right: 30%;
@@ -25,14 +25,41 @@ body{
     width: 100%;
 }
 
-.Fish1{
+// ---------------fish
+
+.Fish-1{
     width: 18%; 
     position: absolute;
-    top: 25%;
-    right: 5%;
+    top: 35%;
+    right: 10%;
     z-index: 1;
 }
 
-.Fish1 img{
+.Fish-1 img{
     width: 100%;
 }
+
+.Fish-2{
+    width: 10%; 
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    z-index: 1;
+}
+
+.Fish-2 img{
+    width: 100%;
+}
+
+.Fish-3{
+    width: 10%; 
+    position: absolute;
+    bottom: 35%;
+    left: 23%;
+    z-index: 1;
+}
+
+.Fish-3 img{
+    width: 100%;
+}
+
