@@ -21,7 +21,7 @@ button{
 .testWrapper{
 display: flex;
 width: 100vw;
-height: 100vh;
+height: 130vh;
 background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat center center fixed;
 background-size: cover;
 }
@@ -42,8 +42,7 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
 }
 
 .title{
-  margin: auto;
-  margin-bottom: 20px;
+  margin: 80px auto 35px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -105,8 +104,8 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
 
   .restartPlay {
    position: absolute;
-   left: 250px;
-   bottom: 270px;
+   left: 390px;
+   bottom: 255px;
 
     button{
     width: 160px;
@@ -152,7 +151,7 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
 
 .testArrow{
   position: absolute;
-  right: 250px;
+  right: 380px;
   bottom: -140px;
   
   button{
@@ -166,8 +165,8 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
 .scoreBoard{
   margin: auto;  
   margin-top: -30px;
-  width: 65%;
-  height: 60%;
+  width: 55%;
+  height: 45%;
   background:url(../../dev/images/dinoTest/pic/blank.png) no-repeat center center;
   background-size: contain;
   font-weight: $font-bold;
