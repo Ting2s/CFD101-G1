@@ -18,8 +18,21 @@ body{
     position: absolute;
     top: 10%;
     right: 30%;
+    z-index: 2;
 }
 
 .dino-sea1 img{
+    width: 100%;
+}
+
+.Fish1{
+    width: 18%; 
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    z-index: 1;
+}
+
+.Fish1 img{
     width: 100%;
 }
