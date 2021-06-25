@@ -1,0 +1,70 @@
+@import 'base/font';
+
+
+body{
+  height: 100%;
+  background: lightblue;
+  box-sizing: border-box;
+}
+
+/* centerboard */
+.sectionBg{
+  position: relative;
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  height: auto;
+}
+
+#background{
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+#meanBoard{
+  width: 65%;
+  max-width: 1200px;
+  //position: relative;
+  margin: 0 auto;
+  display: block;
+  padding-top: 10%;
+}
+
+.whiteBoard{
+  width: 42%;
+  height: 46%;
+  background-color: white;
+  max-width: 1200px;
+  position: absolute;
+  left: calc(50% - 15%);
+  top: 32%;
+  z-index: 999;
+  display: block;
+}
+
+.boardTitle{
+  position: absolute;
+  top: 18%;
+  max-width: 1200px;
+  left: calc(50% - 26%);
+}
+
+.size{
+  // input[type="range"] {
+  //   -webkit-appearance: slider-vertical;
+  // }
+  display: inline-block;
+  width: 20px;
+  height: 150px;
+
+  input {
+  width: 150px;
+  height: 20px;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+  }
+}
