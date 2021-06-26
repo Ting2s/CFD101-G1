@@ -1,0 +1,237 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'DFPLiYuan';
+  src: url("../font/DFPLiYuan.woff.ttf") format("truetype");
+  /* unicode-range: 文字1 編碼, 文字2 編碼, 文字3 編碼; */
+}
+
+html {
+  color: #562c2c;
+  font-family: 'DFPLiYuan';
+}
+
+button {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+.testWrapper {
+  display: flex;
+  width: 100vw;
+  height: 130vh;
+  background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.whiteBoard, .showScore {
+  margin: auto;
+  width: 100%;
+  height: 90%;
+  background-size: contain;
+}
+
+.whiteBoard {
+  background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center center;
+}
+
+.showScore {
+  background: url(../../dev/images/dinoTest/pic/testBoard_2.png) no-repeat center center;
+}
+
+.title {
+  margin: 80px auto 35px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.testTitle {
+  margin: auto;
+  padding: 25px;
+  height: 120px;
+  background: url(../images/dinoTest/pic/woodBlank2.png) no-repeat center;
+  background-size: contain;
+}
+
+.testTitle h1 {
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  font-size: 45px;
+  color: #ffdc7d;
+}
+
+.testContent {
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  padding: 10px;
+}
+
+.testContent h3 {
+  font-size: 30px;
+}
+
+.testContent p {
+  font-size: 26px;
+  padding-bottom: 30px;
+}
+
+.testContent .smRemind {
+  font-size: 20px;
+  color: #7f8112;
+  padding-bottom: 40px;
+}
+
+.testStart_btn button {
+  width: 250px;
+  padding: 60px;
+  border-style: none;
+  background: url(../../dev/images/dinoTest/pic/woodTitle2.png) no-repeat center center;
+  background-size: contain;
+  text-align: center;
+  font-size: 26px;
+}
+
+.testContent_Q {
+  position: relative;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.testContent_Q .restartPlay {
+  position: absolute;
+  left: 390px;
+  bottom: 255px;
+}
+
+.testContent_Q .restartPlay button {
+  width: 160px;
+  padding: 20px;
+  border-style: none;
+  background: url(../../dev/images/dinoTest/pic/woodTitle.png) no-repeat center center;
+  background-size: contain;
+  font-size: 21px;
+}
+
+.testContent_Q h3 {
+  font-size: 30px;
+}
+
+.choose {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 40px;
+  margin: auto;
+  width: 30%;
+  font-weight: 700;
+  text-align: center;
+}
+
+.choose button {
+  width: 160px;
+  padding: 20px;
+  border-style: none;
+  background: url(../../dev/images/dinoTest/pic/goldWood.png) no-repeat center center;
+  background-size: contain;
+  font-size: 23px;
+  color: #ffffff;
+}
+
+.choose button:hover {
+  color: #ffdc7d;
+}
+
+.testArrow {
+  position: absolute;
+  right: 380px;
+  bottom: -140px;
+}
+
+.testArrow button {
+  padding: 60px;
+  border-style: none;
+  background: url(../../dev/images/dinoTest/pic/arrowRight.png) no-repeat center center;
+  background-size: contain;
+}
+
+.scoreBoard {
+  margin: auto;
+  margin-top: -30px;
+  width: 55%;
+  height: 45%;
+  background: url(../../dev/images/dinoTest/pic/blank.png) no-repeat center center;
+  background-size: contain;
+  font-weight: 700;
+}
+
+.scoreBox {
+  padding-top: 40px;
+}
+
+.scoreTitle {
+  margin: auto;
+  background: url(../../dev/images/dinoTest/pic/woodBlank.png) no-repeat center center;
+  background-size: contain;
+  height: 70px;
+  padding-top: 6px;
+}
+
+.scoreTitle h3 {
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  color: #ffffff;
+}
+
+.scoreBoard p {
+  text-align: left;
+  color: #ffe56e;
+  padding-left: 200px;
+  margin: 30px 26px 0;
+}
+
+.score {
+  margin: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  text-align: center;
+  background: url(../../dev/images/dinoTest/pic/scoreBar.png) no-repeat center center;
+  background-size: contain;
+  color: #ffffff;
+  font-size: 23px;
+}
+
+.score span {
+  color: red;
+  font-size: 46px;
+}
+
+.score .comment {
+  margin-left: 15px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.scoreBtn {
+  margin: 20px 30px;
+  text-align: center;
+}
+
+.scoreBtn button {
+  margin: 7px 35px;
+  width: 130px;
+  padding: 20px;
+  border-style: none;
+  background: url(../../dev/images/dinoTest/pic/woodTitle.png) no-repeat center center;
+  background-size: contain;
+  font-size: 19px;
+}
+/*# sourceMappingURL=dinoTest.css.map */

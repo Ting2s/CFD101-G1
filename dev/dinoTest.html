@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恐龍知識小測驗</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+  <!-- js -->
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoTest.css">
+
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+
+
+
+  <main>
+    <div class="testWrapper">
+
+      <!-- 有白板區 -->
+      <div class="whiteBoard" id="whiteBoard">
+
+        <!-- 結算時會消失 -->
+        <div class="title" :class="">
+
+          <div class="testTitle">
+            <h1>恐龍知多少？</h1>
+          </div>
+
+        </div>
+        <!-- ================================================== -->
+        <!-- 首頁內容區 -->
+        <div class="testContent" id="testContent">
+          <h3>恐龍知識大挑戰</h3>
+          <p>你對恐龍的了解究竟有多少呢？
+            現在就來測試你的實力吧！</p>
+          <p class="smRemind">小提醒：測試後換取的代幣可以在恐龍商城裡使用哦！</p>
+          <div class="testStart_btn">
+            <button id="startBtn">開始遊戲</button>
+          </div>
+        </div>
+        <!-- ================================================== -->
+        <!-- 測驗畫面 -->
+        <div class="testContent_Q none" id="testContent_Q">
+          <!-- 遊戲開始才有 -->
+          <div class="restartPlay">
+            <button>重新開始</button>
+          </div>
+          <!-- 題目 -->
+          <h3 class="qusTitle">
+            Q1.全世界最重的恐龍大約重達幾公噸？
+          </h3>
+
+          <!-- 題目選項 -->
+          <div class="choose">
+            <button class="chooseBtn">A.30噸</button>
+            <button class="chooseBtn">B.50噸</button>
+            <button class="chooseBtn">C.70噸</button>
+            <button class="chooseBtn">D.100噸</button>
+          </div>
+
+          <!-- 去下一題 -->
+          <div class="testArrow">
+            <button id="nextArrow"></button>
+          </div>
+
+        </div>
+        <!-- ================================================== -->
+        <!-- 答題結算 -->
+        <div class="scoreBoard none" id="scoreBoard">
+
+          <div class="scoreBox">
+            <div class="scoreTitle">
+              <h3>遊玩結果</h3>
+            </div>
+          </div>
+
+          <p>嘿！你答對了……</p>
+
+          <div class="score">
+            <span>7</span>/7題
+            <span class="comment">你真是個天才！</span>
+          </div>
+
+          <div class="scoreBtn">
+            <button id="restart">再玩一次</button>
+            <a href="dinoTest_rank.html"><button>看排行榜</button></a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </main>
+
+
+
+
+  <!-- js -->
+  <script src="../js/dinoTest.js"></script>
+
+</body>
+
+</html>
