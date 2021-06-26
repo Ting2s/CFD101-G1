@@ -96,12 +96,14 @@ margin: 10px;
     text-align: center;
     color: $white;
   }
+  //內容板子
   .dark{
     background: url(../../dev/images/dinoPersonal/yellowBoard_b.png) no-repeat center center;
     background-size: contain;
 
   }
   
+  //內容板子（當前）
   .light{
   background: url(../../dev/images/dinoPersonal/yellowBoard.png) no-repeat center center;
   background-size: contain;
