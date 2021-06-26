@@ -22,8 +22,22 @@ body {
     width: 20%;
     margin: auto;
     margin-top: 70px;
+    animation: animate 0.4s infinite;
+    animation-direction: alternate;
 }
 
 .Bt img, .Egg img{
     width: 100%;
+}
+
+//----animation bt
+
+@keyframes animate {
+    from {
+        width: 20%;
+    }
+
+    to {
+        width: 21%;
+    }
 }
