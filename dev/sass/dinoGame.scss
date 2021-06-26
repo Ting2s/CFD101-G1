@@ -36,6 +36,7 @@ body {
     z-index: 1;
     animation: animate 15s infinite;
     animation-delay: 0s;
+    cursor: pointer; 
 }
 
 .Fish-2 {
@@ -46,6 +47,7 @@ body {
     z-index: 3;
     animation: animate-2 10s infinite;
     animation-delay: 3s;
+    cursor: pointer; 
 }
 
 .Fish-3 {
@@ -56,6 +58,7 @@ body {
     z-index: 1;
     animation: animate-3 8s infinite;
     animation-delay: 5s;
+    cursor: pointer; 
 }
 
 .Fish-4 {
@@ -66,6 +69,7 @@ body {
     z-index: 3;
     animation: animate-4 17s infinite;
     animation-delay: 10s;
+    cursor: pointer; 
 }
 
 .Fish-5 {
@@ -76,6 +80,7 @@ body {
     z-index: 1;
     animation: animate-5 18s infinite;
     animation-delay: 0s;
+    cursor: pointer; 
 }
 
 .Fish-6 {
@@ -86,6 +91,7 @@ body {
     z-index: 3;
     animation: animate-6 16s infinite;
     animation-delay: 3s;
+    cursor: pointer; 
 }
 
 .Fish-1 img,
