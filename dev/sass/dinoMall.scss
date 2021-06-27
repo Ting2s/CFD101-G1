@@ -5,17 +5,20 @@ body{
 .wrapMall{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1360px;
+  // align-items: flex-end;
+  position:absolute;
+  top:20%;
+  left:10%;
+  max-width: 1920px;
   width: 100%;
   margin:0 auto;
-  border: 1px solid red;
-  margin-top: 8rem;
+  // border: 1px solid red;
 }
 .wrapMall .itemLeft{
   width: 100%;
 }
 .wrapMall .itemLeft .card{
-  background: url(../images/stoneframe01.png) no-repeat center center / contain;
+  background: url(../images/dinoMall/stoneframe01.png) no-repeat center center / contain;
     text-align: center;
     padding: 120px;
 }
@@ -39,7 +42,7 @@ body{
   width: 100%;
 }
 .wrapMall .itemRight .title{
-  background: url(../images/woodBlank.png) no-repeat center center / contain;
+  background: url(../images/dinoMall/woodBlank.png) no-repeat center center / contain;
   text-align: center;
   padding: 20px
 }
@@ -50,7 +53,7 @@ body{
   width: 30%;
 }
 .wrapMall .itemRight .groundImgCard{
-  background: url(../images/stornBoard.png) no-repeat center center / contain;
+  background: url(../images/dinoMall/stornBoard.png) no-repeat center center / contain;
   text-align: center;
   padding-bottom: 90px;
 }
