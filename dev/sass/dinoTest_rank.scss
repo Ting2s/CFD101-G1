@@ -1,0 +1,200 @@
+// @import './base/reset';
+@import './base/font';
+@import '../../guideline_sass/sass/base/var';
+
+
+//==================================
+
+html{
+  color: $brown;
+  font-family:'DFPliYuan';
+}
+button{
+  cursor: pointer;
+}
+
+//==================================
+
+.rankWrapper{
+margin: auto;
+width: 100vw;
+background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat fixed;
+background-size: cover;
+}
+
+.rankInWrap{
+  margin:auto;
+  padding: 50px;
+  max-width: 1400px;
+}
+.rankBox{ 
+  background: url(../../dev/images/dinoTest/pic/woodBoard.png) no-repeat center center;
+  background-size: contain;
+  }
+
+  .rankTitle h1{
+  text-align: center;
+  padding-top: 50px;
+  font-size: $font-h1;
+  }
+
+
+  .rankContent{ 
+    margin: 50px auto;
+    margin-top: 100px;
+    padding: 40px 8px;
+    width: 37%;
+    border-radius: 7%;
+    background-color:$brown;
+
+    }
+  ul{    
+    list-style: none;
+  li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    margin: 8px 0;
+    padding: 0 10px;
+    
+    &::before{
+      content: "";
+      display: block;
+      width: 100%;
+      margin: 5px;
+      border-top: 3px dashed rgb(150, 118, 103);  
+      
+    }
+    }
+     
+  }
+  .rankContent li:first-child:before{
+    display: none;
+  }
+
+  .arrow{
+    width: 10px;
+  }
+
+
+
+  .rankSili{
+    background: url(../../dev/images/dinoTest/pic/rank_siliver.png);
+  }
+
+  .rankGold{
+    background: url(../../dev/images/dinoTest/pic/rank_gold.png); 
+  }
+
+  .rankNum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    color: rgb(56, 18, 18);
+    font-size: ($font-h4)-10px;
+  }
+
+  .rankPhoto img{
+    width: 60px;
+    height: 60px;
+  }
+
+  .rankScore,.rankNm{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .rankScore{
+    font-size: ($font-h4)+5px;
+    color:$yellow-second;
+
+    span{
+      font-size:($font-h4)-15px ;
+      color: $white;
+
+    }
+  }
+
+  .rankNm{ 
+    flex-direction: column;
+    
+    span{
+     
+      padding: 5px 0;
+      font-size:($font-h4)-15px;
+      color:white;
+    }
+    .rankName{
+      font-size:($font-h4)-5px;
+      color: $yellow-second;
+    }
+  }
+  .rankBtn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+    button{
+      margin: initial;
+      width: 180px;
+      height: 70px;
+      line-height:70px;
+      border-style:none;
+      background:url(../../dev/images/dinoTest/pic/woodTitle3.png) no-repeat center center;
+      background-size: contain;
+      text-align: center;
+      font-size:($font-h4)-10px;
+    }
+  
+  }
+//==================================
+@media screen and (max-width: 1200px) {
+  .rankContent {
+    width: 45%;
+    }
+  }
+
+
+//==================================
+@media screen and (max-width: 768px) {
+
+.rankTitle h1 {
+  padding-top:110px;
+
+}
+.rankContent {
+  margin-top: 80px;
+  padding: 30px 8px;
+  width: 60%;
+}
+
+.rankBox {
+  margin: -20px;}
+
+
+.rankBtn button {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+
+}
+
+//==================================
+@media screen and (max-width: 414px) {
+
+  .rankBox{
+    visibility: hidden;
+  }
+  .rankContent{
+    width: 95%;
+}
+
+
+  }

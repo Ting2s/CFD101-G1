@@ -1,0 +1,244 @@
+// @import './base/reset';
+@import './base/font';
+@import '../../guideline_sass/sass/base/var';
+
+
+//==================================
+
+html{
+  color: $brown;
+  font-family:'DFPLiYuan';
+}
+button{
+  cursor: pointer;
+}
+
+.none{
+  display:none;
+}
+//==================================
+
+.testWrapper{
+display: flex;
+width: 100vw;
+height: 130vh;
+background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat center center fixed;
+background-size: cover;
+}
+
+.whiteBoard,.showScore{
+  margin: auto;
+  width: 100%;
+  height: 90%;
+  background-size: contain;
+}
+
+.whiteBoard{
+background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center center;
+}
+
+.showScore{
+  background: url(../../dev/images/dinoTest/pic/testBoard_2.png) no-repeat center center;
+}
+
+.title{
+  margin: 80px auto 35px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.testTitle{
+    margin: auto;
+    padding: 25px;
+    height: 120px;
+    background: url(../images/dinoTest/pic/woodBlank2.png) no-repeat center;
+    background-size: contain;
+
+  h1{
+    margin: auto; 
+    padding: 5px;
+    text-align: center;
+    font-size: $font-h1;
+    color:$yellow-first;
+  }
+}
+
+//首頁內容==================================
+.testContent{ 
+  font-weight: $font-bold;
+  line-height: $font-lineheight;
+  text-align: center;
+  padding: 10px;
+
+  h3{ 
+    font-size: $font-h3; 
+  }
+  p{
+    font-size:$font-h4;
+    padding-bottom: 30px;   
+  }
+  .smRemind{
+    font-size: ($font-h4)-6px;
+    color: rgb(127, 129, 18);
+    padding-bottom: 40px;
+  }
+ 
+} 
+.testStart_btn button{
+  width: 250px;
+  padding: 60px;
+  border-style:none;
+  background:url(../../dev/images/dinoTest/pic/woodTitle2.png) no-repeat center center;
+  background-size: contain;
+  text-align: center;
+  font-size: $font-h4;
+}
+
+
+//測驗畫面==================================
+.testContent_Q{
+  position: relative;
+  font-weight: $font-bold;
+  line-height: $font-lineheight;
+  text-align: center;
+
+  .restartPlay {
+   position: absolute;
+   left: 390px;
+   bottom: 255px;
+
+    button{
+    width: 160px;
+    padding: 20px;
+    border-style:none;
+    background:url(../../dev/images/dinoTest/pic/woodTitle.png) no-repeat center center;
+    background-size: contain;
+    font-size: ($font-h4)-5px;
+  }
+}
+
+  h3{
+    font-size: $font-h3;
+  }
+}
+
+.choose{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 40px;
+  margin: auto;
+  width: 30%;
+  font-weight: $font-bold;
+  text-align: center;
+
+
+  button{
+    width: 160px;
+    padding: 20px;
+    border-style:none;
+    background:url(../../dev/images/dinoTest/pic/goldWood.png) no-repeat center center;
+    background-size: contain;
+    font-size: ($font-h4)-3px;
+    color:$white;
+
+    &:hover{
+      color: $yellow-first;
+    }
+  }
+}
+
+.testArrow{
+  position: absolute;
+  right: 380px;
+  bottom: -140px;
+  
+  button{
+    padding: 60px;
+    border-style:none;
+    background:url(../../dev/images/dinoTest/pic/arrowRight.png) no-repeat center center;
+    background-size: contain;
+  }
+}
+//分數畫面==================================
+.scoreBoard{
+  margin: auto;  
+  margin-top: -30px;
+  width: 55%;
+  height: 45%;
+  background:url(../../dev/images/dinoTest/pic/blank.png) no-repeat center center;
+  background-size: contain;
+  font-weight: $font-bold;
+
+  
+}
+
+
+.scoreBox{
+  padding-top: 40px;
+}
+  .scoreTitle {
+    margin: auto;
+    background: url(../../dev/images/dinoTest/pic/woodBlank.png) no-repeat center center;
+    background-size: contain;
+    height: 70px;
+    padding-top: 6px;
+
+   
+}
+
+.scoreTitle h3{
+      font-size: $font-h3;
+      text-align: center;
+      line-height: 60px;
+      color: $white;
+    }
+
+.scoreBoard p{
+  text-align: left;
+  color:$yellow-second;
+  padding-left: 200px;
+  margin: 30px 26px 0;
+}
+.score{
+  margin: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  text-align: center;
+  background: url(../../dev/images/dinoTest/pic/scoreBar.png) no-repeat center center;
+  background-size: contain;
+  color:$white;
+  font-size:($font-h4)-3px;
+
+  span{
+    color:red;
+    font-size: ($font-h2)+4px;
+  }
+
+  .comment{
+    margin-left: 15px;
+    color:$white;
+    font-size: ($font-h4)-10px;
+  }
+
+}
+
+.scoreBtn{
+  margin:20px 30px;
+  text-align: center;
+
+  button{ 
+    margin:7px 35px;
+    width: 130px;
+    padding: 20px;
+    border-style:none;
+    background:url(../../dev/images/dinoTest/pic/woodTitle.png) no-repeat center center;
+    background-size: contain;
+    font-size: ($font-h4)-7px;
+   
+  }
+
+}
