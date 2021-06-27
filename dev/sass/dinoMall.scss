@@ -1,4 +1,5 @@
 @import './base/font';
+@import './base/dinoMall_var';
 @import '../../guideline_sass/sass/base/var';
 body{
   background-color: rgb(143, 213, 223);
@@ -16,57 +17,61 @@ body{
   margin:0 auto;
   // border: 1px solid red;
 }
-.wrapMall .itemLeft{
+
+// 左方塊 ==============================================
+#{$titleLeft}{
   width: 100%;
 }
-.wrapMall .itemLeft .card{
+#{$titleLeft} .card{
   background: url('#{$path}/dinoMall/stoneframe01.png') no-repeat center center / contain;
   text-align: center;
   padding: 120px;
 }
-.wrapMall .itemLeft .card img{
+#{$titleLeft} .card img{
   background-color: white;
 }
-.wrapMall .itemLeft .groundButton{
+#{$titleLeft} .groundButton{
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.wrapMall .itemLeft .btnSelect{
-  // overflow: hidden;
+#{$titleLeft} .btnSelect{
   width: 15%;
   margin: 20px 10px;
 }
-.wrapMall .itemLeft .btnSelect img{
+#{$titleLeft} .btnSelect img{
   width: 100%;
 }
-.wrapMall .itemRight{
+
+
+// 右方塊 ==============================================
+#{$titleRight}{
   width: 100%;
 }
-.wrapMall .itemRight .title{
+#{$titleRight} .title{
   background: url('#{$path}/dinoMall/woodBlank.png') no-repeat center center / contain;
   text-align: center;
   padding: 20px
 }
-.wrapMall .itemRight .title h1{
+#{$titleRight} .title h1{
   font-size:$font-h1;
   color:$yellow-second;
   font-weight: $font-bold;
 }
-.wrapMall .itemRight .arrow img{
+#{$titleRight} .arrow img{
   width: 30%;
 }
-.wrapMall .itemRight .groundImgCard{
+#{$titleRight} .groundImgCard{
   background: url('#{$path}/dinoMall/stornBoard.png') no-repeat center center / contain;
   text-align: center;
   padding-bottom: 90px;
 }
-.wrapMall .itemRight .imgCard{
+#{$titleRight} .imgCard{
   position: relative;
   left: 35%;
   display: flex;
   width: 30%;
 }
-.wrapMall .itemRight .imgCard img{
+#{$titleRight} .imgCard img{
   width: 100%;
 }
