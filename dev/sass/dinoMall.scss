@@ -1,3 +1,5 @@
+@import './base/font';
+@import '../../guideline_sass/sass/base/var';
 body{
   background-color: rgb(143, 213, 223);
 }
@@ -31,8 +33,8 @@ body{
   justify-content: center;
 }
 .wrapMall .itemLeft .btnSelect{
-  overflow: hidden;
-  width: 25%;
+  // overflow: hidden;
+  width: 15%;
   margin: 20px 10px;
 }
 .wrapMall .itemLeft .btnSelect img{
@@ -47,7 +49,9 @@ body{
   padding: 20px
 }
 .wrapMall .itemRight .title h1{
-  font-size: 45px;
+  font-size:$font-h1;
+  color:$yellow-second;
+  font-weight: $font-bold;
 }
 .wrapMall .itemRight .arrow img{
   width: 30%;
