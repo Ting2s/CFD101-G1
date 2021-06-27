@@ -20,9 +20,9 @@ body{
   width: 100%;
 }
 .wrapMall .itemLeft .card{
-  background: url(../images/dinoMall/stoneframe01.png) no-repeat center center / contain;
-    text-align: center;
-    padding: 120px;
+  background: url('#{$path}/dinoMall/stoneframe01.png') no-repeat center center / contain;
+  text-align: center;
+  padding: 120px;
 }
 .wrapMall .itemLeft .card img{
   background-color: white;
@@ -44,7 +44,7 @@ body{
   width: 100%;
 }
 .wrapMall .itemRight .title{
-  background: url(../images/dinoMall/woodBlank.png) no-repeat center center / contain;
+  background: url('#{$path}/dinoMall/woodBlank.png') no-repeat center center / contain;
   text-align: center;
   padding: 20px
 }
@@ -57,7 +57,7 @@ body{
   width: 30%;
 }
 .wrapMall .itemRight .groundImgCard{
-  background: url(../images/dinoMall/stornBoard.png) no-repeat center center / contain;
+  background: url('#{$path}/dinoMall/stornBoard.png') no-repeat center center / contain;
   text-align: center;
   padding-bottom: 90px;
 }
