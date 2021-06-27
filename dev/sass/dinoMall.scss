@@ -1,77 +1,119 @@
 @import './base/font';
 @import './base/dinoMall_var';
 @import '../../guideline_sass/sass/base/var';
-body{
+
+body {
   background-color: rgb(143, 213, 223);
 }
 
-.wrapMall{
-  display: grid;
+.wrapMall {
+  position             : absolute;
+  top                  : 20%;
+  left                 : 10%;
+  display              : grid;
   grid-template-columns: 1fr 1fr;
-  // align-items: flex-end;
-  position:absolute;
-  top:20%;
-  left:10%;
-  max-width: 1920px;
-  width: 100%;
-  margin:0 auto;
+  justify-content      : center;
+  max-width            : 1320px;
+  width                : 100%;
   // border: 1px solid red;
 }
 
 // 左方塊 ==============================================
-#{$titleLeft}{
+#{$titleLeft} {
   width: 100%;
 }
-#{$titleLeft} .card{
+
+#{$titleLeft} .card {
   background: url('#{$path}/dinoMall/stoneframe01.png') no-repeat center center / contain;
   text-align: center;
-  padding: 120px;
+  padding   : 120px;
 }
-#{$titleLeft} .card img{
+
+#{$titleLeft} .card img {
   background-color: white;
 }
-#{$titleLeft} .groundButton{
-  width: 100%;
-  display: flex;
+
+#{$titleLeft} .groundButton {
+  display        : flex;
   justify-content: center;
+  width          : 100%;
 }
-#{$titleLeft} .btnSelect{
-  width: 15%;
+
+#{$titleLeft} .btnSelect {
+  width : 20%;
   margin: 20px 10px;
 }
-#{$titleLeft} .btnSelect img{
+
+#{$titleLeft} .btnSelect img {
   width: 100%;
 }
 
 
 // 右方塊 ==============================================
-#{$titleRight}{
-  width: 100%;
+#{$titleRight} {
+  background: url('#{$path}/dinoMall/stornBoard.png') no-repeat center center / contain;
+  padding   : 0 60px;
 }
-#{$titleRight} .title{
-  background: url('#{$path}/dinoMall/woodBlank.png') no-repeat center center / contain;
-  text-align: center;
-  padding: 20px
+
+#{$titleRight} .groundTitle {
+  display        : flex;
+  justify-content: center;
+  margin-left    : 10%;
 }
-#{$titleRight} .title h1{
-  font-size:$font-h1;
-  color:$yellow-second;
+
+#{$titleRight} .title {
+  background  : url('#{$path}/dinoMall/woodBlank.png') no-repeat center center / contain;
+  padding     : 20px;
+  margin-right: 10px;
+  text-align  : center;
+}
+
+#{$titleRight} .title h3 {
+  color      : $yellow-second;
+  font-size  : $font-h3;
   font-weight: $font-bold;
 }
-#{$titleRight} .arrow img{
-  width: 30%;
+
+#{$titleRight} .cart {
+  width : 10%;
+  height: 10%;
 }
-#{$titleRight} .groundImgCard{
-  background: url('#{$path}/dinoMall/stornBoard.png') no-repeat center center / contain;
-  text-align: center;
+
+#{$titleRight} .cart img {
+  width: 100%;
+}
+
+#{$titleRight} .arrow .prePage {
+  background: url('#{$path}/dinoMall/pre.png') no-repeat center center / contain;
+  width     : 50px;
+  height    : 50px;
+}
+
+#{$titleRight} .arrow span {
+  font-size     : $font-h4;
+  font-weight   : $font-bold;
+  vertical-align: 12px;
+  color         : $brown;
+}
+
+#{$titleRight} .arrow .nextPage {
+  background: url('#{$path}/dinoMall/next.png') no-repeat center center / contain;
+  width     : 50px;
+  height    : 50px;
+}
+
+#{$titleRight} .groundImgCard {
+  text-align    : center;
   padding-bottom: 90px;
 }
-#{$titleRight} .imgCard{
+
+#{$titleRight} .imgCard {
   position: relative;
-  left: 35%;
-  display: flex;
-  width: 30%;
+  left    : 30%;
+  display : flex;
+  width   : 40%;
 }
-#{$titleRight} .imgCard img{
+
+#{$titleRight} .imgCard img {
   width: 100%;
 }
