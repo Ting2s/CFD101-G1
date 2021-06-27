@@ -1,0 +1,240 @@
+@import 'dinoPersonal.scss';
+
+//==================================
+//更換按鈕
+.switchBtn{
+  padding: 20px 60px;
+  margin: 20px;
+
+  
+
+button{
+  padding: 5px 30px;
+  font-weight: $font-bold;
+  font-size: ($font-h4)-6px;
+  
+  &:hover{
+    color: $yellow-second;
+  }
+}
+
+p{
+  padding: 20px 10px 0px 10px;
+  color: $yellow-second;
+  font-size: ($font-h4)-12px;
+}
+}
+//==================================
+//標題按鈕被選取時的CSS
+.active{
+  padding: 5px 30px;
+  border-radius: $btn-radius;
+  border:3px solid $brown;
+  background-color:$yellow-second;
+  color:$brown;
+
+  &:hover{
+    background-color: $brown;
+    color:$yellow-second;
+  }
+}
+
+//關閉時
+
+//==================================
+.dinoChoose{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.changePage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 30px;
+
+  span{
+    margin: 20px 0;
+    font-size: ($font-h4);
+  }
+}
+.upPage,.downPage{
+  width: 80px;
+  height: 80px;
+  background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
+  background-size: contain;
+
+}
+.downPage{
+  transform:scaleY(-1);
+}
+
+
+.dino{
+  display: flex;
+  flex-wrap: wrap;
+
+
+  li{
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    cursor: pointer;
+
+    img{
+      display:block;
+      margin: auto;
+      margin-top: 70px;
+      width: 50%;
+      
+      //彈窗動畫
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.7;}
+    }
+    
+    input{
+      display: block;
+      margin: auto;
+      margin-top: 50px;
+      width: 150px;
+      height: 60px;
+      border: none;
+      background: url(../../dev/images/dinoPersonal/goldWood.png) no-repeat center center;
+      background-size: contain;    
+      
+      color: $brown;
+      font-size: ($font-h4)-8px;
+      font-weight: $font-bold;
+
+    }
+}
+  }
+.ocean{ 
+  background: url(../../dev/images/dinoPersonal/eggocean.png) no-repeat center center;
+ } 
+.ground{
+  background: url(../../dev/images/dinoPersonal/egggress.png) no-repeat center center;
+}
+.sky{
+  background: url(../../dev/images/dinoPersonal/eggfly.png) no-repeat center center;
+}
+
+//彈窗背景CSS
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+//caption設定
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+//動畫設定
+.modal-content, .caption {  
+  animation-name: zoom;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+//關掉按鈕
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover,:focus{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+  }
+}
+
+
+
+
+//==================================
+//我的恐龍配件
+
+.dinoAcc{
+
+  li{
+    display: inline-block;
+    margin:0 10px;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    background-size: contain;
+
+    img{
+      display:block;
+      margin: auto;
+      width: 40%;
+      margin-top: 40px;
+
+      &:hover {
+        opacity: 0.7;}
+    }
+  }
+}
+
+.hat{
+    background: url(../../dev/images/dinoPersonal/hat.png) no-repeat center center;
+  }
+
+.ring{
+    background: url(../../dev/images/dinoPersonal/ring.png) no-repeat center center;
+  }
+
+.shoes{
+    background: url(../../dev/images/dinoPersonal/shoes.png) no-repeat center center;
+  }
+  
+  
+  
+//=====================打開開關clas 
+.none{
+  display: none;
+}

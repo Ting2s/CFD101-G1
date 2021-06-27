@@ -1,12 +1,12 @@
-body{
+body {
     height: 100vh;
     background-image: url('../images/dinoGame/bg-sea.jpg');
     background-size: cover;
-    background-position:center center;
+    background-position: center center;
     background-repeat: no-repeat;
 }
 
-.GameRange{
+.GameRange {
     width: 100%;
     height: 88vh;
     position: relative;
@@ -14,81 +14,92 @@ body{
     overflow: hidden;
 }
 
-.dino-sea1{
-    width: 40%; 
+.dino-sea1 {
+    width: 40%;
     position: absolute;
     top: 10%;
     right: 30%;
     z-index: 2;
 }
 
-.dino-sea1 img{
+.dino-sea1 img {
     width: 100%;
 }
 
 // ---------------fish
 
-.Fish-1{
-    width: 18%; 
+.Fish-1 {
+    width: 18%;
     position: absolute;
     top: 35%;
     right: -1%;
     z-index: 1;
     animation: animate 15s infinite;
     animation-delay: 0s;
+    cursor: pointer; 
 }
 
-.Fish-2{
-    width: 10%; 
+.Fish-2 {
+    width: 10%;
     position: absolute;
     top: 35%;
     left: -10%;
-    z-index: 1;
+    z-index: 3;
     animation: animate-2 10s infinite;
     animation-delay: 3s;
+    cursor: pointer; 
 }
 
-.Fish-3{
-    width: 10%; 
+.Fish-3 {
+    width: 10%;
     position: absolute;
     bottom: 35%;
     left: -10%;
     z-index: 1;
     animation: animate-3 8s infinite;
     animation-delay: 5s;
+    cursor: pointer; 
 }
 
-.Fish-4{
-    width: 13%; 
+.Fish-4 {
+    width: 13%;
     position: absolute;
     top: 15%;
     left: -13%;
-    z-index: 1;
+    z-index: 3;
     animation: animate-4 17s infinite;
     animation-delay: 10s;
+    cursor: pointer; 
 }
 
-.Fish-5{
-    width: 8%; 
+.Fish-5 {
+    width: 8%;
     position: absolute;
     bottom: 20%;
     right: -8%;
     z-index: 1;
     animation: animate-5 18s infinite;
     animation-delay: 0s;
+    cursor: pointer; 
 }
 
-.Fish-6{
-    width: 8%; 
+.Fish-6 {
+    width: 8%;
     position: absolute;
     top: 5%;
     right: -10%;
-    z-index: 1;
+    z-index: 3;
     animation: animate-6 16s infinite;
     animation-delay: 3s;
+    cursor: pointer; 
 }
 
-.Fish-1 img,.Fish-2 img, .Fish-3 img, .Fish-4 img, .Fish-5 img, .Fish-6 img {
+.Fish-1 img,
+.Fish-2 img,
+.Fish-3 img,
+.Fish-4 img,
+.Fish-5 img,
+.Fish-6 img {
     width: 100%;
 }
 
@@ -152,19 +163,63 @@ body{
         transform: translateX(-1500%);
     }
 }
+
 //-----水草
-.SeaweedL{
-    width: 20%;
-    height: 47vh;
+.SeaweedL {
+    width: 29%;
+    height: 69vh;
     position: relative;
-    bottom: 35%;
+    bottom: 57%;
     left: -77px;
-    background-color: aquamarine;
     overflow: hidden;
 }
 
-.SeaweedL .Seaweed-1{
+.SeaweedL .Seaweed-1 {
     width: 100%;
     position: absolute;
+    left: -9%;
     transform: rotate(-20deg);
+}
+
+.SeaweedL .Seaweed-2 {
+    width: 100%;
+    left: 10%;
+    position: absolute;
+    transform: rotate(0deg);
+}
+
+.SeaweedR {
+    width: 22%;
+    height: 52vh;
+    position: relative;
+    bottom: 109%;
+    left: 73%;
+    overflow: hidden;
+}
+
+.SeaweedR .Seaweed-1 {
+    width: 100%;
+    position: absolute;
+    left: -9%;
+    transform: rotate(-20deg);
+}
+
+.SeaweedR .Seaweed-2 {
+    width: 100%;
+    left: 10%;
+    position: absolute;
+    transform: rotate(0deg);
+}
+
+//----成長
+.GrowUp {
+    width: 33%;
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.GrowUp img {
+    width: 100%;
 }
