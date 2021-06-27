@@ -6,16 +6,14 @@ body{
 }
 
 .wrapMall{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  // align-items: flex-end;
-  justify-content: center;
   position:absolute;
   top:20%;
   left:10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
   max-width: 1320px;
   width: 100%;
-  // margin:0 auto;
   // border: 1px solid red;
 }
 
@@ -55,13 +53,24 @@ body{
   padding: 20px
 }
 #{$titleRight} .title h1{
-  font-size:$font-h1;
   color:$yellow-second;
+  font-size : $font-h1;
   font-weight: $font-bold;
 }
-#{$titleRight} .arrow img{
+#{$titleRight} .arrow .prePage{
+  background: url('#{$path}/dinoMall/pre.png') no-repeat center center / contain;
   width: 30%;
 }
+#{$titleRight} .arrow span{
+  font-size  :$font-h3 ;
+}
+#{$titleRight} .arrow .nextPage{
+  background: url('#{$path}/dinoMall/next.png') no-repeat center center / contain;
+  width: 30%;
+}
+// #{$titleRight} .arrow img{
+//   width: 30%;
+// }
 #{$titleRight} .groundImgCard{
   background: url('#{$path}/dinoMall/stornBoard.png') no-repeat center center / contain;
   text-align: center;
