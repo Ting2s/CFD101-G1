@@ -6,38 +6,96 @@ body {
     background-repeat: no-repeat;
 }
 
-.Wrap{
+.Wrap {
     display: flex;
     flex-direction: column;
-    padding-top: 16%;
+    padding-top: 38%;
 }
 
-.Egg{
+.Egg {
     width: 38%;
     margin: auto;
     margin-left: 33%;
+    position: relative;
 }
 
-.Bt{
+.egg-1{
+    position: absolute;
     width: 20%;
+    bottom: 15vh;
+    left: 22%;
+}
+
+.egg-2 {
+    position: absolute;
+    width: 24%;
+    bottom: 16vh;
+    left: 35%;
+    // z-index: 1;
+}
+
+.egg-3 {
+    position: absolute;
+    width: 21%;
+    bottom: 15vh;
+    left: 52%;
+    // z-index: 2;
+}
+
+.nest {
+    position: absolute;
+    width: 85%;
+    bottom: 5vh;
+    left: 8%;
+    // z-index: 3;
+}
+
+.Bt {
     margin: auto;
-    margin-top: 70px;
     animation: animate 0.4s infinite;
     animation-direction: alternate;
 }
 
-.Bt img, .Egg img{
+.Bt img {
     width: 100%;
+}
+
+.remove {
+    display: none;
+}
+
+.click{
+    cursor: pointer; 
 }
 
 //----animation bt
 
 @keyframes animate {
     from {
-        width: 20%;
+        width: 18%;
     }
 
     to {
-        width: 21%;
+        width: 19%;
+    }
+}
+
+//----animation egg
+
+.egg-animation {
+    animation: animate-egg 1.5s forwards;
+}
+
+@keyframes animate-egg {
+    from {
+        width: 38%;
+        margin-left: 33%;
+        margin-top: 0%;
+    }
+
+    to {
+        width: 50%;
+        margin-left: 27%;
+        margin-top: 8%;
     }
 }
