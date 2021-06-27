@@ -24,14 +24,15 @@ body {
     width: 20%;
     bottom: 15vh;
     left: 22%;
+    z-index: 2;
 }
 
 .egg-2 {
     position: absolute;
-    width: 24%;
+    width: 27%;
     bottom: 16vh;
     left: 35%;
-    // z-index: 1;
+    z-index: 1;
 }
 
 .egg-3 {
@@ -39,15 +40,15 @@ body {
     width: 21%;
     bottom: 15vh;
     left: 52%;
-    // z-index: 2;
+    z-index: 2;
 }
 
 .nest {
     position: absolute;
-    width: 85%;
+    width: 70%;
     bottom: 5vh;
-    left: 8%;
-    // z-index: 3;
+    left: 15%;
+    z-index: 3;
 }
 
 .Bt {
