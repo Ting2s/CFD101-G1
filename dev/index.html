@@ -6,13 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @@include('layout/style.html')
     <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/parallax.min.js"></script>
 </head>
 <body>
     <!-- @@include('layout/header.html')
     <div class="content">
-      <a href="dinoGame.html"> <h1>首頁sss</h1></a>
-       <h1>涵改看看</h1>
     </div>
     @@include('layout/footer.html') -->
+     <!-- Start animation -->
+    <!-- 天空場景S1 -->
+    <section class="section sky">
+        <img class="pterodactyl" src="./images/index/Pterodactyl.png">
+        <img class="sun"
+         src="./images/index/sun.png">
+        <div id="parallax_area" data-hover-only="false">
+            <div class="box  " data-depth="0.8"><img class="cloud-bl" src="./images/index/cloud-br.png" alt=""></div>
+            <div class="box " data-depth="0.4"><img class="cloud-fl" src="./images/index/cloud-bl.png" alt="">
+            </div>
+            <div class="box " data-depth="0.2"><img class="cloud-br"src="./images/index/cloud-br.png" alt="">
+            </div>
+            <div class="box " data-depth="0.1"><img class="cloud-r" src="./images/index/cloud-fr.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- 海洋場景S2 -->
+    <div id="sea"></div>
+    <section class="section sea">
+      <img class="plesiosaurus"
+      src="./images/index/Plesiosaur.png" alt="">
+      <img class="cloud-sea" src="./images/index/cloud-sea.png" alt="">
+      <div id="parallax_area1"
+      data-hover-only="false">
+          <div class="box " data-depth="0.5"><img class="wave-0" src="./images/index/wave0.png" alt="">
+          </div>
+          <div class="box " data-depth="0.6"><img class="wave-1" src="./images/index/wave1.png" alt="">
+          </div>
+          <div class="box " data-depth="0.8"><img class="wave-2" src="./images/index/wave2.png" alt="">
+          </div>
+          <div class="box " data-depth="1"><img class="wave-3" src="./images/index/wave3.png" alt="">
+          </div>
+          <div class="box " data-depth="1"><img class="wave-4" src="./images/index/wave4.png" alt="">
+          </div>
+      </div>
+    </section>
+    <!-- 陸地場景S3 -->
+    <section class="land">
+      <img class="stegosaurus"src="./images/index/Stegosaurus.png" alt="">
+        <img class="nest"src="./images/index/nest.png" alt="">
+        <img id="egg-g" class="egg-g eggmove
+        "src="./images/index/egg-g.png" alt="">
+        <img id="egg-w" class="egg-w eggmove
+        "src="./images/index/egg-w.png" alt="">
+        <img id="egg-b" class="egg-b eggmove
+        "src="./images/index/egg-b.png" alt="">
+    </section>
+    <script src="js/parallax.js"></script>
+    <script src="js/animation.js"></script>
 </body>
 </html>
