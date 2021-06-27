@@ -1,0 +1,203 @@
+@import 'dinoPersonal.scss';
+
+//==================================
+//更換按鈕
+.switchBtn{
+  padding: 20px 60px;
+  margin: 20px;
+
+  
+
+button{
+  padding: 5px 30px;
+  font-weight: $font-bold;
+  font-size: ($font-h4)-6px;
+  
+  &:hover{
+    color: $yellow-second;
+  }
+}
+
+p{
+  padding: 20px 10px 0px 10px;
+  color: $yellow-second;
+  font-size: ($font-h4)-12px;
+}
+}
+//==================================
+//標題按鈕被選取時的CSS
+.active{
+  padding: 5px 30px;
+  border-radius: $btn-radius;
+  border:3px solid $brown;
+  background-color:$yellow-second;
+  color:$brown;
+
+  &:hover{
+    background-color: $brown;
+    color:$yellow-second;
+  }
+}
+
+//關閉時
+
+//==================================
+.dinoChoose{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+
+}
+.changePage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 30px;
+
+  span{
+    margin: 20px 0;
+    font-size: ($font-h4);
+  }
+}
+.upPage,.downPage{
+  width: 80px;
+  height: 80px;
+  background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
+  background-size: contain;
+
+}
+.downPage{
+  transform:scaleY(-1);
+}
+
+
+.myCard,.card{
+  display: flex;
+  flex-wrap: wrap;
+
+
+  li{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    width: 350px;
+    height: 300px;
+    background: url(../../dev/images/dinoPersonal/cardBoard.png) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+
+    img{
+      display:block;
+      margin: auto;
+      margin-top: 25px;
+      width: 65%;
+      
+      //彈窗動畫
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.7;}
+    }
+    
+    input{
+      display: block;
+      margin: auto;
+      width: 150px;
+      height: 60px;
+      border: none;
+      background: url(../../dev/images/dinoPersonal/woodCard.png) no-repeat center center;
+      background-size: contain;    
+      
+      color: $brown;
+      font-size: ($font-h4)-8px;
+      font-weight: $font-bold;
+
+    }
+}
+  }
+
+  .deleteCard{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 50px;
+    height:50px;
+    background: url(../../dev/images/dinoPersonal/exit.png) no-repeat center center;
+      background-size: contain;    
+  }
+
+
+//彈窗背景CSS
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+//caption設定
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+//動畫設定
+.modal-content, .caption {  
+  animation-name: zoom;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+//關掉按鈕
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover,:focus{
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+  }
+}
+
+
+//=====================打開開關clas 
+.none{
+  display: none;
+}
