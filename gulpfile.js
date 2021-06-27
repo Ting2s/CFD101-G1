@@ -84,7 +84,7 @@ function browser() {
     browserSync.init({
         server: {
             baseDir: "./dist",
-            index: "index.html",
+            index: "dinoMall.html",
         },
         port: 3000,
     });
