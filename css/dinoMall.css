@@ -1,0 +1,80 @@
+body {
+  background-color: #8fd5df;
+}
+
+.wrapMall {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid red;
+  margin-top: 8rem;
+}
+
+.wrapMall .itemLeft {
+  width: 100%;
+}
+
+.wrapMall .itemLeft .card {
+  background: url(./image/stoneframe01.png) no-repeat center center/contain;
+  text-align: center;
+  padding: 120px;
+}
+
+.wrapMall .itemLeft .card img {
+  background-color: white;
+}
+
+.wrapMall .itemLeft .groundButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapMall .itemLeft .btnSelect {
+  overflow: hidden;
+  width: 25%;
+  margin: 20px 10px;
+}
+
+.wrapMall .itemLeft .btnSelect img {
+  width: 100%;
+}
+
+.wrapMall .itemRight {
+  width: 100%;
+}
+
+.wrapMall .itemRight .title {
+  background: url(./image/woodBlank.png) no-repeat center center/contain;
+  text-align: center;
+  padding: 20px;
+}
+
+.wrapMall .itemRight .title h1 {
+  font-size: 45px;
+}
+
+.wrapMall .itemRight .arrow img {
+  width: 30%;
+}
+
+.wrapMall .itemRight .groundImgCard {
+  background: url(./image/stornBoard.png) no-repeat center center/contain;
+  text-align: center;
+  padding-bottom: 90px;
+}
+
+.wrapMall .itemRight .imgCard {
+  position: relative;
+  left: 35%;
+  display: flex;
+  width: 30%;
+}
+
+.wrapMall .itemRight .imgCard img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=dinoMall.css.map */
