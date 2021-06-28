@@ -1,0 +1,181 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section{
+  overflow: hidden;
+}
+/* 天空場景S1 */
+body .section.sky{
+  position: relative;
+  height: 1080px;
+  background-image: url(../images/index/S1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pterodactyl{
+  position: absolute;
+  height: 200px;
+  top: 30%;
+  left: 0%;
+  z-index: 1;
+}
+.sun{
+  position: absolute;
+  height: 800px;
+  top: -10%;
+  left: 40%;
+}
+body .section .box .cloud-bl{
+  position: absolute;
+  width: 800px;
+  /* background-color: #ff4800; */
+  left: 0%;
+  top: 300px;
+  opacity: 0.8;
+}
+body .section .box .cloud-fl{
+  position: absolute;
+  width: 900px;
+  left: -200px;
+  top: 500px;
+}
+body .section .box .cloud-br{
+  position: absolute;
+  width: 800px;
+  left: 900px;
+  top: 300px;
+}
+body .section .box .cloud-r{
+  position: absolute;
+  width: 700px;
+  left: 800px;
+  top: 400px;
+}
+/* 海洋場景S2 */
+.sea{
+  position: relative;
+  height: 1080px;
+  background-image: url(../images/index/S2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plesiosaurus{   
+  position: absolute;
+  height: 400px;
+  top: 30%;
+  left: 90%;
+}
+.cloud-sea{
+  position: absolute;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  z-index: 2;
+}
+.wave-0{
+  position: absolute;
+  width: 350px;
+  top: 410px;
+  left: 300px;
+}
+.wave-1{
+  position: absolute;
+  width: 1930px;
+  top: 490px;
+  opacity: 0.9;
+}
+.wave-2{
+  position: absolute;
+  top: 550px;
+  opacity: 0.8;
+}
+.wave-3{
+  position: absolute;
+  top: 610px;
+}
+.wave-4{
+  position: absolute;
+  top: 655px;
+}
+/* 陸地場景S3 */
+.land{
+  position: relative;
+  height: 1080px;
+  background-image: url(../images/index/S3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.stegosaurus{
+  position: absolute;
+  height: 300px;
+  top: 30%;
+  left: -30%;
+}
+#egg-g ,#egg-w, #egg-b{
+  position: absolute;
+  top: 77%;
+}
+.nest{
+  position: absolute;
+  top: 79%;
+  left: 40%;
+  z-index: 10;
+}
+#egg-g{
+  left: 43%;
+}
+#egg-w{
+  left: 47%;
+  z-index: 1;
+}
+#egg-b{
+  left: 51%;
+}
+
+/* 恐龍蛋hover跳動效果 */
+#egg-g ,#egg-w, #egg-b{
+  width: 80px;
+}
+
+.eggmove {
+  transition: transform 0.3s;
+}
+.eggmove::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 10px;
+  background: radial-gradient(closest-side, black, transparent);
+  bottom: 0;
+  opacity: 0;
+  transform: scaleX(1) translateY(0);
+  transition: transform 0.3s;
+}
+.eggmove:hover {
+  animation: eggmove 0.3s 0.3s infinite alternate;
+  transform: scale(1.25) translateY(-70px);
+}
+@keyframes eggmove {
+  to {
+    transform: scale(1.25) translateY(-45px);
+  }
+}
+@keyframes shadow {
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateY(35px);
+  }
+}
+#egg-g:hover::after {
+  animation: shadow 0.6s 0.6s infinite alternate;
+  opacity: 1;
+  transform: scaleX(1.125) translateY(30px);
+}
