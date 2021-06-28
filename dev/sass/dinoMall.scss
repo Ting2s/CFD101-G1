@@ -1,5 +1,6 @@
 @import './base/font';
 @import './base/dinoMall_var';
+@import './mixins/mixin_Mall';
 @import '../../guideline_sass/sass/base/var';
 
 body {
@@ -7,113 +8,102 @@ body {
 }
 
 .wrapMall {
-  position             : absolute;
-  top                  : 20%;
-  left                 : 10%;
-  display              : grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content      : center;
-  max-width            : 1320px;
-  width                : 100%;
-  // border: 1px solid red;
+   @include posiTion(absolute,20%,10%);
+   @include rect(100%,null){
+      max-width            : 1920px;
+   }; 
+      @include d-flex(grid){
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+      };   
 }
 
 // 左方塊 ==============================================
-#{$titleLeft} {
-  width: 100%;
-}
 
-#{$titleLeft} .card {
-  background: url('#{$path}/dinoMall/stoneframe01.png') no-repeat center center / contain;
-  text-align: center;
-  padding   : 120px;
-}
-
-#{$titleLeft} .card img {
-  background-color: white;
-}
-
-#{$titleLeft} .groundButton {
-  display        : flex;
-  justify-content: center;
-  width          : 100%;
-}
-
-#{$titleLeft} .btnSelect {
-  width : 20%;
-  margin: 20px 10px;
-}
-
-#{$titleLeft} .btnSelect img {
-  width: 100%;
-}
-
+      #{$titleLeft}{
+                  @include rect(100%,null);
+                  .card{
+                        background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
+                        text-align: center;
+                        padding   : 18%;
+                        }
+                        span{
+                              @include posiTion(absolute,40%,9%);  // HAT  
+                              img{
+                                  width: 25%;
+                              }
+                        }
+                       
+                  .groundButton{
+                        @include rect(100%,null);
+                        @include d-flex();
+                        .btnSelect{
+                                  @include rect(22%,null);
+                                  @include fontSz($font-h4,$font-bold);
+                                  margin: 20px 10px;
+                                  background: url('#{$pathMall}/goldWood.png') no-repeat center center / contain;
+                                  color:$white;
+                                  padding: 20px 0 25px;
+                                  transition: all .7s ease-in-out;
+                                  &:hover{
+                                    transform: scale(.9); 
+                                  }                              
+                                  img{
+                                       @include rect(100%,null);
+                                        object-fit: cover;     
+                                      }
+                                  }
+                               }
+                    }
 
 // 右方塊 ==============================================
-#{$titleRight} {
-  background: url('#{$path}/dinoMall/stornBoard.png') no-repeat center center / contain;
-  padding   : 0 60px;
-}
-
-#{$titleRight} .groundTitle {
-  display        : flex;
-  justify-content: center;
-  margin-left    : 10%;
-}
-
-#{$titleRight} .title {
-  background  : url('#{$path}/dinoMall/woodBlank.png') no-repeat center center / contain;
-  padding     : 20px;
-  margin-right: 10px;
-  text-align  : center;
-}
-
-#{$titleRight} .title h3 {
-  color      : $yellow-second;
-  font-size  : $font-h3;
-  font-weight: $font-bold;
-}
-
-#{$titleRight} .cart {
-  width : 10%;
-  height: 10%;
-}
-
-#{$titleRight} .cart img {
-  width: 100%;
-}
-
-#{$titleRight} .arrow .prePage {
-  background: url('#{$path}/dinoMall/pre.png') no-repeat center center / contain;
-  width     : 50px;
-  height    : 50px;
-}
-
-#{$titleRight} .arrow span {
-  font-size     : $font-h4;
-  font-weight   : $font-bold;
-  vertical-align: 12px;
-  color         : $brown;
-}
-
-#{$titleRight} .arrow .nextPage {
-  background: url('#{$path}/dinoMall/next.png') no-repeat center center / contain;
-  width     : 50px;
-  height    : 50px;
-}
-
-#{$titleRight} .groundImgCard {
-  text-align    : center;
-  padding-bottom: 90px;
-}
-
-#{$titleRight} .imgCard {
-  position: relative;
-  left    : 30%;
-  display : flex;
-  width   : 40%;
-}
-
-#{$titleRight} .imgCard img {
-  width: 100%;
-}
+#{$titleRight}{
+        background: url('#{$pathMall}/stornBoard.png') no-repeat center center / contain;
+        padding   : 0 60px;
+        .groundImgCard{
+              text-align    : center;
+              padding-bottom: 15%;
+              .groundTitle{
+                    @include d-flex();
+                    margin-left    : 10%;              
+                    .title{
+                        background  : url('#{$pathMall}/woodBlank.png') no-repeat center center / contain;
+                        padding     : 28px;
+                        margin-right: 10px;
+                        text-align  : center; 
+                              h3{
+                              @include fontSz($font-h3,$font-bold);
+                              color      : $yellow-second;
+                              }                
+                         }
+                    .cart{
+                             @include rect(10%,10%);
+                              img{
+                                    @include rect(100%,null);
+                                  }                  
+                          }
+                        }
+              .arrow{
+                    .prePage{
+                            @include rect(50px,50px);
+                            background: url('#{$pathMall}/pre.png') no-repeat center center / contain;
+                            }
+                    span{
+                            @include fontSz($font-h4,$font-bold);
+                            vertical-align: 12px;
+                            color         : $brown;                          
+                        }
+                    .nextPage{
+                              @include rect(50px,50px);
+                              background: url('#{$pathMall}/next.png') no-repeat center center / contain;
+                             }
+                    }
+              .imgCard{
+                        @include d-flex();
+                            img{
+                                margin: 5px 10px;
+                                object-fit: cover;
+                                }
+                      }
+              }
+        }

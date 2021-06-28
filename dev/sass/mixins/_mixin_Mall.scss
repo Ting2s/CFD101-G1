@@ -1,0 +1,23 @@
+@mixin rect($w, $h) {
+  width : $w;
+  height: $h;
+  @content;
+}
+
+@mixin d-flex($disP:flex) {
+  display        : $disP;
+  justify-content: center;
+  @content;
+}
+
+@mixin posiTion($p, $d_top, $d_left) {
+  position: $p;
+  top     : $d_top;
+  left    : $d_left;
+  @content;
+}
+
+@mixin fontSz($size,$weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
