@@ -1,0 +1,135 @@
+@import 'dinoPersonal.scss';
+
+//==================================
+//更換按鈕
+.switchBtn{
+  padding: 20px 60px;
+  margin: 20px;
+
+  
+
+button{
+  padding: 5px 30px;
+  font-weight: $font-bold;
+  font-size: ($font-h4)-6px;
+  
+  &:hover{
+    color: $yellow-second;
+  }
+}
+
+p{
+  padding: 20px 10px 0px 10px;
+  color: $yellow-second;
+  font-size: ($font-h4)-12px;
+}
+}
+//==================================
+//標題按鈕被選取時的CSS
+.active{
+  padding: 5px 30px;
+  border-radius: $btn-radius;
+  border:3px solid $brown;
+  background-color:$yellow-second;
+  color:$brown;
+
+  &:hover{
+    background-color: $brown;
+    color:$yellow-second;
+  }
+}
+
+//關閉時
+
+//==================================
+.dinoChoose{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px;
+
+}
+.changePage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 30px;
+
+}
+.upPage,.downPage{
+  margin: 40px 10px;
+  width: 80px;
+  height: 80px;
+  background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
+  background-size: contain;
+
+}
+.downPage{
+  transform:scaleY(-1);
+}
+
+
+.myArti,.arti{
+
+  ul{  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  
+
+    li{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  
+      padding: 17px;
+      width: 670px;
+      max-width: 670px;
+      height: 100%;
+      background: url(../../dev/images/dinoPersonal/long.png) no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+
+      img{
+        width: 60px;
+      }
+    }
+  }
+}
+
+.artic{
+  margin-left: 10px;
+  color: $yellow-first;
+  font-size: ($font-h4)-12px;
+  
+
+  .detail{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.time,.read,.repo{
+      padding: 10px;
+      color:$white;
+      font-size: ($font-h4)-13px;  
+    }
+    
+.time{
+  margin-left: 13px;
+}
+#repo img{
+  width:5%;
+}
+
+//=====================打開開關clas 
+.none{
+  display: none;
+}
