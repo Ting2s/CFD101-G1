@@ -97,6 +97,11 @@ margin: 10px;
     color: $white;
   }
   //內容板子
+
+  .light,.dark{
+    font-family:'DFPliYuan';
+    letter-spacing: 2px;
+  }
   .dark{
     background: url(../../dev/images/dinoPersonal/yellowBoard_b.png) no-repeat center center;
     background-size: contain;
