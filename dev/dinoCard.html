@@ -7,23 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     @@include('layout/style.html')
 
-  
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/dinoCard.css">
     <!-- stylesheet -->
     <!-- <link href="/static/css/literallycanvas.css" rel="stylesheet"> -->
     <link href="css/literallycanvas.css" rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- dependency: React.js -->
+    
     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-with-addons.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
 
-    <!-- <link
+    <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <!-- Literally Canvas -->
     <!-- <script src="/static/js/literallycanvas.js"></script> -->
     <script src="js/literallycanvas.js"></script>
     
@@ -46,49 +43,48 @@
     <img class="titleBtn" src="images/dinoCard/titleBtn.png" alt="">
     <h1 class="titleText">客製化明信片</h1>
 
-    <div class="addMore">
-      <a href="#" id="chooseBg">
-        <img src="images/dinoCard/addmoreBtn.png" alt="">
-        <span class="addmoreText1">選擇背景</span>
-      </a>
-      <a href="#" id="chooseHead">
-        <img src="images/dinoCard/addmoreBtn.png" alt="">
-        <span class="addmoreText2">上傳頭貼</span>
-      </a>
-    </div>
+    <form class="addMore">
+      <button onclick="self.location.href='#'" class="addmoreText1">
+        <img src="images/dinoCard/addmoreBtn.png">
+        <span>選擇背景</span>
+      </button>
+      
+      <button onclick="self.location.href='#'" class="addmoreText2">
+        <img src="images/dinoCard/addmoreBtn.png">
+        <span>上傳頭貼</span>
+      </button>
+    </form>
 
     <div id="whiteBoard" class="whiteBoard">
       <div class="myDrawing"></div>
     </div>
-  
-    
-    <div class="downBtn">
-      <div>
-        <a href="#" class="save">
-       
-            <img src="images/dinoCard/woodTitle.png">
-            <span class="downText">儲存</span>
-          
-        </a>
-
-        <a href="#" class="downLoad">
-          <img src="images/dinoCard/woodTitle.png">
-          <span class="downText">下載</span>
-        </a>
-
-        <a href="#" class="post">
-          <img src="images/dinoCard/woodTitle.png">
-          <span class="downText">投稿</span>
-        </a>
-
-        <a href="#" class="share">
-          <img src="images/dinoCard/woodTitle.png">
-          <span class="downText">分享</span>
-        </a>
-      </div>
-    </div>
-  
   </div>
+    
+
+    <div>
+      <form class="downBtn">
+        <button onclick="self.location.href='#'" class="save">
+          <img src="images/dinoCard/woodTitle.png">
+          <span class="downText1">儲存</span>
+        </button>
+
+        <button onclick="self.location.href='#'" class="downLoad">
+          <img src="images/dinoCard/woodTitle.png">
+          <span class="downText2">下載</span>
+        </button>
+
+        <button onclick="self.location.href='#'" class="post">
+          <img src="images/dinoCard/woodTitle.png">
+          <span class="downText3">投稿</span>
+        </button>
+
+        <button onclick="self.location.href='#'" class="share">
+          <img src="images/dinoCard/woodTitle.png">
+          <span class="downText4">分享</span>
+        </button>
+      </form>
+    </div>
+
 </section>      
     
 
