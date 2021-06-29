@@ -26,14 +26,17 @@ body {
                   .cardLeft{
                         background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
                         text-align: center;
-                        padding   : 20%;
+                        padding   : 25%;
                         }
                         span{
-                              @include posiTion(absolute,51%,20%);  // HAT  
+                              @include posiTion(absolute,52%,19%);  // HAT  
                               img{
                                   width: 90%;
                               }
                         }
+                        .showImg_Mall{
+                                      @include rect(100%,null);
+                                      }
                        
                   .groundButton{
                         @include rect(100%,null);
