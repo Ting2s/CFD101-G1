@@ -189,12 +189,11 @@ background-size: cover;
 //==================================
 @media screen and (max-width: 414px) {
 
-  .rankBox{
-    visibility: hidden;
+  .rankBox {
+  background:none;
   }
   .rankContent{
     width: 95%;
 }
 
-
-  }
+}
