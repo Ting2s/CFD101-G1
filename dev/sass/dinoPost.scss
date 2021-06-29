@@ -15,10 +15,10 @@
     position: absolute;
     z-index: 30;
     top: 0px;
-    left: 650px;
+    left: 850px;
   
     img {
-      width: 50%;
+      width: 60%;
     }
   }
   
@@ -27,6 +27,9 @@
     background-size: cover;
     width: 63%;
     height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
   }
   
@@ -35,9 +38,6 @@
     border-radius: 10px;
     padding: 20px;
     width: 85%;
-    height: 85%;
-    margin: 0 auto;
-    
   }
   
   input {

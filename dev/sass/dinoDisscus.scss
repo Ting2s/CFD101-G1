@@ -36,6 +36,7 @@ body{
 .buck{
   background-image: url(../images/disscus/board2.jpg);
   background-size: cover;
+  height: 100vh;
 }
 
 .jobs{
@@ -297,6 +298,7 @@ tbody tr td:nth-child(1) div::before{
 .board{
   background-image: url(../images/disscus/board.png);
   background-size: cover;
+  margin-left: -50px;
 }
 
 @media only screen and (max-width:1124px){
