@@ -1,12 +1,4 @@
-//(1)點擊.testStart_btn時，.testContent的show-->none，.testContent_Q的none-->show
 
-//(2)點擊#nextArrow時，.scoreBoard的none-->show，
-//  .testContent_Q的show-->none
-//  .whiteBoard的class-- > showScore"
-//(2)點擊.restartPlay時(暫且不做)
-
-//(3)點擊#restart .testContent_Q的none-->show
-//  .scoreBoard的show-->none
 
 //  :class="{'show':isOK,'none':isNO}"
 // let vue=new Vue({
