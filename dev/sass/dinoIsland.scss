@@ -1,0 +1,117 @@
+body {
+    height: 100vh;
+    background-image: url('../images/dinoIsland/island-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.Wrap {
+    width: 65%;
+    height: 85vh;
+    position: relative;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    // background-color: rgba(161, 161, 235, 0.541);
+}
+
+.Dino-1 {
+    width: 15%;
+    position: absolute;
+    left: 11%;
+    top: 3%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-1-col{
+    width: 15%;
+    position: absolute;
+    left: 11%;
+    top: 3%;
+}
+
+.Dino-2 {
+    width: 14%;
+    position: absolute;
+    left: 26%;
+    top: 20%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-2-col {
+    width: 14%;
+    position: absolute;
+    left: 26%;
+    top: 20%;
+}
+
+.Dino-3 {
+    width: 25%;
+    position: absolute;
+    left: 30%;
+    bottom: 30%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-3-col {
+    width: 25%;
+    position: absolute;
+    left: 30%;
+    bottom: 30%;
+}
+
+.Dino-4 {
+    width: 18%;
+    position: absolute;
+    right: 21%;
+    top: 28%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-4-col {
+    width: 18%;
+    position: absolute;
+    right: 21%;
+    top: 28%;
+}
+
+.Dino-5 {
+    width: 24%;
+    position: absolute;
+    right: 20%;
+    bottom: 7%;
+    z-index: 1;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-5-col {
+    width: 24%;
+    position: absolute;
+    right: 20%;
+    bottom: 7%;
+    z-index: 1;
+}
+
+.Dino-6 {
+    width: 16%;
+    position: absolute;
+    right: 12%;
+    bottom: 23%;
+    z-index: 2;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-1 img,
+.Dino-2 img,
+.Dino-3 img,
+.Dino-4 img,
+.Dino-5 img,
+.Dino-6 img,
+.Dino-1-col img,
+.Dino-2-col img,
+.Dino-3-col img,
+.Dino-4-col img,
+.Dino-5-col img {
+    width: 100%;
+}

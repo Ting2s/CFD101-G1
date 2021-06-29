@@ -21,7 +21,7 @@ button{
 .testWrapper{
 display: flex;
 width: 100vw;
-height: 130vh;
+height: 100vh;
 background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat center center fixed;
 background-size: cover;
 }
@@ -50,7 +50,6 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
 .testTitle{
     margin: auto;
     padding: 25px;
-    height: 120px;
     background: url(../images/dinoTest/pic/woodBlank2.png) no-repeat center;
     background-size: contain;
 
@@ -58,7 +57,7 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
     margin: auto; 
     padding: 5px;
     text-align: center;
-    font-size: $font-h1;
+    font-size: ($font-h1)-8px;
     color:$yellow-first;
   }
 }
@@ -68,19 +67,17 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
   font-weight: $font-bold;
   line-height: $font-lineheight;
   text-align: center;
-  padding: 10px;
 
   h3{ 
     font-size: $font-h3; 
   }
   p{
     font-size:$font-h4;
-    padding-bottom: 30px;   
+    padding-bottom: 20px;   
   }
   .smRemind{
     font-size: ($font-h4)-6px;
     color: rgb(127, 129, 18);
-    padding-bottom: 40px;
   }
  
 } 
@@ -104,8 +101,8 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
 
   .restartPlay {
    position: absolute;
-   left: 390px;
-   bottom: 255px;
+   left: 370px;
+   bottom:300px;
 
     button{
     width: 160px;
@@ -155,6 +152,7 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
   bottom: -140px;
   
   button{
+    margin: 0 10px 40px 0;
     padding: 60px;
     border-style:none;
     background:url(../../dev/images/dinoTest/pic/arrowRight.png) no-repeat center center;
@@ -199,7 +197,7 @@ background: url(../../dev/images/dinoTest/pic/testBoard.png) no-repeat center ce
   text-align: left;
   color:$yellow-second;
   padding-left: 200px;
-  margin: 30px 26px 0;
+  margin: 30px 55px 0;
 }
 .score{
   margin: 10px 15px;
