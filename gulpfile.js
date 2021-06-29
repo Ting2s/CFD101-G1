@@ -42,7 +42,8 @@ function includeHTML() {
 const imagemin = require("gulp-imagemin");
 
 function imgs_dev() {
-    return src(["dev/images/*.*", "dev/images/**/*.*"]).pipe(dest("dist/images"));
+    return src(["dev/images/*.*", "dev/images/**/*.*"])
+        .pipe(dest("dist/images"));
 }
 
 // 壓圖
@@ -83,7 +84,7 @@ function browser() {
     browserSync.init({
         server: {
             baseDir: "./dist",
-            index: "index.html",
+            index: "dinoMall.html",
         },
         port: 3000,
     });

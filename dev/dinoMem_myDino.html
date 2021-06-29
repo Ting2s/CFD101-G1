@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恐龍收藏</title>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+  <!-- js -->
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoMem_myDino.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+    <div class="perWrap">
+      <div class="perHeader">
+
+      </div>
+
+      <div class="perBox">
+
+        <!-- 左側個人頭像區 -->
+        <div class="perPhoto">
+          <h1>會員中心</h1>
+          <!-- 頭貼框 -->
+          <div class="perFrame">
+            <img src="images/dinoPersonal/photoSticker.jpg" alt="">
+            <h3>龍春暉</h3>
+          </div>
+        </div>
+
+        <!-- 右側內容區 -->
+        <div class="perContent">
+          <!-- 內容板子 -->
+          <div class="conBtn">
+            <a href=""> <button class="dark">查看會員資料</button></a>
+            <a href="dinoMem_myDino.html"> <button class="light">恐龍收藏</button></a>
+            <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
+
+            <a href="dinoMem_arti.html">
+              <button class="dark">文章收藏</button></a>
+          </div>
+
+          <!-- 大板子內容 -->
+          <div class="conFrame">
+
+            <div class="switchBtn">
+              <button class="active" id="dino_btn">我的恐龍</button>
+              <button id="dinoAcc_btn">我的恐龍配件</button>
+
+
+              <!-- 我的恐龍 -->
+              <p id="dino_p">點擊後可以查看恐龍資料哦！</p>
+              <!-- 我的恐龍配件 -->
+              <p id="dinoAcc_p" class="none">點擊後就能給擁有的恐龍更換哦！</p>
+            </div>
+
+
+
+
+            <!-- 欄位 -->
+            <div class="dinoChoose">
+              <!-- 選頁按鈕 -->
+              <div class="changePage">
+                <button id="upPage" class="upPage"></button>
+                <span>1/3</span>
+                <button id="downPage" class="downPage"></button>
+              </div>
+
+              <!-- -----我的恐龍----- -->
+              <!-- 欄位格子 -->
+              <div class="dino" id="dino">
+                <ul>
+                  <li class="ocean">
+                    <img src="images/dinoPersonal/d2.png" alt="" onclick="openModel(this)" id="dino_1">
+
+                    <input type="button" value="龍春暉">
+
+                    <!-- The Modal -->
+                    <div id="myModal_1" class="modal">
+                      <span class="close">&times;</span>
+                      <img class="modal-content" id="img01">
+                      <div id="caption_1" class="caption"></div>
+                    </div>
+
+                  </li>
+
+                  <li class="ground">
+                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                    <input type="button" value="龍春暉">
+
+
+                  </li>
+
+
+                  <li class="sky">
+                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                    <input type="button" value="龍春暉">
+
+                  </li>
+                </ul>
+              </div>
+
+
+              <!-- -----我的恐龍配件----- -->
+              <div class="dinoAcc none" id="dinoAcc">
+                <ul>
+                  <li class="hat">
+                    <img src="images/dinoPersonal/prod1.png" alt="">
+                  </li>
+
+                  <li class="ring">
+                    <img src="images/dinoPersonal/prod4.png" alt="">
+                  </li>
+
+                  <li class="shoes">
+                    <img src="images/dinoPersonal/prod6.png" alt="">
+                  </li>
+
+                  <li class="shoes">
+                    <img src="images/dinoPersonal/prod5.png" alt="">
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="hat">
+                    <img src="images/dinoPersonal/prod1.png" alt="">
+                  </li>
+
+                  <li class="ring">
+                    <img src="images/dinoPersonal/prod4.png" alt="">
+                  </li>
+
+                  <li class="shoes">
+                    <img src="images/dinoPersonal/prod6.png" alt="">
+                  </li>
+
+                  <li class="shoes">
+                    <img src="images/dinoPersonal/prod5.png" alt="">
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+
+
+
+  </main>
+
+
+  <!-- js -->
+  <script src="js/dinoMem_myDino.js"></script>
+</body>
+
+</html>

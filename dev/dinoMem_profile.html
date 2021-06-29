@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GOGO龍會員資料</title>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+  <!-- js -->
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoMem_profile.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+    <div class="perWrap">
+      <div class="perHeader">
+      </div>
+      <div class="perBox">
+        <!-- 左側個人頭像區 -->
+        <div class="perPhoto">
+          <h1>會員中心</h1>
+          <!-- 頭貼框 -->
+          <div class="perFrame">
+            <img src="images/dinoPersonal/photoSticker.jpg" alt="">
+            <h3>龍春暉</h3>
+          </div>
+        </div>
+
+        <!-- 右側內容區 -->
+        <div class="perContent">
+          <!-- 內容標籤板子 -->
+          <div class="conBtn">
+            <button class="light">查看會員資料</button>
+            <button class="dark">恐龍收藏</button>
+            <button class="dark">明信片收藏</button>
+            <button class="dark">文章收藏</button>
+          </div>
+          <div class="conFrame">
+            <div class="profileForm">
+              <form class="profile"action="">
+                <label class="control-label">會員暱稱</label>
+                <input type="text" placeholder="龍春暉"/>
+                <label class="control-label">帳號</label>
+                <input type="email"placeholder="帳號" />
+                <label class="control-label">密碼</label>
+                <input type="password"placeholder="密碼" />
+                <button  type="submit">修改</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>

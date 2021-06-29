@@ -11,7 +11,7 @@ $label-input: 10px;
 //字級
 $font-h1: 45px; //標題字
 $font-h2: 42px; //測驗題目敘述
-$font-h3: 30px;
+$font-h3: 30px; 
 $font-h4: 26px;
 $font-base: 18px;
 
@@ -25,22 +25,20 @@ $font-black: 900;
 $font-spacing: 0.05px;
 $font-lineheight: 1.5;
 
+// bg:url() 路徑
+$path:'../images';
+
 //顏色
 $white: #ffffff;
 $black: #313131;
 $brown: #562c2c;
 $yellow-first: #ffdc7d; //主要黃色
 $yellow-second: #ffe56e;
-// $gray-first: #9f9f9f;
-// $gray-second: #d6d6d6;
-// $gray-third: #f4f4f4;
-// $blue: #;
-$red: #d23423; //解鎖恐龍  飼養恐龍btn
-// $colors: $white, $black, $yellow-first, $yellow-second, $gray-first, $gray-second, $gray-third, $blue;
+$red: #d23423; //解鎖恐龍  飼養恐龍
 
 // 斷點
 $breakpoint:(
   desktop: 1200px,
   tablet: 768px,
-  mobile: 414px,
+  mobile: 375px, //手機鎖死
 );

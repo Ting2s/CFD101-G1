@@ -1,0 +1,122 @@
+@import './base/font';
+@import './base/dinoMall_var';
+@import './mixins/mixin_Mall';
+@import '../../guideline_sass/sass/base/var';
+
+body {
+  background-color: rgb(143, 213, 223);
+}
+
+.wrapMall {
+      @include rect(100%,null){
+            max-width            : 1920px;
+      }; 
+      @include d-flex(grid){
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            margin: auto;
+            padding-top: 10%;
+      };   
+}
+
+// 左方塊 ==============================================
+
+      #{$titleLeft}{
+                  @include rect(100%,null);
+                  .cardLeft{
+                        background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
+                        text-align: center;
+                        padding   : 20%;
+                        }
+                        span{
+                              @include posiTion(absolute,51%,20%);  // HAT  
+                              img{
+                                  width: 90%;
+                              }
+                        }
+                       
+                  .groundButton{
+                        @include rect(100%,null);
+                        @include d-flex();
+                        .btnSelect{
+                                  @include rect(22%,null);
+                                  @include fontSz($font-h4,$font-bold);
+                                  margin: 20px 10px;
+                                  background: url('#{$pathMall}/goldWood.png') no-repeat center center / contain;
+                                  color:$white;
+                                  padding: 20px 0 25px;
+                                  transition: all .7s ease-in-out;
+                                  &:hover{
+                                    transform: scale(.9); 
+                                  }                              
+                                  img{
+                                       @include rect(100%,null);
+                                        object-fit: cover;     
+                                      }
+                                  }
+                               }
+                    }
+
+                    
+// 右方塊 ==============================================
+#{$titleRight}{
+        background: url('#{$pathMall}/stornBoard.png') no-repeat center center / contain;
+        padding   : 2%;
+        .groundImgCard{
+              text-align    : center;
+              padding-bottom: 14%;
+              .groundTitle{
+                        @include d-flex();
+                        margin-left    : 10%;              
+                        .title{
+                              background  : url('#{$pathMall}/woodBlank.png') no-repeat center center / contain;
+                              padding     : 28px;
+                              margin-right: 10px;
+                              text-align  : center; 
+                                    h3{
+                                    @include fontSz($font-h3,$font-bold);
+                                    color      : $yellow-second;
+                                    }                
+                              }
+                        .cart{
+                              @include rect(10%,10%);
+                                    img{
+                                          @include rect(100%,null);
+                                          cursor: pointer;
+                                    }                  
+                              }
+                        }
+              .arrow{
+                    .prePage{
+                            @include rect(50px,50px);
+                            background: url('#{$pathMall}/pre.png') no-repeat center center / contain;
+                            }
+                    span{
+                            @include fontSz($font-h4,$font-bold);
+                            vertical-align: 12px;
+                            color         : $brown;                          
+                        }
+                    .nextPage{
+                              @include rect(50px,50px);
+                              background: url('#{$pathMall}/next.png') no-repeat center center / contain;
+                             }
+                    }
+              .imgCard{
+                        @include d-flex();
+                              .card{
+                                    background: url('#{$pathMall}/frame.png') no-repeat center center / contain;
+                                    margin: 1%;
+                                    padding: 3%;
+                                    cursor: pointer;
+                                    img{  
+                                          margin: 14px 10px;
+                                          object-fit: cover;
+                                          }
+                                    span{
+                                          display: block;
+                                          color:$yellow-first ;
+                                          }
+                                    }
+                      }
+              }
+        }

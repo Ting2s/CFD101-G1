@@ -1,0 +1,329 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+:root {
+  --color-main:#1a202e;
+}
+
+.main-content {
+  margin: 70px auto 0;
+  min-height: calc(100vh - 70px);
+  /* 外層加overflowhidden*/
+}
+
+.main-content .main {
+  padding: 1.5rem;
+  /* background: #f1f5f9; */
+  background-image: url(../images/disscus/board3.jpg);
+  background-size: cover;
+}
+
+.main-content .jobs-grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 1rem;
+}
+
+.main-content .buck {
+  background-image: url(../images/disscus/board2.jpg);
+  background-size: cover;
+}
+
+.main-content .jobs {
+  overflow-x: auto;
+  background-color: rgba(255, 255, 255, 0.77);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.main-content .search {
+  display: flex;
+  padding-top: 1rem;
+  margin-left: 5rem;
+  justify-items: flex-start;
+}
+
+.main-content .box {
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  border: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-content .box > input {
+  /* flex: 1; */
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.main-content select {
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid #aaa;
+  background: #ffffff;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color: #302e2e;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.main-content select::-ms-expand {
+  display: none;
+}
+
+.main-content .select {
+  position: relative;
+  display: flex;
+  width: 13em;
+  height: 3em;
+  margin: 0 2rem;
+  line-height: 3;
+  background: #5c6664;
+  overflow: hidden;
+  border-radius: .25em;
+}
+
+.main-content .select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #682f09;
+  color: azure;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+}
+
+.main-content .select:hover::after {
+  color: #23b499;
+}
+
+.main-content .purchase-info .btn {
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 1.6rem;
+  outline: 0;
+  margin-left: 0.2rem;
+}
+
+.main-content .purchase-info .btn {
+  cursor: pointer;
+  color: #fff;
+}
+
+.main-content .purchase-info .btn:last-of-type {
+  background: #f64749;
+}
+
+.main-content .purchase-info .btn:hover {
+  opacity: 0.9;
+}
+
+.main-content nav {
+  position: relative;
+  margin: 15px 0px 0px 88px;
+  width: 590px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 0;
+  justify-content: unset;
+}
+
+.main-content nav a {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #8a8888;
+  text-decoration: none;
+  line-height: 50px;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  text-align: center;
+}
+
+.main-content nav .animation {
+  position: absolute;
+  height: 100%;
+  height: 5px;
+  bottom: 0;
+  z-index: 0;
+  background: #1abc9c;
+  border-radius: 8px;
+  transition: all .5s ease 0s;
+}
+
+.main-content nav a:nth-child(1) {
+  width: 100px;
+}
+
+.main-content nav .start-home, .main-content a:nth-child(1):hover ~ .animation {
+  width: 100px;
+  left: 0;
+}
+
+.main-content nav a:nth-child(2) {
+  width: 110px;
+}
+
+.main-content nav a:nth-child(2):hover ~ .animation {
+  width: 110px;
+  left: 100px;
+}
+
+.main-content nav a:nth-child(3) {
+  width: 100px;
+}
+
+.main-content nav a:nth-child(3):hover ~ .animation {
+  width: 100px;
+  left: 210px;
+}
+
+.main-content .jobs h2 small {
+  color: #5850ec;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: .9rem;
+}
+
+.main-content .jobs table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin: auto;
+  /* 固定寬*/
+  width: 800px;
+}
+
+.main-content span.indicator {
+  background: #c9f7f5;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.main-content span.indicator.even {
+  background: #fff4de;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.main-content .jobs table td div {
+  background: #fff;
+  margin-bottom: .8rem;
+  margin-top: .8rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  font-size: .85rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.main-content .jobs table thead {
+  border-top: #aaa 1px solid;
+  border-bottom: #aaa  1px solid;
+}
+
+.main-content .jobs table thead th div {
+  /* background: #fff; */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+  font-size: .85rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.main-content tbody tr td {
+  vertical-align: middle;
+}
+
+.main-content tbody tr td:nth-child(1) div {
+  position: relative;
+}
+
+.main-content tbody tr td:nth-child(1) div::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 100%;
+  transform: translateY(-50%);
+  background-color: #993c36;
+}
+
+.main-content .pac {
+  display: flex;
+  justify-content: center;
+}
+
+.main-content .pagination {
+  display: inline-block;
+}
+
+.main-content .pagination a {
+  font-size: 12px;
+  color: black;
+  float: left;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.main-content .board {
+  background-image: url(../images/disscus/board.png);
+  background-size: cover;
+}
+
+@media only screen and (max-width: 1124px) {
+  .main-content .main-content {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 1314px) {
+  .main-content .jobs-grid {
+    grid-template-columns: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .main-content .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-content .fa-comments {
+  color: #417ef0;
+}
+/*# sourceMappingURL=disscus.css.map */

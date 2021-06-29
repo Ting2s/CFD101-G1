@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "DFPLiYuan";
+  src: url("../font/DFPLiYuan.woff.ttf") format("truetype");
+  /* unicode-range: 文字1 編碼, 文字2 編碼, 文字3 編碼; */
+}
+body {
+  background-color: #8fd5df;
+}
+
+.wrapMall {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 100%;
+  max-width: 1920px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.wrapMall .itemLeft {
+  width: 100%;
+}
+.wrapMall .itemLeft .card {
+  background: url("../images/dinoMall/stoneframe.png") no-repeat center center/contain;
+  text-align: center;
+  padding: 18%;
+}
+.wrapMall .itemLeft span {
+  position: absolute;
+  top: 40%;
+  left: 9%;
+}
+.wrapMall .itemLeft span img {
+  width: 25%;
+}
+.wrapMall .itemLeft .groundButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wrapMall .itemLeft .groundButton .btnSelect {
+  width: 22%;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 20px 10px;
+  background: url("../images/dinoMall/goldWood.png") no-repeat center center/contain;
+  color: #ffffff;
+  padding: 20px 0 25px;
+  transition: all 0.7s ease-in-out;
+}
+.wrapMall .itemLeft .groundButton .btnSelect:hover {
+  transform: scale(0.9);
+}
+.wrapMall .itemLeft .groundButton .btnSelect img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.wrapMall .itemRight {
+  background: url("../images/dinoMall/stornBoard.png") no-repeat center center/contain;
+  padding: 0 60px;
+}
+.wrapMall .itemRight .groundImgCard {
+  text-align: center;
+  padding-bottom: 15%;
+}
+.wrapMall .itemRight .groundImgCard .groundTitle {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+}
+.wrapMall .itemRight .groundImgCard .groundTitle .title {
+  background: url("../images/dinoMall/woodBlank.png") no-repeat center center/contain;
+  padding: 28px;
+  margin-right: 10px;
+  text-align: center;
+}
+.wrapMall .itemRight .groundImgCard .groundTitle .title h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffe56e;
+}
+.wrapMall .itemRight .groundImgCard .groundTitle .cart {
+  width: 10%;
+  height: 10%;
+}
+.wrapMall .itemRight .groundImgCard .groundTitle .cart img {
+  width: 100%;
+}
+.wrapMall .itemRight .groundImgCard .arrow .prePage {
+  width: 50px;
+  height: 50px;
+  background: url("../images/dinoMall/pre.png") no-repeat center center/contain;
+}
+.wrapMall .itemRight .groundImgCard .arrow span {
+  font-size: 26px;
+  font-weight: 700;
+  vertical-align: 12px;
+  color: #562c2c;
+}
+.wrapMall .itemRight .groundImgCard .arrow .nextPage {
+  width: 50px;
+  height: 50px;
+  background: url("../images/dinoMall/next.png") no-repeat center center/contain;
+}
+.wrapMall .itemRight .groundImgCard .imgCard {
+  display: flex;
+  justify-content: center;
+}
+.wrapMall .itemRight .groundImgCard .imgCard img {
+  margin: 5px 10px;
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=dinoMall.css.map */
