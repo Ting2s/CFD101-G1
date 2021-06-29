@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    background-image: url('../images/dinoIsland/island-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.Wrap{
+    width: 65%;
+    height: 85vh;
+    position: relative;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(161, 161, 235, 0.541);
+}
+
+.Dino-1{
+    width: 14%;
+    position: absolute;
+    left: 12%;
+    top: 5%;
+}
+
+.Dino-1 img{
+    width: 100%;
+}
