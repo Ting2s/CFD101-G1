@@ -13,7 +13,7 @@
 
   <!-- css -->
   @@include('layout/style.html')
-  <link rel="stylesheet" href="css/dinoPersonal_myDino.css">
+  <link rel="stylesheet" href="css/dinoMem_myDino.css">
 </head>
 
 <body>
@@ -42,10 +42,10 @@
           <!-- 內容板子 -->
           <div class="conBtn">
             <a href=""> <button class="dark">查看會員資料</button></a>
-            <a href="dinoPersonal_myDino.html"> <button class="light">恐龍收藏</button></a>
-            <a href="dinoPersonal_card.html"> <button class="dark">明信片收藏</button></a>
+            <a href="dinoMem_myDino.html"> <button class="light">恐龍收藏</button></a>
+            <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
 
-            <a href="dinoPersonal_arti.html">
+            <a href="dinoMem_arti.html">
               <button class="dark">文章收藏</button></a>
           </div>
 
@@ -74,12 +74,13 @@
                 <span>1/3</span>
                 <button id="downPage" class="downPage"></button>
               </div>
+
               <!-- -----我的恐龍----- -->
               <!-- 欄位格子 -->
               <div class="dino" id="dino">
                 <ul>
                   <li class="ocean">
-                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_1">
+                    <img src="images/dinoPersonal/d2.png" alt="" onclick="openModel(this)" id="dino_1">
 
                     <input type="button" value="龍春暉">
 
@@ -93,29 +94,17 @@
                   </li>
 
                   <li class="ground">
-                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2">
+                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
                     <input type="button" value="龍春暉">
 
-                    <!-- The Modal -->
-                    <div id="myModal_2" class="modal">
-                      <span class="close">&times;</span>
-                      <img class="modal-content" id="img02">
-                      <div id="caption_2" class="caption"></div>
-                    </div>
 
                   </li>
 
 
                   <li class="sky">
-                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_3">
+                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
                     <input type="button" value="龍春暉">
 
-                    <!-- The Modal -->
-                    <div id="myModal_3" class="modal">
-                      <span class="close">&times;</span>
-                      <img class="modal-content" id="img03">
-                      <div id="caption_3" class="caption"></div>
-                    </div>
                   </li>
                 </ul>
               </div>
@@ -176,7 +165,7 @@
 
 
   <!-- js -->
-  <script src="js/myDino.js"></script>
+  <script src="js/dinoMem_myDino.js"></script>
 </body>
 
 </html>

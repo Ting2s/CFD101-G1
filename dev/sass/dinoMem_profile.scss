@@ -21,17 +21,18 @@ margin: auto;
 width: 100vw;
 height: 100vh;
 }
-
+// 左側頭貼框
 .perHeader{
   width: 100%;
   height:20%;
 }
+// 左側個人頭像區塊外包的div
 .perBox{
 display: flex;
 flex-wrap: wrap;
 margin: 10px;
 }
-
+// 左側個人頭像區塊
 .perPhoto{
   display: flex;
   flex-direction: column;
@@ -40,13 +41,13 @@ margin: 10px;
   flex-grow: 1;
   margin: 30px;
   padding-bottom: 20px;
-
-
+// 會員中心標題
   h1{
     font-size: $font-h1;
     font-weight: $font-bold;
     margin: 20px auto;
   }
+// 會員頭像相框
   .perFrame{
   display: flex;
   flex-direction: column;
@@ -59,10 +60,11 @@ margin: 10px;
   background: url(../../dev/images/dinoPersonal/personFrame.png) no-repeat center center;
   background-size: contain;
 
-  img{
+  .perFrame img{
     margin-top: 50px;
     width: 180px;
   }
+  // 會員名稱
   h3{
     padding: 30px 0;
     font-size: $font-h3;
@@ -71,7 +73,7 @@ margin: 10px;
 
 }
 
-
+// 右側內容區
 .perContent{
   flex-grow: 3;
   display: flex;
@@ -81,13 +83,13 @@ margin: 10px;
   margin-bottom: 30px;
 
 }
+// 內容標籤板子外層
 .conBtn{
   margin-top: 20px;
   padding-left: 30px;
   display: flex;
   flex-wrap: wrap;
-
-
+// 內容標籤板子
   button{
     margin: 0 20px;
     padding: 10px 10px 25px 10px;
@@ -96,12 +98,7 @@ margin: 10px;
     text-align: center;
     color: $white;
   }
-  //內容板子
-
-  .light,.dark{
-    font-family:'DFPliYuan';
-    letter-spacing: 2px;
-  }
+  //內容板子(預設) 
   .dark{
     background: url(../../dev/images/dinoPersonal/yellowBoard_b.png) no-repeat center center;
     background-size: contain;
@@ -116,12 +113,40 @@ margin: 10px;
 }
 
 
-
+//右側內容區背板
 .conFrame{
   margin-top: -30px;
   width: 90%;
   height: 90%;
-  background: url(../../dev/images/dinoPersonal/boardnormal_L.png) no-repeat center center;
+  background-image: 
+  no-repeat center center;
   background-size: contain;
 
+}
+// 會員資料表單
+.conFrame .profileForm{
+  display: flex;
+  
+} 
+.conFrame .profile{
+  position: relative;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+}
+.conFrame .control-label{
+  // font-size: $font-h5;
+  padding: 5px;
+}
+.conFrame input{
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+}
+.conFrame form button{
+  width: 100%;
+  cursor: pointer;
+  // font-size: $font-h5;
+  background-color: white;
 }
