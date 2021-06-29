@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .bac {
+    background-image: url(../images/disscus/board3.jpg);
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .container {
+    padding-left: 60px;
+  }
+  
+  .board {
+    padding-top: 120px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    overflow-x: visible;
+  }
+  
+  .boardcont {
+    z-index: 50;
+  
+    .title {
+      text-align: center;
+  
+      img {
+        width: 30%;
+      }
+    }
+  }
+  
+  .boardtxt {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem 0.5rem 3rem;
+    background-color: #ffe56e;
+    border: 3px solid #562c2c;
+    border-radius: 15px;
+  }
+  
+  .single-board .img {
+    position: relative;
+    overflow: hidden;
+  
+    p {
+      position: absolute;
+      z-index: 1;
+      top: 40px;
+      left: 30px;
+      color: #fff;
+      padding: 0.25rem 1rem;
+    }
+  
+    img {
+      width: 100%;
+    }
+  
+    .btnl {
+      position: absolute;
+      z-index: 1;
+      top: 130px;
+      left: 80px;
+      padding: 0.25rem 1rem;
+      background-image: url(../images/disscus/goldWood.png);
+      background-size: cover;
+      width: 50%;
+      height: 24%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+  }
+  
+  .boardpic {
+    background-image: url(../images/disscus/board.png);
+    background-size: cover;
+    height: calc(100vh - 120px);
+    margin-left: -50px;
+  }
