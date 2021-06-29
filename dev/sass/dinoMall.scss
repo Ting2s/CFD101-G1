@@ -8,13 +8,14 @@ body {
 }
 
 .wrapMall {
-   @include posiTion(absolute,20%,10%);
-   @include rect(100%,null){
-      max-width            : 1920px;
-   }; 
+      @include rect(100%,null){
+            max-width            : 1920px;
+      }; 
       @include d-flex(grid){
             grid-template-columns: 1fr 1fr;
             align-items: center;
+            margin: auto;
+            padding-top: 10%;
       };   
 }
 
@@ -22,15 +23,15 @@ body {
 
       #{$titleLeft}{
                   @include rect(100%,null);
-                  .card{
+                  .cardLeft{
                         background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
                         text-align: center;
-                        padding   : 18%;
+                        padding   : 20%;
                         }
                         span{
-                              @include posiTion(absolute,40%,9%);  // HAT  
+                              @include posiTion(absolute,51%,20%);  // HAT  
                               img{
-                                  width: 25%;
+                                  width: 90%;
                               }
                         }
                        
@@ -56,32 +57,34 @@ body {
                                }
                     }
 
+                    
 // 右方塊 ==============================================
 #{$titleRight}{
         background: url('#{$pathMall}/stornBoard.png') no-repeat center center / contain;
-        padding   : 0 60px;
+        padding   : 2%;
         .groundImgCard{
               text-align    : center;
-              padding-bottom: 15%;
+              padding-bottom: 14%;
               .groundTitle{
-                    @include d-flex();
-                    margin-left    : 10%;              
-                    .title{
-                        background  : url('#{$pathMall}/woodBlank.png') no-repeat center center / contain;
-                        padding     : 28px;
-                        margin-right: 10px;
-                        text-align  : center; 
-                              h3{
-                              @include fontSz($font-h3,$font-bold);
-                              color      : $yellow-second;
-                              }                
-                         }
-                    .cart{
-                             @include rect(10%,10%);
-                              img{
-                                    @include rect(100%,null);
-                                  }                  
-                          }
+                        @include d-flex();
+                        margin-left    : 10%;              
+                        .title{
+                              background  : url('#{$pathMall}/woodBlank.png') no-repeat center center / contain;
+                              padding     : 28px;
+                              margin-right: 10px;
+                              text-align  : center; 
+                                    h3{
+                                    @include fontSz($font-h3,$font-bold);
+                                    color      : $yellow-second;
+                                    }                
+                              }
+                        .cart{
+                              @include rect(10%,10%);
+                                    img{
+                                          @include rect(100%,null);
+                                          cursor: pointer;
+                                    }                  
+                              }
                         }
               .arrow{
                     .prePage{
@@ -100,10 +103,20 @@ body {
                     }
               .imgCard{
                         @include d-flex();
-                            img{
-                                margin: 5px 10px;
-                                object-fit: cover;
-                                }
+                              .card{
+                                    background: url('#{$pathMall}/frame.png') no-repeat center center / contain;
+                                    margin: 1%;
+                                    padding: 3%;
+                                    cursor: pointer;
+                                    img{  
+                                          margin: 14px 10px;
+                                          object-fit: cover;
+                                          }
+                                    span{
+                                          display: block;
+                                          color:$yellow-first ;
+                                          }
+                                    }
                       }
               }
         }
