@@ -29,22 +29,18 @@ dino_btn.addEventListener("click", function () {
 
 
 
-
-
-
-
 //-----------------------------------
+let openModel = function (e) {
+  
+
 let modal = document.getElementById("myModal_1");
-
-
-let img = document.getElementById("dino_1");
 let modalImg = document.getElementById("img01");
 let captionText = document.getElementById("caption_1");
-img.onclick = function(){
+
   modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+  modalImg.src = e.src;
+  captionText.innerHTML = e.alt;
+
 
 
 let span = document.getElementsByClassName("close")[0];
@@ -52,4 +48,6 @@ let span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() { 
   modal.style.display = "none";
+  }
+  
 }

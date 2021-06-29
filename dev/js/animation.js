@@ -135,12 +135,12 @@ new ScrollMagic.Scene({
   duration: 4000,
   triggerHook: 0,
 })
-.setTween(tween)
+.setTween(tween1)
 .addIndicators()
 .setPin('.sky')
 .addTo(controller);
 
-const controller2 = new ScrollMagic.Controller();
+// const controller2 = new ScrollMagic.Controller();
 
 new ScrollMagic.Scene({
   triggerElement: '#sea',
@@ -148,9 +148,9 @@ new ScrollMagic.Scene({
   triggerHook: 0,
 })
 .setTween(tween2)
-// .addIndicators()
+.addIndicators()
 .setPin('.sea')
-.addTo(controller2);
+.addTo(controller);
 
 new ScrollMagic.Scene({
   triggerElement: '.land',
@@ -158,9 +158,9 @@ new ScrollMagic.Scene({
   triggerHook: 0,
 })
 .setTween(tween3)
-// .addIndicators()
+.addIndicators()
 .setPin('.land')
-.addTo(controller2);
+.addTo(controller);
 
 
 
