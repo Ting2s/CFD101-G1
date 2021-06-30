@@ -7,6 +7,10 @@ body {
   background-color: rgb(143, 213, 223);
 }
 
+.none{
+      display: none;
+    }
+
 .wrapMall {
       @include rect(100%,null){
             max-width            : 1920px;
@@ -26,14 +30,17 @@ body {
                   .cardLeft{
                         background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
                         text-align: center;
-                        padding   : 20%;
+                        padding   : 25%;
                         }
                         span{
-                              @include posiTion(absolute,51%,20%);  // HAT  
+                              @include posiTion(absolute,52%,19%);  // HAT  
                               img{
                                   width: 90%;
                               }
                         }
+                        .showImg_Mall{
+                                      @include rect(100%,null);
+                                      }
                        
                   .groundButton{
                         @include rect(100%,null);
@@ -101,22 +108,24 @@ body {
                               background: url('#{$pathMall}/next.png') no-repeat center center / contain;
                              }
                     }
-              .imgCard{
-                        @include d-flex();
-                              .card{
-                                    background: url('#{$pathMall}/frame.png') no-repeat center center / contain;
-                                    margin: 1%;
-                                    padding: 3%;
-                                    cursor: pointer;
-                                    img{  
-                                          margin: 14px 10px;
-                                          object-fit: cover;
+              .btnCard-1 , .btnCard-2{
+                                    .imgCard{
+                                          @include d-flex();
+                                                .card{
+                                                      background: url('#{$pathMall}/frame.png') no-repeat center center / contain;
+                                                      margin: 1%;
+                                                      padding: 3%;
+                                                      cursor: pointer;
+                                                      img{  
+                                                            margin: 14px 10px;
+                                                            object-fit: cover;
+                                                            }
+                                                      span{
+                                                            display: block;
+                                                            color:$yellow-first ;
+                                                            }
+                                                      }
                                           }
-                                    span{
-                                          display: block;
-                                          color:$yellow-first ;
-                                          }
-                                    }
-                      }
+                        }             
               }
         }

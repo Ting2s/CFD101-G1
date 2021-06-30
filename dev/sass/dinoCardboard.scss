@@ -5,6 +5,7 @@
 
 .boardContent{
   width: 100%;
+<<<<<<< HEAD
   position: relative;
 
   .contentBg{
@@ -52,29 +53,76 @@
       top: 1.8rem;
       letter-spacing: 1px;
     }
+=======
+  max-height: 100vh;
+  background-image: url(../images/dinoCardboard/bg.jpg);
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.board{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .titleText{
+    font-size: 24px;//----------------
+    font-family: DFPLiYuan;//-----------------
+    color: white;//----------------
+    position: absolute;
+    top: 9.3rem;
+    letter-spacing: 1px;
+    z-index: 3;
+>>>>>>> dev
   }
 }
 
 
 .person{
+<<<<<<< HEAD
   position: absolute;
   width: 70%;
   max-width: 1000px;
   top: 4.2rem;
+=======
+  margin-top: -5rem;
+  width: 80%;
+  max-width: 1200px;
+  position: relative;
+
+  .personBg{
+    background-image: url(../images/dinoCardboard/meanBoard.png);
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5.2rem 4.2rem 3.8rem 4.2rem;
+  }
+>>>>>>> dev
 
   .personItem{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
     justify-content: center;
+    align-items: center;
 
     .personPart{
-      width: 13rem;
-      height: 13rem;
+      width: 12rem;
+      height: 12rem;
       background-color: white;
       padding: .6rem;
       margin: .3rem .3rem;
+      box-shadow:2px 2px 2px rgba(20%,20%,40%,0.5),3px 3px 5px rgba(20%,20%,40%,0.3),4px 4px 8px rgba(20%,20%,40%,0.3);
 
       .personImg{
         width: 100%;
@@ -93,10 +141,11 @@
         }
         span{
           margin: 0 auto;
+          font-size: 16px;
         }
       }
       .personDate{
-        font-size: 10px;//-----------
+        font-size: 8px;//-----------
         padding: .7rem 0;
         padding-left: 50%;
       }
