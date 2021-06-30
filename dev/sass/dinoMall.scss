@@ -1,10 +1,13 @@
 @import './base/font';
 @import './base/dinoMall_var';
 @import './mixins/mixin_Mall';
+@import './layout/footer';
 @import '../../guideline_sass/sass/base/var';
 
 body {
   background-color: rgb(143, 213, 223);
+//   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .none{
@@ -12,14 +15,15 @@ body {
     }
 
 .wrapMall {
-      @include rect(100%,null){
+      @include rect(80%,null){
             max-width            : 1920px;
+            // background-color: antiquewhite;
       }; 
       @include d-flex(grid){
             grid-template-columns: 1fr 1fr;
             align-items: center;
             margin: auto;
-            padding-top: 10%;
+            padding-top: 5%;  // *****版面
       };   
 }
 
@@ -114,7 +118,7 @@ body {
                                                 .card{
                                                       background: url('#{$pathMall}/frame.png') no-repeat center center / contain;
                                                       margin: 1%;
-                                                      padding: 3%;
+                                                      padding: 2%;  // ***** 版面
                                                       cursor: pointer;
                                                       img{  
                                                             margin: 14px 10px;
