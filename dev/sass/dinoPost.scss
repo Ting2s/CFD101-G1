@@ -7,26 +7,30 @@
   .bac {
     background-image: url(../images/disscus/2935.jpg);
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     position: relative;
+    padding-top: 200px;
   }
   
   .bot {
     position: absolute;
     z-index: 30;
-    top: 0px;
-    left: 850px;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
   
     img {
       width: 60%;
+      margin: auto;
     }
   }
   
   .backboard {
     background-image: url(../images/disscus/blank.png);
     background-size: cover;
-    width: 63%;
-    height: 95%;
+    width: 950px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
