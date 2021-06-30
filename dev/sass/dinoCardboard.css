@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'DFPLiYuan';
+  src: url("../font/DFPLiYuan.woff.ttf") format("truetype");
+  /* unicode-range: 文字1 編碼, 文字2 編碼, 文字3 編碼; */
+}
+
+@font-face {
+  font-family: 'DFPLiYuan';
+  src: url("../font/DFPLiYuan.woff.ttf") format("truetype");
+}
+
+button {
+  border: none;
+  background-color: rgba(0, 255, 255, 0);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.Menu {
+  width: 12%;
+  max-width: 120px;
+  /* background-color: cornsilk; */
+}
+
+.Menu img {
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+  font-family: 'DFPLiYuan';
+  font-size: 20px;
+  font-weight: normal;
+  color: #045127;
+  letter-spacing: 3px;
+}
+
+.NavL {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 44%;
+  padding: 0 6%;
+  /* background-color: blueviolet; */
+}
+
+.NavR {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 44%;
+  padding: 0 6%;
+  /* background-color: blueviolet; */
+}
+
+.SignIn {
+  width: 17%;
+  padding: 0;
+}
+
+.SignIn img {
+  width: 100%;
+}
+
+.Island {
+  position: fixed;
+  bottom: 50px;
+  right: 45px;
+  width: 4.5%;
+}
+
+.Island img {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  max-height: 100vh;
+  background-image: url(../images/dinoCardboard/bg.jpg);
+  z-index: 888;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.board .boardImg {
+  width: 80%;
+  max-height: 600px;
+  min-height: 500px;
+  margin-top: 2.4rem;
+  position: relative;
+}
+
+.board .titleText {
+  font-size: 24px;
+  font-family: DFPLiYuan;
+  color: white;
+  position: absolute;
+  padding-bottom: 24rem;
+  letter-spacing: 1px;
+}
+
+.person {
+  position: absolute;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.person .personItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.person .personItem .personPart {
+  width: 13rem;
+  height: 13rem;
+  background-color: white;
+  padding: .6rem;
+  margin: .3rem .3rem;
+}
+
+.person .personItem .personPart .personImg {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.person .personItem .personPart .personImg img {
+  width: 100%;
+}
+
+.person .personItem .personPart .personContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: .5rem;
+}
+
+.person .personItem .personPart .personContent img {
+  width: 12%;
+}
+
+.person .personItem .personPart .personContent span {
+  margin: 0 auto;
+}
+
+.person .personItem .personPart .personDate {
+  font-size: 10px;
+  padding: .7rem 0;
+  padding-left: 50%;
+}
+/*# sourceMappingURL=dinoCardboard.css.map */

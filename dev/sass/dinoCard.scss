@@ -1,6 +1,8 @@
 @import 'base/reset';
+// @import '../../guideline_sass/sass/base/var';
 @import 'base/font';
 @import 'layout/nav';
+
 
 
 body{
@@ -14,6 +16,10 @@ body{
   .Island{
     z-index: 999;
   }
+
+  .content{
+     height: 100vh;
+   }
 }
 
 /* centerboard */
@@ -37,37 +43,33 @@ body{
   left: 0;
   object-fit: cover;
   position: absolute;
-  //animation: fadeOutDown;
-  //animation-name:cloudani;
-  // animation-duration:5s;
-  // animation-iteration-count:infinite;
-  // animation-direction:alternate;
+  animation: pulse;
+  animation-duration:8s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
 }
-// @keyframes cloudani{
-//   from{
-//       top:0;
-//   }
-//   to{
-//       down:50%;
-//   }
-// }
-//@debug {
-//   --animate-duration: 6s;
-// }
 
 .board{
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  top: 8rem;
+  //top: 7rem;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
 
   .meanBoard{
     width: 60%;
-    margin: 0 auto;
+    //margin: 0 auto;
+    
     
     img{
       width: 100%;
+      max-height: 500px;
+      min-height: 450px;
+      //margin: 0 auto;
+      //position: relative;//----------
     }
   }
 
@@ -75,93 +77,114 @@ body{
     width: 15%;
     height: 3.8rem;
     position: absolute;
-    top: 1.8em;
+    //top: 1.8em;
+    margin-top: 1.5rem;
     left:calc(50% - 26%);
   }
 
   .titleText{
-    font-size: 24px;//----------------
+    font-size: 22px;//----------------
     font-family: DFPLiYuan;//-----------------
     color: white;//----------------
     position: absolute;
-    top: 2em;
+    //top: 2.1em;
+    margin-top: 2.6rem;
     left:calc(50% - 24.5%);
   }
 
   .whiteBoard{
     position: absolute;
-    top: 6.5em;
+    //top: 6.2rem;
+    margin-top: 6rem;
     width: 52%;
     left: calc(50% - 26%);
   }
 
   .addMore{
     position: absolute;
-    top: 1.8em;
-    left:calc(50% + 7%);
-
-    img{
-      width: auto;
-      height: 3.8rem;
-    }
-
-    // a&hover,
-    // a&click{
-    //   box-shadow:4px 4px 12px 4px rgb(255, 238, 0);
-    // }
-
-    span{
-      position: absolute;
-      font-size: 22px;//----------------
-      font-family: DFPLiYuan;//-----------------
-      color: white;//----------------
-    }
+    //top: 2.2em;
+    margin-top: 1.8rem;
+    left:calc(50%);
 
     .addmoreText1{
-      top: .9em;
-      left:calc(50% - 46%);
+      width: 25%;
+
+      img{
+        width: 100%;
+        position: relative;
+      }
+
+      span{
+        position: absolute;
+        left: 15px;
+        top: 18px;
+        font-size: 16px;//----------------
+        font-family: DFPLiYuan;//-----------------
+        color: white;//----------------
+        letter-spacing: 1px;
+      }
+      
     }
 
     .addmoreText2{
-      top: .9em;
-      left:calc(50% + 5%);
+      width: 25%;
+
+      img{
+        width: 100%;
+        position: relative;
+      }
+
+      span{
+        position: absolute;
+        left: 114px;
+        top: 18px;
+        font-size: 16px;//----------------
+        font-family: DFPLiYuan;//-----------------
+        color: white;//----------------
+        letter-spacing: 1px;
+      }
     }
   }
 }
 
 .literally {
   background-color: white !important;
+  min-height: 360px !important;
 }
 
 .downBtn{
-  
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  //margin-top: 7rem;
+   
   .save,
   .downLoad,
   .post,
   .share {
+    width: 12.5%;
+    margin: 20px;
     position: relative;
-    top: 1.8em;
-    margin: 0 1.2em;
-    cursor: pointer;
 
     img{
-      width: 13%;
-      height: auto;
-      position: relative;
-
-      img{
-        width: 100%;
-      }
+      width: 100%;
     }
 
-    .downText{
+    span{
       position: absolute;
-      font-size: 22px;//----------------
+      font-size: 18px;//----------------
       font-family: DFPLiYuan;//-----------------
       color: white;//----------------
-      left:calc(50% - 10%);
-      padding-top: .9em;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
+    }
+
+    .downText1,
+    .downText2,
+    .downText3,
+    .downText4{
+      left:calc(50% - 12%);
+      padding-top: 18px;
     }
   }
 }
