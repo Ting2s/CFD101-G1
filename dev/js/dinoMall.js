@@ -45,22 +45,6 @@
 
     window.onload = init;
 
-          // let nextPage = document.getElementById("nextPage");
-          // nextPage.addEventListener("click", function () {
-
-          //     document.getElementById("btnCard-2").classList.remove("none");
-          //     document.getElementById("btnCard-1").classList.add("none");
-          //     console.log(nextPage);
-          // })
-
-
-          // let prePage  = document.getElementById("prePage");
-          //     prePage.addEventListener("click", function () {
-
-          //         document.getElementById("btnCard-2").classList.add("none");
-          //         document.getElementById("btnCard-1").classList.remove("none");
-          //         console.log(prePage);
-          //     })
 
 
 
