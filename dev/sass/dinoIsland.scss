@@ -102,6 +102,17 @@ body {
     // background-color: rgba(161, 161, 235, 0.541)
 }
 
+<<<<<<< HEAD
+=======
+.Dino-6-col {
+    width: 16%;
+    position: absolute;
+    right: 12%;
+    bottom: 23%;
+    z-index: 2;
+}
+
+>>>>>>> e15725fa93276430abde14a244031d26808f74ed
 .Dino-1 img,
 .Dino-2 img,
 .Dino-3 img,
@@ -112,6 +123,24 @@ body {
 .Dino-2-col img,
 .Dino-3-col img,
 .Dino-4-col img,
+<<<<<<< HEAD
 .Dino-5-col img {
     width: 100%;
 }
+=======
+.Dino-5-col img,
+.Dino-6-col img {
+    width: 100%;
+}
+
+//-----hover
+
+.Dino-1:hover,
+.Dino-2:hover,
+.Dino-3:hover,
+.Dino-4:hover,
+.Dino-5:hover,
+.Dino-6:hover{
+    opacity: 0;
+}
+>>>>>>> e15725fa93276430abde14a244031d26808f74ed

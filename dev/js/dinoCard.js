@@ -3,4 +3,3 @@ LC.init(
   {imageURLPrefix: 'images/dinoCard'}
   // LiterallyCanvas(.downLoad, getSnapshot(keys=['shapes', 'imageSize', 'colors', 'position', 'scale', 'backgroundShapes']))
 );
-
