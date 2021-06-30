@@ -5,45 +5,54 @@
 
 //==================================
 
-html{
+body{
   color: $brown;
   font-family:'DFPliYuan';
 }
 button{
   cursor: pointer;
+  font-family:'DFPliYuan';
 }
 
 //==================================
 
 .rankWrapper{
+height: 100vh;   
 margin: auto;
-width: 100vw;
-background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat fixed;
+background-image: url(../../dev/images/dinoTest/pic/testJungle_2.png); 
 background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
 }
 
 .rankInWrap{
-  margin:auto;
-  padding: 50px;
-  max-width: 1400px;
+margin: auto;
+  max-width: 1040px;
 }
 .rankBox{ 
-  background: url(../../dev/images/dinoTest/pic/woodBoard.png) no-repeat center center;
+  margin: auto;
+  width: 60%;
+  background: url(../../dev/images/dinoPersonal/cardBoard_h.png) no-repeat center center;
   background-size: contain;
   }
 
   .rankTitle h1{
   text-align: center;
-  padding-top: 50px;
+
+  padding:30px;
+  background-image: url(../../dev/images/dinoPersonal/woodCard.png); 
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   font-size: $font-h1;
   }
 
 
   .rankContent{ 
     margin: 50px auto;
-    margin-top: 100px;
+    margin-top: 120px;
     padding: 40px 8px;
-    width: 37%;
+    width: 60%;
     border-radius: 7%;
     background-color:$brown;
 
