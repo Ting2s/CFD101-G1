@@ -14,11 +14,17 @@
 <body>
   @@include('layout/header.html')
 
-<div class="content">
+<section class="boardContent">
 
-  <div class="board">
-      <img class="boardImg" src="images/dinoCardboard/meanBoard.png" alt="">
-
+  <div class="contentBg">
+    <img src="images/dinoCardboard/bg.jpg" alt="">
+  </div>
+      
+  <div class="cardBoard">
+    
+    <div class="meanBoard">
+      <img src="images/dinoCardboard/meanBoard.png" class="meanBoard">
+    </div>
     <h1 class="titleText">明信片牆</h1>
 
     <div class="person">
@@ -100,12 +106,28 @@
             <p class="personDate">2021/06/30</p>
           </div>
         </li>
-        
       </ul>
+    </div>
+
+  <div class="underBtn">
+    <div class="leftBtn">
+      <img src="images/dinoCardboard/leftBtn.png" alt="">
+    </div>
+
+    <div class="numberBtn">
+      <img src="images/dinoCardboard/numberBtn.png" alt="">
+    </div>
+
+    <div class="rightBtn">
+      <img src="images/dinoCardboard/rightBtn.png" alt="">
     </div>
   </div>
 
-</div>  
+  </div>
+
+</section>  
+
+ 
 
 
   <!-- @@include('layout/footer.html') -->
