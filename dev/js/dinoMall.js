@@ -12,13 +12,15 @@
 
 
     function prePageshowImg(){
-      document.getElementById("btnCard-2").classList.remove("none");
-      document.getElementById("btnCard-1").classList.add("none");
+      getId("btnCard-2").classList.remove("none");
+      getId("btnCard-1").classList.add("none");
+      getId("showName").innerText = "紋身貼紙";
       // console.log(nextPage);
     }
     function nextPageshowImg(){
-      document.getElementById("btnCard-2").classList.add("none");
-      document.getElementById("btnCard-1").classList.remove("none");
+      getId("btnCard-2").classList.add("none");
+      getId("btnCard-1").classList.remove("none");
+      getId("showName").innerText = "帽子";
       // console.log(prePage);
     }
     
@@ -35,8 +37,7 @@
       let cart = document.getElementsByClassName('cart')[0];
       cart.onclick = showCart;
 
-      // change page
-
+      // switch page
       let prePage  = document.getElementById("prePage");
       let nextPage = document.getElementById("nextPage");
       prePage.onclick = prePageshowImg;
