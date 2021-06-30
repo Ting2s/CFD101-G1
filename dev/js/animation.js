@@ -136,7 +136,7 @@ new ScrollMagic.Scene({
   triggerHook: 0,
 })
 .setTween(tween1)
-.addIndicators()
+// .addIndicators()
 .setPin('.sky')
 .addTo(controller);
 
@@ -148,7 +148,7 @@ new ScrollMagic.Scene({
   triggerHook: 0,
 })
 .setTween(tween2)
-.addIndicators()
+// .addIndicators()
 .setPin('.sea')
 .addTo(controller);
 
@@ -158,7 +158,7 @@ new ScrollMagic.Scene({
   triggerHook: 0,
 })
 .setTween(tween3)
-.addIndicators()
+// .addIndicators()
 .setPin('.land')
 .addTo(controller);
 
