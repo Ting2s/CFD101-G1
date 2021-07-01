@@ -23,13 +23,11 @@ height: 100vh;
 }
 
 .perHeader{
-  width: 100%;
-  height:20%;
+  height:15%;
 }
 .perBox{
 display: flex;
 flex-wrap: wrap;
-margin: 10px;
 }
 
 .perPhoto{
@@ -73,6 +71,7 @@ margin: 10px;
 
 
 .perContent{
+  position: relative;
   flex-grow: 3;
   display: flex;
   flex-direction: column;
@@ -82,6 +81,9 @@ margin: 10px;
 
 }
 .conBtn{
+  position: relative;
+  left: 0;
+  width: 90%;
   margin-top: 20px;
   padding-left: 30px;
   display: flex;
@@ -118,6 +120,9 @@ margin: 10px;
 
 
 .conFrame{
+  position: relative;
+  left: 0;
+
   margin-top: -30px;
   width: 90%;
   height: 90%;
