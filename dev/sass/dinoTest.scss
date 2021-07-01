@@ -1,4 +1,4 @@
-// @import './base/reset';
+//@import './base/reset';
 @import './base/font';
 @import '../../guideline_sass/sass/base/var';
 
@@ -6,8 +6,6 @@
 //==================================
 
 body{
-
-
 color: $brown;
 font-family:'DFPLiYuan';
 
@@ -24,9 +22,9 @@ button{
 //==================================
 
 .testWrapper{
-  display: flex;
-  height: 100vh;
-background-image: url(../../dev/images/dinoTest/pic/testJungle_2.png) ;
+display: flex;
+height: 100vh;
+background-image: url(../images/disscus/board3.jpg);
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
