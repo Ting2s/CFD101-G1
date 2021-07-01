@@ -1,11 +1,37 @@
-
     function getId(id){
       return document.getElementById(id);
     }  
+
     function showImg(e){
       getId("showHat").src = e.target.src;
-      getId("showHat").style.display="";      
+      getId("showHat").style.display="";
+      
+      Draggable.create("#showHat", {
+        type:"x,y", // "rotation"
+        inertia:true,
+        cursor:'pointer',
+        dragResistance:0.2,
+        edgeResistance:1,
+        lockAxis:false,
+        bounds: document.getElementsByClassName("cardLeft"),
+        // bounds: '#abc',
+        throwProps:true,
+        onClick:function() {
+          console.log("clicked");
+        },
+        onDragEnd:function(e){
+          if(this.hitTest('#showImg_Mall','10%')){  // area %
+            TweenMax.fromTo('#showHat',3,{
+              scale:2,rotationY:0},{
+              scale:1,ease:Bounce.easeOut,rotationY:360
+            },
+            )
+          }
+        }
+      }); // Draggable.create()
     }
+
+
     function showCart(){
       alert("購物系統維修中");
     }
@@ -42,6 +68,7 @@
       let nextPage = document.getElementById("nextPage");
       prePage.onclick = prePageshowImg;
       nextPage.onclick = nextPageshowImg;
+
     }
 
     window.onload = init;

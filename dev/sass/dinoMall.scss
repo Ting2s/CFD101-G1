@@ -6,8 +6,8 @@
 
 body {
   background-color: rgb(143, 213, 223);
-//   overflow-x: hidden;
   overflow-y: hidden;
+  font-family:'DFPLiYuan';
 }
 
 .none{
@@ -39,7 +39,7 @@ body {
                         span{
                               @include posiTion(absolute,52%,19%);  // HAT  
                               img{
-                                  width: 90%;
+                                  @include rect(90%,null);
                               }
                         }
                         .showImg_Mall{
