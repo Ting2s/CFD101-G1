@@ -1,17 +1,16 @@
 @import 'base/reset';
 @import 'layout/nav';
 @import 'base/font';
+@import 'layout/footer';
 @import 'dinoDisscus';
-<<<<<<< HEAD
-=======
 @import 'dinoHotpost';
 @import 'dinoPost';
->>>>>>> e15725fa93276430abde14a244031d26808f74ed
+
 
 body {
     .content {
         width: 100%;
-        height: 1000px;
+        // height: 1000px;
         background-color: rgb(182, 182, 182);
     }
 
@@ -22,7 +21,7 @@ body {
     }
     footer {
         width: 100%;
-        height: 400px;
+        // height: 400px;
         background-color: rgb(232, 230, 230);
     }
 }
