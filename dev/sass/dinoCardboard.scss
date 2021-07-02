@@ -2,6 +2,7 @@
 @import 'base/font';
 @import 'layout/nav';
 
+
 body {
   height: 100vh;
   background-image: url('../images/dinoCardboard/bg.jpg');
@@ -92,6 +93,7 @@ body {
         span{
           margin: 0 auto;
           font-size: 16px;
+          font-family: DFPLiYuan;//-----------------
         }
       }
       .personDate{
@@ -129,6 +131,7 @@ body {
       color: white;//----------------
       font-weight: bold;
       font-size: 18px;//------------
+      font-family: DFPLiYuan;//-----------------
     }
   }
 }
@@ -142,20 +145,38 @@ body {
   animation: fadeInUp .6s;
 }
 
-#heart{
-  cursor: pointer;
+.camera{
+  position: absolute;
+  width: 100%;
+  top: 9rem;
+  margin-left: 65%;
+  // -webkit-filter:  20px rgb(255, 255, 255);
+  // filter: 20px rgb(255, 255, 255);
+  animation:rotate-taichi 2s ease-in infinite alternate;
+
+  img{
+    width: 5%;
+    -webkit-filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+    //background: white;
+    // border:1px solid rgb(255, 255, 255);
+    // padding:4px;
+    // border-radius: 5%;
+  }
+
+  p{
+    color: #ff4f8f;//----------------
+    font-size: 16px;//------------
+    font-family: DFPLiYuan;//-----------------
+    //-webkit-text-stroke: 1px #fff;
+    padding-top: .2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 0.6em #fff, 0 0 0.6em #fff,
+        0 0 0.6em #fff;
+  }
 }
 
-// .pageButton--disable {
-//    opacity: 0.5;
-// }
-
-// .pageButton--disable:hover {
-//    cursor: not-allowed;
-// }
-
-// input:invalid,
-// :-moz-ui-invalid {
-//    box-shadow: none;
-//    border-color: red;
-// }
+@keyframes rotate-taichi {
+  0%{transform:rotate(-15deg);}
+  100%{transform:rotate(15deg);}
+}

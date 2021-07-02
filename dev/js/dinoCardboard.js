@@ -109,15 +109,3 @@ function setPageInputMinMax() {
     pageInput.max = maximumPage;
 }
 
-// function disablePrevNext() {
-//     if (actualPage == minimumPage) {
-//         previousPageButton.classList.add("pageButton--disable");
-//     } else {
-//         previousPageButton.classList.remove("pageButton--disable");
-//     }
-//     if (actualPage == maximumPage) {
-//         nextPageButton.classList.add("pageButton--disable");
-//     } else {
-//         nextPageButton.classList.remove("pageButton--disable");
-//     }
-// }
