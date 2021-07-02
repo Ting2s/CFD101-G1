@@ -20,4 +20,10 @@
 @mixin fontSz($size,$weight) {
   font-size: $size;
   font-weight: $weight;
+  @content;
+}
+@mixin pdMargin ($pad,$marg){
+  padding: $pad;
+  margin: $marg;
+  @content;
 }
