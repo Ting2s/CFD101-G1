@@ -79,7 +79,10 @@
       // console.log(prePage);
     }
 
-
+    //   選擇恐龍 
+    function showImgChange(e){
+      getId("showImg_Mall").src = e.target.src;
+    }    
 
     // openModalBox A / C
     function openModalBoxA(){
@@ -92,10 +95,6 @@
         }
       }
     
-    //   選擇恐龍 
-    function showImgChange(e){
-      getId("showImg_Mall").src = e.target.src;
-    }
     function openModalBoxC(){
       getId("bg-modal").style.display='flex';
     }
@@ -106,6 +105,13 @@
     }
     function closeModalBoxC(){
       getId("bg-modal").style.display='none';
+    }
+
+    // 脫光光 B
+    function closeModalBoxB(){
+      getId("showHat").style.display='none';
+      getId("showSticker").style.display='none';
+
     }
 
     
@@ -144,8 +150,10 @@
       btnSelect_a.onclick = openModalBoxA;
       let  btnCloseA= getId("close-a"); 
       btnCloseA.onclick = closeModalBoxA;
-
      
+      // 脫光光
+      let btnSelect_b = getId("btnSelect_b"); 
+      btnSelect_b.onclick = closeModalBoxB;
 
       // 儲存造型 modalBox
       let btnSelect_c = getId("btnSelect_c"); 
