@@ -2,9 +2,7 @@
 @import 'layout/nav';
 @import 'base/font';
 @import 'layout/footer';
-@import 'dinoDisscus';
-@import 'dinoHotpost';
-@import 'dinoPost';
+
 
 
 body {
@@ -16,8 +14,8 @@ body {
 
     header {
      width: 100%;
-     height: 120px;
-     background-color: rgb(216, 216, 216);
+    //  height: 120px;
+    //  background-color: rgb(216, 216, 216);
     }
     footer {
         width: 100%;

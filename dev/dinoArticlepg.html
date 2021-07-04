@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="utf-8">
+        <title>文章內頁</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        @@include('layout/style.html')
+        <link rel="stylesheet" href="css/dinoSinglepg.css">
+    </head>
+
+    <body>
+        @@include('layout/header.html')
+        <div class="news-contents wrapper">
+          <article>
+              <header class="post-info">
+                  <h2 class="post-title">想瞭解三角龍的冷知識嗎？</h2>
+                  <p class="post-date">5/16 <span>2020</span></p>
+                  <p class="post-cat">類別：恐龍知識 &nbsp&nbsp&nbsp<i class="fas fa-user-edit"></i> 徐涵涵</p>
+              </header>
+              <img src="./images/disscus/dino8.jpg" alt="恐龍知識">
+              <p>
+                  三角龍，是種食植性恐龍。是最晚出現的恐龍之一，距今約6800萬年前到6500萬年前。
+                  它們有非常大的頭盾，以及三根角狀物，令人聯想起現代犀牛。
+                  三角龍最顯著的特徵是它們的大型頭顱，是所有陸地動物中最大之一。它們的頭盾可
+                  長至超過2.5米，可以達到整個動物身長的1/3。
+                  三角龍個體的身長被估計有7.9到9米長，高度為2.9到3米。
+              </p>
+              <p>
+              </p>
+          </article>
+          <hr>
+          <h2>文章留言</h2>
+          <div class = "disnoitem">
+            <div class = "disnoimg">
+              <img src = "./images/disscus/member.jpg" alt = "food image">
+              <p>呂阿暉</p>
+            </div>
+            <div class = "disnocontent">
+              <h2 class = "disnoname">讚讚讚讚讚~~~~~~~讚讚讚讚讚</h2>
+              <p class = "category">發表於: <span>2021-01-12 13:48:01&nbsp;&nbsp; <i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
+            </div>
+          </div>
+          <hr>
+          <h2>新增留言</h2>
+          <form action="">
+            <textarea id="single" name="single" placeholder="" style="height:100px"></textarea>
+            <button class="dinbtn">送出</button>
+          </form>
+        </div>
+    </body>
+</html>

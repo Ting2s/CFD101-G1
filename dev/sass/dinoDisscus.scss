@@ -1,327 +1,178 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style-type: none;
-}
-
-body{
-  overflow-x: hidden;
-  font-family: "Noto Sans TC", sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400&display=swap");
 
 :root{
-  --color-main:#1a202e;
+    --lay: "Noto Sans TC", sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    line-height: 1.5;
+    font-family: var(--lay);
+    color: rgb(54, 52, 52);
+    background-image: url('../images/disscus/board3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.menu{
+    margin: 2rem 0;
+}
+.menu-container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    margin-top: 160px;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.menu-head{
+    text-align: center;
+}
+.menu-head h2{
+    font-family: var(--lay);
+    font-size: 2.6rem;
+}
+.menu-head h2 img{
+    width: 20%;
+    margin: 0 auto;
+}
+.menu-head p{
+    font-weight: 300;
+    padding: 1.3rem 0;
+}
+.menu-btns{
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: center;
+}
+.menu-btn{
+    font-family: var(--lay);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: #ff9505;
+    display: block;
+    margin: 0 1rem;
+    cursor: pointer;
+    outline: 0;
+    transition: opacity 0.4s ease-out;
+}
+.menu-btn::after{
+    content: "";
+    display: block;
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ff9505;
+    margin-top: 0.5rem;
+    width: 0;
+    transition: width 0.4s ease-out;
+}
+.menu-btn:hover::after{
+    width: 100%;
+}
+.menu-btn:hover{
+    opacity: 0.8;
+}
+.active-btn{
+    color: rgb(68, 66, 66);
+}
+.disnoitems{
+    margin: 2rem 0;
+}
+.disnoitem{
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+    margin: 0.6rem 0;
+    box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75);
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.disnoimg img{
+    border-radius: 4px;
+}
+.disnocontent{
+    padding: 1rem;
+}
+.disnoname a{
+    font-family: var(--lay);
+    color: #ff9505;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.line{
+    width: 100px;
+    height: 3px;
+    background: #ff9505;
+}
+.disnodate{
+    padding: 0.3rem 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+.disnopri{
+    padding-bottom: 0.3rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+.category{
+    padding-top: 0.2rem;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: var(--lay);
+}
+.category span{
+    font-weight: 500;
 }
 
-.main-content{
-  margin:  auto 0;
-  min-height: calc(100vh - 70px);
-
-.main{
-  padding:1.5rem ;
-  /* background: #f1f5f9; */
-   padding-top: 120px;
-  background-image: url(../images/disscus/board3.jpg);
-  background-size: cover;
-}
-/* 外層加overflowhidden*/
-.jobs-grid{
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap:1rem;
-}
-.buck{
-  background-image: url(../images/disscus/board2.jpg);
-  background-size: cover;
-  height: 100vh;
+@media screen and (min-width: 600px){
+    .disnoitem{
+        display: grid;
+        grid-template-columns: 25% auto;
+        align-items: center;
+        padding: 1rem;
+        column-gap: 1rem;
+    }
+    .disnocontent{
+        padding: 0;
+    }
 }
 
-.jobs{
-  overflow-x: auto;
-  background-color: rgba(255, 255, 255, .77);
-  border-radius: 20px;
-  padding: 10px;
-}
-.search{
-  display: flex;
-  padding-top: 1rem;
-  margin-left: 5rem;
-  justify-items: flex-start;
-} 
-.box{
-
-  width: 300px;
-  height: 50px;
-  background-color: white;
-  border-radius: 30px;
-  border: 1px solid #aaa;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-
+@media screen and (min-width: 768px){
+    .menu-head p{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-.box > input{
-
-/* flex: 1; */
-
-height: 40px;
-
-border: none;
-
-outline: none;
-
-font-size: 18px;
-
-padding-left: 10px;
-
-
-}
-
-select {
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  -ms-appearance:none;
-  appearance:none;
-  outline:0;
-  box-shadow:none;
-  border:1px solid #aaa;
-  background: #ffffff;
-  background-image: none;
-  flex: 1;
-  padding: 0 .5em;
-  color:rgb(48, 46, 46);
-  cursor:pointer;
-  font-size: 1em;
-}
-select::-ms-expand {
-  display: none;
-}
-.select {
-  position: relative;
-  display: flex;
-  width: 13em;
-  height: 3em;
-  margin: 0 2rem;
-  line-height: 3;
-  background: #5c6664;
-  overflow: hidden;
-  border-radius: .25em;
-}
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 1em;
-  background: #682f09;
-  color: azure;
-  cursor:pointer;
-  pointer-events:none;
-  transition:.25s all ease;
-}
-.select:hover::after {
-  color: #23b499;
-}
-
-
-.purchase-info .btn {
-  border       : 1.5px solid #ddd;
-  border-radius: 25px;
-  text-align   : center;
-  padding      : 0.45rem 1.6rem;
-  outline      : 0;
-  margin-left : 0.2rem;
-}
-
-
-.purchase-info .btn {
-  cursor: pointer;
-  color : #fff;
-}
-
-.purchase-info .btn:last-of-type {
-  background: #f64749;
-}
-
-.purchase-info .btn:hover {
-  opacity: 0.9;
-}
-
-nav{
-position: relative;
-margin: 15px 0px 0px 88px;
-width: 590px;
-height: 50px;
-border-radius: 8px;
-font-size: 0;
-justify-content: unset;
-}
-nav a{
-font-size: 20px;
-text-transform: uppercase;
-color: rgb(138, 136, 136);
-text-decoration: none;
-line-height: 50px;
-position: relative;
-z-index: 1;
-display: inline-block;
-text-align: center;
-}
-nav .animation{
-position: absolute;
-height: 100%;
-height: 5px; 
-  bottom: 0;
-z-index: 0;
-background: #1abc9c;
-border-radius: 8px;
-transition: all .5s ease 0s;
-}
-nav a:nth-child(1){
-width: 100px;
-}
-nav .start-home, a:nth-child(1):hover~.animation{
-width: 100px;
-left: 0;
-}
-nav a:nth-child(2){
-width: 110px;
-}
-nav a:nth-child(2):hover~.animation{
-width: 110px;
-left: 100px;
-}
-nav a:nth-child(3){
-width: 100px;
-}
-nav a:nth-child(3):hover~.animation{
-width: 100px;
-left: 210px;
-}
-
-.jobs h2 small{
-  color:#5850ec ;
-  font-weight: 600;
-  display: inline-block;
-  margin-left: 1rem;
-  font-size: .9rem;
-}
-
-.jobs table{
-  border-collapse: collapse;
-  margin-top: 1rem;
-  margin: auto;
-/* 固定寬*/
-
-width: 800px;
-}
-
-span.indicator{
-  background: #c9f7f5;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-}
-
-span.indicator.even{
-  background: #fff4de;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-}
-
-.jobs table td div{
-  background: #fff;
-  margin-bottom: .8rem;
-  margin-top: .8rem;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: .5rem;
-  font-size: .85rem;
-  color: #444;
-  font-weight: 500;
-}
-.jobs table thead{
-  border-top: #aaa 1px solid;
-  border-bottom:#aaa  1px solid ;
-}
-.jobs table thead th div{
-  /* background: #fff; */
-  height: 30px;
-  display: flex;
-  align-items: center;
-  padding: .5rem;
-  font-size: .85rem;
-  color: #444;
-  font-weight: 500;
-}
-
-tbody tr td{
-  vertical-align: middle;
-}
-tbody tr td:nth-child(1) div{
-  position: relative;
-}
-tbody tr td:nth-child(1) div::before{
-  content: "";
-  position: absolute;
-  display: inline-block;
-  left: 0;
-  top: 50%;
-  width: 10px;
-  height:100%;
-  transform: translateY(-50%);
-  background-color: #562c2c;
-}
-.pac{
-  display: flex;
-  justify-content: center;
-}
-
-.pagination {
-  display: inline-block;
- }
-
-.pagination a {
-  font-size: 12px;
-  color: black;
-  float: left;
-  padding: 8px 10px;
-  text-decoration: none;
-}
-
-.board{
-  background-image: url(../images/disscus/board.png);
-  background-size: cover;
-  margin-left: -50px;
-}
-
-@media only screen and (max-width:1124px){
-  .main-content{
-      margin-left: 0;
-  }
-}
-
-@media only screen and (max-width:1314px){
-  .jobs-grid{
-      grid-template-columns: 100%;
-  }
-}
-
-@media only screen and (max-width:320px){
-  .jobs-grid{
-      grid-template-columns: 1fr;
-  }
-
-}
-
-.fa-comments{
-  color: rgb(65, 126, 240);
-}
-
+@media screen and (min-width: 992px){
+    .menu-head p{
+        width: 50%;
+    }
+    .disnoitems{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
 }
