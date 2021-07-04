@@ -70,7 +70,6 @@
               <!-- 選頁按鈕 -->
               <div class="changePage">
                 <button id="upPage" class="upPage"></button>
-                <span>1/3</span>
                 <button id="downPage" class="downPage"></button>
               </div>
 
@@ -80,27 +79,17 @@
               <div class="myCard" id="myCard">
                 <ul>
                   <li>
-                    <button class="deleteCard">
+                    <button class="deleteCard" onclick="deleteCard(this)">
                     </button>
                     <input type="button" value="我與恐龍">
-                    <img src="images/dinoPersonal/example.jpg" alt="" id="card_1">
-
-
-
-
-                    <!-- The Modal -->
-                    <div id="myModal_1" class="modal">
-                      <span class="close">&times;</span>
-                      <img class="modal-content" id="img01">
-                      <div id="caption_1" class="caption"></div>
-                    </div>
+                    <img src="images/dinoPersonal/example.jpg" alt="" onclick="openModel(this)">
                   </li>
 
                   <li>
-                    <button class="deleteCard">
+                    <button class="deleteCard" onclick="deleteCard(this)">
                     </button>
                     <input type="button" value="恐龍朋友">
-                    <img src="images/dinoPersonal/example4.jpg" alt="" id="card_2">
+                    <img src="images/dinoPersonal/example4.jpg" alt="" onclick="openModel(this)">
 
                   </li>
 
@@ -113,27 +102,17 @@
 
                 <ul>
                   <li>
-                    <button class="deleteCard">
+                    <button class="deleteCard" onclick="deleteCard(this)">
                     </button>
                     <input type="button" value="朋友的恐龍">
-                    <img src="images/dinoPersonal/example3.jpg" alt="" id="card_1">
-
-
-
-
-                    <!-- The Modal -->
-                    <div id="myModal_1" class="modal">
-                      <span class="close">&times;</span>
-                      <img class="modal-content" id="img01">
-                      <div id="caption_1" class="caption"></div>
-                    </div>
+                    <img src="images/dinoPersonal/example3.jpg" alt="" onclick="openModel(this)">
                   </li>
 
                   <li>
-                    <button class="deleteCard">
+                    <button class="deleteCard" onclick="deleteCard(this)">
                     </button>
                     <input type="button" value="別人的恐龍">
-                    <img src="images/dinoPersonal/example2.jpg" alt="" id="card_2">
+                    <img src="images/dinoPersonal/example2.jpg" alt="" onclick="openModel(this)">
 
                   </li>
 
@@ -151,6 +130,11 @@
 
 
 
+    <!-- layout -->
+    <!-- 恐龍大圖 -->
+    @@include('layout/dinoMem_modal.html')
+    <!-- 刪除 -->
+    @@include('layout/dinoMem_delete_card.html')
 
 
   </main>
@@ -158,7 +142,9 @@
 
 
   <!-- js -->
+  <script src="js/dinoMem.js"></script>
   <script src="js/dinoMem_card.js"></script>
+
 </body>
 
 </html>

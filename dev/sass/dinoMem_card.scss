@@ -6,11 +6,9 @@
   padding: 20px 60px;
   margin: 20px;
 
-  
 
 button{
   padding: 5px 30px;
-  font-weight: $font-bold;
   font-size: ($font-h4)-6px;
   
   &:hover{
@@ -56,12 +54,9 @@ p{
   flex-direction: column;
   margin-left: 30px;
 
-  span{
-    margin: 20px 0;
-    font-size: ($font-h4);
-  }
 }
 .upPage,.downPage{
+  margin: 40px 10px;
   width: 80px;
   height: 80px;
   background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
@@ -201,3 +196,50 @@ p{
 .none{
   display: none;
 }
+
+
+//=====================刪除
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelBtn, .deleteBtn {
+display: inline-block;
+margin:20px;
+border: none;
+border-radius: 10px;
+color: white;
+padding: 15px 32px;
+text-align: center;
+font-size: ($font-h4)-10px;
+
+
+
+}
+
+// 取消刪除
+.cancelBtn {
+  background-color: #ccc;
+  color: black;
+}
+
+// 確定刪除
+.deleteBtn {
+  background-color: #f44336;
+}
+
+
+.delete_con {
+  padding: 16px;
+  text-align: center;
+
+  h3{
+    padding: 15px;
+    font-size: $font-h3;
+  }
+  p{
+    font-size: ($font-h4)-10px;
+  }
+}
+

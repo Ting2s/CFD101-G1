@@ -31,22 +31,35 @@ myCard_btn.addEventListener("click", function () {
 
 
 //-----------------------------------
-let modal = document.getElementById("myModal_1");
+
+//-----------------------------------
+//刪除明信片
+
+// let deleteTable = document.getElementById('deleteTable');
+// let goDelete= document.getElementById('goDelete');
+// goDelete.addEventListener("click", function (){
+// deleteTable.style.display='block';
+// })
+
+// //處碰box外面時也能關掉
+// //window.onclick = function(e) {
+//   //if (e.target == deleteTable) {
+//     //deleteTable.style.display = "none";
+//   //}
+// //}
+// let dele_close= document.getElementById('dele_close');
+// dele_close.addEventListener("click", function (){
+// deleteTable.style.display='none';
+// })
+
+// let cancelBtn= document.getElementById('cancelBtn');
+// cancelBtn.addEventListener("click", function (){
+// deleteTable.style.display='none';
+// })
 
 
-let img = document.getElementById("card_1");
-let modalImg = document.getElementById("img01");
-let captionText = document.getElementById("caption_1");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-
-let span = document.getElementsByClassName("close")[0];
-
-
-span.onclick = function() { 
-  modal.style.display = "none";
-}
+// let deleteBtn= document.getElementById('deleteBtn');
+// deleteBtn.addEventListener("click", function (){
+// alert("成功刪除！");
+// deleteTable.style.display='none';
+// })
