@@ -217,23 +217,40 @@ body {
 
 //----成長
 .GrowUp {
-    width: 33%;
-    position: absolute;
-    bottom: 8%;
+    width: 33%;  
+    position: relative;
+    bottom: 67%;
     left: 50%;
     transform: translateX(-50%);
+    // background-color: blanchedalmond;
 }
 
-.GrowUp img {
+.GrowUp .GrowUp_sch {
     width: 100%;
 }
+
+.Grow-sq{
+    width: 99.4%;
+    height: 45%;
+    position: absolute;
+    bottom: 0;
+    left: 50.7%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    // justify-content: space-evenly;
+    // background-color: rgba(255, 127, 80, 0.479);
+
+}
+
+.Grow-sq img{
+    width: 6%;
+    height: 76%;
+    margin: 0 0.3%;
+}
+
 
 //---remove
 .remove{
     display: none;
-}
-
-//show
-.show{
-    display: block;
 }

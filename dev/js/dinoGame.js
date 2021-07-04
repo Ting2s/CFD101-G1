@@ -81,5 +81,10 @@ function init() {
     Fish_6.onclick = hide_6;
 }
 
+//grow up進度條
+
+
+
+
 window.onload = init;
 
