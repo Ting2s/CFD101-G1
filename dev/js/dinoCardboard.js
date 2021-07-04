@@ -66,7 +66,7 @@ function previousPage() {
         });
         document.getElementById("page" + actualPage).classList.add("pageShow");
         setPageInputValue();
-        disablePrevNext();
+        // disablePrevNext();
     }
 }
 
@@ -109,3 +109,24 @@ function setPageInputMinMax() {
     pageInput.max = maximumPage;
 }
 
+
+//--------------
+$(function () {
+    
+    $('.pic').on('click', function () {
+
+        var src = $(this).attr('src');
+        $('.imgPreview img').attr('src', src);
+        $('.imgPreview').show()
+    });
+
+    $('.imgPreview').on('click', function () {
+
+        $('.imgPreview').hide()
+    });
+})
+
+//------------------------
+function favorite(e) {
+    e.classList.toggle("fas");
+  }
