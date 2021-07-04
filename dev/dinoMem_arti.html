@@ -9,7 +9,9 @@
 
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
-  <!-- js -->
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
   <!-- css -->
   @@include('layout/style.html')
@@ -58,16 +60,11 @@
             </div>
 
 
-            <!-- 欄位 -->
-            <div class="dinoChoose">
+
+            <!-- -----我的文章----- -->
+            <div class="dinoCon">
               <!-- 選頁按鈕 -->
-              <div class="changePage">
-                <button id="upPage" class="upPage"></button>
-                <button id="downPage" class="downPage"></button>
-              </div>
-
-
-              <!-- -----我的文章----- -->
+              @@include('layout/dinoMem_pageBar.html')
               <!-- 欄位格子 -->
               <div class="myArti" id="myArti">
 
@@ -152,6 +149,7 @@
                 </ul>
 
               </div>
+
 
 
               <!-- -----文章收藏----- -->
@@ -239,9 +237,12 @@
               </div>
 
             </div>
+
+            <!-- -------------------------------- -->
           </div>
         </div>
       </div>
+    </div>
     </div>
 
     </div>
