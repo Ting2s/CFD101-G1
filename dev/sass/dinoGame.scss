@@ -36,7 +36,7 @@ body {
     top: 35%;
     right: -1%;
     z-index: 1;
-    animation: animate 15s infinite;
+    animation: animate-1 15s infinite;
     animation-delay: 0s;
     cursor: pointer;
 }
@@ -107,7 +107,7 @@ body {
 }
 
 //-------animation fish
-@keyframes animate {
+@keyframes animate-1 {
     from {
         transform: translateX(100%);
     }
