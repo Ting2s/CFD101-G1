@@ -41,6 +41,10 @@ p{
 //關閉時
 
 //==================================
+.dinoCon{
+  display: flex;
+  flex-wrap: wrap;
+}
 .dinoChoose{
   display: flex;
   justify-content: center;
@@ -53,7 +57,14 @@ p{
   align-items: center;
   flex-direction: column;
   margin-left: 30px;
-
+  li{
+    position: relative;
+    left: 30px;
+    margin: 0 20px;
+    margin-right: 40px;
+    font-size: $font-h4;
+    color: $yellow-second;
+  }
 
 }
 .upPage,.downPage{
@@ -64,6 +75,7 @@ p{
   background-size: contain;
 
 }
+
 .downPage{
   transform:scaleY(-1);
 }

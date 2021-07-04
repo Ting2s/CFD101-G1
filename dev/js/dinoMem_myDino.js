@@ -7,6 +7,7 @@ dinoAcc_btn.addEventListener("click", function () {
   document.getElementById("dinoAcc").classList.remove("none");
   document.getElementById("dinoAcc_p").classList.remove("none");
   
+  
 
   document.getElementById("dinoAcc_btn").classList.add("active");
   document.getElementById("dino_btn").classList.remove("active");

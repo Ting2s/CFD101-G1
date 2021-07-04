@@ -1,192 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'
-        integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=='
-        crossorigin='anonymous' />
-        @@include('layout/style.html')
-        
-    <title>討論</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>討論區</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoDisscus.css">
 </head>
+
 <body>
-        @@include('layout/header.html')
-    <div class="main-content">
-        <div class="main">
-            <div class="jobs-grid">
-             <div class="buck">
-                <div class="jobs">
-            <form>
-                <div class="search">
-                    <div class="box"> 
-                        <input type="text" name="" placeholder="嘿!再找什麼恐龍呢?">
-                    </div>
-                    <div class="select">
-                        <select name="format" id="format">
-                           <option selected disabled>哪個地區</option>
-                           <option value="txy"></option>
-                           <option value="txt"></option>
-                           <option value="txy"></option>
-                           <option value="txt"></option>
-                           <option value="txt"></option>
-                        </select>
-                     </div>
-                     <div class = "purchase-info">
-                        <button type = "button" class = "btn">查詢</button>
-                    </div>
-                </div>
-            </form>    
-                    <nav>
-                        <a href="#">精華</a>
-                        <a href="#">最新</a>
-                        <a href="#">我的收藏</a>
-                        <div class="animation start-home"></div>
-                    </nav>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>
-                                    <div>
-                                        <!-- <span class="indicator"></span> -->
-                                    </div>
-                                </th>
-                                <th>
-                                    <div>文章標題</div>
-                                </th>
-                                <th>
-                                    <div>作者</div>
-                                </th>
-                                <th>
-                                    <div>發布日期</div>
-                                </th>
-                                <th>
-                                    <div>瀏覽數</div>
-                                </th>
-                                <th>
-                                    <div>回覆</div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <!-- <span class="indicator even"></span> -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>恐龍冷知識恐龍冷知識恐龍冷知識恐龍冷知識</div>
-                                </td>
-                                <td>
-                                    <div>呂阿暉</div>
-                                </td>
-                                <td>
-                                    <div>2021-05-20</div>
-                                </td>
-                                <td>
-                                    <div>443</div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <i class="fas fa-comments"></i>&nbsp5
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <!-- <span class="indicator"></span> -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>恐龍冷知識恐龍冷知識恐龍冷知識恐龍冷知識</div>
-                                </td>
-                                <td>
-                                    <div>呂阿暉</div>
-                                </td>
-                                <td>
-                                    <div>2021-05-20</div>
-                                </td>
-                                <td>
-                                    <div>443</div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <i class="fas fa-comments"></i>&nbsp5
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <!-- <span class="indicator even"></span> -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>恐龍冷知識恐龍冷知識恐龍冷知識恐龍冷知識</div>
-                                </td>
-                                <td>
-                                    <div>呂阿暉</div>
-                                </td>
-                                <td>
-                                    <div>2021-05-20</div>
-                                </td>
-                                <td>
-                                    <div>443</div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <i class="fas fa-comments"></i>&nbsp5
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div>
-                                        <!-- <span class="indicator"></span> -->
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>恐龍冷知識恐龍冷知識恐龍冷知識恐龍冷知識</div>
-                                </td>
-                                <td>
-                                    <div>呂阿暉</div>
-                                </td>
-                                <td>
-                                    <div>2021-05-20</div>
-                                </td>
-                                <td>
-                                    <div>443</div>
-                                </td>
-                                <td>
-                                    <div>
-                                        <i class="fas fa-comments"></i>&nbsp5
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="pac">
-                    <div class="pagination">
-                        <a href="#"><</a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">6</a>
-                        <a href="#">7</a>
-                        <a href="#">8</a>
-                        <a href="#">></a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-                <div class="board"></div>
-            </div>
+    @@include('layout/header.html')
+  <section class="menu" id="app">
+    <div class="menu-container">
+      <div class="menu-head">
+        <h2><img src="./images/disscus/dis1.png" alt=""></h2>
+        <p></p>
+      </div>
+      <div class="menu-btns">
+        <div v-for="item in types" :key="item.id">
+          <button type="button" class="menu-btn active-btn" @click="sel(item)">{{item}}</button>
         </div>
+      </div>
+
+      <div class="disnoitems">
+        <!-- item -->
+        <div class="disnoitem" v-for="item in typeMenu">
+          <div class="disnoimg">
+            <img :src="item.imgsrc" alt="dino image">
+          </div>
+          <div class="disnocontent">
+            <h2 class="disnoname"><a :href="item.loc">{{item.title}}</a></h2>
+            <div class="line"></div>
+            <h3 class="disnodate"><i class="far fa-calendar-alt"></i> {{item.date}} &nbsp;<i
+                class="far fa-comment-dots"></i> {{item.view}}</h3>
+            <h3 class="disnopri"><i class="fas fa-user-edit"></i> {{item.author}}</h3>
+            <p class="category">{{item.category}} <span>{{item.span}}</span></p>
+          </div>
+        </div>
+        <!-- end of item -->
+      </div>
     </div>
+  </section>
+<script src="./js/dinoDisscus.js"></script>
 </body>
 </html>
