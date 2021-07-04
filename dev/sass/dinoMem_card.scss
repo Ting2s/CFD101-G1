@@ -40,11 +40,14 @@ p{
 //關閉時
 
 //==================================
+.dinoCon{
+  display: flex;
+  flex-wrap: wrap;
+}
 .dinoChoose{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -30px;
 
 }
 .changePage{
@@ -53,17 +56,27 @@ p{
   align-items: center;
   flex-direction: column;
   margin-left: 30px;
+  li{
+    position: relative;
+    left: 30px;
+    margin: 0 20px;
+    margin-right: 40px;
+    font-size: $font-h4;
+    color: $yellow-second;
+  }
 
 }
 .upPage,.downPage{
-  margin: 40px 10px;
+  margin: 20px 10px;
   width: 80px;
   height: 80px;
   background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
   background-size: contain;
 
 }
+
 .downPage{
+
   transform:scaleY(-1);
 }
 

@@ -31,6 +31,14 @@ let deleteCard = function () {
   let deleteTable = document.getElementById('deleteTable');
   deleteTable.style.display = 'block';
 
+  let deleteBtn= document.getElementById('deleteBtn');
+  deleteBtn.addEventListener("click", function (){
+
+    deleteTable.style.display = 'none';
+    alert("成功刪除！");
+    e.stopPropagation(); 
+  })
+
 
 let dele_close= document.getElementById('dele_close');
   dele_close.addEventListener("click", function (){
@@ -42,12 +50,36 @@ let dele_close= document.getElementById('dele_close');
   deleteTable.style.display="none";
   })
   
-  
-  let deleteBtn= document.getElementById('deleteBtn');
-  deleteBtn.addEventListener("click", function (){
-
-    deleteTable.style.display = 'none';
-    alert("成功刪除！");
-    e.stopPropagation(); 
-  })
 }
+
+//=====================================
+//更換頁碼
+let pageBar = new Vue({
+
+  el: '.dinoChoose',
+  data: {
+    all: 5, //總頁數
+    cur: 1,//當前頁碼
+  },
+
+
+  computed: {
+    // 顯示最後一頁
+    showLast: function () {
+      if (this.cur >= this.all) {
+        return false;
+      }
+      return true
+    },
+    
+    // 顯示第一頁
+    showFirst: function () {
+      if (this.cur > 1) {
+        return true
+      }
+      return false;
+    },
+  }, 
+  }); 
+  
+  
