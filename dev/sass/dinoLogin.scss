@@ -227,3 +227,43 @@ color: #757575;
 position: relative;
 float: left;
 }
+
+
+//============================================
+//冒泡提醒
+/* The actual popup */
+.popuptext {
+  display: none;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+}
+
+/* Popup arrow */
+.popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  z-index: 4;
+}
+
+.show {
+  display: block;
+  animation: fadeIn 1s;
+ 
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
