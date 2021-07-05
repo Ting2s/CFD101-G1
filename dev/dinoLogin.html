@@ -70,7 +70,7 @@
               <h2>登入</h2>
               <input type="text" placeholder="帳號" />
               <input type="password" placeholder="密碼" />
-              <button class="login_btn" onclick="login()">
+              <button class="login_btn">
                 LOGIN
               </button>
             </div>
@@ -83,11 +83,40 @@
 
               <!-- 註冊輸入畫面 -->
               <h2>註冊</h2>
-              <input type="text" placeholder="常用信箱" />
-              <input type="text" placeholder="帳號" />
-              <input type="password" placeholder="密碼" />
-              <input type="password" placeholder="確認密碼" />
-              <button class="signup_btn" onclick="signUp()">
+              <input type="text" placeholder="常用信箱" id="newEmail" />
+
+              <!-- 冒泡提醒 -->
+              <div class="popuptext" id="lowEight">
+                <span>
+                  帳號不得低於八碼！
+                </span>
+              </div>
+
+              <div class="popuptext" id="EandN">
+                <span>
+                  帳號必須有英文和數字！
+                </span>
+              </div>
+
+              <input type="text" placeholder="帳號" id="newAct" class="popup" />
+
+              <!-- 冒泡提醒 -->
+              <div class="popuptext" id="lowEight_psw">
+                <span>
+                  密碼不得低於八碼！
+                </span>
+              </div>
+
+              <div class="popuptext" id="EandN_psw">
+                <span>
+                  密碼必須有英文和數字！
+                </span>
+              </div>
+
+
+              <input type="password" placeholder="密碼" id="newPsw" />
+              <input type="password" placeholder="確認密碼" id="pswCheck" />
+              <button class="signup_btn" id="signup_btn">
                 SIGN UP
               </button>
             </div>
