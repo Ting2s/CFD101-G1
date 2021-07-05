@@ -1,3 +1,12 @@
+//---close
+let clo = document.getElementById('close');
+let teach = document.getElementById('teach');
+
+clo.addEventListener('click', function (e) {
+    teach.classList.add("remove");
+})
+
+
 //fish click事件
 let Fish_1 = document.getElementById("Fish-1");
 let Fish_2 = document.getElementById("Fish-2");
@@ -102,4 +111,6 @@ function add(){
 }
 
 window.onload = init;
+
+
 

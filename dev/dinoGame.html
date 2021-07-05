@@ -12,12 +12,25 @@
 
 <body>
     @@include('layout/header.html')
-    <div class="teach">
+    <div class="teach" id="teach">
+        <!-- close -->
+        <button class="close" id="close">
+            <img src="./images/dinoGame/close.png" alt="">
+        </button>
+
+        <!-- Step1 -->
         <img class="teach-bg" src="./images/dinoGame/teach.png" alt="">
         <img class="touch-fish" src="./images/dinoGame/touch-fish.png" alt="">
+        <img class="dino" src="./images/dinoGame/dino-teach.png" alt="">
 
-        <div class="teach-sq">
-            <img src="./images/dinoGame/GrowUp_sq.png" alt="">
+        <!-- Step2 -->
+        <div class="teach-growp-wrap">
+            <img class="GrowUp_1" src="./images/dinoGame/GrowUp_1.png" alt="">
+            <div class="teach-sq-wrap">
+                <div class="teach-sq">
+                    <img src="./images/dinoGame/GrowUp_sq.png" alt="">
+                </div>
+            </div>
         </div>
 
     </div>
@@ -78,6 +91,8 @@
             </div>
         </div>
     </div>
+
+
 
     @@include('layout/footer.html')
     <!-- js -->
