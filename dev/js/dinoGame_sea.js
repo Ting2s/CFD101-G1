@@ -133,7 +133,7 @@ n_1.addEventListener('click', function (e) {
 let yes = document.getElementById('Y_1');
 let no = document.getElementById('N_2');
 let no_1 = document.getElementById('N_3');
-console.log(y);
+
 yes.addEventListener('click', function (e) {
     yes.classList.add("right");
     no.classList.add("er");
@@ -177,6 +177,8 @@ teach_close_1.addEventListener('click', function (e) {
     litTest_2.classList.add("closeAnimation");
 })
 
+//恐龍長大
+let dino = document.getElementById('dinopic');
 
 //grow up進度條
 let j = 0;
@@ -186,7 +188,7 @@ function add() {
     Grow.children[j].style.display = 'block';
     g+=3; 
     dino.style.transform = `scale(1.${g})`;
-    console.log(g);
+    
     j++;
     if (j === 5) {
         litTest_1.classList.remove("remove");
@@ -195,12 +197,11 @@ function add() {
     if (j === 10) {
         litTest_2.classList.remove("remove");
     }
-
+    if(j ===15){
+        window.location.href='dinoIsland.html';
+    }
 }
 
-//恐龍長大
-let dino = document.getElementById('dinopic');
-console.log(dino);
 
 
 window.onload = init;
