@@ -1,7 +1,6 @@
 @import './base/font';
 @import './base/dinoMall_var';
 @import './mixins/mixin_Mall';
-@import './layout/footer';
 @import '../../guideline_sass/sass/base/var';
 
 body {
@@ -95,8 +94,20 @@ body {
                                     }                
                               }
                         .cart{
+                              @include  posiTion(relative,null,null);
                               @include rect(10%,10%);
+                                    p{
+                                          @include posiTion(absolute,10%,null){
+                                                right:10%;
+                                                background-color: rgb(250, 3, 3);
+                                                color:$white;
+                                                padding: 5px;
+                                                border-radius: 50%;
+                                                @include fontSz($font-base,$font-bold);
+                                          }
+                                    }
                                     img{
+                                          // @include  posiTion(relative,null,null);
                                           @include rect(100%,null);
                                           cursor: pointer;
                                     }                  
@@ -121,18 +132,22 @@ body {
                                     .imgCard{
                                           @include d-flex();
                                                 .card{
-                                                      background: url('#{$pathMall}/frame.png') no-repeat center center / contain;
-                                                      margin: 1%;
-                                                      padding: 2%;  // ***** 版面
-                                                      cursor: pointer;
-                                                      img{  
-                                                            margin: 14px 10px;
+                                                      background: url('#{$pathMall}/frame.png') no-repeat top center / contain;
+                                                      margin:0 1%;
+                                                      > img{  
+                                                            margin: 0px 14px;
+                                                            padding: 31px 20px 15px;
                                                             object-fit: cover;
+                                                            cursor: pointer; 
                                                             }
                                                       span{
                                                             display: block;
                                                             color:$yellow-first ;
+                                                            padding-bottom: 12px
                                                             }
+                                                      }
+                                                      .smallCart{
+                                                            cursor: pointer;     
                                                       }
                                           }
                         }             
@@ -177,7 +192,7 @@ body {
                   }
                   .box{ 
                         @include pdMargin(20px,0 15px);
-                        background-color: rgb(173, 226, 138);
+                        background-color: rgb(83, 180, 18);
                         align-self: normal;
                         transition: all 1s ease-in-out;
                         img{
@@ -248,5 +263,24 @@ body {
                         }
                   } 
       
+      }
+}
+
+.shake{
+      width: 10%;
+      animation: shakeCart .4s ease-in-out;
+}
+@keyframes shakeCart{
+      25%{
+            transform: translateX(6px);
+      }
+      50%{
+            transform: translateX(-4px);
+      }
+      75%{
+            transform: translateX(2px);
+      }
+      100%{
+            transform: translateX(0);
       }
 }
