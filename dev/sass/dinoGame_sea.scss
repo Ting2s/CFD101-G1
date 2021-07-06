@@ -381,6 +381,16 @@ body {
     }
 }
 
+.closeAnimation{
+    animation: close 0.3s forwards;
+}
+
+@keyframes close{
+    to{
+      transform: scale(0);
+    }
+}
+
 // ----------------------------RWD(1024px)
 
 @media screen and (max-width: 1024px) {

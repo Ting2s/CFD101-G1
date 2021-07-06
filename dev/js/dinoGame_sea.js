@@ -3,7 +3,7 @@ let clo = document.getElementById('close');
 let teach = document.getElementById('teach');
 
 clo.addEventListener('click', function (e) {
-    teach.classList.add("remove");
+    teach.classList.add("closeAnimation");
 })
 
 
