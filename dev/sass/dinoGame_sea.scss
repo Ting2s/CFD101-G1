@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'DFPLiYuan';
+    src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+  }
+
 body {
     height: 100vh;
     background-image: url('../images/dinoGame/bg-sea.jpg');
@@ -49,7 +54,7 @@ body {
     z-index: 3;
     animation: animate-2 10s infinite;
     animation-delay: 3s;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .Fish-3 {
@@ -60,7 +65,7 @@ body {
     z-index: 1;
     animation: animate-3 12s infinite;
     animation-delay: 5s;
-    cursor: pointer; 
+    cursor: pointer;
     z-index: 2;
 }
 
@@ -72,7 +77,7 @@ body {
     z-index: 3;
     animation: animate-4 17s infinite;
     animation-delay: 10s;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .Fish-5 {
@@ -83,7 +88,7 @@ body {
     z-index: 1;
     animation: animate-5 18s infinite;
     animation-delay: 0s;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .Fish-6 {
@@ -94,7 +99,7 @@ body {
     z-index: 3;
     animation: animate-6 16s infinite;
     animation-delay: 3s;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .Fish-1 img,
@@ -217,7 +222,7 @@ body {
 
 //----成長
 .GrowUp {
-    width: 33%;  
+    width: 33%;
     position: relative;
     bottom: 67%;
     left: 50%;
@@ -229,7 +234,7 @@ body {
     width: 100%;
 }
 
-.Grow-sq{
+.Grow-sq {
     width: 99.4%;
     height: 45%;
     position: absolute;
@@ -241,7 +246,7 @@ body {
     // background-color: rgba(255, 127, 80, 0.479);
 }
 
-.Grow-sq img{
+.Grow-sq img {
     width: 6%;
     height: 76%;
     margin: 0 0.3%;
@@ -250,15 +255,16 @@ body {
 
 
 //---remove
-.remove{
+.remove {
     display: none;
 }
-.show{
+
+.show {
     display: block;
 }
 
 //---teach
-.close{
+.close {
     position: fixed;
     width: 4%;
     top: 5%;
@@ -267,11 +273,11 @@ body {
     z-index: 100;
 }
 
-.close img{
+.close img {
     width: 100%;
 }
 
-.teach{
+.teach {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -280,7 +286,7 @@ body {
     z-index: 100;
 }
 
-.teach .teach-bg{
+.teach .teach-bg {
     width: 100%;
     margin-top: 32%;
     transform: translateY(-50%);
@@ -288,7 +294,7 @@ body {
 
 //teach fish
 
-.touch-fish{
+.touch-fish {
     width: 18%;
     position: absolute;
     top: 30%;
@@ -301,7 +307,7 @@ body {
 
 //---teach group
 
-.teach-growp-wrap{
+.teach-growp-wrap {
     width: 40%;
     position: relative;
     bottom: 86%;
@@ -312,11 +318,11 @@ body {
     // background-color: rgba(238, 232, 170, 0.712);
 }
 
-.GrowUp_1{
+.GrowUp_1 {
     width: 100%;
 }
 
-.teach-sq-wrap{
+.teach-sq-wrap {
     width: 100%;
     height: 44%;
     position: absolute;
@@ -327,7 +333,7 @@ body {
     // background-color: rgba(251, 2, 2, 0.712);
 }
 
-.teach-sq{
+.teach-sq {
     width: 6.4%;
     height: 91%;
     position: absolute;
@@ -340,13 +346,13 @@ body {
     // background-color: rgba(255, 166, 0, 0.493);
 }
 
-.teach-sq img{
+.teach-sq img {
     width: 100%;
 }
 
 //teach dino
 
-.dino{
+.dino {
     width: 41%;
     position: absolute;
     top: 18%;
@@ -367,27 +373,28 @@ body {
 }
 
 @keyframes sq {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
 
 @keyframes dino {
-    to{
+    to {
         width: 42%;
     }
 }
 
-.closeAnimation{
+.closeAnimation {
     animation: close 0.3s forwards;
 }
 
-@keyframes close{
-    to{
-      transform: scale(0);
+@keyframes close {
+    to {
+        transform: scale(0);
     }
 }
 
@@ -401,7 +408,7 @@ body {
     }
 
     .SeaweedL {
-        width: 35%;      
+        width: 35%;
         left: -6%;
         bottom: -35%;
     }
@@ -413,35 +420,35 @@ body {
     }
 
     .GrowUp {
-        width: 43%;  
+        width: 43%;
     }
 
-    .Grow-sq{
+    .Grow-sq {
         bottom: 2.2%;
     }
 
-    .teach .teach-bg{
+    .teach .teach-bg {
         margin-top: 40%;
         transform: translateY(-50%);
     }
 
-    .touch-fish{
+    .touch-fish {
         top: 34%;
         left: 23%;
     }
 
-    .teach-growp-wrap{
+    .teach-growp-wrap {
         width: 55%;
         bottom: 63%;
         left: 55%;
     }
 
-    .dino{
+    .dino {
         top: 26%;
         right: 15%;
     }
-    
-    .close{
+
+    .close {
         width: 6%;
         top: 6%;
         right: 6%;
@@ -460,7 +467,7 @@ body {
     }
 
     .SeaweedL {
-        width: 26%;      
+        width: 26%;
         left: -4%;
         bottom: -20%;
     }
@@ -472,38 +479,38 @@ body {
         top: -44%;
         left: 73%;
     }
-    
+
     .GrowUp {
         width: 33%;
     }
 
-    .Grow-sq{
+    .Grow-sq {
         bottom: 4%;
     }
 
-    .teach .teach-bg{
+    .teach .teach-bg {
         margin-top: 28%;
         transform: translateY(-50%);
     }
 
-    .touch-fish{
+    .touch-fish {
         width: 16%;
         top: 30%;
         left: 23%;
     }
 
-    .teach-growp-wrap{
+    .teach-growp-wrap {
         width: 39%;
         bottom: 108%;
         left: 48%;
     }
 
-    .dino{
+    .dino {
         top: 16%;
         right: 15%;
     }
 
-    .close{
+    .close {
         width: 5%;
         top: 5%;
         right: 4%;
@@ -516,6 +523,21 @@ body {
             width: 17%;
         }
     }
-    
-    
+}
+
+//小測驗
+.litTest{
+    width: 85%;
+    height: 80vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -72%;
+    z-index: 101;
+    border-radius: 80px;
+    background-color: rgba(0, 0, 0, 0.445);
+}
+
+.litTest h2{
+    font-size: 42px;
 }

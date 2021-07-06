@@ -110,6 +110,11 @@ function add(){
         console.log(Grow.children[j]);
 }
 
+
+
+
+
+
 window.onload = init;
 
 
