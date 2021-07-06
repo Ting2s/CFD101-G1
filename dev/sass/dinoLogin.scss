@@ -13,6 +13,11 @@ button{
 cursor: pointer;
 color: $brown;
 font-family:'DFPLiYuan';
+
+transition: all .5s ease-in-out;;
+&:hover{
+  transform: scale(.9);
+}
 }
 
 
