@@ -27,14 +27,28 @@
 
       </div>
 
-      <div class="perBox">
+      <div class="perBox" id="perBox">
 
         <!-- 左側個人頭像區 -->
         <div class="perPhoto">
           <h1>會員中心</h1>
           <!-- 頭貼框 -->
           <div class="perFrame">
-            <img src="images/dinoPersonal/photoSticker.jpg" alt="">
+            <div class="hat_frame">
+
+              <img src="images/dinoPersonal/prod1.png">
+
+            </div>
+            <div class="ticket_frame">
+
+              <img src="images/dinoPersonal/prod2.png">
+            </div>
+
+            <div class="back_frame">
+
+              <img src="images/dinoPersonal/prod4.png" alt="">
+            </div>
+            <img src="images/dinoPersonal/d1.png" alt="">
             <h3>龍春暉</h3>
           </div>
         </div>
@@ -69,12 +83,13 @@
 
 
             <!-- 欄位 -->
-            <div class="dinoCon">
+
+
+
+            <!-- -----我的恐龍----- -->
+            <div class="dinoCon" id="dinoCon_my">
               <!-- 選頁按鈕 -->
               @@include('layout/dinoMem_pageBar.html')
-
-
-              <!-- -----我的恐龍----- -->
               <!-- 欄位格子 -->
               <div class="dino" id="dino">
                 <ul>
@@ -101,13 +116,17 @@
                   </li>
                 </ul>
               </div>
+            </div>
 
 
-              <!-- -----我的恐龍配件----- -->
-              <div class="dinoAcc none" id="dinoAcc">
+            <!-- -----我的恐龍配件----- -->
+            <div class="dinoCon none" id="dinoCon_acc">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <div class="dinoAcc" id="dinoAcc">
                 <ul>
-                  <li class="hat">
-                    <img src="images/dinoPersonal/prod1.png" alt="">
+                  <li class="hat" @click="choose">
+                    <img src="images/dinoPersonal/prod1.png">
                   </li>
 
                   <li class="ring">
@@ -163,6 +182,7 @@
 
 
   <!-- js -->
+
   <script src="js/dinoMem.js"></script>
   <script src="js/dinoMem_myDino.js"></script>
 

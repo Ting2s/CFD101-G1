@@ -1,3 +1,43 @@
+//=====================================
+//更換頁碼
+let pageBar = new Vue({
+
+  el: '#perBox',
+  data: {
+    all: 3, //總頁數
+    cur: 1,//當前頁碼
+    
+  },
+  methods: {
+    //選擇商品
+    choose: function () {
+      
+    }
+  },
+
+  computed: {
+    // 顯示最後一頁
+    showLast: function () {
+      if (this.cur >= this.all) {
+        return false;
+      }
+      return true
+    },
+    
+    // 顯示第一頁
+    showFirst: function () {
+      if (this.cur > 1) {
+        return true
+      }
+      return false;
+    },
+  },
+
+  }); 
+  
+  //-------------------------------------
+
+
 // 展開大圖
 let openModel = function (e) {
 
@@ -36,50 +76,24 @@ let deleteCard = function () {
 
     deleteTable.style.display = 'none';
     alert("成功刪除！");
-    e.stopPropagation(); 
   })
+
 
 
 let dele_close= document.getElementById('dele_close');
   dele_close.addEventListener("click", function (){
   deleteTable.style.display="none";
-  })
+  },false)
   
   let cancelBtn= document.getElementById('cancelBtn');
   cancelBtn.addEventListener("click", function (){
   deleteTable.style.display="none";
-  })
+  },false)
   
 }
 
-//=====================================
-//更換頁碼
-let pageBar = new Vue({
+// window.addEventListener("load", function () {
+//   deleteCard
+// })
 
-  el: '.dinoChoose',
-  data: {
-    all: 5, //總頁數
-    cur: 1,//當前頁碼
-  },
-
-
-  computed: {
-    // 顯示最後一頁
-    showLast: function () {
-      if (this.cur >= this.all) {
-        return false;
-      }
-      return true
-    },
-    
-    // 顯示第一頁
-    showFirst: function () {
-      if (this.cur > 1) {
-        return true
-      }
-      return false;
-    },
-  }, 
-  }); 
-  
   
