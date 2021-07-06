@@ -253,16 +253,6 @@ body {
     display: none;
 }
 
-
-//---remove
-.remove {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
 //---teach
 .close {
     position: fixed;
@@ -330,7 +320,7 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    // background-color: rgba(251, 2, 2, 0.712);
+    background-color: rgba(251, 2, 2, 0.712);
 }
 
 .teach-sq {
@@ -343,7 +333,7 @@ body {
     animation: sq 0.7s infinite;
     animation-direction: alternate;
     animation-delay: 3s;
-    // background-color: rgba(255, 166, 0, 0.493);
+    background-color: rgba(255, 166, 0, 0.493);
 }
 
 .teach-sq img {
@@ -525,19 +515,91 @@ body {
     }
 }
 
-//小測驗
-.litTest{
+//小測驗1
+.litTest_1{
     width: 85%;
     height: 80vh;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     top: -72%;
+    margin: auto;
     z-index: 101;
     border-radius: 80px;
-    background-color: rgba(0, 0, 0, 0.445);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.527);
 }
 
-.litTest h2{
-    font-size: 42px;
+.litTest_1 h1, .choose{
+    font-size: 45px;
+    font-family: 'DFPLiYuan';
+    letter-spacing: 10px;
+    color: #ffdc7d;;
 }
+
+.choose{
+    color: white;
+    cursor: pointer;
+}
+
+//小測驗2
+.litTest_2{
+    width: 85%;
+    height: 80vh;
+    position: relative;
+    top: -72%;
+    margin: auto;
+    z-index: 101;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+
+.litTest_2 h1, .choose{
+    font-size: 45px;
+    font-family: 'DFPLiYuan';
+    letter-spacing: 10px;
+    color: #ffdc7d;;
+}
+
+.choose{
+    color: white;
+    cursor: pointer;
+}
+
+
+//--------------------------------
+
+.right{
+    color: rgb(0, 255, 0);
+}
+.er{
+    color: rgb(255, 70, 70);
+}
+
+.teach_close{
+    position: absolute;
+    width: 4%;
+    top: 5%;
+    right: 7%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.teach_close img{
+    width: 100%;
+}
+
+//---remove
+.remove {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
