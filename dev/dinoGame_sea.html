@@ -13,10 +13,33 @@
 <body>
     @@include('layout/header.html')
 
+    <div class="teach" id="teach">
+        <!-- close -->
+        <button class="close" id="close">
+            <img src="./images/dinoGame/close.png" alt="">
+        </button>
+
+        <!-- Step1 -->
+        <img class="teach-bg" src="./images/dinoGame/teach.png" alt="">
+        <img class="touch-fish" src="./images/dinoGame/touch-fish.png" alt="">
+        <img class="dino" src="./images/dinoGame/dino-teach.png" alt="">
+
+        <!-- Step2 -->
+        <div class="teach-growp-wrap">
+            <img class="GrowUp_1" src="./images/dinoGame/GrowUp_1.png" alt="">
+            <div class="teach-sq-wrap">
+                <div class="teach-sq">
+                    <img src="./images/dinoGame/GrowUp_sq.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
     <div class="GameRange">
-        <div class="dino-sea1">
-            <img src="./images/dinoGame/dino-sea1.png" alt="">
+        <div class="dino-sea1" id="dino">
+            <img id="dinopic" src="./images/dinoGame/dino-sea1.png" alt="">
         </div>
         <!-- -------fish -->
         <div class="Fish-1" id="Fish-1">
@@ -81,8 +104,9 @@
         <p class="choose" id="N">劍龍</p>
         <p class="choose" id="N_1">翼手龍</p>
     </div>
-     <!-- 小測驗2 -->
-     <div class="litTest_2 remove" id="litTest_2">
+
+    <!-- 小測驗2 -->
+    <div class="litTest_2 remove" id="litTest_2">
         <button class="teach_close remove" id="teach_close_1">
             <img src="./images/dinoGame/close.png" alt="">
         </button>
