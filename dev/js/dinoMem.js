@@ -67,19 +67,19 @@ let openModel = function (e) {
     //}
   //}
 //刪除明信片
-let deleteCard = function () {
+let deleteCard = function (e) {
   let deleteTable = document.getElementById('deleteTable');
   deleteTable.style.display = 'block';
 
   let deleteBtn= document.getElementById('deleteBtn');
-  deleteBtn.addEventListener("click", function (){
+  deleteBtn.addEventListener("click", function () {
 
     deleteTable.style.display = 'none';
     alert("成功刪除！");
+    detachEvent();
   })
-
-
-
+  
+  
 let dele_close= document.getElementById('dele_close');
   dele_close.addEventListener("click", function (){
   deleteTable.style.display="none";

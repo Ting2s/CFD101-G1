@@ -190,7 +190,7 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
 
 
 .scoreBox{
-  padding-top: 40px;
+  padding-top: 30px;
 }
   .scoreTitle {
     margin: auto;
@@ -208,9 +208,8 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
     }
 
 .scoreBoard p{
-  text-align: left;
+  text-align: center;
   color:$yellow-second;
-  padding-left: 220px;
   margin: 30px 55px 0;
 }
 .score{

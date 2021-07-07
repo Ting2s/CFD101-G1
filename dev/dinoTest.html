@@ -25,7 +25,7 @@
 
 
   <main>
-    <div class="testWrapper">
+    <div class="testWrapper" id="app">
 
       <!-- 有白板區 -->
       <div class="whiteBoard" id="whiteBoard">
@@ -127,8 +127,10 @@
           <p>嘿！你答對了……</p>
 
           <div class="score">
-            <span>7</span>/7題
-            <span class="comment">你真是個天才！</span>
+            <span>{{score}}</span>/7題
+            <span class="comment" v-model="comment">
+              {{comment}}
+            </span>
           </div>
 
           <div class="scoreBtn">

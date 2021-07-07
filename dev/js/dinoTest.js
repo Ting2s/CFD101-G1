@@ -17,18 +17,34 @@
 //==================================================
 let judge = new Vue({
 
-  el:('#testContent_Q'),
+  el:('#app'),
   data: {
     question:"全世界最重的恐龍大約重達幾公噸？",
     isRight: true,
     isShow: false,
     isActive: false,
+    //分數===========
+    
+    score: "7",
+    comment_A: "你真是個天才！",
+    comment_B: "你真厲害！",
+    comment_C: "再加油！",
   },
   methods: {
     choose: function (index) {
       this.isShow = true;
       this.isActive=true;
     },
+
+    comment: function () {
+      if (this.score === 7) {
+        return this.comment_A;
+      } else if (this.score >= 4) {
+        return this.comment_B;
+      } else {
+        return this.comment_C;
+      }
+    }
 
   }
 })

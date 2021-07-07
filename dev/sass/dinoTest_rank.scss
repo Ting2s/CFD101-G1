@@ -23,6 +23,7 @@ button{
 //==================================
 
 .rankWrapper{
+width: 100vw;
 height: 100vh;   
 margin: auto;
 
@@ -34,13 +35,11 @@ background-repeat: no-repeat;
 
 .rankInWrap{
 margin: auto;
-padding: 20px;
-  max-width: 1040px;
 }
 .rankBox{ 
   margin: auto;
   padding-top: 40px;
-  width: 65%;
+  width: 600px;
   background: url(../../dev/images/dinoPersonal/cardBoard_h.png) no-repeat center center;
   background-size: contain;
   }
@@ -61,7 +60,7 @@ padding: 20px;
 
   .rankContent{ 
     margin: 20px auto;
-    padding: 10px 5px;
+    padding: 5px;
     width: 65%;
     border-radius: 7%;
     background-color: #562c2c;
@@ -97,7 +96,7 @@ padding: 20px;
     animation:  slidein 1.2s;
   }
   .rankContent li:nth-child(5){
-    animation: slidein 1.6s;
+    animation: slidein 1.5s;
   }
 
 
@@ -174,7 +173,6 @@ padding: 20px;
 
 
     button{
-      margin: initial;
       width: 180px;
       height: 70px;
       line-height:70px;
@@ -219,13 +217,13 @@ padding: 20px;
 //==================================
 @keyframes slidein {
   from {
-    padding-left:  100%;
-    width: 300%;
+    padding-left: 100%;
+
   }
 
   to {
     padding-left: 0%;
-    width: 100%;
+
   }
 }
 //==================================
