@@ -180,28 +180,23 @@ p{
 }
 //============================================
 //身上配件
+
 .perFrame .hat_frame img{
   position: absolute; 
-  left: 100px; 
-  bottom: 250px; 
   width: 70px;
 }
 
 .perFrame .ticket_frame img{
   position: absolute; 
-  left: 180px; 
-  bottom: 250px; 
   width: 70px;
 }
 
 .perFrame .back_frame img{
   position: absolute; 
-  left: 280px; 
-  bottom: 250px; 
   width: 70px;
- 
 }
 
 .ticket_frame,.hat_frame,.back_frame{
 display: none; 
+cursor: pointer;
 }

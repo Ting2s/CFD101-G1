@@ -9,6 +9,9 @@
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
 
+  <!-- gsap -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
   <!-- vue -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
@@ -51,61 +54,65 @@
           <div class="restartPlay">
             <button>重新開始</button>
           </div>
-          <!-- 題目 -->
-          <h3 class="qusTitle">
-            Q1 . {{question}}
-          </h3>
 
-          <!-- 題目選項 -->
-          <div class="choose">
-            <div class="buttonBox">
-              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                A.30噸
-              </button>
+          <!-- 題目內容 -->
+          <div class="testCenter">
+            <!-- 題目 -->
+            <h3 class="qusTitle" v-for="(question,index) in questions">
+              Q {{index+1}} . {{question.q}}
+            </h3>
 
-              <!-- 判決對錯 -->
-              <div class="judge" v-show="isShow">
-                <img v-if="isRight" src="images/dinoTest/pic/x.png">
-                <img v-else src="images/dinoTest/pic/right.png">
+            <!-- 題目選項 -->
+            <div class="choose">
+              <div class="buttonBox">
+                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                  A.30噸
+                </button>
 
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <img v-if="isRight" src="images/dinoTest/pic/x.png">
+                  <img v-else src="images/dinoTest/pic/right.png">
+
+                </div>
               </div>
-            </div>
 
-            <div class="buttonBox">
-              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                B.50噸
-              </button>
-              <!-- 判決對錯 -->
-              <div class="judge" v-show="isShow">
-                <img v-if="isRight" src="images/dinoTest/pic/x.png">
-                <img v-else src="images/dinoTest/pic/right.png">
+              <div class="buttonBox">
+                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                  B.50噸
+                </button>
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <img v-if="isRight" src="images/dinoTest/pic/x.png">
+                  <img v-else src="images/dinoTest/pic/right.png">
 
+                </div>
               </div>
-            </div>
 
-            <div class="buttonBox">
-              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                C.70噸
-              </button>
-              <!-- 判決對錯 -->
-              <div class="judge" v-show="isShow">
-                <img v-if="isRight" src="images/dinoTest/pic/right.png">
-                <img v-else src="images/dinoTest/pic/x.png">
+              <div class="buttonBox">
+                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                  C.70噸
+                </button>
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <img v-if="isRight" src="images/dinoTest/pic/right.png">
+                  <img v-else src="images/dinoTest/pic/x.png">
+                </div>
               </div>
-            </div>
 
-            <div class="buttonBox">
-              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                D.100噸
-              </button>
-              <!-- 判決對錯 -->
-              <div class="judge" v-show="isShow">
-                <img v-if="isRight" src="images/dinoTest/pic/x.png">
-                <img v-else src="images/dinoTest/pic/right.png">
+              <div class="buttonBox">
+                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                  D.100噸
+                </button>
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <img v-if="isRight" src="images/dinoTest/pic/x.png">
+                  <img v-else src="images/dinoTest/pic/right.png">
 
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
 
           <!-- 去下一題 -->
@@ -128,8 +135,8 @@
 
           <div class="score">
             <span>{{score}}</span>/7題
-            <span class="comment" v-model="comment">
-              {{comment}}
+            <span class="comment">
+              {{comment()}}
             </span>
           </div>
 
@@ -151,6 +158,7 @@
 
   <!-- js -->
   <script src="../js/dinoTest.js"></script>
+
 
 </body>
 

@@ -1,15 +1,17 @@
-let rank = new Vue({
+// let rank = new Vue({
 
-  el: "#rank",
-  data: {
+//   el: "#rank",
+//   data: {
     
     
-  },
+//   },
   
-  methods: {
+//   methods: {
     
-  },
+//   },
  
 
 
-})
+// })
+
+

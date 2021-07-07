@@ -10,6 +10,10 @@
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
 
+  <!-- jq -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
   <!-- vue -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
@@ -33,23 +37,27 @@
         <div class="perPhoto">
           <h1>會員中心</h1>
           <!-- 頭貼框 -->
-          <div class="perFrame">
-            <div class="hat_frame">
+          <div class="perFrame" id="perFrame">
 
-              <img src="images/dinoPersonal/prod1.png">
+            <div class="hat_frame" id="hat_frame">
+
+              <img src="images/dinoPersonal/prod1.png" id="myHat" class="draggable ui-widget-content">
 
             </div>
-            <div class="ticket_frame">
+            <div class="ticket_frame" id="ticket_frame">
 
-              <img src="images/dinoPersonal/prod2.png">
+              <img src="images/dinoPersonal/prod2.png" id="myTicket" class="draggable ui-widget-content">
             </div>
 
-            <div class="back_frame">
+            <div class="back_frame" id="back_frame">
 
-              <img src="images/dinoPersonal/prod4.png" alt="">
+              <img src="images/dinoPersonal/prod4.png" alt="" id="myBack" class="draggable ui-widget-content">
             </div>
-            <img src="images/dinoPersonal/d1.png" alt="">
+
+
+            <img src="images/dinoPersonal/d1.png" alt="" id="facePhoto">
             <h3>龍春暉</h3>
+
           </div>
         </div>
 
@@ -74,7 +82,7 @@
 
 
               <!-- 我的恐龍 -->
-              <p id="dino_p">點擊後可以查看恐龍資料哦！</p>
+              <p id="dino_p">點擊後可以查看恐龍哦！</p>
               <!-- 我的恐龍配件 -->
               <p id="dinoAcc_p" class="none">點擊後就能給擁有的恐龍更換哦！</p>
             </div>
@@ -92,29 +100,84 @@
               @@include('layout/dinoMem_pageBar.html')
               <!-- 欄位格子 -->
               <div class="dino" id="dino">
-                <ul>
-                  <li class="ocean">
-                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
 
-                    <input type="button" value="龍春暉">
+                <div class="mydino_p1">
+                  <ul>
+                    <li class="ocean">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
 
-
-                  </li>
-
-                  <li class="ground">
-                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                    <input type="button" value="龍春暉">
+                      <input type="button" value="龍春暉">
 
 
-                  </li>
+                    </li>
+
+                    <li class="ground">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                      <input type="button" value="龍春暉">
 
 
-                  <li class="sky">
-                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                    <input type="button" value="龍春暉">
+                    </li>
 
-                  </li>
-                </ul>
+
+                    <li class="sky">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                      <input type="button" value="龍春暉">
+
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mydino_p2 none">
+                  <ul>
+                    <li class="ocean">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
+
+                      <input type="button" value="龍春暉">
+
+
+                    </li>
+
+                    <li class="ground">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                      <input type="button" value="龍春暉">
+
+
+                    </li>
+
+
+                    <li class="sky">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                      <input type="button" value="龍春暉">
+
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mydino_p3 none">
+                  <ul>
+                    <li class="ocean">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
+
+                      <input type="button" value="龍春暉">
+
+
+                    </li>
+
+                    <li class="ground">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                      <input type="button" value="龍春暉">
+
+
+                    </li>
+
+
+                    <li class="sky">
+                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
+                      <input type="button" value="龍春暉">
+
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -124,9 +187,10 @@
               <!-- 選頁按鈕 -->
               @@include('layout/dinoMem_pageBar.html')
               <div class="dinoAcc" id="dinoAcc">
+                <!-- 一頁 -->
                 <ul>
-                  <li class="hat" @click="choose">
-                    <img src="images/dinoPersonal/prod1.png">
+                  <li class="hat">
+                    <img src="images/dinoPersonal/prod1.png" onclick="myHat(this)">
                   </li>
 
                   <li class="ring">
@@ -182,6 +246,9 @@
 
 
   <!-- js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+
 
   <script src="js/dinoMem.js"></script>
   <script src="js/dinoMem_myDino.js"></script>

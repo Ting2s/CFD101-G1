@@ -41,9 +41,9 @@ let pageBar = new Vue({
 // 展開大圖
 let openModel = function (e) {
 
-  let modal = document.getElementById("myModal_1");
-  let modalImg = document.getElementById("img01");
-  let captionText = document.getElementById("caption_1");
+let modal = document.getElementById("myModal_1");
+let modalImg = document.getElementById("img01");
+let captionText = document.getElementById("caption_1");
   
     modal.style.display = "block";
     modalImg.src = e.src;
@@ -73,9 +73,8 @@ let deleteCard = function (e) {
 
   let deleteBtn= document.getElementById('deleteBtn');
   deleteBtn.addEventListener("click", function () {
-
-    deleteTable.style.display = 'none';
     alert("成功刪除！");
+    deleteTable.style.display = 'none';
     detachEvent();
   })
   

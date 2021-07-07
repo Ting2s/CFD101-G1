@@ -29,4 +29,32 @@ dino_btn.addEventListener("click", function () {
   document.getElementById("dinoAcc_btn").classList.remove("active");
 })
 
+//-----------------------------------
+// 替代圖片
 
+// 帽子拖曳
+function myHat(e) {
+  document.getElementById("myHat").src = e.target.src;
+  document.getElementById("hat_frame").style.display = "block";
+}
+$(function () {
+  $("#hat_frame").draggable({ containment: ".perFrame", scroll: false });
+});
+
+// 紋身拖曳
+function myTicket(e) {
+  document.getElementById("myTicket").src = e.target.src;
+  document.getElementById("ticket_frame").style.display = "block";
+}
+$(function () {
+  $("#ticket_frame").draggable({ containment: ".perFrame", scroll: false });
+});
+
+// 背景拖曳
+function myBack(e) {
+  document.getElementById("myBack").src = e.target.src;
+  document.getElementById("back_frame").style.display = "block";
+}
+$(function () {
+  $("#back_frame").draggable({ containment: ".perFrame", scroll: false });
+});

@@ -19,7 +19,10 @@ let judge = new Vue({
 
   el:('#app'),
   data: {
-    question:"全世界最重的恐龍大約重達幾公噸？",
+    questions: [
+      { q:"全世界最重的恐龍大約重達幾公噸？"}
+    
+    ],
     isRight: true,
     isShow: false,
     isActive: false,
@@ -37,9 +40,9 @@ let judge = new Vue({
     },
 
     comment: function () {
-      if (this.score === 7) {
+      if (this.score == 7) {
         return this.comment_A;
-      } else if (this.score >= 4) {
+      } else if (this.score >= 4 && this.score<7) {
         return this.comment_B;
       } else {
         return this.comment_C;

@@ -9,6 +9,8 @@
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
 
+  <!-- gsap -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 
   <!-- vue -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -59,7 +61,7 @@
               </li>
 
 
-              <li>
+              <li class="rankLi">
                 <div class="rankNum rankGold">
                   2
                 </div>
@@ -80,7 +82,7 @@
                 </div>
               </li>
 
-              <li>
+              <li class="rankLi">
                 <div class="rankNum rankSili">
                   3
                 </div>
@@ -101,7 +103,7 @@
                 </div>
               </li>
 
-              <li>
+              <li class="rankLi">
                 <div class="rankNum rankSili">
                   4
                 </div>
@@ -122,7 +124,7 @@
                 </div>
               </li>
 
-              <li>
+              <li class="rankLi">
                 <div class="rankNum rankSili">
                   5
                 </div>
@@ -176,6 +178,20 @@
 
   <!-- js -->
   <script src="../dev/js/dinoTest_rank.js"></script>
+
+  <script>
+    TweenMax.staggerFrom(".rankContent", .5,
+      {
+        top: 100,
+        opacity: 0.5,
+        delay: .2,
+        ease: Power2.easeOut,
+        rotation: 180
+      }, 0.3);
+
+    TweenMax.staggerFrom(".rankLi", .5, { top: 100, opacity: 0, delay: 1, ease: Back.easeOut }, 0.3);
+  </script>
+
 </body>
 
 </html>

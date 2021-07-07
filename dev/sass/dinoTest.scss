@@ -99,7 +99,14 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
   background-size: contain;
   text-align: center;
   font-size: ($font-h4)-5px;
+
+  animation: bounce .5s infinite alternate;
+  
 }
+
+@keyframes bounce{
+  from{transform:translateY(10px)}
+  to{transform:translateY(-10px)}}
 
 
 //測驗畫面==================================
@@ -266,3 +273,5 @@ img{
   width: 30px;
 }
 }
+
+//================================

@@ -86,19 +86,6 @@ margin: auto;
     }
   }
 
-  .rankContent li:nth-child(2){
-    animation: slidein .3s;
-  }
-  .rankContent li:nth-child(3){
-    animation:  slidein .8s;
-  }
-  .rankContent li:nth-child(4){
-    animation:  slidein 1.2s;
-  }
-  .rankContent li:nth-child(5){
-    animation: slidein 1.5s;
-  }
-
 
   .rankContent li:first-child:before{
     display: none;
@@ -215,17 +202,7 @@ margin: auto;
   }
 }
 //==================================
-@keyframes slidein {
-  from {
-    padding-left: 100%;
 
-  }
-
-  to {
-    padding-left: 0%;
-
-  }
-}
 //==================================
 @media screen and (max-width: 414px) {
 
