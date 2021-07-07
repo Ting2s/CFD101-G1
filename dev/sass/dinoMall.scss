@@ -56,9 +56,9 @@ body {
                         .btnSelect{
                                   @include rect(22%,null);
                                   @include fontSz($font-h4,$font-bold);
+                                  @include colorBgcolor($white,null);
                                   margin: 20px 10px;
                                   background: url('#{$pathMall}/goldWood.png') no-repeat center center / contain;
-                                  color:$white;
                                   padding: 20px 0 25px;
                                   transition: all .7s ease-in-out;
                                   &:hover{
@@ -90,7 +90,7 @@ body {
                               text-align  : center; 
                                     h3{
                                     @include fontSz($font-h3,null);
-                                    color      : $yellow-second;
+                                    @include colorBgcolor($yellow-second,null);
                                     }                
                               }
                         .cart{
@@ -99,15 +99,13 @@ body {
                                     p{
                                           @include posiTion(absolute,10%,null){
                                                 right:10%;
-                                                background-color: rgb(250, 3, 3);
-                                                color:$white;
-                                                padding: 5px;
-                                                border-radius: 50%;
+                                                @include colorBgcolor($white,$red);
+                                                @include pdMargin(5px,null);                                               
                                                 @include fontSz($font-base,$font-bold);
+                                                border-radius: 50%;
                                           }
                                     }
                                     img{
-                                          // @include  posiTion(relative,null,null);
                                           @include rect(100%,null);
                                           cursor: pointer;
                                     }                  
@@ -120,8 +118,8 @@ body {
                             }
                     span{
                             @include fontSz($font-h4,$font-bold);
+                            @include colorBgcolor($brown,null);
                             vertical-align: 12px;
-                            color         : $brown;                          
                         }
                     .nextPage{
                               @include rect(50px,50px);
@@ -169,20 +167,20 @@ body {
       .modal-wrap{
             @include posiTion(relative,20%,null);  
             @include rect(50%,null){
-                  @include pdMargin(20px,null);
-                  background-color:$white;
+                  @include pdMargin(33px,null);
+                  @include colorBgcolor(null,$white);
                   border-radius: 4px;
                   text-align: center;
             };
             .close-a{
                   @include posiTion(absolute,14px,null){
-                        @include fontSz($font-h4,$font-bold);
+                        @include fontSz($font-h4,$font-bold);                        
+                        @include colorBgcolor($gray_Mall,null);
                         right:14px;
-                        color:$gray_Mall;
                         cursor: pointer;
                   };
                   &:hover{
-                        color: $black;
+                        @include colorBgcolor($black,null);
                         cursor: pointer;
                   }
             }
@@ -204,7 +202,7 @@ body {
                               @include fontSz(30px,null);
                         }
                         &:hover{
-                              color:$yellow-first ;
+                              @include colorBgcolor($yellow-first,null);
                               transform:translateY(-10px);
                         }
                   }          
@@ -229,8 +227,8 @@ body {
       .modal-content{
                   @include posiTion(relative,null,null);  
                   @include rect(500px,300px){
-                        @include pdMargin(20px,null);      
-                        background-color:$white;
+                        @include pdMargin(20px,null);
+                        @include colorBgcolor(null,$white);      
                         border-radius: 4px;
                         text-align: center;
                   };
@@ -238,31 +236,23 @@ body {
                         @include posiTion(absolute,14px,null){
                               @include fontSz($font-h4,$font-bold);
                               right:14px;
-                              color:$gray_Mall;
+                              @include colorBgcolor($gray_Mall,null);
                               cursor: pointer;
                         };
                         &:hover{
-                              color: $black;
+                              @include colorBgcolor($black,null);
                               cursor: pointer;
                         }
                   }
+                  img{
+                     @include rect(150px,150px);
+                     margin-top: 20px;
+                  }
                   h3{
                      @include fontSz($font-h3,null);
-                     @include pdMargin(null,15px){
-                                    color      : $yellow-second;
-                                     };      
-                  }
-                  span{
-                        @include fontSz($font-h4,$font-bold);
-                  }
-                  form{
-                        input{
-                              @include rect(30%,null);
-                              display: block;
-                              margin: 15px auto;
-                        }
-                  } 
-      
+                     @include pdMargin(null,15px);
+                     @include colorBgcolor($yellow-second,null);
+                  }                                      
       }
 }
 
