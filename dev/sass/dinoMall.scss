@@ -5,8 +5,8 @@
 
 body {
   background-color: rgb(143, 213, 223);
-  overflow-y: hidden;
   font-family:'DFPLiYuan';
+  //   overflow-y: hidden;
 }
 
 .none{
@@ -20,9 +20,9 @@ body {
       }; 
       @include d-flex(grid){
             grid-template-columns: 1fr 1fr;
-            align-items: center;
+            // align-items: center;
             margin: auto;
-            padding-top: 5%;  // *****版面
+            padding-top: 7%;  // *****版面
       };   
 }
 
@@ -80,8 +80,10 @@ body {
         .groundImgCard{
               text-align    : center;
               padding-bottom: 14%;
+              align-items: center;
               .groundTitle{
                         @include d-flex();
+                        align-items: center;
                         margin-left    : 10%;              
                         .title{
                               background  : url('#{$pathMall}/woodBlank.png') no-repeat center center / contain;
@@ -274,3 +276,24 @@ body {
             transform: translateX(0);
       }
 }
+
+@media screen and (max-width: 992px){
+      .wrapMall{
+            grid-template-columns:1fr;
+            margin: 20% auto;            
+      }
+      .itemLeft{
+            margin-bottom: 20%;
+      }
+      #counter{
+            font-size:14px;
+            padding: 4px;
+            top:2%;    
+      }
+}
+@media screen and (max-width: 768px){
+      .groundTitle {
+            // align-items: center;
+      }
+  }
+  
