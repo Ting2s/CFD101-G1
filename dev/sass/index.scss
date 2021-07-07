@@ -80,7 +80,7 @@ body .section .box .cloud-r{
 }
 /* 海洋場景S2 */
 // 動態文字:中段介紹
-.ml9 {
+.slogan {
   position: absolute;
   top: 300px;
   left: 390px;
@@ -89,7 +89,7 @@ body .section .box .cloud-r{
   z-index: 10;
 }
 
-.ml9 .text-wrapper {
+.slogan .text-wrapper {
   position: relative;
   display: inline-block;
   padding-top: 0.2em;
@@ -98,7 +98,7 @@ body .section .box .cloud-r{
   overflow: hidden;
 }
 
-.ml9 .letter {
+.slogan .letter {
   transform-origin: 50% 100%;
   display: inline-block;
   line-height: 1em;
