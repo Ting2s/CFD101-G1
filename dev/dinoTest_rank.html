@@ -10,6 +10,9 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
 
 
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
   <!-- css -->
   @@include('layout/style.html')
   <link rel="stylesheet" href="css/dinoTest_rank.css">
@@ -32,7 +35,7 @@
 
 
           <!-- 排行榜內容 -->
-          <div class="rankContent">
+          <div class="rankContent" id="rank">
             <ul>
               <li class="rankLi">
                 <div class="rankNum rankGold">
@@ -172,7 +175,7 @@
 
 
   <!-- js -->
-  <script src="../dev/js/dinoTest.js"></script>
+  <script src="../dev/js/dinoTest_rank.js"></script>
 </body>
 
 </html>
