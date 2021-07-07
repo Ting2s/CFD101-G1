@@ -116,6 +116,7 @@
       // <!-- CART CART CART -->
       // <!-- CART CART CART -->
       function showCart(){
+        console.log("12345");
         // getId("bgColor").style.display='block';
         getId("bgColor").classList.toggle(`show`);
       };
@@ -303,7 +304,8 @@
       // <!-- CART CART CART -->
 
       // showCart
-      const cart = document.getElementsByClassName('cart')[0];
+      // const cart = document.getElementsByClassName('cart')[0];
+      const cart = document.getElementById('cart');
       cart.onclick = showCart;  
       let  btnCloseCart= getId("closeCart"); 
       btnCloseCart.onclick = closesShoppingCart;
