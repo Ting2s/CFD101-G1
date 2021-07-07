@@ -1,3 +1,5 @@
+// const { get } = require("browser-sync");
+
     function getId(id){
       return document.getElementById(id);
     };  
@@ -116,7 +118,7 @@
       // <!-- CART CART CART -->
       // <!-- CART CART CART -->
       function showCart(){
-        console.log("12345");
+        // console.log("12345");
         // getId("bgColor").style.display='block';
         getId("bgColor").classList.toggle(`show`);
       };
@@ -180,9 +182,10 @@
       };
 
       // add item
-      let count =0;
+      // let count =0;
       function addToCartClicked(e) {
         // count
+        let count =0;
         count++;
         const counter = getId('counter');
         counter.innerText = count;
@@ -235,13 +238,20 @@
       // purchase
       function purchaseClicked() {
         alert('購買成功!!!');
-        let cartItems = document.getElementsByClassName('cart-items')[0];
+        // getId('counter').innerText = 0 ; // 清空
+        const counter = getId('counter');
+
+        let cartItems = document.getElementsByClassName('cart-items')[0];        
         while (cartItems.hasChildNodes()) {
             cartItems.removeChild(cartItems.firstChild);
             // cartItems.removeChild(cartItems.childNodes[0]);
+            counter.innerText = 0 ; // 清空
         }
+        // const counter = getId('counter');
+        // counter.innerText = 0 ; // 清空
+
         updateCartTotal();
-    };
+        };
 
 
 
