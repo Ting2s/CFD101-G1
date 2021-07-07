@@ -5,48 +5,65 @@
 
 //==================================
 
-html{
+body{
   color: $brown;
   font-family:'DFPliYuan';
 }
 button{
   cursor: pointer;
+  color: $brown;
+  font-family:'DFPliYuan';
+
+  transition: all .5s ease-in-out;;
+  &:hover{
+    transform: scale(.9);
+  }
 }
 
 //==================================
 
 .rankWrapper{
-margin: auto;
 width: 100vw;
-background: url(../../dev/images/dinoTest/pic/testJungle_2.png) no-repeat fixed;
+height: 100vh;   
+margin: auto;
+
+background-image: url(../images/disscus/board3.jpg);
 background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
 }
 
 .rankInWrap{
-  margin:auto;
-  padding: 50px;
-  max-width: 1400px;
+margin: auto;
 }
 .rankBox{ 
-  background: url(../../dev/images/dinoTest/pic/woodBoard.png) no-repeat center center;
+  margin: auto;
+  padding-top: 40px;
+  width: 600px;
+  background: url(../../dev/images/dinoPersonal/cardBoard_h.png) no-repeat center center;
   background-size: contain;
   }
 
+  .rankTitle{
+    padding-top: 20px;
+  }
   .rankTitle h1{
   text-align: center;
-  padding-top: 50px;
-  font-size: $font-h1;
+  padding:20px;
+  background-image: url(../../dev/images/dinoPersonal/woodCard.png); 
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  font-size: ($font-h1)-10px;
   }
 
 
   .rankContent{ 
-    margin: 50px auto;
-    margin-top: 100px;
-    padding: 40px 8px;
-    width: 37%;
+    margin: 20px auto;
+    padding: 5px;
+    width: 65%;
     border-radius: 7%;
-    background-color:$brown;
-
+    background-color: #562c2c;
     }
   ul{    
     list-style: none;
@@ -57,18 +74,32 @@ background-size: cover;
     align-items: center;
     margin: 8px 0;
     padding: 0 10px;
+
     
     &::before{
       content: "";
       display: block;
       width: 100%;
       margin: 5px;
-      border-top: 3px dashed rgb(150, 118, 103);  
-      
+      border-top: 3px dashed rgb(150, 118, 103);   
     }
     }
-     
   }
+
+  .rankContent li:nth-child(2){
+    animation: slidein .3s;
+  }
+  .rankContent li:nth-child(3){
+    animation:  slidein .8s;
+  }
+  .rankContent li:nth-child(4){
+    animation:  slidein 1.2s;
+  }
+  .rankContent li:nth-child(5){
+    animation: slidein 1.5s;
+  }
+
+
   .rankContent li:first-child:before{
     display: none;
   }
@@ -142,7 +173,6 @@ background-size: cover;
 
 
     button{
-      margin: initial;
       width: 180px;
       height: 70px;
       line-height:70px;
@@ -183,9 +213,19 @@ background-size: cover;
     font-size: 20px;
     margin-top: 40px;
   }
-
 }
+//==================================
+@keyframes slidein {
+  from {
+    padding-left: 100%;
 
+  }
+
+  to {
+    padding-left: 0%;
+
+  }
+}
 //==================================
 @media screen and (max-width: 414px) {
 

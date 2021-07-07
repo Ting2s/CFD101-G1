@@ -1,16 +1,15 @@
 @import 'base/reset';
 @import 'base/font';
+@import 'layout/footer';
 @import 'layout/nav';
 
 
-.boardContent{
-  width: 100%;
-  max-height: 100vh;
-  background-image: url(../images/dinoCardboard/bg.jpg);
-  background-position: center;
-  object-fit: cover;
-  background-repeat: no-repeat;
+body {
+  height: 100vh;
+  background-image: url('../images/dinoCardboard/bg.jpg');
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .board{
@@ -27,27 +26,28 @@
     font-family: DFPLiYuan;//-----------------
     color: white;//----------------
     position: absolute;
-    top: 9.3rem;
+    top: 8.6rem;
     letter-spacing: 1px;
     z-index: 3;
   }
 }
 
 
-.person{
-  margin-top: -5rem;
-  width: 80%;
+.person{//------------------------------
+  margin-top: 6.4rem;
+  width: 100%;
   max-width: 1200px;
   position: relative;
 
   .personBg{
-    background-image: url(../images/dinoCardboard/meanBoard.png);
-    width: 100%;
+    background-image: url('../images/dinoCardboard/meanBoard.png');
+    //width: 100%;
     height: 100%;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     padding: 5.2rem 4.2rem 3.8rem 4.2rem;
+    margin: 0 auto;
   }
 
   .personItem{
@@ -57,7 +57,7 @@
     height: 100%;
     margin: 0 auto;
     justify-content: center;
-    align-items: center;
+    align-items:center;
 
     .personPart{
       width: 12rem;
@@ -77,7 +77,7 @@
       }
       .personContent{
         display: flex;
-        padding-top: .5rem;
+        //padding-top: .5rem;
 
         img{
           width: 12%;
@@ -85,11 +85,13 @@
         span{
           margin: 0 auto;
           font-size: 16px;
+          font-family: DFPLiYuan;//-----------------
+          padding-top: .5rem;
         }
       }
       .personDate{
         font-size: 8px;//-----------
-        padding: .7rem 0;
+        padding: .8rem 0;
         padding-left: 50%;
       }
     } 
@@ -99,14 +101,102 @@
 .underBtn{
   display: flex;
   position: absolute;
-  top: 32rem;
-  //width: 100%;
+  top: 39rem;
   justify-content: center;
+  width: 100%;
 
-  .leftBtn img,
-  .numberBtn img,
-  .rightBtn img{
+  img{
     width: 60%;
   }
 
+  .numberBtn{
+    background-image: url(../images/dinoCardboard/numberBtn.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 1.1rem 0 .7rem;
+    background-position: center;
+
+    input{
+      width: 42px;
+    }
+
+    span{
+      color: white;//----------------
+      font-weight: bold;
+      font-size: 18px;//------------
+      font-family: DFPLiYuan;//-----------------
+    }
+  }
+}
+
+.page {
+  display: none;
+}
+
+.pageShow {
+  display: block;
+  animation: fadeInUp .6s;
+}
+
+.camera{
+  position: absolute;
+  width: 5%;
+  top: 9rem;
+  //margin-left: 56rem;
+  left: 80%;
+  animation:rotate-taichi 2s ease-in infinite alternate;
+
+  img{
+    width: 100%;
+    -webkit-filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+  }
+
+  p{
+    color: #ff4f8f;//----------------
+    font-size: 16px;//------------
+    font-family: DFPLiYuan;//-----------------
+    //-webkit-text-stroke: 1px #fff;
+    padding-top: .2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 0.6em #fff, 0 0 0.6em #fff,
+        0 0 0.6em #fff;
+  }
+}
+
+@keyframes rotate-taichi {
+  0%{transform:rotate(-15deg);}
+  100%{transform:rotate(15deg);}
+}
+
+.pic{
+  cursor: pointer;
+}
+
+.imgPreview {
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  cursor: zoom-in;
+}
+
+.imgPreview img {
+  z-index: 999;
+  width: 30%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  cursor: zoom-in;
+}
+
+.like{
+  font-size: 1.2rem;
+  color: #ff0015;
+  display: block;
 }

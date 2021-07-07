@@ -1,0 +1,168 @@
+@import './base/font';
+@import './base/dinoMall_var';
+@import './mixins/mixin_Mall';
+@import '../../guideline_sass/sass/base/var';
+
+
+.bgColor.show{
+  transform: translateX(0%);
+}
+
+.bgColor{
+          @include posiTion(fixed,0,0);
+          @include rect(30%,100%);
+          @include pdMargin(30px,null);
+          z-index: 99;
+          overflow-y: auto;
+          border:5px solid rgb(185, 185, 92);
+          background-color: rgb(194, 228, 133);
+          transform: translateX(-100%);  //   cart 版面 總開關
+          transition:all 1s ease-in-out;
+          .closeCart{
+                      @include posiTion(absolute,14px,null){
+                      @include fontSz($font-h4,$font-bold);
+                      right:14px;
+                      color:$gray_Mall;
+                      cursor: pointer;
+                      }
+                      &:hover{
+                        color: $black;
+                        cursor: pointer;
+                      }
+          }
+          .section-header {
+                      @include colorBgcolor(#d23423,null);
+                      @include fontSz($font-h3,null){
+                        text-align: center;
+                        letter-spacing: 2px; 
+                      };
+          }
+          .cart-row{
+                      display: flex;
+                      .cart-item{
+                                  @include rect(45%,null){
+                                    letter-spacing: 1px;
+                                  };
+                      }
+                      .cart-price{
+                                  @include rect(20%,null){
+                                    letter-spacing: 1px;
+                                  };
+                                  @include fontSz(19px,null);
+                                  @include colorBgcolor(#333,null);
+                      }
+                      .cart-quantity{
+                                  @include rect(35%,null){
+                                    letter-spacing: 1px;
+                                  };
+                      }
+          }
+          .cart-total{
+                      @include colorBgcolor(#333,null);
+                      @include fontSz($font-base,null);
+                      // margin-left:8px;
+                      letter-spacing: 2px;
+          }
+          .infoCart{
+                      @include fontSz($font-base,null);
+                      margin:5px;
+                      text-align: end;
+                      letter-spacing: 2px;
+          }
+          .btn-purchase{
+                      @include colorBgcolor($white,#56CCF2);
+                      @include fontSz($font-h4,$font-bold);
+                      @include pdMargin(11px,null);
+                      display: block;
+                      margin: 40px auto 80px;
+                      text-align: center;
+                      cursor: pointer;
+                      border: none;
+                      border-radius: 5px;
+                      letter-spacing: 2px;
+                      &:hover{
+                              @include colorBgcolor(null,#2D9CDB);
+                      }          
+          }           
+
+
+
+}
+
+
+// modal 共用區 
+.cart-header {
+  @include fontSz(null,$font-bold);
+  @include colorBgcolor(#333,null);
+}
+
+.cart-column {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-right: 24px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cart-item-title {
+  @include colorBgcolor(#333,null);
+  @include fontSz(19px,null);
+  margin-left: 8px;
+}
+
+.cart-item-image {
+  @include rect(75px,auto);
+  border-radius: 10px;
+}
+
+.cart-quantity-input {
+  @include rect(50px,34px);
+  @include colorBgcolor(#333,#eee);
+  @include fontSz(19px,null);
+  border-radius: 5px;
+  border: 1px solid #56CCF2;
+  text-align: center;
+  margin-right: 25px;
+}
+
+.cart-row:last-child {
+  border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+  border: none;
+}
+
+.cart-total {
+  text-align: end;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.cart-total-title {
+  @include fontSz(24px,$font-bold);
+  @include colorBgcolor($black,null);
+  margin-right: 20px;
+}
+
+.cart-total-price {
+  @include fontSz(18px,null);
+  @include colorBgcolor(#333,null);
+}
+.btn-danger {
+  @include colorBgcolor($white,#EB5757);
+  @include fontSz(null,$font-bold);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-danger:hover {
+  @include colorBgcolor(null,#CC4C4C);
+}
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px;
+  cursor: pointer;
+}

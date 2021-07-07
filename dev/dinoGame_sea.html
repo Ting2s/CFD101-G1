@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@include('layout/style.html')
+    <link rel="stylesheet" href="css/dinoGame_sea.css">
+    <title>Document</title>
+</head>
+
+<body>
+    @@include('layout/header.html')
+
+    <div class="teach" id="teach">
+        <!-- close -->
+        <button class="close" id="close">
+            <img src="./images/dinoGame/close.png" alt="">
+        </button>
+
+        <!-- Step1 -->
+        <img class="teach-bg" src="./images/dinoGame/teach.png" alt="">
+        <img class="touch-fish" src="./images/dinoGame/touch-fish.png" alt="">
+        <img class="dino" src="./images/dinoGame/dino-teach.png" alt="">
+
+        <!-- Step2 -->
+        <div class="teach-growp-wrap">
+            <img class="GrowUp_1" src="./images/dinoGame/GrowUp_1.png" alt="">
+            <div class="teach-sq-wrap">
+                <div class="teach-sq">
+                    <img src="./images/dinoGame/GrowUp_sq.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="GameRange">
+        <div class="dino-sea1" id="dino">
+            <img id="dinopic" src="./images/dinoGame/dino-sea1.png" alt="">
+        </div>
+        <!-- -------fish -->
+        <div class="Fish-1" id="Fish-1">
+            <img src="./images/dinoGame_sea/fish-1.png" alt="">
+        </div>
+        <div class="Fish-2" id="Fish-2">
+            <img src="./images/dinoGame_sea/fish-2.png" alt="">
+        </div>
+        <div class="Fish-3" id="Fish-3">
+            <img src="./images/dinoGame_sea/fish-3.png" alt="">
+        </div>
+        <div class="Fish-4" id="Fish-4">
+            <img src="./images/dinoGame_sea/fish-4.png" alt="">
+        </div>
+        <div class="Fish-5" id="Fish-5">
+            <img src="./images/dinoGame_sea/fish-5.png" alt="">
+        </div>
+        <div class="Fish-6" id="Fish-6">
+            <img src="./images/dinoGame_sea/fish-6.png" alt="">
+        </div>
+        <!-- -------水草-->
+        <div class="SeaweedL">
+            <img class="Seaweed-1" src="./images/dinoGame_sea/seaweed.gif" alt="">
+            <img class="Seaweed-2" src="./images/dinoGame_sea/seaweed.gif" alt="">
+        </div>
+        <div class="SeaweedR">
+            <img class="Seaweed-1" src="./images/dinoGame_sea/seaweed.gif" alt="">
+            <img class="Seaweed-2" src="./images/dinoGame_sea/seaweed.gif" alt="">
+        </div>
+
+        <!-- -------成長-->
+        <div class="GrowUp">
+            <img class="GrowUp_sch" src="./images/dinoGame_sea/GrowUp.png" alt="">
+
+            <div class="Grow-sq">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_sea/GrowUp_sq.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- 小測驗1 -->
+    <div class="litTest_1 remove" id="litTest_1">
+        <button class="teach_close remove" id="teach_close">
+            <img src="./images/dinoGame/close.png" alt="">
+        </button>
+        <h1>Q1最聰明的恐龍是?</h1>
+        <p class="choose" id="Y">傷齒龍</p>
+        <p class="choose" id="N">劍龍</p>
+        <p class="choose" id="N_1">翼手龍</p>
+    </div>
+
+    <!-- 小測驗2 -->
+    <div class="litTest_2 remove" id="litTest_2">
+        <button class="teach_close remove" id="teach_close_1">
+            <img src="./images/dinoGame/close.png" alt="">
+        </button>
+        <h1>Q2會照顧寶寶的恐龍是?</h1>
+        <p class="choose" id="N_2">波塞東龍</p>
+        <p class="choose" id="N_3">斑龍</p>
+        <p class="choose" id="Y_1">慈母龍</p>
+    </div>
+
+
+
+    @@include('layout/footer.html')
+    <!-- js -->
+    <script src="../js/dinoGame_sea.js"></script>
+
+</body>
+
+</html>

@@ -20,4 +20,37 @@
 @mixin fontSz($size,$weight) {
   font-size: $size;
   font-weight: $weight;
+  @content;
+}
+@mixin pdMargin ($pad,$marg){
+  padding: $pad;
+  margin: $marg;
+  @content;
+}
+
+@mixin colorBgcolor($a,$b) {
+  color:$a;
+  background-color: $b;
+}
+
+@mixin btn($name, $w, $bgc) {
+  .btn-#{$name} {
+    width: $w;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    background-color: $bgc;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+    transition: .2s all ease-in-out;
+    @content;
+
+    &:hover {
+      background-color: darken($bgc, 20%);
+      width: $w * 2;
+      padding: 20px;
+    }
+  }
 }

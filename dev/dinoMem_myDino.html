@@ -9,7 +9,9 @@
 
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
-  <!-- js -->
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
   <!-- css -->
   @@include('layout/style.html')
@@ -25,14 +27,28 @@
 
       </div>
 
-      <div class="perBox">
+      <div class="perBox" id="perBox">
 
         <!-- 左側個人頭像區 -->
         <div class="perPhoto">
           <h1>會員中心</h1>
           <!-- 頭貼框 -->
           <div class="perFrame">
-            <img src="images/dinoPersonal/photoSticker.jpg" alt="">
+            <div class="hat_frame">
+
+              <img src="images/dinoPersonal/prod1.png">
+
+            </div>
+            <div class="ticket_frame">
+
+              <img src="images/dinoPersonal/prod2.png">
+            </div>
+
+            <div class="back_frame">
+
+              <img src="images/dinoPersonal/prod4.png" alt="">
+            </div>
+            <img src="images/dinoPersonal/d1.png" alt="">
             <h3>龍春暉</h3>
           </div>
         </div>
@@ -41,7 +57,7 @@
         <div class="perContent">
           <!-- 內容板子 -->
           <div class="conBtn">
-            <a href=""> <button class="dark">查看會員資料</button></a>
+            <a href="dinoMem_profile.html"> <button class="dark">查看會員資料</button></a>
             <a href="dinoMem_myDino.html"> <button class="light">恐龍收藏</button></a>
             <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
 
@@ -67,29 +83,21 @@
 
 
             <!-- 欄位 -->
-            <div class="dinoChoose">
-              <!-- 選頁按鈕 -->
-              <div class="changePage">
-                <button id="upPage" class="upPage"></button>
-                <span>1/3</span>
-                <button id="downPage" class="downPage"></button>
-              </div>
 
-              <!-- -----我的恐龍----- -->
+
+
+            <!-- -----我的恐龍----- -->
+            <div class="dinoCon" id="dinoCon_my">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
               <!-- 欄位格子 -->
               <div class="dino" id="dino">
                 <ul>
                   <li class="ocean">
-                    <img src="images/dinoPersonal/d2.png" alt="" onclick="openModel(this)" id="dino_1">
+                    <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
 
                     <input type="button" value="龍春暉">
 
-                    <!-- The Modal -->
-                    <div id="myModal_1" class="modal">
-                      <span class="close">&times;</span>
-                      <img class="modal-content" id="img01">
-                      <div id="caption_1" class="caption"></div>
-                    </div>
 
                   </li>
 
@@ -108,13 +116,17 @@
                   </li>
                 </ul>
               </div>
+            </div>
 
 
-              <!-- -----我的恐龍配件----- -->
-              <div class="dinoAcc none" id="dinoAcc">
+            <!-- -----我的恐龍配件----- -->
+            <div class="dinoCon none" id="dinoCon_acc">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <div class="dinoAcc" id="dinoAcc">
                 <ul>
-                  <li class="hat">
-                    <img src="images/dinoPersonal/prod1.png" alt="">
+                  <li class="hat" @click="choose">
+                    <img src="images/dinoPersonal/prod1.png">
                   </li>
 
                   <li class="ring">
@@ -148,24 +160,32 @@
                   </li>
                 </ul>
               </div>
-
             </div>
+
           </div>
         </div>
       </div>
     </div>
+    </div>
 
     </div>
 
 
 
+    <!-- layout -->
+    <!-- 恐龍大圖 -->
+    @@include('layout/dinoMem_modal.html')
 
 
   </main>
+  @@include('layout/footer.html')
 
 
   <!-- js -->
+
+  <script src="js/dinoMem.js"></script>
   <script src="js/dinoMem_myDino.js"></script>
+
 </body>
 
 </html>

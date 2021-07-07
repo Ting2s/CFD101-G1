@@ -8,7 +8,9 @@
   <title>恐龍知識小測驗</title>
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
-  <!-- js -->
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
   <!-- css -->
   @@include('layout/style.html')
@@ -23,7 +25,7 @@
 
 
   <main>
-    <div class="testWrapper">
+    <div class="testWrapper" id="app">
 
       <!-- 有白板區 -->
       <div class="whiteBoard" id="whiteBoard">
@@ -51,15 +53,59 @@
           </div>
           <!-- 題目 -->
           <h3 class="qusTitle">
-            Q1.全世界最重的恐龍大約重達幾公噸？
+            Q1 . {{question}}
           </h3>
 
           <!-- 題目選項 -->
           <div class="choose">
-            <button class="chooseBtn">A.30噸</button>
-            <button class="chooseBtn">B.50噸</button>
-            <button class="chooseBtn">C.70噸</button>
-            <button class="chooseBtn">D.100噸</button>
+            <div class="buttonBox">
+              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                A.30噸
+              </button>
+
+              <!-- 判決對錯 -->
+              <div class="judge" v-show="isShow">
+                <img v-if="isRight" src="images/dinoTest/pic/x.png">
+                <img v-else src="images/dinoTest/pic/right.png">
+
+              </div>
+            </div>
+
+            <div class="buttonBox">
+              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                B.50噸
+              </button>
+              <!-- 判決對錯 -->
+              <div class="judge" v-show="isShow">
+                <img v-if="isRight" src="images/dinoTest/pic/x.png">
+                <img v-else src="images/dinoTest/pic/right.png">
+
+              </div>
+            </div>
+
+            <div class="buttonBox">
+              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                C.70噸
+              </button>
+              <!-- 判決對錯 -->
+              <div class="judge" v-show="isShow">
+                <img v-if="isRight" src="images/dinoTest/pic/right.png">
+                <img v-else src="images/dinoTest/pic/x.png">
+              </div>
+            </div>
+
+            <div class="buttonBox">
+              <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
+                D.100噸
+              </button>
+              <!-- 判決對錯 -->
+              <div class="judge" v-show="isShow">
+                <img v-if="isRight" src="images/dinoTest/pic/x.png">
+                <img v-else src="images/dinoTest/pic/right.png">
+
+              </div>
+            </div>
+
           </div>
 
           <!-- 去下一題 -->
@@ -81,8 +127,10 @@
           <p>嘿！你答對了……</p>
 
           <div class="score">
-            <span>7</span>/7題
-            <span class="comment">你真是個天才！</span>
+            <span>{{score}}</span>/7題
+            <span class="comment" v-model="comment">
+              {{comment}}
+            </span>
           </div>
 
           <div class="scoreBtn">
@@ -99,7 +147,7 @@
   </main>
 
 
-
+  @@include('layout/footer.html')
 
   <!-- js -->
   <script src="../js/dinoTest.js"></script>

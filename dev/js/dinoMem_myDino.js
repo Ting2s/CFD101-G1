@@ -1,11 +1,14 @@
 
+
+//==================================
 let dinoAcc_btn = document.getElementById("dinoAcc_btn");
 dinoAcc_btn.addEventListener("click", function () {
   
-  document.getElementById("dino").classList.add("none");
+  document.getElementById("dinoCon_my").classList.add("none");
   document.getElementById("dino_p").classList.add("none");
-  document.getElementById("dinoAcc").classList.remove("none");
+  document.getElementById("dinoCon_acc").classList.remove("none");
   document.getElementById("dinoAcc_p").classList.remove("none");
+  
   
 
   document.getElementById("dinoAcc_btn").classList.add("active");
@@ -16,9 +19,9 @@ dinoAcc_btn.addEventListener("click", function () {
 let dino_btn = document.getElementById("dino_btn");
 dino_btn.addEventListener("click", function () {
   
-  document.getElementById("dinoAcc").classList.add("none");
+  document.getElementById("dinoCon_acc").classList.add("none");
   document.getElementById("dinoAcc_p").classList.add("none");
-  document.getElementById("dino").classList.remove("none");
+  document.getElementById("dinoCon_my").classList.remove("none");
   document.getElementById("dino_p").classList.remove("none");
   
   
@@ -27,27 +30,3 @@ dino_btn.addEventListener("click", function () {
 })
 
 
-
-
-//-----------------------------------
-let openModel = function (e) {
-  
-
-let modal = document.getElementById("myModal_1");
-let modalImg = document.getElementById("img01");
-let captionText = document.getElementById("caption_1");
-
-  modal.style.display = "block";
-  modalImg.src = e.src;
-  captionText.innerHTML = e.alt;
-
-
-
-let span = document.getElementsByClassName("close")[0];
-
-
-span.onclick = function() { 
-  modal.style.display = "none";
-  }
-  
-}

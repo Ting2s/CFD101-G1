@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoLogin.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+
+    <div class="loginWrap">
+      <div class="loginCon">
+
+        <!-- 頁面登入 -->
+        <div class="loginBox">
+          <div class="loginStr">
+
+            <!-- 登入點擊前 -->
+            <div class="login_md">
+              <div class="changeOpcitiy">
+                <h2>登入</h2>
+                <p>登入會員專區，查看我的恐龍！
+                </p>
+                <button class="login_btn" onclick="login()">LOGIN</button>
+              </div>
+            </div>
+
+            <!-- 註冊點擊前 -->
+            <div class="signup_md">
+              <div class="changeOpcitiy">
+                <h2>註冊</h2>
+                <p>還沒有會員帳號？快來註冊！</p>
+                <button class="signup_btn" onclick="signUp()">SIGN UP</button>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- 背景畫面 -->
+          <div class="conBack">
+            <!-- <div class="imgBack_login">
+              <img src="" alt="" />
+            </div> -->
+          </div>
+
+          <div class="forms">
+            <!-- <div class="imgBack_sign">
+              <img src="" alt="" />
+            </div> -->
+            <div class="form_login">
+
+              <!-- 關閉按鈕連結 -->
+              <a href="#" onclick="hideAll()">
+                <img src="images/dinoPersonal/x.png" alt=""></a>
+
+              <!-- 登入輸入畫面 -->
+              <h2>登入</h2>
+              <input type="text" placeholder="帳號" />
+              <input type="password" placeholder="密碼" />
+              <button class="login_btn">
+                LOGIN
+              </button>
+            </div>
+
+            <div class="form_signup">
+
+              <!-- 關閉按鈕連結 -->
+              <a href="#" onclick="hideAll()"><img src="images/dinoPersonal/x.png" alt="">
+              </a>
+
+              <!-- 註冊輸入畫面 -->
+              <h2>註冊</h2>
+              <input type="text" placeholder="常用信箱" id="newEmail" />
+
+              <!-- 冒泡提醒 -->
+              <div class="popuptext" id="lowEight">
+                <span>
+                  帳號不得低於八碼！
+                </span>
+              </div>
+
+              <div class="popuptext" id="EandN">
+                <span>
+                  帳號必須有英文和數字！
+                </span>
+              </div>
+
+              <input type="text" placeholder="帳號" id="newAct" class="popup" />
+
+              <!-- 冒泡提醒 -->
+              <div class="popuptext" id="lowEight_psw">
+                <span>
+                  密碼不得低於八碼！
+                </span>
+              </div>
+
+              <div class="popuptext" id="EandN_psw">
+                <span>
+                  密碼必須有英文和數字！
+                </span>
+              </div>
+
+
+              <input type="password" placeholder="密碼" id="newPsw" />
+              <input type="password" placeholder="確認密碼" id="pswCheck" />
+              <button class="signup_btn" id="signup_btn">
+                SIGN UP
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+  <!-- js -->
+  <script src="js/dinoLogin.js"></script>
+  @@include('layout/footer.html')
+</body>
+
+</html>

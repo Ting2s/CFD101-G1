@@ -1,0 +1,19 @@
+<!-- 選頁按鈕 -->
+<div id="pageBar" class="dinoChoose">
+  <ul class="changePage">
+    <li v-if="showFirst"><a v-on:click="cur--">
+        <button id="upPage" class="upPage"></button>
+
+      </a></li>
+
+    <li>
+      {{ cur }}/{{all}}
+    </li>
+
+    <li v-if="showLast">
+      <a v-on:click="cur++">
+        <button id="downPage" class="downPage"></button>
+      </a>
+    </li>
+  </ul>
+</div>
