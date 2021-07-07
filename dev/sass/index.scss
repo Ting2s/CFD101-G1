@@ -1,4 +1,6 @@
 
+@import './base/font';
+@import './layout/footer';
 *{
   margin: 0;
   padding: 0;
@@ -9,6 +11,26 @@
   overflow: hidden;
 }
 /* 天空場景S1 */
+// 動態文字:開頭
+.guide {
+  position: absolute;
+  top: 300px;
+  left: 230px;
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.guide .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+// 天空背景
 body .section.sky{
   position: relative;
   height: 1080px;
@@ -57,6 +79,30 @@ body .section .box .cloud-r{
   top: 400px;
 }
 /* 海洋場景S2 */
+// 動態文字:中段介紹
+.slogan {
+  position: absolute;
+  top: 300px;
+  left: 390px;
+  font-weight: 500;
+  font-size: 4em;
+  z-index: 10;
+}
+
+.slogan .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.slogan .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
 .sea{
   position: relative;
   height: 1080px;
@@ -81,7 +127,7 @@ body .section .box .cloud-r{
 .wave-0{
   position: absolute;
   width: 350px;
-  margin-top: 500px;
+  top: 410px;
 }
 .wave-1{
   position: absolute;
@@ -125,7 +171,7 @@ body .section .box .cloud-r{
 .nest{
   position: absolute;
   top: 79%;
-  left: 40%;
+  left: 41%;
   z-index: 10;
 }
 #egg-g{
@@ -139,25 +185,41 @@ body .section .box .cloud-r{
   left: 51%;
 }
 //遊戲說明欄
-.typing{
+.typing {
   position: absolute;
-  z-index: 10;
-  top: 500px;
+  top: 50%;
+  left: 38%;
+  font-weight: 800;
+  font-size: 2em;
+  width: 14em;
+  height: 1.1em;
+  white-space: nowrap;
+  border-right: 2px solid transparent;
+  animation: typing 3.5s steps(14, end), blink-caret .75s step-end infinite;
+  overflow: hidden;
 }
-.typing p{
-
-  color: red;
-
-} 
-
+/* 列印效果 */
+@keyframes typing {
+from { width: 0; }
+to { width: 14em; }
+}
+.typing{
+  animation-name: typing;
+  animation-iteration-count: infinite;
+}
+/* 游標閃爍 */
+@keyframes blink-caret {
+from, to { box-shadow: 1px 0 0 0 transparent; }
+50% { box-shadow: 1px 0 0 0; }
+}
 /* 恐龍蛋hover跳動效果 */
-// #egg-g ,#egg-w, #egg-b{
-//   width: 80px;
-// }
+#egg-g ,#egg-w, #egg-b{
+  width: 80px;
+}
 
-// .engrave {
-//   transition: transform 0.3s;
-// }
+.engrave {
+  transition: transform 0.3s;
+}
 // .eggmove::after {
 //   position: absolute;
 //   display: block;
@@ -170,21 +232,25 @@ body .section .box .cloud-r{
 //   transform: scaleX(1) translateY(0);
 //   transition: transform 0.3s;
 // }
-// .eggmove:hover {
-//   animation: eggmove 0.3s 0.3s infinite alternate;
-//   transform: scale(1.25) translateY(-70px);
-// }
-// @keyframes eggmove {
-//   to {
-//     transform: scale(1.25) translateY(-45px);
-//   }
-// }
-// @keyframes shadow {
-//   to {
-//     opacity: 1;
-//     transform: scaleX(1) translateY(35px);
-//   }
-// }
+.eggmove{
+  animation: eggmove 0.3s 0.3s infinite alternate;
+  transform: scale(1.25) translateY(-70px);
+}
+.eggmove{
+  animation-name: eggmove;
+  animation-iteration-count: infinite;
+}
+@keyframes eggmove {
+  to {
+    transform: scale(1.25) translateY(-45px);
+  }
+}
+@keyframes shadow {
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateY(35px);
+  }
+}
 // #egg-g:hover::after {
 //   animation: shadow 0.6s 0.6s infinite alternate;
 //   opacity: 1;
