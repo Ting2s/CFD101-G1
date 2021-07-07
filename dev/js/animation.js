@@ -162,5 +162,42 @@ new ScrollMagic.Scene({
 .setPin('.land')
 .addTo(controller);
 
+// S1 導覽文字動畫
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.guide');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
+anime.timeline({loop: true})
+  .add({
+    targets: '.guide .letter',
+    translateY: [-100,0],
+    easing: "easeOutExpo",
+    duration: 1400,
+    delay: (el, i) => 30 * i
+  }).add({
+    targets: '.guide',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
 
+// S2介紹文字動畫
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.ml9 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml9 .letter',
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  }).add({
+    targets: '.ml9',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
