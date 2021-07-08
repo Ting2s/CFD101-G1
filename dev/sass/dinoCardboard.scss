@@ -3,6 +3,23 @@
 @import 'layout/footer';
 @import 'layout/nav';
 
+@mixin tablet{
+  @media (max-width: 1180px) {
+    @content
+  }
+};
+
+@mixin portrait{
+  @media (max-width: 930px) {
+    @content
+  }
+};
+
+@mixin mobile{
+  @media (max-width: 670px) {
+    @content
+  }
+};
 
 body {
   height: 100vh;
@@ -10,6 +27,10 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
+  @include tablet{
+    height: 100vh;
+  }
 }
 
 .board{
@@ -20,24 +41,28 @@ body {
   height: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
   
   .titleText{
     font-size: 24px;//----------------
     font-family: DFPLiYuan;//-----------------
     color: white;//----------------
     position: absolute;
-    top: 9.3rem;
+    top: 9rem;/////
     letter-spacing: 1px;
     z-index: 3;
+
+    @include tablet{
+      //background-image: url(../images/dinoCardboard/);
+    }
   }
 }
 
 
 .person{
-  //margin-top: -5rem;
+  //margin-top: -1rem;////
   width: 80%;
   max-width: 1200px;
-  position: relative;
 
   .personBg{
     background-image: url(../images/dinoCardboard/meanBoard.png);
@@ -47,6 +72,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     padding: 5.2rem 4.2rem 3.8rem 4.2rem;
+
+    @include tablet{
+      background-image: none;
+    }
   }
 
   .personItem{
@@ -55,7 +84,6 @@ body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    justify-content: center;
     align-items:center;
 
     .personPart{
@@ -89,7 +117,7 @@ body {
       }
       .personDate{
         font-size: 8px;//-----------
-        padding: .7rem 0;
+        padding: .3rem 0;
         padding-left: 50%;
       }
     } 
@@ -99,9 +127,13 @@ body {
 .underBtn{
   display: flex;
   position: absolute;
-  top: 39rem;
   justify-content: center;
   width: 100%;
+  margin-top: 38rem;
+
+  @include tablet{
+    display: none;
+  }
 
   img{
     width: 60%;
@@ -140,7 +172,7 @@ body {
   position: absolute;
   width: 5%;
   top: 9rem;
-  margin-left: 56rem;
+  right: 7rem;
   animation:rotate-taichi 2s ease-in infinite alternate;
 
   img{
