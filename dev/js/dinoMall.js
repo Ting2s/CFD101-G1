@@ -1,5 +1,3 @@
-// const { get } = require("browser-sync");
-
     function getId(id){
       return document.getElementById(id);
     };  
@@ -118,7 +116,6 @@
       // <!-- CART CART CART -->
       // <!-- CART CART CART -->
       function showCart(){
-        // console.log("12345");
         // getId("bgColor").style.display='block';
         getId("bgColor").classList.toggle(`show`);
       };
@@ -146,6 +143,7 @@
         let cartItemContainer = document.getElementsByClassName('cart-items')[0];
         let cartRows = cartItemContainer.getElementsByClassName('cart-row');
         // console.log(cartRows);
+        
         let total = 0;
         for (let i = 0; i < cartRows.length; i++) {
             let cartRow = cartRows[i];
@@ -182,22 +180,22 @@
       };
 
       // add item
-      // let count =0;
+      let count =0;
       function addToCartClicked(e) {
         // count
-        let count =0;
+        // let count =0;
         count++;
-        const counter = getId('counter');
+        let counter = getId('counter');
         counter.innerText = count;
 
         let button = e.target;
         let shopItemCard = button.parentElement.parentElement;
-        console.log(shopItemCard);
+        // console.log(shopItemCard);
         let title = shopItemCard.getElementsByClassName(' shopItemImage')[0].title;
         let price = shopItemCard.getElementsByClassName('shopItemPrice')[0].innerText;
-        console.log(title,price);
+        // console.log(title,price);
         let imageSrc = shopItemCard.getElementsByClassName(' shopItemImage')[0].src;
-        console.log(imageSrc);
+        // console.log(imageSrc);
         addItemToCart(title, price, imageSrc);
         updateCartTotal();
       };
@@ -238,26 +236,23 @@
       // purchase
       function purchaseClicked() {
         alert('購買成功!!!');
-        // getId('counter').innerText = 0 ; // 清空
-        const counter = getId('counter');
 
         let cartItems = document.getElementsByClassName('cart-items')[0];        
         while (cartItems.hasChildNodes()) {
             cartItems.removeChild(cartItems.firstChild);
             // cartItems.removeChild(cartItems.childNodes[0]);
-            counter.innerText = 0 ; // 清空
         }
-        // const counter = getId('counter');
-        // counter.innerText = 0 ; // 清空
 
         updateCartTotal();
-        };
+        clear(); 
+      };       
 
-
-
-
-
-
+      // 清空  <p id = counter> 0 </p>
+      function clear(){
+        count = 0;
+        let counter = getId('counter');
+        counter.innerText = 0 ; 
+      }
 
 
     
@@ -315,7 +310,7 @@
 
       // showCart
       // const cart = document.getElementsByClassName('cart')[0];
-      const cart = document.getElementById('cart');
+      let cart = document.getElementById('cart');
       cart.onclick = showCart;  
       let  btnCloseCart= getId("closeCart"); 
       btnCloseCart.onclick = closesShoppingCart;
