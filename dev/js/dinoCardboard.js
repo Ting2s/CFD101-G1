@@ -16,10 +16,10 @@ function init() {
     setPageInputValue();
     getMaximumPage();
     setTotalPages();
-	  setPageInputMinMax();
+	setPageInputMinMax();
     nextPageOnClick();
     previousPageOnClick();
-    // throughInputPageOnClick();
+    //throughInputPageOnClick();
     throughInputPageOnkeypress();
     // disablePrevNext();
 
@@ -50,7 +50,7 @@ function nextPage() {
         });
         document.getElementById("page" + actualPage).classList.add("pageShow");
         setPageInputValue();
-        disablePrevNext();
+        //disablePrevNext();
     }
 }
 
@@ -70,9 +70,9 @@ function previousPage() {
     }
 }
 
-// function throughInputPageOnClick() {
-//     pageInputButton.addEventListener("click", throughInputPage);
-// }
+function throughInputPageOnClick() {
+    pageInputButton.addEventListener("click", throughInputPage);
+}
 
 function throughInputPageOnkeypress() {
     pageInput.addEventListener("keypress", throughInputPageKeypress);
@@ -96,7 +96,7 @@ function throughInputPage() {
             value.classList.remove("pageShow");
         });
         document.getElementById("page" + actualPage).classList.add("pageShow");
-        disablePrevNext();
+        //disablePrevNext();
     }
 }
 
@@ -129,4 +129,30 @@ $(function () {
 //------------------------
 function favorite(e) {
     e.classList.toggle("fas");
+  }
+
+//------------------------
+$(function () {
+    $('.like').click(function () { likeFunction(this); });
+    favorite.classList.toggle("fas").click(function () { dislikeFunction(this);});
+  });
+  
+  
+  function likeFunction(caller) {
+    var postId = caller.parentElement.getAttribute('postid');
+    $.ajax({
+        type: "POST",
+        url: "dinoCardboard.php",
+        data: 'Action=LIKE&PostID=' + postId,
+        success: function () {}
+    });
+  }
+  function dislikeFunction(caller) {
+    var postId = caller.parentElement.getAttribute('postid');
+    $.ajax({
+        type: "POST",
+        url: "dinoCardboard.php",
+        data: 'Action=DISLIKE&PostID=' + postId,
+        success: function () {}
+    });
   }
