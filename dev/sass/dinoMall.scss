@@ -228,7 +228,7 @@ body {
       display:none ;
       .modal-content{
                   @include posiTion(relative,null,null);  
-                  @include rect(700px,550px){
+                  @include rect(600px,550px){
                         @include pdMargin(20px,null);
                         @include colorBgcolor(null,$white);      
                         border-radius: 10px;
