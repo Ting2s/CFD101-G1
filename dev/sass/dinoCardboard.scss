@@ -60,12 +60,12 @@ body {
       top: 9rem;
     }
 
-    @include portrait{
-      background-image: url(../images/dinoCardboard/titleBoard.png);
-      background-size: cover;
-      padding: 1.2rem 2.2rem 1.4rem 2.2rem;
-      top: 8rem;
-    }
+    // @include portrait{
+    //   background-image: url(../images/dinoCardboard/titleBoard.png);
+    //   background-size: cover;
+    //   padding: 1.2rem 2.2rem 1.4rem 2.2rem;
+    //   top: 8rem;
+    // }
   }
 }
 
@@ -91,14 +91,14 @@ body {
       margin: 0 auto;
     }
 
-    @include portrait{
-      padding: 3.2rem 0 3.8rem 0 ;
-      width: 404px;
+    // @include portrait{
+    //   padding: 3.2rem 0 3.8rem 0 ;
+    //   width: 404px;
 
-      .mPort{
-        display: none;
-      }
-    }
+    //   .mPort{
+    //     display: none;
+    //   }
+    // }
   }
 
   .personItem{
@@ -160,9 +160,9 @@ body {
     margin-top: 48rem;
   }
 
-  @include portrait{
-    margin-top: 44rem;
-  }
+  // @include portrait{
+  //   margin-top: 44rem;
+  // }
 
   img{
     width: 60%;
@@ -219,23 +219,23 @@ body {
     text-shadow: 0 0 0.6em #fff, 0 0 0.6em #fff,
         0 0 0.6em #fff;
 
-    @include portrait{
-      font-size: 22px;
-    }
+    // @include portrait{
+    //   font-size: 22px;
+    // }
   }
 
   @include tablet{
     width: 33%;
   }
 
-  @include portrait{
-    width: 28%;
+//   @include portrait{
+//     width: 28%;
 
-    img{
-      -webkit-filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
-      filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
-    }
-  }
+//     img{
+//       -webkit-filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
+//       filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
+//     }
+//   }
 }
 
 @keyframes rotate-taichi {
