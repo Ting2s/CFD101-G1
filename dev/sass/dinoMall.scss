@@ -29,10 +29,10 @@ body {
 // 左方塊 ==============================================
 
       #{$titleLeft}{
-                  @include rect(100%,null);
+                  // @include rect(100%,null);
                   .cardLeft{
                         background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
-                        text-align: center;
+                        // text-align: center;
                         @include pdMargin(25%,null);
                         }
                         .showImgA{
@@ -114,6 +114,10 @@ body {
                               }
                         }
               .arrow{
+                    @include d-flex(){
+                          align-items: center;
+                          margin-bottom: 15px;
+                    }
                     .prePage{
                             @include rect(50px,50px);
                             background: url('#{$pathMall}/pre.png') no-repeat center center / contain;
@@ -122,6 +126,7 @@ body {
                             @include fontSz($font-h4,$font-bold);
                             @include colorBgcolor($brown,null);
                             vertical-align: 12px;
+                            margin: 0 6px;
                         }
                     .nextPage{
                               @include rect(50px,50px);
@@ -250,12 +255,8 @@ body {
                      @include fontSz($font-h3,null);
                      @include pdMargin(null,15px);
                      @include colorBgcolor($yellow-second,null);
+                     margin-top: 10%;
                   }
-                  canvas{
-                        max-width: 50%;
-                        max-height: 50%;
-                        object-fit: contain;
-                  }                                      
       }
 }
 
@@ -292,8 +293,44 @@ body {
             top:2%;    
       }
 }
-// @media screen and (max-width: 768px){
-//       .groundTitle {
-//       }
-//   }
+@media screen and (max-width: 1025px){
+      .wrapMall{
+            padding-top:20%;
+            align-items: center;
+      }
+      .itemLeft{
+            margin: 10px;
+      }
+      .wrapMall .itemLeft .groundButton .btnSelect{
+            font-size: 17px;
+      }
+      .wrapMall .itemRight {
+            margin: 35px;
+            background-size: cover;
+      }
+      .wrapMall .itemRight .groundImgCard .groundTitle .cart p{
+            top:2%;
+            right: -10%;
+            font-size: 10px;
+      }
+      .wrapMall .itemRight .groundImgCard .groundTitle .cart img{
+            width: 130%;
+      }
+  }
   
+
+  @media screen and (max-width: 813px){
+            .groundButton{
+                  margin-bottom: 15%;
+            }
+            
+            .wrapMall .itemRight{
+                  padding: 15%;
+            }
+            .wrapMall .itemRight .groundImgCard{
+                  padding-bottom: 0;
+            }
+            .wrapMall .itemRight .groundImgCard .btnCard-1 .imgCard .card, .wrapMall .itemRight .groundImgCard .btnCard-2 .imgCard .card {
+                  margin: 3% 4%;
+            }
+}
