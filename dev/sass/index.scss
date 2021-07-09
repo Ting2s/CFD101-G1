@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'DFPLiYuan';
+  src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+}
 @import './base/font';
 @import './layout/footer';
 *{
@@ -15,11 +18,13 @@
 .guide {
   position: absolute;
   top: 300px;
-  left: 230px;
+  left: 52%;
+  transform: translateX(-50%);
   color: #402d2d;
   padding: 40px 0;
-  font-weight: 800;
-  font-size: 2em;
+  font-family: 'DFPLiYuan';
+  font-size: 3em;
+  line-height: 2em;
   text-transform: uppercase;
   letter-spacing: 0.5em;
   overflow: hidden;
@@ -85,7 +90,6 @@ body .section .box .cloud-r{
   top: 300px;
   left: 390px;
   font-weight: 500;
-  font-size: 4em;
   z-index: 10;
 }
 
@@ -93,8 +97,11 @@ body .section .box .cloud-r{
   position: relative;
   display: inline-block;
   padding-top: 0.2em;
-  padding-right: 0.05em;
+  padding-right: 0.03em;
   padding-bottom: 0.1em;
+  font-family: 'DFPLiYuan';
+  font-size: 3em;
+  letter-spacing: 0.5em;
   overflow: hidden;
 }
 
@@ -166,31 +173,36 @@ body .section .box .cloud-r{
 }
 #egg-g ,#egg-w, #egg-b{
   position: absolute;
-  top: 77%;
+  top: 70%;
 }
 .nest{
   position: absolute;
-  top: 79%;
+  top: 72%;
   left: 41%;
   z-index: 10;
 }
 #egg-g{
-  left: 43%;
+  left: 42%;
 }
 #egg-w{
-  left: 47%;
+  left: 46%;
   z-index: 1;
 }
 #egg-b{
-  left: 51%;
+  left: 50%;
+}
+
+.EggIn{
+  cursor: pointer;
 }
 //遊戲說明欄
 .typing {
   position: absolute;
   top: 50%;
-  left: 38%;
-  font-weight: 800;
-  font-size: 2em;
+  left: 35%;
+  font-family: 'DFPLiYuan';
+  font-size: 40px;
+  color: #402d2d;
   width: 14em;
   height: 1.1em;
   white-space: nowrap;
