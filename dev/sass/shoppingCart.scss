@@ -21,51 +21,54 @@
           .closeCart{
                       @include posiTion(absolute,14px,null){
                       @include fontSz($font-h4,$font-bold);
+                      @include colorBgcolor($gray_Mall,null);
                       right:14px;
-                      color:$gray_Mall;
                       cursor: pointer;
                       }
                       &:hover{
-                        color: $black;
-                        cursor: pointer;
+                        @include colorBgcolor($black,null){
+                            cursor: pointer;
+                        };
                       }
           }
           .section-header {
-                      @include colorBgcolor(#d23423,null);
+                      @include colorBgcolor($black,null);
                       @include fontSz($font-h3,null){
-                        text-align: center;
-                        letter-spacing: 2px; 
+                          text-align: center;
+                          letter-spacing: 2px; 
+                          margin-bottom: 20px
                       };
           }
           .cart-row{
                       display: flex;
+                      .cart-header{
+                        @include fontSz($font-h4,null);
+                      }
                       .cart-item{
                                   @include rect(45%,null){
-                                    letter-spacing: 1px;
+                                      letter-spacing: 1px;
                                   };
                       }
                       .cart-price{
                                   @include rect(20%,null){
-                                    letter-spacing: 1px;
+                                      letter-spacing: 1px;
                                   };
-                                  @include fontSz(19px,null);
                                   @include colorBgcolor(#333,null);
                       }
                       .cart-quantity{
                                   @include rect(35%,null){
-                                    letter-spacing: 1px;
+                                      letter-spacing: 1px;
                                   };
                       }
           }
           .cart-total{
                       @include colorBgcolor(#333,null);
                       @include fontSz($font-base,null);
-                      // margin-left:8px;
                       letter-spacing: 2px;
           }
           .infoCart{
                       @include fontSz($font-base,null);
-                      margin:5px;
+                      @include pdMargin(null,5px);
                       text-align: end;
                       letter-spacing: 2px;
           }
@@ -83,10 +86,7 @@
                       &:hover{
                               @include colorBgcolor(null,#2D9CDB);
                       }          
-          }           
-
-
-
+          }          
 }
 
 
@@ -97,12 +97,9 @@
 }
 
 .cart-column {
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid black;
-  margin-right: 24px;
-  padding-bottom: 10px;
-  margin-top: 10px;
+      margin: 10px 24px 0 0 ;
+      padding-bottom: 10px;
+      border-bottom: 1px solid black;
 }
 
 .cart-item-title {
@@ -136,8 +133,7 @@
 
 .cart-total {
   text-align: end;
-  margin-top: 10px;
-  margin-right: 10px;
+  margin: 10px 10px 0 0;
 }
 
 .cart-total-title {
@@ -161,8 +157,8 @@
   @include colorBgcolor(null,#CC4C4C);
 }
 .btn {
+  @include pdMargin(11px,null);
   text-align: center;
   vertical-align: middle;
-  padding: 11px;
   cursor: pointer;
 }
