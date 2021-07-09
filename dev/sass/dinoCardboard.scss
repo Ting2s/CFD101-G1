@@ -11,13 +11,13 @@
 
 @mixin portrait{
   @media (max-width: 930px) {
-    @content
+    // @content
   }
 };
 
 @mixin mobile{
   @media (max-width: 670px) {
-    @content
+    // @content
   }
 };
 
@@ -232,7 +232,7 @@ body {
     width: 28%;
 
     img{
-      -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255));
+      -webkit-filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
       filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
     }
   }
