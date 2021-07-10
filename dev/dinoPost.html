@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @@include('layout/style.html')
   <link rel="stylesheet" href="css/dinoPost.css">
-  <title>我想發文</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <title>我要發文</title>
 </head>
 <body>
   @@include('layout/header.html')
-  <div class="container">
-    <div class="formhead">我想發文</div>
+  <div class="container" id="app">
+    <div class="formhead">我要發文</div>
     <form action="">
       <label for="fname">文章標題</label>
       <input type="text" id="fname" name="firstname" placeholder="文章標題">
@@ -23,7 +24,8 @@
       </select>
   
       <label for="subject">文章內文</label>
-      <textarea id="subject" name="subject" placeholder="" style="height:400px"></textarea>
+      <textarea id="subject" name="subject" maxlength="250" style="height:400px" @input="remain" v-model="input"></textarea>
+      <div class="last">剩餘字數:{{lasttext}}</div>
       <div class="center">
         <div class="form-input">
           <label for="file-ip-1">文章圖片上傳</label>

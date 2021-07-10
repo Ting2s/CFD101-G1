@@ -6,3 +6,18 @@ function showPreview(event){
       preview.style.display = "block";
     }
   }
+
+  let vm = new Vue({
+    el: "#app",
+    data(){
+      return{
+        lasttext: 250
+      }
+    },
+    methods:{
+      remain(){
+      let text = this.input.length;
+      this.lasttext = 250 - text ;
+      }
+    }
+  })
