@@ -5,7 +5,7 @@
 
 body {
     height: 100vh;
-    background-image: url('images/dinoGame/bg-sea.jpg');
+    background-image: url('../images/dinoGame_sea/bg-sea.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -325,7 +325,7 @@ body {
 
 .teach-sq {
     width: 6.4%;
-    height: 91%;
+    height: 94%;
     position: absolute;
     bottom: 0%;
     right: 33.7%;
@@ -433,6 +433,10 @@ body {
         left: 55%;
     }
 
+    .teach-sq {  
+        height: 94.4%;
+    }
+
     .dino {
         top: 26%;
         right: 15%;
@@ -493,6 +497,10 @@ body {
         width: 39%;
         bottom: 108%;
         left: 48%;
+    }
+
+    .teach-sq {  
+        height: 95%;
     }
 
     .dino {
@@ -578,7 +586,7 @@ body {
     color: rgb(0, 255, 0);
 }
 .er{
-    color: rgb(255, 70, 70);
+    color: rgb(138, 138, 138);
 }
 
 .teach_close{
