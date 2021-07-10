@@ -35,15 +35,19 @@ let pageBar = new Vue({
 
   }); 
   
-  //-------------------------------------
-
+//-------------------------------------
+function Id(id){
+  return document.getElementById(id);
+}; 
 
 // 展開大圖
+
+
 let openModel = function (e) {
 
-let modal = document.getElementById("myModal_1");
-let modalImg = document.getElementById("img01");
-let captionText = document.getElementById("caption_1");
+let modal =Id("myModal");
+let modalImg =Id("img");
+let captionText =Id("caption");
   
     modal.style.display = "block";
     modalImg.src = e.src;
@@ -56,7 +60,6 @@ let captionText = document.getElementById("caption_1");
   span.onclick = function() { 
     modal.style.display = "none";
     }
-    
 }
   
 //=================================================== 
@@ -66,33 +69,51 @@ let captionText = document.getElementById("caption_1");
       //deleteTable.style.display = "none";
     //}
   //}
-//刪除明信片
-let deleteCard = function (e) {
-  let deleteTable = document.getElementById('deleteTable');
-  deleteTable.style.display = 'block';
 
-  let deleteBtn= document.getElementById('deleteBtn');
-  deleteBtn.addEventListener("click", function () {
-    alert("成功刪除！");
-    deleteTable.style.display = 'none';
-    detachEvent();
-  })
+//刪除明信片
+
+function delete_go() {
+
+let deleteTable = Id("deleteTable");
+deleteTable.style.display = 'block';
+
+
+let dele_close = Id('dele_close');
+dele_close.addEventListener("click", function () {
+deleteTable.style.display = "none";
+})
   
-  
-let dele_close= document.getElementById('dele_close');
-  dele_close.addEventListener("click", function (){
-  deleteTable.style.display="none";
-  },false)
-  
-  let cancelBtn= document.getElementById('cancelBtn');
-  cancelBtn.addEventListener("click", function (){
-  deleteTable.style.display="none";
-  },false)
-  
+let cancelBtn = Id('cancelBtn');
+cancelBtn.addEventListener("click", function () {
+deleteTable.style.display = "none";
+})
+
+  let deleteBtn = Id("deleteBtn");
+  let ul = Id("ul_1");
+
+deleteBtn.addEventListener("click", function (e) {
+  deleteTable.style.display = 'none';
+  alert("成功刪除！");
+  Id("li_1_1").style.display = "none";;
+  // ul.removeChild(e.target.parentNode);
+})
 }
+// let deleteCard = function (e) {
+  
+//   deleteTable.style.display = 'block';
+
+//   let deleteBtn = Id("deleteBtn");
+//   deleteBtn.addEventListener("click", function () {
+//     alert("成功刪除！");
+//     deleteTable.style.display = 'none';
+
+//   })
+  
+//=================================================== 
+
+  
+// }
 
 // window.addEventListener("load", function () {
-//   deleteCard
+//   deleteCard;
 // })
-
-  

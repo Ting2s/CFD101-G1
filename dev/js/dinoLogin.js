@@ -1,5 +1,3 @@
-
-
 function login() {
 document.querySelector('.forms').className = "forms form_login_active";  
 document.querySelector('.form_login').style.display = "block";
@@ -53,92 +51,145 @@ document.querySelector('.form_login ').style.display = "none";
 
 // ===================================================
 //檢查新帳號
-let newEmail = document.getElementById('newEmail');
-let newAct = document.getElementById('newAct');
-let newPsw = document.getElementById('newPsw');
-let newCheck = document.getElementById('newCheck');
 
-let signup_btn = document.getElementById('signup_btn');
-let lowEight = document.getElementById("lowEight");
-let EandN = document.getElementById("EandN");
-let lowEight_psw = document.getElementById("lowEight_psw");
-let EandN_psw = document.getElementById("EandN_psw");
+function $id(id) {
+  return document.getElementById(id);
+}
 
 
-
-signup_btn.addEventListener("click", function () {
-
+$id("signup_btn").addEventListener("click", function () {
 //不得有空值
-if (newAct.value.length == 0) {
-  alert("不得為空值！")
+if ($id("newAct").value.length == 0) {
+  $id("null_1").classList.add("show");  
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("null_1").classList.remove("show");
+  });
   return;
   }
-if (newEmail.value.length == 0) {
-  alert("不得為空值！")
+if ($id("newEmail").value.length == 0) {
+  $id("null_2").classList.add("show");  
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("null_2").classList.remove("show");
+  });
    return;
   }
-if (newPsw.value.length == 0) {
-    alert("不得為空值！")
+if ($id("newPsw").value.length == 0) {
+  $id("null_3").classList.add("show");  
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("null_3").classList.remove("show");
+  });
     return;
   }
-if (newCheck.value.length == 0) {
-    alert("不得為空值！")
+if ($id("pswCheck").value.length == 0) {
+  $id("null_4").classList.add("show");  
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("null_4").classList.remove("show");
+  });
     return;
     }
-  // if (newAct.value.length == 0 | newEmail.value.length == 0 | newPsw.value.length == 0 |newCheck.value.length == 0 ) {
-  //   alert("不得為空值！")
-  //   return;
-  // 
-
   
 //帳號要八個字以上
-  if (newAct.value.length < 8) {
-    lowEight.classList.add("show");
+  if ($id("newAct").value.length < 8) {
+    $id("lowEight").classList.add("show");
     
-    signup_btn.addEventListener("blur", function () {
-      lowEight.classList.remove("show");
+    $id("signup_btn").addEventListener("blur", function () {
+      $id("lowEight").classList.remove("show");
     });
-    return (false);
+    return;
 }
 
 //要有英文數字  
-  if (!(newAct.keyCode >= 65 && newAct.keyCode <= 90)
-  ||( (!(newAct.keyCode >= 48 && newAct.keyCode <= 57))
-    ||
-    (!(newAct.keyCode >= 96 && newAct.keyCode <= 105))
-  )) {
-  EandN.classList.add("show");
-  signup_btn.addEventListener("blur", function () {
-    EandN.classList.remove("show");
+  let en = /[a-zA-Z][\d]|[\d][a-zA-Z]/;
+  if (en.test($id("newAct").value) ==false) {
+    $id("EandN").classList.add("show");
+    $id("signup_btn").addEventListener("blur", function () {
+      $id("EandN").classList.remove("show");
   });
     return;
   }
 //密碼要八個字以上
-if (newPsw.value.length < 8) {
-  lowEight_psw.classList.add("show");
+if ($id("newPsw").value.length < 8) {
+  $id("lowEight_psw").classList.add("show");
   
-  signup_btn.addEventListener("blur", function () {
-    lowEight_psw.classList.remove("show");
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("lowEight_psw").classList.remove("show");
   });
   return (false);
 }
 //要有英文數字
-if (!(newPsw.keyCode >= 65 && newPsw.keyCode <= 90)
-||( (!(newPsw.keyCode >= 48 && newPsw.keyCode <= 57))
-  ||
-  (!(newPsw.keyCode >= 96 && newPsw.keyCode <= 105))
-)) {
-EandN_psw.classList.add("show");
-signup_btn.addEventListener("blur", function () {
-  EandN_psw.classList.remove("show");
+if (en.test($id("newPsw").value) ==false) {
+  $id("EandN_psw").classList.add("show");
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("EandN_psw").classList.remove("show");
 });
   return;
 }
 
 //確認密碼要跟密碼一樣
-if(newCheck.value != newPsw.value) {
-  alert("確認密碼與密碼不相符！");
-  return;
+if($id("pswCheck").value != $id("newPsw").value) {
+  $id("check_box").classList.add("show");
+  $id("signup_btn").addEventListener("blur", function () {
+    $id("check_box").classList.remove("show");
+});
+return;
+}
+else {
+  alert("註冊成功！");
   }
-})
+},false)
 
+//=================================================
+// 登入
+
+//登入帳號密碼，確認後進入
+function sendForm() {
+    
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status == 200) {
+      let member = JSON.parse(xhr.responseText);
+      if (member.mem_id) {
+        alert("登入成功！");
+
+      } else {
+        alert("帳號密碼有錯誤！");
+      }
+    } else {
+      alert(xhr.status);
+    }
+  }
+  xhr.open("post", "dist/dinoLogin.php", true);
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+  let data_info = `mem_id=${$id("mem_id").value} & 
+  mem_pw=${$id("mem_pw").value}`;
+  xhr.send(data_info);
+}
+
+
+
+//==========================================
+//註冊會員
+// function signUp() {
+//     let xhr = new XMLHttpRequest();
+//     xhr.onload = function () {
+//       if (xhr.status == 200) {
+        
+//       } else {
+//         alert(xhr.status);
+//       }
+//   }
+  
+//   xhr.open("post", "../dinoSingup.php", true);
+//   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+//   let data_info = ;
+//   xhr.send(data_info);
+// }
+  
+
+//==========================================
+function init() {
+  //點擊登入
+  $id('login_btn').onclick = sendForm;
+}; 
+window.onload = init;

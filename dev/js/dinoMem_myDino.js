@@ -31,11 +31,19 @@ dino_btn.addEventListener("click", function () {
 
 //-----------------------------------
 // 替代圖片
-
+function Id(id){
+  return document.getElementById(id);
+};  
 // 帽子拖曳
 function myHat(e) {
-  document.getElementById("myHat").src = e.target.src;
-  document.getElementById("hat_frame").style.display = "block";
+
+  Id("myHat").src = e.src;
+  Id("myHat").innerHTML = e.alt;
+  Id("hat_frame").style.display = "block";
+  
+  $("#hat_frame").click(function () {
+    $("#hat_frame").toggle(1000);
+  });
 }
 $(function () {
   $("#hat_frame").draggable({ containment: ".perFrame", scroll: false });
@@ -43,8 +51,15 @@ $(function () {
 
 // 紋身拖曳
 function myTicket(e) {
-  document.getElementById("myTicket").src = e.target.src;
-  document.getElementById("ticket_frame").style.display = "block";
+  Id("myTicket").src = e.src;
+  Id("myTicket").innerHTML = e.alt;
+
+  Id("ticket_frame").style.display = "block";
+  
+  $("#ticket_frame").click(function () {
+    $("#ticket_frame").toggle(1000);
+  });
+
 }
 $(function () {
   $("#ticket_frame").draggable({ containment: ".perFrame", scroll: false });
@@ -52,8 +67,15 @@ $(function () {
 
 // 背景拖曳
 function myBack(e) {
-  document.getElementById("myBack").src = e.target.src;
-  document.getElementById("back_frame").style.display = "block";
+  Id("myBack").src = e.src;
+  Id("myBack").innerHTML = e.alt;
+
+  Id("back_frame").style.display = "block";
+ 
+  $("#back_frame").click(function () {
+    $("#back_frame").toggle(1000);
+  });
+
 }
 $(function () {
   $("#back_frame").draggable({ containment: ".perFrame", scroll: false });

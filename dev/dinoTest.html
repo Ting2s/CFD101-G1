@@ -38,92 +38,65 @@
         <h1>恐龍知多少？</h1>
         <!-- ================================================== -->
         <!-- 首頁內容區 -->
-        <div class="testContent" id="testContent">
+        <div class="testContent" id="testContent" :class="{'none' :isStart}">
           <h3>恐龍知識大挑戰</h3>
           <p>你對恐龍的了解究竟有多少呢？
             現在就來測試你的實力吧！</p>
           <p class="smRemind">小提醒：測試後換取的代幣可以在恐龍商城裡使用哦！</p>
           <div class="testStart_btn">
-            <button id="startBtn">開始遊戲</button>
+            <button @click="game" id="startBtn">開始遊戲</button>
           </div>
         </div>
         <!-- ================================================== -->
         <!-- 測驗畫面 -->
-        <div class="testContent_Q none" id="testContent_Q">
+        <div class="testContent_Q" id="testContent_Q" :class="{'none' :isGame}">
           <!-- 遊戲開始才有 -->
+
+          <!-- 重新開始 -->
           <div class="restartPlay">
-            <button>重新開始</button>
+
+            <button @click="restart">重新開始</button>
           </div>
 
+
           <!-- 題目內容 -->
-          <div class="testCenter">
+          <div class="testCenter" id="testCenter" v-for="(question,index) in questions" v-if="question.status == '1'">
             <!-- 題目 -->
-            <h3 class="qusTitle" v-for="(question,index) in questions">
+            <h3 class="qusTitle">
               Q {{index+1}} . {{question.q}}
             </h3>
 
             <!-- 題目選項 -->
+            <!-- v-for="(,index) in " -->
             <div class="choose">
-              <div class="buttonBox">
+
+              <div class="buttonBox" v-for="(answer,index) in answers">
                 <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                  A.30噸
+                  {{answer.name}}.{{question.A}}
                 </button>
 
                 <!-- 判決對錯 -->
                 <div class="judge" v-show="isShow">
-                  <img v-if="isRight" src="images/dinoTest/pic/x.png">
-                  <img v-else src="images/dinoTest/pic/right.png">
+                  <img :src="wrongImg">
+                  <img :src="rightImg">
 
                 </div>
               </div>
 
-              <div class="buttonBox">
-                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                  B.50噸
-                </button>
-                <!-- 判決對錯 -->
-                <div class="judge" v-show="isShow">
-                  <img v-if="isRight" src="images/dinoTest/pic/x.png">
-                  <img v-else src="images/dinoTest/pic/right.png">
 
-                </div>
-              </div>
-
-              <div class="buttonBox">
-                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                  C.70噸
-                </button>
-                <!-- 判決對錯 -->
-                <div class="judge" v-show="isShow">
-                  <img v-if="isRight" src="images/dinoTest/pic/right.png">
-                  <img v-else src="images/dinoTest/pic/x.png">
-                </div>
-              </div>
-
-              <div class="buttonBox">
-                <button class="chooseBtn" @click="choose(index)" :class="{clicked:isActive}">
-                  D.100噸
-                </button>
-                <!-- 判決對錯 -->
-                <div class="judge" v-show="isShow">
-                  <img v-if="isRight" src="images/dinoTest/pic/x.png">
-                  <img v-else src="images/dinoTest/pic/right.png">
-
-                </div>
-              </div>
-
+            </div>
+            <!-- 去下一題 -->
+            <div class="testArrow">
+              <button id="nextArrow" @click="nextTitle(index)"></button>
             </div>
           </div>
 
-          <!-- 去下一題 -->
-          <div class="testArrow">
-            <button id="nextArrow"></button>
-          </div>
+
 
         </div>
         <!-- ================================================== -->
         <!-- 答題結算 -->
-        <div class="scoreBoard none" id="scoreBoard">
+        <div class="scoreBoard" id="scoreBoard" :class="{'none':isScore}">
 
           <div class="scoreBox">
             <div class="scoreTitle">
@@ -134,14 +107,18 @@
           <p>嘿！你答對了……</p>
 
           <div class="score">
-            <span>{{score}}</span>/7題
+            <span>{{allPoint}}</span>/7題
             <span class="comment">
               {{comment()}}
             </span>
           </div>
 
           <div class="scoreBtn">
-            <button id="restart">再玩一次</button>
+            <button id="restart" @click="restart">
+              再玩一次
+            </button>
+
+
             <a href="dinoTest_rank.html"><button>看排行榜</button></a>
           </div>
         </div>
