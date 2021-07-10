@@ -128,11 +128,11 @@ new Vue({
       }
     },
     //當選取的選項和ans一樣時 加一分
-    rightPoint() {
-      if () {
-        return this.point = 1
-      }
-    },
+    // rightPoint() {
+    //   // if () {
+    //   //   return this.point = 1
+    //   // }
+    // },
     //將七題的對錯計算
     finalScore() {
 
@@ -158,7 +158,6 @@ new Vue({
   
     //切換下頁鍵ok
     nextTitle: function (i) {
-      //將index1的status從1~2，index2的status從2~1
       console.log(this.questions[6].status);
       
       if (this.questions[i].status < this.questions[i + 1].status) {
@@ -170,7 +169,7 @@ new Vue({
         this.questions[i + 2].status = 1;
       }
 
-      //進入算分階段
+      //進入公布分數（直接跳轉??
       if (this.questions[6].status = 1) {
         console.log("hi");
         this.isGame = true;
@@ -182,6 +181,16 @@ new Vue({
     //重新開始ok
     restart: function () {
       // console.log(this.questions[0].status);
+
+      this.questions[0].status = 1
+      for (let i = 1; i < this.questions.length; i++) {
+        this.questions[i].status = 2
+      }
+    },
+    //再玩一次ok
+    playAgain() {
+      this.isScore = true;
+      this.isGame = false;
 
       this.questions[0].status = 1
       for (let i = 1; i < this.questions.length; i++) {
