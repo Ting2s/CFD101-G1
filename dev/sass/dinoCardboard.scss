@@ -2,275 +2,189 @@
 @import 'base/font';
 @import 'layout/footer';
 @import 'layout/nav';
-
-@mixin tablet{
-  @media (max-width: 1180px) {
-    @content
-  }
-};
-
-@mixin portrait{
-  @media (max-width: 930px) {
-    // @content
-  }
-};
-
-@mixin mobile{
-  @media (max-width: 670px) {
-    // @content
-  }
-};
-
 body {
-  height: 100vh;
-  background-image: url('../images/dinoCardboard/bg.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-
-  @include tablet{
     height: 100vh;
-  }
-}
-
-.board{
-  display: flex;
-  //align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  
-  .titleText{
-    font-size: 24px;//----------------
-    font-family: DFPLiYuan;//-----------------
-    color: white;//----------------
-    position: absolute;
-    top: 11rem;/////
-    letter-spacing: 1px;
-    z-index: 3;
-
-    @include tablet{
-      background-image: url(../images/dinoCardboard/titleBoard.png);
-      background-size: cover;
-      padding: 1.2rem 2.2rem 1.4rem 2.2rem;
-      top: 9rem;
-    }
-
-    // @include portrait{
-    //   background-image: url(../images/dinoCardboard/titleBoard.png);
-    //   background-size: cover;
-    //   padding: 1.2rem 2.2rem 1.4rem 2.2rem;
-    //   top: 8rem;
-    // }
-  }
-}
-
-
-.person{
-  margin-top: 2rem;////
-  width: 80%;
-  max-width: 1200px;
-
-  .personBg{
-    background-image: url('../images/dinoCardboard/meanBoard.png');
-    //width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-position: center;
+    background-image: url('../images/dinoCardboard/bg.jpg');
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    padding: 5.2rem 4.2rem 3.8rem 4.2rem;
+}
 
-    @include tablet{
-      background-image: none;
-      padding: 5.2rem 0 3.8rem 0 ;
-      width: 605px;
-      margin: 0 auto;
-    }
-
-    // @include portrait{
-    //   padding: 3.2rem 0 3.8rem 0 ;
-    //   width: 404px;
-
-    //   .mPort{
-    //     display: none;
-    //   }
-    // }
-  }
-
-  .personItem{
+.board {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    //align-items:center;
-    //justify-content: center;
-
-    .personPart{
-      width: 12rem;
-      height: 12rem;
-      background-color: white;
-      padding: .6rem;
-      margin: .3rem .3rem;
-      box-shadow:2px 2px 2px rgba(20%,20%,40%,0.5),3px 3px 5px rgba(20%,20%,40%,0.3),4px 4px 8px rgba(20%,20%,40%,0.3);
-
-      .personImg{
-        width: 100%;
-        margin: 0 auto;
-
-        img{
-          width: 100%;
-        }
-      }
-      .personContent{
-        display: flex;
-        //padding-top: .5rem;
-
-        img{
-          width: 12%;
-        }
-        span{
-          margin: 0 auto;
-          font-size: 16px;
-          font-family: DFPLiYuan;//-----------------
-          padding-top: .5rem;
-        }
-      }
-      .personDate{
-        font-size: 8px;//-----------
-        padding: .3rem 0;
-        padding-left: 50%;
-      }
-    } 
-  }
+    .titleText {
+        font-size: 24px; //----------------
+        font-family: DFPLiYuan; //-----------------
+        color: white; //----------------
+        position: absolute;
+        top: 8.6rem;
+        letter-spacing: 1px;
+        z-index: 3;
+    }
 }
 
-.underBtn{
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  width: 100%;
-  margin-top: 37rem;
-  
-  @include tablet{
-    margin-top: 48rem;
-  }
-
-  // @include portrait{
-  //   margin-top: 44rem;
-  // }
-
-  img{
-    width: 60%;
-  }
-
-  .numberBtn{
-    background-image: url(../images/dinoCardboard/numberBtn.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 0 1.1rem 0 .7rem;
-    background-position: center;
-
-    input{
-      width: 42px;
+.person {
+    //------------------------------
+    margin-top: 6.4rem;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    .personBg {
+        background-image: url('../images/dinoCardboard/meanBoard.png');
+        //width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 5.2rem 4.2rem 3.8rem 4.2rem;
+        margin: 0 auto;
     }
-
-    span{
-      color: white;//----------------
-      font-weight: bold;
-      font-size: 18px;//------------
-      font-family: DFPLiYuan;//-----------------
+    .personItem {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        .personPart {
+            width: 12rem;
+            height: 12rem;
+            background-color: white;
+            padding: .6rem;
+            margin: .3rem .3rem;
+            box-shadow: 2px 2px 2px rgba(20%, 20%, 40%, 0.5), 3px 3px 5px rgba(20%, 20%, 40%, 0.3), 4px 4px 8px rgba(20%, 20%, 40%, 0.3);
+            .personImg {
+                width: 100%;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                }
+            }
+            .personContent {
+                display: flex;
+                //padding-top: .5rem;
+                img {
+                    width: 12%;
+                }
+                span {
+                    margin: 0 auto;
+                    font-size: 16px;
+                    font-family: DFPLiYuan; //-----------------
+                    padding-top: .5rem;
+                }
+            }
+            .personDate {
+                font-size: 8px; //-----------
+                padding: .8rem 0;
+                padding-left: 50%;
+            }
+        }
     }
-  }
+}
+
+.underBtn {
+    display: flex;
+    position: absolute;
+    top: 39rem;
+    justify-content: center;
+    width: 100%;
+    img {
+        width: 60%;
+    }
+    .numberBtn {
+        background-image: url(../images/dinoCardboard/numberBtn.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0 1.1rem 0 .7rem;
+        background-position: center;
+        input {
+            width: 42px;
+        }
+        span {
+            color: white; //----------------
+            font-weight: bold;
+            font-size: 18px; //------------
+            font-family: DFPLiYuan; //-----------------
+        }
+    }
 }
 
 .page {
-  display: none;
+    display: none;
 }
 
 .pageShow {
-  display: block;
-  animation: fadeInUp .6s;
+    display: block;
+    animation: fadeInUp .6s;
 }
 
-.camera{
-  position: absolute;
-  width: 28%;
-  bottom: 1rem;
-  animation:rotate-taichi 2s ease-in infinite alternate;
-
-  img{
-    width: 100%;
-    -webkit-filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
-    filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
-  }
-
-  p{
-    color: #ff4f8f;//----------------
-    font-size: 28px;//------------
-    font-family: DFPLiYuan;//-----------------
-    //-webkit-text-stroke: 1px #fff;
-    padding: 0 0 6px 0;
-    letter-spacing: 1px;
-    text-shadow: 0 0 0.6em #fff, 0 0 0.6em #fff,
-        0 0 0.6em #fff;
-
-    // @include portrait{
-    //   font-size: 22px;
-    // }
-  }
-
-  @include tablet{
-    width: 33%;
-  }
-
-//   @include portrait{
-//     width: 28%;
-
-//     img{
-//       -webkit-filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
-//       filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
-//     }
-//   }
+.camera {
+    position: absolute;
+    width: 28%;
+    bottom: 1rem;
+    //margin-left: 56rem;
+    left: 10px;
+    animation: rotate-taichi 2s ease-in infinite alternate;
+    img {
+        width: 100%;
+        -webkit-filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+        filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+    }
+    p {
+        color: #ff4f8f; //----------------
+        font-size: 56px; //------------
+        font-family: DFPLiYuan; //-----------------
+        //-webkit-text-stroke: 1px #fff;
+        padding-top: .2rem;
+        letter-spacing: 1px;
+        text-shadow: 0 0 0.6em #fff, 0 0 0.6em #fff, 0 0 0.6em #fff;
+    }
 }
 
 @keyframes rotate-taichi {
-  0%{transform:rotate(-15deg);}
-  100%{transform:rotate(15deg);}
+    0% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
 }
 
-.pic{
-  cursor: pointer;
+.pic {
+    cursor: pointer;
 }
 
 .imgPreview {
-  display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 999;
-  cursor: zoom-in;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    cursor: zoom-in;
 }
 
 .imgPreview img {
-  z-index: 999;
-  width: 30%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  cursor: zoom-in;
+    z-index: 999;
+    width: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: zoom-in;
 }
 
-.like{
-  font-size: 1.2rem;
-  color: #ff0015;
-  display: block;
+.like {
+    font-size: 1.2rem;
+    color: #ff0015;
+    display: block;
 }
