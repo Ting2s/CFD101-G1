@@ -68,9 +68,9 @@
 
               <!-- 登入輸入畫面 -->
               <h2>登入</h2>
-              <input type="text" placeholder="帳號" />
-              <input type="password" placeholder="密碼" />
-              <button class="login_btn">
+              <input type="text" placeholder="帳號" id="mem_id" />
+              <input type="password" placeholder="密碼" id="mem_pw" />
+              <button class="login_btn" id="login_btn" value="登入">
                 LOGIN
               </button>
             </div>
@@ -83,9 +83,23 @@
 
               <!-- 註冊輸入畫面 -->
               <h2>註冊</h2>
+
+              <!-- 冒泡提醒 -->
+              <div class="popuptext" id="null_1">
+                <span>
+                  不得為空值！
+                </span>
+              </div>
+
               <input type="text" placeholder="常用信箱" id="newEmail" />
 
               <!-- 冒泡提醒 -->
+              <div class="popuptext" id="null_2">
+                <span>
+                  不得為空值！
+                </span>
+              </div>
+
               <div class="popuptext" id="lowEight">
                 <span>
                   帳號不得低於八碼！
@@ -101,6 +115,12 @@
               <input type="text" placeholder="帳號" id="newAct" class="popup" />
 
               <!-- 冒泡提醒 -->
+              <div class="popuptext" id="null_3">
+                <span>
+                  不得為空值！
+                </span>
+              </div>
+
               <div class="popuptext" id="lowEight_psw">
                 <span>
                   密碼不得低於八碼！
@@ -115,6 +135,21 @@
 
 
               <input type="password" placeholder="密碼" id="newPsw" />
+
+
+
+              <!-- 冒泡提醒 -->
+              <div class="popuptext" id="null_4">
+                <span>
+                  不得為空值！
+                </span>
+              </div>
+
+              <div class="popuptext" id="check_box">
+                <span>
+                  確認密碼和密碼不相符！
+                </span>
+              </div>
               <input type="password" placeholder="確認密碼" id="pswCheck" />
               <button class="signup_btn" id="signup_btn">
                 SIGN UP

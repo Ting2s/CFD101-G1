@@ -11,10 +11,10 @@ font-family:'DFPLiYuan';
 
 }
 button{
-  cursor: pointer;
   color: $brown;
   font-family:'DFPLiYuan';
   transition: all .5s ease-in-out;
+  cursor: pointer;
   &:hover{
     transform: scale(.9);
 }
@@ -29,6 +29,8 @@ button{
 
 .testWrapper{
 display: flex;
+overflow: hidden;
+width: 100vw;
 height: 100vh;
 background-image: url(../images/disscus/board3.jpg);
 background-size: cover;
@@ -38,10 +40,10 @@ background-repeat: no-repeat;
 
 .whiteBoard,.showScore{
 
-  width: 60%;
-  height: 78%;
+  width: 1000px;
+  height: 550px;
   margin: auto;
-  margin-bottom:5px;
+  padding-top: 20px;
   background-size: contain;
   background-repeat:no-repeat;
   background-position: center;
@@ -109,10 +111,15 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
   to{transform:translateY(-10px)}}
 
 
+@keyframes bounce_x{
+    from{transform:translateX(10px)}
+    to{transform:translateX(-10px)}}
+  
+
+
 //測驗畫面==================================
 .testContent_Q{
   position: relative;
-  line-height: $font-lineheight;
   text-align: center;
 
   .restartPlay {
@@ -127,6 +134,7 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
     background:url(../../dev/images/dinoTest/pic/woodTitle.png) no-repeat center center;
     background-size: contain;
     font-size: ($font-h4)-5px;
+
   }
 }
 
@@ -158,6 +166,7 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
     font-size: ($font-h4)-3px;
     color:$white;
 
+
     &:hover{
       color: $yellow-first;
     }
@@ -176,10 +185,12 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
   
   button{
     width: 100px;
-    padding: 60px;
+    padding: 40px;
     border-style:none;
     background:url(../../dev/images/dinoTest/pic/arrowRight.png) no-repeat center center;
     background-size: contain;
+
+    animation: bounce_x .6s infinite alternate;
   }
 }
 
@@ -189,7 +200,7 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
 }
 //分數畫面==================================
 .scoreBoard{
-    margin: 30px;
+    margin: 10px;
     height: 50%;
     background: url(../images/dinoTest/pic/blank.png) no-repeat center center;
     background-size: contain; 
