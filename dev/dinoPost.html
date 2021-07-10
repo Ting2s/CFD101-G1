@@ -7,6 +7,7 @@
   @@include('layout/style.html')
   <link rel="stylesheet" href="css/dinoPost.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
   <title>我要發文</title>
 </head>
 <body>
@@ -15,16 +16,16 @@
     <div class="formhead">我要發文</div>
     <form action="">
       <label for="fname">文章標題</label>
-      <input type="text" id="fname" name="firstname" placeholder="文章標題">
+      <input type="text" id="fname" name="firstname" placeholder="文章標題" maxlength="20" required>
       <label for="category">文章類別</label>
-      <select id="category" name="category">
+      <select id="category" name="category" required>
         <option value="恐龍知識">恐龍知識</option>
         <option value="恐龍創作">恐龍創作</option>
         <option value="恐龍分享">恐龍分享</option>
       </select>
   
       <label for="subject">文章內文</label>
-      <textarea id="subject" name="subject" maxlength="250" style="height:400px" @input="remain" v-model="input"></textarea>
+      <textarea id="subject" name="subject" maxlength="250" style="height:400px" @input="remain" v-model="input" required></textarea>
       <div class="last">剩餘字數:{{lasttext}}</div>
       <div class="center">
         <div class="form-input">
@@ -35,9 +36,15 @@
           </div>
         </div>
       </div>
-      <button class="dinbtn">送出</button>
+      <input class="dinbtn" type="button" @click="showModal = true" value="送出"></input>
     </form>
+  <div class="clickbac" v-if="showModal">
+    <div class="modal">
+      <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
+      <p>🎉發文成功🎉</p>
+    </div>
   </div>
-  <script src="js/dinoPost.js"></script>  
+  </div>
+  <script src="./js/dinoPost.js"></script>  
 </body>
 </html>

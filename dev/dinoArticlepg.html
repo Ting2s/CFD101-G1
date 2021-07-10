@@ -14,17 +14,32 @@
         <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
         @@include('layout/style.html')
         <link rel="stylesheet" href="css/dinoSinglepg.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     </head>
 
     <body>
         @@include('layout/header.html')
-        <div class="news-contents wrapper">
+        <div class="news-contents wrapper" id="app">
           <article>
               <header class="post-info">
                   <h2 class="post-title">想瞭解三角龍的冷知識嗎？</h2>
                   <p class="post-date">恐龍<span>知識</span></p>
-                  <p class="post-cat"><i class="fas fa-user-edit"></i> 徐涵涵&nbsp;&nbsp;<i class="fas fa-exclamation-circle"></i> 檢舉</p>
+                  <p class="post-cat"><i class="fas fa-user-edit"></i> 徐涵涵&nbsp;&nbsp;<span class="warn" @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
               </header>
+              <div class="clickbac" v-if="showModal">
+                <div class="modal">
+                  <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
+                 <h1>檢舉原因</h1>
+                 <form action="">
+                    <label><input type="radio" name="result" value="惡意中傷">惡意中傷</label><br>
+                    <label><input type="radio" name="result" value="散布謠言">散布謠言</label><br>
+                    <label><input type="radio" name="result" value="不雅字眼">不雅字眼</label><br>
+                  <br>
+                  <input class="button" type="button" value="送出" @click="showModal = false">
+                  </input>
+                 </form>
+                </div>
+              </div>
               <img src="./images/disscus/dino8.jpg" alt="恐龍知識">
               <p>
                   三角龍，是種食植性恐龍。是最晚出現的恐龍之一，距今約6800萬年前到6500萬年前。
@@ -45,15 +60,16 @@
             </div>
             <div class = "disnocontent">
               <h2 class = "disnoname">讚讚讚讚讚~~~~~~~讚讚讚讚讚</h2>
-              <p class = "category">發表於: <span>2021-01-12 13:48:01&nbsp;&nbsp; <i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
+              <p class = "category">發表於: 2021-01-12 13:48:01&nbsp;&nbsp; <span @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
             </div>
           </div>
           <hr>
           <h2>新增留言</h2>
           <form action="">
             <textarea id="single" name="single" placeholder="" style="height:100px"></textarea>
-            <button class="dinbtn">送出</button>
+            <input class="dinbtn" type="button" value="送出"></input>
           </form>
         </div>
+        <script src="./js/dinoSinpage.js"></script>
     </body>
 </html>
