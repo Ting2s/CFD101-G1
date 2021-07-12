@@ -1,60 +1,5 @@
 let data = {
-    disnoitems: [
-      {
-        imgsrc: './images/disscus/dino6.jpg',
-        title: '有可能用琥珀中的恐龍DNA來復活恐龍嗎？',
-        date: '2021-07-08 12:10:12',
-        author: '王小明',
-        category: '文章類別 :',
-        span: '恐龍知識',
-        loc:'./dinoArticlepg.html'
-      },
-      {
-        imgsrc: './images/disscus/dino7.jpg',
-        title: '恐龍世界第一話:歡樂的一天!',
-        date: '2021-07-08 12:10:12',
-        author: '王小明',
-        category: '文章類別 :',
-        span: '恐龍創作',
-        loc:'./dinoArticlepg.html'
-      },
-      {
-        imgsrc: './images/disscus/dino8.jpg',
-        title: '想瞭解三角龍的冷知識嗎？',
-        date: '2021-07-08 12:10:12',
-        author: '徐涵涵',
-        category: '文章類別 :',
-        span: '恐龍知識',
-        loc:'./dinoArticlepg.html'
-      },
-      {
-        imgsrc: './images/disscus/dino3.jpg',
-        title: '跟著劍龍去野餐',
-        date: '2021-07-08 12:10:12',
-        author: '徐涵涵',
-        category: '文章類別 :',
-        span: '恐龍創作',
-        loc:'./dinoArticlepg.html'
-      },
-      {
-        imgsrc: './images/disscus/dino4.jpg',
-        title: '如何養出滿血迅猛龍?分享熱騰騰的攻略',
-        date: '2021-07-08 12:10:12',
-        author: '王小明',
-        category: '文章類別 :',
-        span: '恐龍分享',
-        loc:'./dinoArticlepg.html'
-      },
-      {
-        imgsrc: './images/disscus/dino5.jpg',
-        title: '這次拍的亮黃色劍龍!高清40P大家也來分享',
-        date: '2021-07-08 12:10:12',
-        author: '王小明',
-        category: '文章類別 :',
-        span: '恐龍分享',
-        loc:'./dinoArticlepg.html'
-      },
-    ],
+    artRows:[],
     select: {
       type: '全部',
       title: ''
@@ -67,10 +12,10 @@ let data = {
     computed: {
       typeMenu() {
         if (this.select.type === '全部') {
-          return this.disnoitems
+          return this.artRows
         } else {
-          return this.disnoitems.filter(item => {
-           return item.span ===  this.select.type
+          return this.artRows.filter(item => {
+           return item.art_category ===  this.select.type
           })
         }
       }
@@ -78,6 +23,38 @@ let data = {
     methods: {
       sel(item) {
         this.select.type = item;
+      },
+      getArticle(){
+        let xhr = new XMLHttpRequest();
+        let self =this
+        xhr.onload = function(){
+          if(xhr.status == 200){
+            self.artRows = JSON.parse(xhr.responseText);
+          }else{
+            alert(xhr.status);
+          }
+        }
+        xhr.open("get", "./php/getArticle.php", true);
+        console.log(xhr);
+        xhr.send(null);
       }
     },
+    mounted() {
+      this.getArticle()
+    }
   })
+
+  // function getArticle(){
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.onload = function(){
+  //     if(xhr.status == 200){
+  //       app.artRows = JSON.parse(xhr.responseText);
+  //     }else{
+  //       alert(xhr.status);
+  //     }
+  //   }
+  //   xhr.open("get", "../php/getArticle.php", true);
+  //   xhr.send(null);
+  // }
+
+  // getArticle();
