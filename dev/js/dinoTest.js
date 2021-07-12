@@ -128,11 +128,11 @@ new Vue({
       }
     },
     //當選取的選項和ans一樣時 加一分
-    rightPoint() {
-      if () {
-        return this.point = 1
-      }
-    },
+    // rightPoint() {
+    //   if () {
+    //     return this.point = 1
+    //   }
+    // },
     //將七題的對錯計算
     finalScore() {
 
