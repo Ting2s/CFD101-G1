@@ -198,7 +198,7 @@ function add() {
         litTest_2.classList.remove("remove");
     }
     if(j ===15){
-        window.location.href='dinoIsland.html';
+        window.location.href='dinoGet.html';
     }
 }
 
