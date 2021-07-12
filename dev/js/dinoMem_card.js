@@ -1,4 +1,97 @@
+const maxItemPerPage = 2;
+let pageBar = new Vue({
 
+  el: '#perBox',
+ 
+  data: {
+    postcard: "",
+    //我的明信片
+    cards: [
+      {
+        postcard: "images/dinoPersonal/example3.jpg",
+        value:"我與恐龍"
+      },
+      {
+        postcard: "images/dinoPersonal/example3.jpg",
+        value:"我與恐龍"
+      },
+      {
+        postcard: "images/dinoPersonal/example3.jpg",
+        value:"我與恐龍"
+    },
+    ],
+    //明信片收藏
+    lubcards: [
+      {
+        postcard: "images/dinoPersonal/example4.jpg",
+        value:"他與恐龍"
+      },
+      {
+        postcard: "images/dinoPersonal/example3.jpg",
+        value:"別人的恐龍"
+      },
+      {
+        postcard: "images/dinoPersonal/example3.jpg",
+        value:"恐龍"
+      },
+      {
+        postcard: "images/dinoPersonal/example3.jpg",
+        value:"黑暗恐龍"
+      },
+    ],
+    currentPage: 1
+  },
+  methods: {
+    nextPage() {
+      this.currentPage++;
+    },
+    prePage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    }
+
+  },
+
+  computed: {
+    //我的恐龍
+    getSmallList() {
+      return this.cards.filter((item, index) => {
+        return (
+          index < this.currentPage * maxItemPerPage &&
+          index >= (this.currentPage - 1) * maxItemPerPage
+        );
+      });
+    },
+    //別人的
+    getSmallList_lub() {
+      return this.lubcards.filter((item, index) => {
+        return (
+          index < this.currentPage * maxItemPerPage &&
+          index >= (this.currentPage - 1) * maxItemPerPage
+        );
+      });
+    },
+    isMaxPage() {
+      return this.currentPage >= this.getLastPage;
+    },
+    isMaxPage_lub() {
+      return this.currentPage >= this.getLastPage_lub;
+    },
+    getLastPage() {
+      return Math.ceil(this.cards.length / maxItemPerPage);
+    },
+    getLastPage_lub() {
+      return Math.ceil(this.lubcards.length / maxItemPerPage);
+    }
+  }
+
+  }); 
+
+
+
+
+//===================================================
 let card_btn = document.getElementById("card_btn");
 card_btn.addEventListener("click", function () {
   

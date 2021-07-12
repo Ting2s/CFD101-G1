@@ -73,22 +73,20 @@
               @@include('layout/dinoMem_pageBar.html')
               <!-- 欄位格子 -->
               <div class="myCard" id="myCard">
-                <ul id="ul_1">
-                  <li id="li_1_1">
+                <!-- 第一頁 -->
+                <ul v-for="obj, index in getSmallList">
+
+                  <li id="li_1">
+
                     <button class="deleteCard" onclick="delete_go(this)">
                     </button>
-                    <input type="button" value="我與恐龍">
-                    <img src="images/dinoPersonal/example.jpg" alt="" onclick="openModel(this)">
-                  </li>
-
-                  <li id="li_1_2">
-                    <button class="deleteCard">
-                    </button>
-                    <input type="button" value="我與恐龍">
-                    <img src="images/dinoPersonal/example.jpg" alt="" onclick="openModel(this)">
+                    <input type="button" :value="obj.value">
+                    <img :src="obj.postcard" alt="" onclick="openModel(this)">
                   </li>
 
                 </ul>
+
+
               </div>
             </div>
 
@@ -101,27 +99,13 @@
               <!-- 欄位格子 -->
               <div class="card" id="card">
 
-                <ul>
-                  <li style="display: none;">
-                    <button class="deleteCard">
-                    </button>
-                    <input type="button" value="朋友的恐龍">
-                    <img src="" alt="" onclick="openModel(this)">
-                  </li>
+                <ul v-for="obj, index in getSmallList_lub">
 
                   <li>
                     <button class="deleteCard">
                     </button>
-                    <input type="button" value="朋友的恐龍">
-                    <img src="images/dinoPersonal/example3.jpg" alt="" onclick="openModel(this)">
-                  </li>
-
-                  <li>
-                    <button class="deleteCard">
-                    </button>
-                    <input type="button" value="別人的恐龍">
-                    <img src="images/dinoPersonal/example2.jpg" alt="" onclick="openModel(this)">
-
+                    <input type="button" :value="obj.value">
+                    <img :src="obj.postcard" alt="" onclick="openModel(this)">
                   </li>
 
                 </ul>

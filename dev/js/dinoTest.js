@@ -20,7 +20,10 @@ new Vue({
   el: ('#app'),
   data: {
     answers: [
-      { name: "A" },
+      {
+        name: "A",
+        option:"",
+      },
       { name: "B" },
       { name: "C" },
       { name: "D" },
@@ -94,13 +97,11 @@ new Vue({
     
     isRight: true,
     isShow: false,
-    isActive: false,
     //分數===========
     isStart: false,
     isGame: true,
     isScore: true,
-    isBoard: false,
-    isWhite: true,
+    isWrapper:false,
 
     point: 0,
     allPoint: 0,
@@ -114,35 +115,43 @@ new Vue({
     wrongImg: "images/dinoTest/pic/x.png"
   },
   computed: {
-    //當選擇時按鈕變色+秀出正確錯誤
-    choose: function () {
+
+    // option_A() {
+    //     return $data.questions.A;
+    // },
+
+    choose: function (i) {
       this.isShow = true;
-      this.isActive = true;
-    },
     // 決定是否正確
-    judge: function (i) {
-      if (this.isActive = true,
-        this.questions[i].value = this.questions[i].ans) {
+      if (this.isActive = true &&
+        this.questions[i].target.value == this.questions[i].ans) {
         this.wrongImg = false;
         this.rightImg = true;
+      } else {
+        this.wrongImg = true;
+        this.rightImg = false;
       }
     },
     //當選取的選項和ans一樣時 加一分
-    // rightPoint() {
-    //   // if () {
-    //   //   return this.point = 1
-    //   // }
-    // },
+    rightPoint() {
+      if (this.isActive = true &&
+        this.questions[i].target.value == this.questions[i].ans) {
+        return this.point = 1;
+      } else {
+        return this.point = 0;
+      }
+    },
+
     //將七題的對錯計算
     finalScore() {
-
       for (let i = 1; i<=7; i++) {
         return allPoint += rightPoint();
       };
     },
   },
+
   methods: {
-    //切換成遊戲開始ok
+    //遊戲開始*
     game: function () {
       this.isStart = true;
       this.isGame = false;
@@ -156,7 +165,7 @@ new Vue({
       }
     },
   
-    //切換下頁鍵ok
+    //切換下頁鍵*
     nextTitle: function (i) {
       console.log(this.questions[6].status);
       
@@ -169,16 +178,15 @@ new Vue({
         this.questions[i + 2].status = 1;
       }
 
-      //進入公布分數（直接跳轉??
+      //進入公布分數
       if (this.questions[6].status = 1) {
-        console.log("hi");
         this.isGame = true;
         this.isScore = false;
-        this.isBoard = true;
+        this.isWrapper = true;
       }
     },
 
-    //重新開始ok
+    //重新開始*
     restart: function () {
       // console.log(this.questions[0].status);
 
@@ -187,10 +195,11 @@ new Vue({
         this.questions[i].status = 2
       }
     },
-    //再玩一次ok
+    //再玩一次*
     playAgain() {
       this.isScore = true;
       this.isGame = false;
+      this.isWrapper = false;
 
       this.questions[0].status = 1
       for (let i = 1; i < this.questions.length; i++) {
@@ -198,7 +207,7 @@ new Vue({
       }
     },
     
-    //評論ok
+    //評論*
     comment: function () {
       if (this.score == 7) {
         return this.comment_A;

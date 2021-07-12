@@ -1,4 +1,120 @@
+const maxItemPerPage = 3;
+let pageBar = new Vue({
 
+  el: '#perBox',
+ 
+  data: {
+    postcard: "",
+    //我的明信片
+    cards: [
+      {
+        title: "你們的劍龍會有這種BUG嗎？",
+        time:"2021-06-02",
+        read:"857",
+        repo:"6",
+      },
+      {
+        title: "你們的劍龍會有這種BUG嗎？",
+        time:"2021-06-02",
+        read:"857",
+        repo:"8",
+      },
+      {
+        title: "你們的劍龍會有這種BUG嗎？",
+        time:"2091-06-02",
+        read:"857",
+        repo:"8",
+    },   {
+      title: "你們的劍龍會有這種BUG嗎？",
+      time:"2091-06-02",
+      read:"857",
+      repo:"8",
+  },
+    ],
+    //明信片收藏
+    lubcards: [
+      {
+        title: "三角龍出去玩",
+        time:"2021-06-02",
+        read:"857",
+        repo:"6",
+      },
+      {
+        title: "三角龍出去玩",
+        time:"2021-06-02",
+        read:"857",
+        repo:"8",
+      },
+      {
+        title: "三角龍出去玩",
+        time:"2091-06-02",
+        read:"857",
+        repo:"8",
+    },   {
+      title: "三角龍出去玩",
+      time:"2091-06-02",
+      read:"857",
+      repo:"8",
+      }, {
+      title: "三角龍出去玩",
+      time:"2091-06-02",
+      read:"857",
+      repo:"8",
+},
+    ],
+    currentPage: 1
+  },
+  methods: {
+    nextPage() {
+      this.currentPage++;
+    },
+    prePage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    }
+
+  },
+
+  computed: {
+    //我的恐龍
+    getSmallList() {
+      return this.cards.filter((item, index) => {
+        return (
+          index < this.currentPage * maxItemPerPage &&
+          index >= (this.currentPage - 1) * maxItemPerPage
+        );
+      });
+    },
+    //別人的
+    getSmallList_lub() {
+      return this.lubcards.filter((item, index) => {
+        return (
+          index < this.currentPage * maxItemPerPage &&
+          index >= (this.currentPage - 1) * maxItemPerPage
+        );
+      });
+    },
+    isMaxPage() {
+      return this.currentPage >= this.getLastPage;
+    },
+    isMaxPage_lub() {
+      return this.currentPage >= this.getLastPage_lub;
+    },
+    getLastPage() {
+      return Math.ceil(this.cards.length / maxItemPerPage);
+    },
+    getLastPage_lub() {
+      return Math.ceil(this.lubcards.length / maxItemPerPage);
+    }
+  }
+
+  }); 
+
+
+
+
+//===================================================
 let card_btn = document.getElementById("arti_btn");
 card_btn.addEventListener("click", function () {
   
