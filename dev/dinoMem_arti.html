@@ -65,255 +65,39 @@
 
             <!-- -----我的文章----- -->
             <div class="dinoCon" id="dinoCon_my">
+
               <!-- 選頁按鈕 -->
               @@include('layout/dinoMem_pageBar.html')
               <!-- 欄位格子 -->
               <div class="myArti" id="myArti">
 
-                <!-- 第一頁 -->
-                <div class="arti_p1">
-                  <ul>
+
+                <div class="arti">
+                  <!-- 一行 -->
+                  <ul v-for="obj, index in getSmallList">
                     <li>
                       <img src="images/dinoPersonal/green.png" alt="">
                       <div class="artic">
                         <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
+                          {{obj.title}}
                         </span>
                       </div>
 
                       <div class="detail">
                         <span class="time">
-                          2021-06-02
+                          {{obj.time}}
                         </span>
                         <span class="read">
-                          857
+                          {{obj.read}}
                         </span>
                         <span class="repo" id="repo">
                           <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
+                          {{obj.repo}}
                         </span>
                       </div>
 
-                      <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard">
-                    </li>
-                  </ul>
-
-
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard">
-                    </li>
-                  </ul>
-
-
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard">
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- 第二頁 -->
-                <div class="arti_p2 none">
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                    </li>
-                  </ul>
-
-
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                    </li>
-                  </ul>
-
-
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                    </li>
-                  </ul>
-                </div>
-                <!-- 第三頁 -->
-                <div class="arti_p3 none">
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                    </li>
-                  </ul>
-
-
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                    </li>
-                  </ul>
-
-
-                  <ul>
-                    <li>
-                      <img src="images/dinoPersonal/green.png" alt="">
-                      <div class="artic">
-                        <span class="topic">
-                          你們的劍龍會有這種BUG嗎？
-                        </span>
-                      </div>
-
-                      <div class="detail">
-                        <span class="time">
-                          2021-06-02
-                        </span>
-                        <span class="read">
-                          857
-                        </span>
-                        <span class="repo" id="repo">
-                          <img src="images/dinoPersonal/Icon awesome-reply.png">
-                          6
-                        </span>
-                      </div>
-
-                      <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
+                      <!-- 刪除 -->
+                      <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard" onclick="delete_go(this)">
                     </li>
                   </ul>
                 </div>
@@ -327,86 +111,32 @@
               <!-- 選頁按鈕 -->
               @@include('layout/dinoMem_pageBar.html')
               <div class="arti" id="arti">
-                <ul>
+                <ul v-for="obj, index in getSmallList_lub">
                   <li>
                     <img src="images/dinoPersonal/green.png" alt="">
                     <div class="artic">
                       <span class="topic">
-                        你們的劍龍會有這種BUG嗎？
+                        {{obj.title}}
                       </span>
                     </div>
 
                     <div class="detail">
                       <span class="time">
-                        2021-06-02
+                        {{obj.time}}
                       </span>
                       <span class="read">
-                        857
+                        {{obj.read}}
                       </span>
                       <span class="repo" id="repo">
                         <img src="images/dinoPersonal/Icon awesome-reply.png">
-                        6
+                        {{obj.repo}}
                       </span>
                     </div>
 
-                    <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
+                    <!-- 刪除 -->
+                    <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard" onclick="delete_go(this)">
                   </li>
                 </ul>
-
-
-                <ul>
-                  <li>
-                    <img src="images/dinoPersonal/green.png" alt="">
-                    <div class="artic">
-                      <span class="topic">
-                        你們的劍龍會有這種BUG嗎？
-                      </span>
-                    </div>
-
-                    <div class="detail">
-                      <span class="time">
-                        2021-06-02
-                      </span>
-                      <span class="read">
-                        857
-                      </span>
-                      <span class="repo" id="repo">
-                        <img src="images/dinoPersonal/Icon awesome-reply.png">
-                        6
-                      </span>
-                    </div>
-
-                    <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                  </li>
-                </ul>
-
-
-                <ul>
-                  <li>
-                    <img src="images/dinoPersonal/green.png" alt="">
-                    <div class="artic">
-                      <span class="topic">
-                        你們的劍龍會有這種BUG嗎？
-                      </span>
-                    </div>
-
-                    <div class="detail">
-                      <span class="time">
-                        2021-06-02
-                      </span>
-                      <span class="read">
-                        857
-                      </span>
-                      <span class="repo" id="repo">
-                        <img src="images/dinoPersonal/Icon awesome-reply.png">
-                        6
-                      </span>
-                    </div>
-
-                    <img src="images/dinoPersonal/exit.png" alt="" onclick="deleteCard(this)">
-                  </li>
-                </ul>
-
               </div>
 
             </div>

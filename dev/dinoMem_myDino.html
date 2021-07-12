@@ -103,83 +103,16 @@
               <!-- 欄位格子 -->
               <div class="dino" id="dino">
 
-                <div class="mydino_p1">
-                  <ul>
-                    <li class="ocean">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
 
-                      <input type="button" value="龍春暉">
+                <ul v-for="obj, index in getSmallList">
+                  <li class="ocean">
+                    <img :src="obj.picture" alt="" id="dino_1" onclick="openModel(this)">
 
+                    <input type="button" :value="obj.value">
+                  </li>
 
-                    </li>
+                </ul>
 
-                    <li class="ground">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                      <input type="button" value="龍春暉">
-
-
-                    </li>
-
-
-                    <li class="sky">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                      <input type="button" value="龍春暉">
-
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="mydino_p2 none">
-                  <ul>
-                    <li class="ocean">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
-
-                      <input type="button" value="龍春暉">
-
-
-                    </li>
-
-                    <li class="ground">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                      <input type="button" value="龍春暉">
-
-
-                    </li>
-
-
-                    <li class="sky">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                      <input type="button" value="龍春暉">
-
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="mydino_p3 none">
-                  <ul>
-                    <li class="ocean">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_1" onclick="openModel(this)">
-
-                      <input type="button" value="龍春暉">
-
-
-                    </li>
-
-                    <li class="ground">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                      <input type="button" value="龍春暉">
-
-
-                    </li>
-
-
-                    <li class="sky">
-                      <img src="images/dinoPersonal/d2.png" alt="" id="dino_2" onclick="openModel(this)">
-                      <input type="button" value="龍春暉">
-
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
 
@@ -190,41 +123,24 @@
               @@include('layout/dinoMem_pageBar.html')
               <div class="dinoAcc" id="dinoAcc">
                 <!-- 一頁 -->
-                <ul>
-                  <li class="hat">
-                    <img src="images/dinoPersonal/prod1.png" onclick="myHat(this)">
-                  </li>
 
-                  <li class="ring">
+                <ul>
+                  <div class="acc" v-for="obj, index in getSmallList_lub">
+                    <li class="hat">
+                      <img :src="obj.picture" onclick="myHat(this)">
+                    </li>
+                  </div>
+                  <!-- 
+                  <li class="ticket">
                     <img src="images/dinoPersonal/prod4.png" onclick="myTicket(this)">
                   </li>
 
-                  <li class="shoes">
+                  <li class="back">
                     <img src="images/dinoPersonal/prod6.png" onclick="myBack(this)">
-                  </li>
+                  </li> -->
 
-                  <li class="shoes">
-                    <img src="" alt="" onclick="myBack(this)">
-                  </li>
                 </ul>
 
-                <ul>
-                  <li class="hat">
-                    <img src="" alt="" onclick="myCat(this)">
-                  </li>
-
-                  <li class="ring">
-                    <img src="" alt="" onclick="myTicket(this)">
-                  </li>
-
-                  <li class="shoes">
-                    <img src="" alt="" onclick="myBack(this)">
-                  </li>
-
-                  <li class="shoes">
-                    <img src="" alt="" onclick="myBack(this)">
-                  </li>
-                </ul>
               </div>
             </div>
 
