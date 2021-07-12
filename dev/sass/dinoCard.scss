@@ -146,15 +146,16 @@ body{
     }
     @include respondTo(medium) {
       font-size: 16px;//----------------
-      left:calc(50% - 34%);
-      margin-right: 2rem;
+      left:calc(50% - 37%);
       writing-mode: vertical-rl;
       text-orientation: sideways;
       transform: rotate(-90deg);
-      //text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 3px;
-      background-image: url(../images/dinoCardboard/titleBoard.png);
-      background-size: contain;
-      padding: .9rem;
+      //text-shadow: rgb(255, 255, 255) 1px 1px 3px;
+      padding: 10px;
+      box-shadow: 0px 3px darkseagreen;
+      color: darkgreen;
+      line-height: 18px;
+      top: .7rem;
     }
   }
 
@@ -181,17 +182,24 @@ body{
 
   .addMore{
     position: absolute;
-    //top: 2.2em;
     margin-top: 2.4rem;
-    left:calc(50%);
+    left:50%;
     @include respondTo(large) {
       margin-top: 1.8rem;
+    }
+    @include respondTo(medium) {
+      z-index: 888;
+      left:6.2rem;
+      margin-top: 9rem;
     }
 
     .addmoreText1{
       width: 32%;
       @include respondTo(large) {
         width: 26%;
+      }
+      @include respondTo(medium) {
+        
       }
 
       img{
@@ -215,6 +223,16 @@ body{
           top: 20px;
           font-size: 16px;
         }
+        @include respondTo(medium) {
+          font-size: 12px;
+          width: 56px;
+          color: #ffffff;
+          border: 1px solid #e6e6e6;
+          padding: .5rem;
+          border-radius: 5px;
+          //background-color: #e6e6e6;
+          cursor: pointer;
+        }
       }
       
     }
@@ -223,6 +241,9 @@ body{
       width: 32%;
       @include respondTo(large) {
         width: 26%;
+      }
+      @include respondTo(medium) {
+        
       }
 
       img{
@@ -245,6 +266,18 @@ body{
           left: 128px;
           top: 20px;
           font-size: 16px;
+        }
+        @include respondTo(medium) {
+          font-size: 12px;
+          width: 56px;
+          color: rgb(255, 255, 255);
+          border: 1px solid #e6e6e6;
+          padding: .5rem;
+          border-radius: 5px;
+          top: 4.5rem;
+          left: 1.1rem;
+          //background-color: #e6e6e6;
+          cursor: pointer;
         }
       }
     }
@@ -328,7 +361,10 @@ body{
     margin-top: 6.8rem;
   }
   @include respondTo(medium) {
-    display: none;
+    margin-top: 5rem;
+    position: absolute;
+    display: inline-grid;
+    right: 10rem;
   }
    
   .save,
@@ -341,9 +377,15 @@ body{
     @include respondTo(large) {
       width: 14%;
     }
+    @include respondTo(medium) {
+      margin-top: 2.2rem;
+    }
 
     img{
       width: 100%;
+      @include respondTo(medium) {
+        display: none;
+      }
     }
 
     span{
@@ -355,6 +397,11 @@ body{
       @include respondTo(large) {
         font-size: 18px;
       }
+      @include respondTo(medium) {
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        width: 26px;
+      }
     }
 
     .downText1,
@@ -365,6 +412,11 @@ body{
       padding-top: 24px;
       @include respondTo(large) {
         padding-top: 17px;
+      }
+      @include respondTo(medium) {
+        background-image: url(../images/dinoCard/mBtn.png);
+        background-size: cover;
+        padding: .7rem 1.2rem .6rem 1.4rem;
       }
     }
   }
