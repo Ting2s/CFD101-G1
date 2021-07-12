@@ -2,7 +2,7 @@ const { src, dest, series, parallel, watch } = require("gulp");
 
 // 只是移動php檔案
 function php(){
-    return src(["dev/php/*.*", "dev/php/**/*.*"])
+    return src(["dev/phps/*.*", "dev/phps/**/*.*"])
     .pipe(dest("dist/php"));
 }
 

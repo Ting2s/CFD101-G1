@@ -22,7 +22,7 @@ body {
 }
 
 .Dino-1 {
-    width: 15%;
+    width: 17%;
     position: absolute;
     left: 11%;
     top: 3%;
@@ -30,7 +30,7 @@ body {
 }
 
 .Dino-1-col{
-    width: 15%;
+    width: 17%;
     position: absolute;
     left: 11%;
     top: 3%;
@@ -149,6 +149,8 @@ body {
     background-color: white;
     margin-left: -25%;
     border-radius: 15px;
+    position: relative;
+    top: 20%;
 }
 
 .int-item h2{
@@ -169,6 +171,15 @@ body {
     letter-spacing: 1px;
 }
 
+.int-item h3{
+    font-size: 22px;
+    color: #4b69ce;
+    padding: 0 10%  5% 10%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
 
 
 
