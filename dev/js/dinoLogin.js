@@ -148,7 +148,7 @@ function sendForm() {
   xhr.onload = function () {
     if (xhr.status == 200) {
       let member = JSON.parse(xhr.responseText);
-      if (member.mem_id) {
+      if (member.mem_id != undefined) {
         alert("登入成功！");
 
       } else {
@@ -158,7 +158,8 @@ function sendForm() {
       alert(xhr.status);
     }
   }
-  xhr.open("post", "dist/dinoLogin.php", true);
+  xhr.open("post", "./php/dinoLogin.php", true);
+
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
   let data_info = `mem_id=${$id("mem_id").value} & 
