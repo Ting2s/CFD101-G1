@@ -1,6 +1,6 @@
 <?php
 try {
-    $dbname = "cfd101-g1";
+    $dbname = "connect_cfd101g1";
 /*上傳用帳密，本機開發時請更改為個人mysql帳密*/
     $user = "root";
     $password = "root";
@@ -12,4 +12,4 @@ try {
     echo '錯誤行號:', $e->getLine(), '<br>';
     echo '錯誤訊息:', $e->getMessage(), '<br>';
 }
-?> 
+?>

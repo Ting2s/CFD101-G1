@@ -22,11 +22,17 @@ new Vue({
     answers: [
       {
         name: "A",
-        option:"",
+        option:""
       },
-      { name: "B" },
-      { name: "C" },
-      { name: "D" },
+      {
+        name: "B",
+        option:""  },
+      {
+        name: "C",
+        option:""  },
+      {
+        name: "D",
+        option:""  },
     ],
     questions: [
       {
@@ -49,10 +55,10 @@ new Vue({
       },
       {
         q: "最小的恐龍是？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
+        A: "s",
+        B: "d",
+        C: "e",
+        D: "c",
         status: "2",
         ans: "70噸",
       },
@@ -93,7 +99,7 @@ new Vue({
         ans: "70噸",
       }
     ],
-    choose_q: [],
+    quest_rows:[],
     
     isRight: true,
     isShow: false,
@@ -116,9 +122,6 @@ new Vue({
   },
   computed: {
 
-    // option_A() {
-    //     return $data.questions.A;
-    // },
 
     choose: function (i) {
       this.isShow = true;
@@ -157,34 +160,71 @@ new Vue({
       this.isGame = false;
     },
 
+    //轉換
+    options(i) {
+
+      if (this.answers.name="A") {
+        return this.questions[i].A;
+      };
+      if(this.answers.name="B") {
+        return this.questions[i].B;
+      };
+      if(this.answers.name="C") {
+        return this.questions[i].C;
+      };
+      if(this.answers.name="D") {
+        return this.questions[i].D;
+      };
+      
+    },
+    
+    //撈資料庫
+    myQuiz(){
+      const xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        if(xhr.status == 200){
+          this.quest_rows = JSON.parse(xhr.responseText);
+        }else{
+          alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getQuestion.php", true);
+      xhr.send(null);
+    },
+
     //20題抽7
     chooseQA() {
-      for (let i = 0; i < this.questions.length; i++) {
+      for (let i = 0; i < this.quest_rows.length; i++) {
         let choose = Math.floor(Math.random() * 7);
-        choose = this.choose_q;
+        choose = this.questions;
       }
     },
   
     //切換下頁鍵*
     nextTitle: function (i) {
-      console.log(this.questions[6].status);
       
       if (this.questions[i].status < this.questions[i + 1].status) {
         this.questions[i].status = 2;
         this.questions[i + 1].status = 1;
 
-      } else {
+      } else if (this.questions[i].status > this.questions[i + 1].status) {
         this.questions[i + 1].status = 2;
         this.questions[i + 2].status = 1;
-      }
 
-      //進入公布分數
-      if (this.questions[6].status = 1) {
+    //切換分數
+      } else if (this.questions[6].status = 1) {
         this.isGame = true;
         this.isScore = false;
         this.isWrapper = true;
-      }
+    }
     },
+    //進入公布分數
+    // inScore(){
+    //   if (this.questions[6].status = 1) {
+    //     this.isGame = true;
+    //     this.isScore = false;
+    //     this.isWrapper = true;
+    // }},
 
     //重新開始*
     restart: function () {
@@ -218,6 +258,10 @@ new Vue({
       }
     }
   },
+
+  mounted() {
+    this.myQuiz();
+  }
 })
 
 

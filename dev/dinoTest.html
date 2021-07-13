@@ -72,7 +72,7 @@
 
               <div class="buttonBox" v-for="(answer,index) in answers">
                 <button class="chooseBtn" @click="choose(index)">
-                  {{answer.name}}.{{answer.option}}
+                  {{answer.name}}.{{ options(index) }}
                 </button>
 
                 <!-- 判決對錯 -->
