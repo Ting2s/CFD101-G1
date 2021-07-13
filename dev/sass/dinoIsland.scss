@@ -143,7 +143,7 @@ body {
 }
 
 //介紹框
-.intItem {
+.intItem-1 {
     width: 40%;
     font-family: 'DFPLiYuan';
     background-color: white;
@@ -154,7 +154,8 @@ body {
     display: none;
 }
 
-.intItem h2 {
+.intItem-1 h2,
+.intItem-2 h2 {
     font-size: 23px;
     color: #e05301;
     padding: 5%;
@@ -162,7 +163,9 @@ body {
     text-align: center;
 }
 
-.intItem p {
+//翼手龍&共用css
+.intItem-1 p,
+.intItem-2 p {
     font-size: 20px;
     color: #6e6e6e;
     padding: 0 10% 5% 10%;
@@ -172,7 +175,8 @@ body {
     letter-spacing: 1px;
 }
 
-.intItem h3 {
+.intItem-1 h3,
+.intItem-2 h3 {
     font-size: 22px;
     color: #4b69ce;
     padding: 0 10% 5% 10%;
@@ -181,3 +185,27 @@ body {
     line-height: 180%;
     letter-spacing: 1px;
 }
+
+//始祖鳥
+.intItem-2 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: -12%;
+    border-radius: 15px;
+    position: relative;
+    top: 35%;
+    display: none;
+}
+
+//暴龍
+// .intItem-3 {
+//     width: 40%;
+//     font-family: 'DFPLiYuan';
+//     background-color: white;
+//     margin-left: -12%;
+//     border-radius: 15px;
+//     position: relative;
+//     top: 35%;
+//     // display: none;
+// }
