@@ -1,6 +1,6 @@
 <?php 
 try{
-	require_once("./connectBooks.php");
+	require_once("../connect_cfd101g1.php");
 	$sql = "SELECT * FROM `quiz_question`";
 	$qustion = $pdo->query($sql);
 	$quest_rows = $question->fetchAll(PDO::FETCH_ASSOC);

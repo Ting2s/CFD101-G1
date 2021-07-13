@@ -4,8 +4,8 @@ session_start();
 
 
 try{
-  require_once("./connectBooks.php");
-  $sql = "select * from `member` where mem_id=:mem_id and mem_pw=:mem_pw";
+  require_once("../connect_cfd101g1.php");
+  $sql = "select * from `member` where mem_id=:mem_id && mem_pw=:mem_pw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":mem_id", $_POST["mem_id"]);
   $member->bindValue(":mem_pw", $_POST["mem_pw"]);

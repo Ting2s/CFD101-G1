@@ -180,16 +180,15 @@ new Vue({
     
     //撈資料庫
     myQuiz(){
-      let xhr = new XMLHttpRequest();
+      const xhr = new XMLHttpRequest();
       xhr.onload = function(){
         if(xhr.status == 200){
           this.quest_rows = JSON.parse(xhr.responseText);
         }else{
-          // alert(xhr.status);
+          alert(xhr.status);
         }
       }
       xhr.open("get", "./php/getQuestion.php", true);
-      console.log(xhr);
       xhr.send(null);
     },
 
