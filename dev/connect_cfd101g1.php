@@ -12,4 +12,4 @@ try {
     echo '錯誤行號:', $e->getLine(), '<br>';
     echo '錯誤訊息:', $e->getMessage(), '<br>';
 }
-?> 
+?>
