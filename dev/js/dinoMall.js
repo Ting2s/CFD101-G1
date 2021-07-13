@@ -273,13 +273,14 @@ function closeModalBoxB(){
 // =========================================================
 function init(){
   // let imgs =  document.getElementsByClassName("imgClass");
+  // 點擊 帽子
   let imgs =  document.querySelectorAll('.imgClassHat');
               console.log(imgs);
   for(let i=0; i<imgs.length; i++){
     imgs[i].onclick = showImgHat;
   };
 
-
+  // 點擊 紋身貼紙
   let imgsSticks =  document.querySelectorAll('.imgSticks');
               // console.log(imgsSticks);
   for(let i=0; i<imgsSticks.length; i++){

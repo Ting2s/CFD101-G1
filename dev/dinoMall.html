@@ -5,14 +5,15 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>dinoMall</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
       @@include('layout/style.html')
       <link rel="stylesheet" href="css/dinoMall.css">
-      <title>dinoMall</title>
 </head>
 
 <body>
       @@include('layout/header.html')
-      <section>
+      <section  id="app">
             <div class="wrapMall">
                   <div class="itemLeft">
                         <div class="cardLeft">
@@ -26,15 +27,9 @@
                               </span>
                               <img src="./images/dinoMall/d3.png" class="showImg_Mall" id="showImg_Mall">
                         </div>
-                        <div class="groundButton">
-                              <button id="btnSelect_a" class="btnSelect">
-                                    選擇恐龍
-                              </button>
-                              <button id="btnSelect_b" class="btnSelect">
-                                    脫光光
-                              </button>
-                              <button id="btnSelect_c" class="btnSelect">
-                                    儲存造型
+                        <div class="groundButton" >
+                              <button :id="btnSelect(index)"   :class="{btnSelect:isActive}" v-for="(dino,index) in dinos">
+                                    {{dino}} 
                               </button>
                         </div>
                   </div>
@@ -57,56 +52,56 @@
                                     <span id=showName>帽子</span>
                                     <button id="nextPage" class="nextPage"></button>
                               </div>
-                              <div class="btnCard-1" id="btnCard-1">
-                                    <div class="imgCard">
-                                          <div class="imgLeft card ">
-                                                <img src="./images/dinoMall/prod1.png" class="imgClassHat shopItemImage" alt="" title="海盜帽">
-                                                <span class="shopItemPrice">$10</span>
+                              <div class="btnCard-1" id="btnCard-1"  >
+                                    <div class="imgCard" v-for="itemImg in itemImgs">
+                                          <div class="imgLeft card " >
+                                                <img :src="itemImg.imgURL" 
+                                                :class="{imgClassHat:isImgClassHat,shopItemImage:isShopItemImage}"   :title="itemImg.hat">
+                                                <span class="shopItemPrice">{{itemImg.price}}</span>
                                                 <div class="smallCart">
-                                                      <img src="./images/dinoMall/smallCart.png" alt="">
+                                                      <img :src="smallCartImg" alt="cart">
                                                 </div>
                                           </div>
-                                          
-                                          <div class="imgRight card">
-                                                <img src="./images/dinoMall/prod2.png" class="imgClassHat shopItemImage" alt="" title="皮卡丘">
-                                                <span class="shopItemPrice">$20</span>
+                                          <div class="imgRight card" >
+                                                <img :src="itemImg.imgURL"                            :class="{imgClassHat:isImgClassHat,shopItemImage:isShopItemImage}"   :title="itemImg.hat">
+                                                <span class="shopItemPrice">{{itemImg.price}}</span>
                                                 <div class="smallCart">
-                                                      <img src="./images/dinoMall/smallCart.png" alt="">
+                                                      <img :src="smallCartImg" alt="cart">
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <!-- <div class="imgCard">
+                                          <div class="imgLeft card">
+                                                <img :src="itemImg.imgURL3" class="imgClassHat shopItemImage" :title="itemImg.hat">
+                                                <span class="shopItemPrice">{{itemImg.price}}</span>
+                                                <div class="smallCart">
+                                                      <img :src="smallCartImg" alt="cart">
+                                                </div>
+                                          </div>
+                                          <div class="imgRight card">
+                                                <img :src="itemImg.imgURL4" class="imgClassHat shopItemImage" :title="itemImg.hat">
+                                                <span class="shopItemPrice">{{itemImg.price}}</span>
+                                                <div class="smallCart">
+                                                      <img :src="smallCartImg" alt="cart">
                                                 </div>
                                           </div>
                                     </div>
                                     <div class="imgCard">
                                           <div class="imgLeft card">
-                                                <img src="./images/dinoMall/prod3.png" class="imgClassHat shopItemImage" alt="" title="皇冠">
-                                                <span class="shopItemPrice">$30</span>
+                                                <img :src="itemImg.imgURL5" class="imgClassHat shopItemImage" :title="itemImg.hat">
+                                                <span class="shopItemPrice">{{itemImg.price}}</span>
                                                 <div class="smallCart">
-                                                      <img src="./images/dinoMall/smallCart.png" alt="">
+                                                      <img :src="smallCartImg" alt="cart">
                                                 </div>
                                           </div>
                                           <div class="imgRight card">
-                                                <img src="./images/dinoMall/prod4.png" class="imgClassHat shopItemImage" alt="" title="魔法帽">
-                                                <span class="shopItemPrice">$20</span>
+                                                <img :src="itemImg.imgURL6" class="imgClassHat shopItemImage" :title="itemImg.hat">
+                                                <span class="shopItemPrice">{{itemImg.price}}</span>
                                                 <div class="smallCart">
-                                                      <img src="./images/dinoMall/smallCart.png" alt="">
+                                                      <img :src="smallCartImg" alt="cart">
                                                 </div>
                                           </div>
-                                    </div>
-                                    <div class="imgCard">
-                                          <div class="imgLeft card">
-                                                <img src="./images/dinoMall/prod5.png" class="imgClassHat shopItemImage" alt="" title="紅貝蕾帽">
-                                                <span class="shopItemPrice">$10</span>
-                                                <div class="smallCart">
-                                                      <img src="./images/dinoMall/smallCart.png" alt="">
-                                                </div>
-                                          </div>
-                                          <div class="imgRight card">
-                                                <img src="./images/dinoMall/prod6.png" class="imgClassHat shopItemImage" alt="" title="綠貝蕾帽">
-                                                <span class="shopItemPrice">$10</span>
-                                                <div class="smallCart">
-                                                      <img src="./images/dinoMall/smallCart.png" alt="">
-                                                </div>
-                                          </div>
-                                    </div>
+                                    </div> -->
                               </div>
                               <!-- 紋身貼紙 -->
                               <div class="btnCard-2 none" id="btnCard-2">
@@ -232,6 +227,7 @@
     @@include('layout/footer.html')
     <!-- js -->
      <script src="js/dinoMall.js"></script>
+     <script src="js/dinoMall(ADD).js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>
    
