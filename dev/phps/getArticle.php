@@ -1,6 +1,6 @@
 <?php 
 try{
-	require_once("./connectBooks.php");
+	require_once("../connect_cfd101g1.php");
 	$sql = "SELECT a.*,m.mem_nicname FROM `member` m join article a WHERE a.mem_no=m.mem_no";
 	$article = $pdo->query($sql);
 	$artRows = $article->fetchAll(PDO::FETCH_ASSOC);
