@@ -23,6 +23,8 @@ let data = {
           if(xhr.status == 200){
             self.artRows = JSON.parse(xhr.responseText);
             self.artitem = self.artRows.filter(item => item.art_no === self.url ) 
+            self.cat = self.artitem[0].art_category.substring(0, 2);
+            self.cate = self.artitem[0].art_category.substring(2, 4);
           }else{
             alert(xhr.status);
           }
@@ -30,8 +32,6 @@ let data = {
         xhr.open("get", "./php/getArticle.php", true);
         console.log(xhr);
         xhr.send(null);
-        this.cat = self.artitem[0].art_category.subString(0, 2);
-        this.cate = self.artitem[0].art_category.subString(2, 4);
       },
     },
     mounted() {
