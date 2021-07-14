@@ -139,7 +139,7 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
 }
 
   h3{
-    font-size: $font-h3;
+    font-size: ($font-h3)-5px;
   }
 }
 
@@ -149,7 +149,7 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 25px;
   margin: auto;
   width: 450px;
   font-weight: $font-bold;
@@ -159,17 +159,22 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
 
   button{
     width: 160px;
-    padding: 20px;
+    padding: 30px;
     border-style:none;
     background:url(../../dev/images/dinoTest/pic/goldWood.png) no-repeat center center;
     background-size: contain;
-    font-size: ($font-h4)-3px;
+    font-size: ($font-h4)-7px;
     color:$white;
 
 
     &:hover{
       color: $yellow-first;
     }
+  }
+
+  .clicked{
+    background:url(../../dev/images/dinoTest/pic/goldWood_red.png) no-repeat center center;
+    background-size: contain;
   }
 
 }

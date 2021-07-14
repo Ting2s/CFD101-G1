@@ -71,7 +71,7 @@
             <div class="choose">
 
               <div class="buttonBox" v-for="(answer,index) in answers">
-                <button class="chooseBtn" @click="choose(index)" :style="clicked">
+                <button class="chooseBtn" @click="choose(index)" :class="{'clicked' :isClick}">
                   {{answer.name}}.{{ options(index) }}
                 </button>
 

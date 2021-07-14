@@ -5,7 +5,7 @@ session_start();
 
 try{
   require_once("../connect_cfd101g1.php");
-  $sql = "select * from `member` where mem_id=:mem_id && mem_pw=:mem_pw";
+  $sql = " SELECT * from `member` where mem_id=:mem_id && mem_pw=:mem_pw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":mem_id", $_POST["mem_id"]);
   $member->bindValue(":mem_pw", $_POST["mem_pw"]);
@@ -15,6 +15,8 @@ try{
   echo "{}";
   }else{ //登入成功
     //自資料庫中取回資料
+    
+
     $memRow = $member->fetch(PDO::FETCH_ASSOC);
     //寫入session
     $_SESSION["mem_no"] = $memRow["mem_no"];
@@ -39,7 +41,11 @@ try{
   ];
     echo  json_encode($result);
   }
+  
 }catch(PDOException $e){
-  echo $e->getMessage();
+  echo $e->getMessage();  
+  
+
+
 }
 ?>

@@ -19,29 +19,15 @@ new Vue({
 
   el: ('#app'),
   data: {
-    answers: [
-      {
-        name: "A",
-        option:""
-      },
-      {
-        name: "B",
-        option:""  },
-      {
-        name: "C",
-        option:""  },
-      {
-        name: "D",
-        option:""  },
-    ],
-    //被選上的問題
+    answers: [{name:"A",option:""}
+      ,{name:"B",option:""}
+      ,{name:"C",option:""}
+      ,{name:"D",option:""}
+      ],
+    //題庫
     questions:[],
-    //問題庫
-    quest_rows: [],
 //============== 
-    clicked: {
-      color: 'red',
-    },   
+    isClick:false,   
 //==============   
     isRight: true,
     isShow: false,
@@ -66,7 +52,7 @@ new Vue({
 
     choose(i) {
       this.isShow = true;
-      this.clicked = true;
+      this.isClick = true;
     //顯示對錯
       if (this.clicked = true &&
         this.questions[i].target.value == this.questions[i].quiz_a) {
@@ -100,33 +86,23 @@ new Vue({
     game() {
       this.isStart = true;
       this.isGame = false;
+      this.questions[0].status = 1;
     },
 
     //轉換選項
     options(i) {
-
-      if (this.answers.name="A") {
-        this.questions[i].quiz_opt1;
-      };
-      if(this.answers.name="B") {
-        this.questions[i].quiz_opt2;
-      };
-      if(this.answers.name="C") {
-        this.questions[i].quiz_opt3;
-      };
-      if(this.answers.name="D") {
-        this.questions[i].quiz_opt4;
-      };
-      
+        return this.answers[0].option = this.questions[i].quiz_a;
+      // this.answers[1].option = this.questions[i].quiz_opt2;
     },
-    
+
+
     //撈資料庫*
     myQuiz(){
       const xhr = new XMLHttpRequest();
       const my =this
       xhr.onload = function(){
         if (xhr.status == 200) {
-      my.quest_rows = JSON.parse(xhr.responseText);
+      my.questions = JSON.parse(xhr.responseText);
         }else{
           alert(xhr.status);
         }
@@ -134,29 +110,9 @@ new Vue({
       xhr.open("get", "./php/getQuestion.php", true);
       xhr.send(null);
     },
-
-    //20題抽7
-    chooseQustion() {
-      for (let i = 0; i < 7; i++) {
-        let chooseQ = Math.floor(Math.random() * this.quest_rows.length);
-        this.questions= this.quest_rows[chooseQ];
-    
-        //撇除重複
-        for (let j = 0; j < i; j++) 
-        {
-          while (this.questions[i] == this.questions[i])
-        {
-          j = 0; 
-          let chooseQ = Math.floor(Math.random() * this.quest_rows.length);
-          this.questions = this.quest_rows[chooseQ];
-        }
-        }
-      }
-    },
   
     //切換下頁鍵*
     nextTitle(i) {
-      
       if (this.questions[i].status < this.questions[i + 1].status) {
         this.questions[i].status = 2;
         this.questions[i + 1].status = 1;
@@ -172,13 +128,6 @@ new Vue({
         this.isWrapper = true;
     }
     },
-    //進入公布分數
-    // inScore(){
-    //   if (this.questions[6].status = 1) {
-    //     this.isGame = true;
-    //     this.isScore = false;
-    //     this.isWrapper = true;
-    // }},
 
     //重新開始*
     restart() {
@@ -215,7 +164,6 @@ new Vue({
 
   mounted() {
     this.myQuiz();
-    this.chooseQustion();
   }
 })
 
