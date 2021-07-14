@@ -20,33 +20,15 @@
     <body>
         @@include('layout/header.html')
         <div class="news-contents wrapper" id="app">
-          <article>
+          <article  v-for="artRow in artitem">
               <header class="post-info">
-                  <h2 class="post-title">想瞭解三角龍的冷知識嗎？</h2>
-                  <p class="post-date">恐龍<span>知識</span></p>
-                  <p class="post-cat"><i class="fas fa-user-edit"></i> 徐涵涵&nbsp;&nbsp;<span class="warn" @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
+                  <h2 class="post-title">{{artRow.art_title}}</h2>
+                  <p class="post-date">{{cat}}<span>{{cate}}</span></p>
+                  <p class="post-cat"><i class="fas fa-user-edit"></i> {{artRow.mem_nicname}}&nbsp;&nbsp;<span class="warn" @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
               </header>
-              <div class="clickbac" v-if="showModal">
-                <div class="modal">
-                  <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
-                 <h1>檢舉原因</h1>
-                 <form action="">
-                    <label><input type="radio" name="result" value="惡意中傷">惡意中傷</label><br>
-                    <label><input type="radio" name="result" value="散布謠言">散布謠言</label><br>
-                    <label><input type="radio" name="result" value="不雅字眼">不雅字眼</label><br>
-                  <br>
-                  <input class="button" type="button" value="送出" @click="showModal = false">
-                  </input>
-                 </form>
-                </div>
-              </div>
-              <img src="./images/disscus/dino8.jpg" alt="恐龍知識">
+              <img :src="artRow.art_picture" alt="恐龍知識">
               <p>
-                  三角龍，是種食植性恐龍。是最晚出現的恐龍之一，距今約6800萬年前到6500萬年前。
-                  它們有非常大的頭盾，以及三根角狀物，令人聯想起現代犀牛。
-                  三角龍最顯著的特徵是它們的大型頭顱，是所有陸地動物中最大之一。它們的頭盾可
-                  長至超過2.5米，可以達到整個動物身長的1/3。
-                  三角龍個體的身長被估計有7.9到9米長，高度為2.9到3米。
+                {{artRow.art_content}}
               </p>
               <p>
               </p>
@@ -69,6 +51,20 @@
             <textarea id="single" name="single" placeholder="" style="height:100px"></textarea>
             <input class="dinbtn" type="button" value="送出"></input>
           </form>
+          <div class="clickbac" v-if="showModal">
+            <div class="modal">
+              <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
+             <h1>檢舉原因</h1>
+             <form action="">
+                <label><input type="radio" name="result" value="惡意中傷">惡意中傷</label><br>
+                <label><input type="radio" name="result" value="散布謠言">散布謠言</label><br>
+                <label><input type="radio" name="result" value="不雅字眼">不雅字眼</label><br>
+              <br>
+              <input class="button" type="button" value="送出" @click="showModal = false">
+              </input>
+             </form>
+            </div>
+          </div>
         </div>
         <script src="./js/dinoSinpage.js"></script>
         @@include('layout/footer.html')

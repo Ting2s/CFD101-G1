@@ -1,8 +1,41 @@
-let vm = new Vue({
+
+let data = {
+    artRows:[],
+    showModal: false,
+    artitem:[],
+    url:"",
+    cat:"",
+    cate:""
+  }
+
+  let vm = new Vue({
     el: '#app',
-    data () {
-      return {
-        showModal: false
-      }
+    data : data,
+    methods: {
+      geturl(){
+        this.url = window.location.search.split("=")[1]
+      },
+
+      getArticle(){
+        let xhr = new XMLHttpRequest();
+        let self =this
+        xhr.onload = function(){
+          if(xhr.status == 200){
+            self.artRows = JSON.parse(xhr.responseText);
+            self.artitem = self.artRows.filter(item => item.art_no === self.url ) 
+            self.cat = self.artitem[0].art_category.substring(0, 2);
+            self.cate = self.artitem[0].art_category.substring(2, 4);
+          }else{
+            alert(xhr.status);
+          }
+        }
+        xhr.open("get", "./php/getArticle.php", true);
+        console.log(xhr);
+        xhr.send(null);
+      },
+    },
+    mounted() {
+      this.geturl()
+      this.getArticle()
     }
-  })
+})
