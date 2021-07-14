@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .Wrap {
@@ -256,5 +257,5 @@ body {
     border-radius: 15px;
     position: relative;
     top: 67%;
-    // display: none;
+    display: none;
 }

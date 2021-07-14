@@ -19,6 +19,7 @@ body {
     position: relative;
 }
 
+//Egg-1
 .egg-1 {
     position: absolute;
     width: 20%;
@@ -31,13 +32,21 @@ body {
     animation: egg-1 1.5s forwards;
 }
 
-.egg-1-move:hover {
+.egg-1-touch {
     animation: eggmove 0.5s 0.3s infinite alternate;
     bottom: 27vh;
     left: -20%;
     width: 30%;
 }
 
+.egg-1-leave {
+    bottom: 27vh;
+    left: -20%;
+    width: 30%;
+    transform: rotate(10deg);
+}
+
+//Egg-2
 .egg-2 {
     position: absolute;
     width: 26%;
@@ -50,12 +59,19 @@ body {
     animation: egg-2 1.5s forwards;
 }
 
-.egg-2-move:hover {
+.egg-2-touch {
     animation: eggmove 0.5s 0.3s infinite alternate;
     bottom: 27vh;
     width: 28%;
 }
 
+.egg-2-leave {
+    bottom: 27vh;
+    width: 28%;
+    transform: rotate(-3deg);
+}
+
+//Egg-3
 .egg-3 {
     position: absolute;
     width: 21%;
@@ -68,12 +84,20 @@ body {
     animation: egg-3 1.5s forwards;
 }
 
-.egg-3-move:hover {
+.egg-3-touch {
     animation: eggmove 0.5s 0.3s infinite alternate;
     bottom: 27vh;
     left: 85%;
     width: 28%;
 }
+
+.egg-3-leave {
+    bottom: 27vh;
+    left: 85%;
+    width: 28%;
+    transform: rotate(-10deg);
+}
+
 
 .nest {
     position: absolute;
@@ -184,9 +208,10 @@ body {
 
 //----eggHover
 @keyframes eggmove {
-    from{
+    from {
         transform: rotate(0deg)
     }
+
     to {
         transform: scale(1);
         transform: rotate(10deg);
