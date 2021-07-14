@@ -134,7 +134,6 @@ if($id("pswCheck").value != $id("newPsw").value) {
 return;
 }
 else {
-  alert("這個帳號可以註冊！");
   }
 },false)
 
@@ -151,9 +150,8 @@ function sendForm() {
       if (member.mem_id != undefined) {
         alert("登入成功！");
         // 跳轉到會員中心
-
-        window.location = 'https://tibamef2e.com/cfd101/g1/dinoMem_profile.html';
-
+        window.location.href = 'https://tibamef2e.com/cfd101/g1/dinoMem_profile.html';
+        
       } else {
         alert("帳號密碼有錯誤！");
       }
@@ -164,6 +162,7 @@ function sendForm() {
   xhr.open("post", "./php/dinoLogin.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
+  //從後端需要的資料
   let data_info = `mem_id=${$id("mem_id").value}&mem_pw=${$id("mem_pw").value}`;
   xhr.send(data_info);
 }
@@ -178,26 +177,22 @@ function signForm() {
   xhr.onload = function () {
   if (xhr.status == 200) {
   let member = JSON.parse(xhr.responseText);
-  if (member.mem_id = undefined) {
-  alert("註冊成功！");
-
-// 跳轉到會員中心 
-  window.location = 'https://tibamef2e.com/cfd101/g1/dinoMem_profile.html';
+    
+  if (xhr.responseText == 1) {
+    alert("註冊成功！");
+    window.location.href = 'https://tibamef2e.com/cfd101/g1/dinoLogin.html';
   
   } else {
-    return;
+    alert("此帳後已存在，不可註冊！");
 }
   }else {
   alert(xhr.status);
   }
 }
-  
-  xhr.open("post", "./php/dinoSingup.php", true);
-
+  xhr.open("post", "./php/dinoSignup.php", true);
   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
-  let data_info =`mem_id=${$id("newAct").value}&mem_pw=${$id("newPsw").value}&mem_email=${$id("newEmail").value}`;
-  
+  let data_info = `mem_id=${$id("newAct").value}&mem_pw=${$id("newPsw").value}&mem_email=${$id("newEmail").value}`;
   xhr.send(data_info);
   }
 

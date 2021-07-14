@@ -59,8 +59,7 @@ deleteTable.style.display = "none";
 deleteBtn.addEventListener("click", function (e) {
   deleteTable.style.display = 'none';
   alert("成功刪除！");
-  // Id("li_1").style.display = "none";
-  // console.log(Id("ul_1").childNodes[e]);
+  
   Id("ul_1").removeChild(Id("ul_1").childNodes[e]);
 })
 }
