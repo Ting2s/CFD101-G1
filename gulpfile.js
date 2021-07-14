@@ -2,8 +2,14 @@ const { src, dest, series, parallel, watch } = require("gulp");
 
 // 只是移動php檔案
 function php(){
-    return src(["dev/php/*.*", "dev/php/**/*.*"])
+    return src(["dev/phps/*.*", "dev/phps/**/*.*"])
     .pipe(dest("dist/php"));
+}
+
+// 只是移動php檔案
+function phpconnect(){
+    return src(["dev/*.php",])
+    .pipe(dest("dist"));
 }
 
 // 移動 font字體
@@ -98,14 +104,17 @@ function browser() {
         reload
     );
     watch("dev/js/*.js", babel5).on("change", reload);
+    watch("dev/*.php",phpconnect).on("change", reload);
+    watch("dev/phps/*.*",php).on("change", reload);
 }
 
 // 開發用
-exports.default = series(imgs_dev,font, includeHTML, sassStyle, babel5, php, browser);
+exports.default = series(clear,imgs_dev,font, includeHTML, sassStyle, babel5, php ,phpconnect, browser);
+
 
 //先清除舊檔案，再同時執行其他的、再壓縮圖檔
 exports.prod = series(
     clear,
-    parallel(includeHTML, sassStyle, babel5, php),
+    parallel(includeHTML, sassStyle, babel5, php,phpconnect),
     imgs_prod, font
 );

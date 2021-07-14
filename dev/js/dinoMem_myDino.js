@@ -1,3 +1,111 @@
+const maxItemPerPage = 3;
+const maxItemPerPage_acc = 8;
+let pageBar = new Vue({
+
+  el: '#perBox',
+ 
+  data: {
+    postcard: "",
+    //恐龍
+    cards: [
+      {
+        class:"ocean",
+        picture:"images/dinoPersonal/d2.png",
+        value:"龍春暉",
+      },
+      {
+        class:"ocean",
+        picture:"images/dinoPersonal/d2.png",
+        value:"龍春暉",
+      },
+      {
+        class:"ocean",
+        picture:"images/dinoPersonal/d2.png",
+        value:"龍春暉",
+      },
+      {
+        class:"ocean",
+        picture:"images/dinoPersonal/d2.png",
+        value:"龍春暉",
+      },
+    ],
+    //配件
+    lubcards: [
+      {
+        class: "hat",
+        click:"myhat",
+        picture:"images/dinoPersonal/prod4.png",
+      },
+      {
+        class: "hat",
+        click:"myhat",
+        picture:"images/dinoPersonal/prod4.png",
+      },
+      {
+        class: "hat",
+        click:"myhat",
+        picture:"images/dinoPersonal/prod4.png",
+      },
+      {
+        class: "hat",
+        click:"myhat",
+        picture:"images/dinoPersonal/prod4.png",
+      },
+      {
+        class: "hat",
+        click:"myhat",
+        picture:"images/dinoPersonal/prod4.png",
+      },
+    ],
+    currentPage: 1
+  },
+  methods: {
+    nextPage() {
+      this.currentPage++;
+    },
+    prePage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    }
+
+  },
+
+  computed: {
+    //我的恐龍
+    getSmallList() {
+      return this.cards.filter((item, index) => {
+        return (
+          index < this.currentPage * maxItemPerPage &&
+          index >= (this.currentPage - 1) * maxItemPerPage
+        );
+      });
+    },
+    //別人的
+    getSmallList_lub() {
+      return this.lubcards.filter((item, index) => {
+        return (
+          index < this.currentPage * maxItemPerPage_acc &&
+          index >= (this.currentPage - 1) * maxItemPerPage_acc
+        );
+      });
+    },
+    isMaxPage() {
+      return this.currentPage >= this.getLastPage;
+    },
+    isMaxPage_lub() {
+      return this.currentPage >= this.getLastPage_lub;
+    },
+    getLastPage() {
+      return Math.ceil(this.cards.length / maxItemPerPage);
+    },
+    getLastPage_lub() {
+      return Math.ceil(this.lubcards.length / maxItemPerPage_acc);
+    }
+  }
+
+  }); 
+
 
 
 //==================================

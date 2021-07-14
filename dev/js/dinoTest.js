@@ -20,10 +20,19 @@ new Vue({
   el: ('#app'),
   data: {
     answers: [
-      { name: "A" },
-      { name: "B" },
-      { name: "C" },
-      { name: "D" },
+      {
+        name: "A",
+        option:""
+      },
+      {
+        name: "B",
+        option:""  },
+      {
+        name: "C",
+        option:""  },
+      {
+        name: "D",
+        option:""  },
     ],
     questions: [
       {
@@ -46,10 +55,10 @@ new Vue({
       },
       {
         q: "最小的恐龍是？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
+        A: "s",
+        B: "d",
+        C: "e",
+        D: "c",
         status: "2",
         ans: "70噸",
       },
@@ -90,17 +99,15 @@ new Vue({
         ans: "70噸",
       }
     ],
-    choose_q: [],
+    quest_rows:[],
     
     isRight: true,
     isShow: false,
-    isActive: false,
     //分數===========
     isStart: false,
     isGame: true,
     isScore: true,
-    isBoard: false,
-    isWhite: true,
+    isWrapper:false,
 
     point: 0,
     allPoint: 0,
@@ -114,72 +121,121 @@ new Vue({
     wrongImg: "images/dinoTest/pic/x.png"
   },
   computed: {
-    //當選擇時按鈕變色+秀出正確錯誤
-    choose: function () {
+
+
+    choose: function (i) {
       this.isShow = true;
-      this.isActive = true;
-    },
     // 決定是否正確
-    judge: function (i) {
-      if (this.isActive = true,
-        this.questions[i].value = this.questions[i].ans) {
+      if (this.isActive = true &&
+        this.questions[i].target.value == this.questions[i].ans) {
         this.wrongImg = false;
         this.rightImg = true;
+      } else {
+        this.wrongImg = true;
+        this.rightImg = false;
       }
     },
     //當選取的選項和ans一樣時 加一分
+<<<<<<< HEAD
     // rightPoint() {
     //   if () {
     //     return this.point = 1
     //   }
     // },
+=======
+    rightPoint() {
+      if (this.isActive = true &&
+        this.questions[i].target.value == this.questions[i].ans) {
+        return this.point = 1;
+      } else {
+        return this.point = 0;
+      }
+    },
+
+>>>>>>> 211491889a7f59d63524b46c9a46d4e1cbbbeb6a
     //將七題的對錯計算
     finalScore() {
-
       for (let i = 1; i<=7; i++) {
         return allPoint += rightPoint();
       };
     },
   },
+
   methods: {
-    //切換成遊戲開始ok
+    //遊戲開始*
     game: function () {
       this.isStart = true;
       this.isGame = false;
     },
 
+    //轉換
+    options(i) {
+
+      if (this.answers.name="A") {
+        return this.questions[i].A;
+      };
+      if(this.answers.name="B") {
+        return this.questions[i].B;
+      };
+      if(this.answers.name="C") {
+        return this.questions[i].C;
+      };
+      if(this.answers.name="D") {
+        return this.questions[i].D;
+      };
+      
+    },
+    
+    //撈資料庫
+    myQuiz(){
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function(){
+        if(xhr.status == 200){
+          this.quest_rows = JSON.parse(xhr.responseText);
+        }else{
+          // alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getQuestion.php", true);
+      console.log(xhr);
+      xhr.send(null);
+    },
+
     //20題抽7
     chooseQA() {
-      for (let i = 0; i < this.questions.length; i++) {
+      for (let i = 0; i < this.quest_rows.length; i++) {
         let choose = Math.floor(Math.random() * 7);
-        choose = this.choose_q;
+        choose = this.questions;
       }
     },
   
-    //切換下頁鍵ok
+    //切換下頁鍵*
     nextTitle: function (i) {
-      //將index1的status從1~2，index2的status從2~1
-      console.log(this.questions[6].status);
       
       if (this.questions[i].status < this.questions[i + 1].status) {
         this.questions[i].status = 2;
         this.questions[i + 1].status = 1;
 
-      } else {
+      } else if (this.questions[i].status > this.questions[i + 1].status) {
         this.questions[i + 1].status = 2;
         this.questions[i + 2].status = 1;
-      }
 
-      //進入算分階段
-      if (this.questions[6].status = 1) {
-        console.log("hi");
+    //切換分數
+      } else if (this.questions[6].status = 1) {
         this.isGame = true;
         this.isScore = false;
-        this.isBoard = true;
-      }
+        this.isWrapper = true;
+    }
     },
+    //進入公布分數
+    // inScore(){
+    //   if (this.questions[6].status = 1) {
+    //     this.isGame = true;
+    //     this.isScore = false;
+    //     this.isWrapper = true;
+    // }},
 
-    //重新開始ok
+    //重新開始*
     restart: function () {
       // console.log(this.questions[0].status);
 
@@ -188,8 +244,19 @@ new Vue({
         this.questions[i].status = 2
       }
     },
+    //再玩一次*
+    playAgain() {
+      this.isScore = true;
+      this.isGame = false;
+      this.isWrapper = false;
+
+      this.questions[0].status = 1
+      for (let i = 1; i < this.questions.length; i++) {
+        this.questions[i].status = 2
+      }
+    },
     
-    //評論ok
+    //評論*
     comment: function () {
       if (this.score == 7) {
         return this.comment_A;
@@ -200,6 +267,10 @@ new Vue({
       }
     }
   },
+
+  mounted() {
+    this.myQuiz();
+  }
 })
 
 

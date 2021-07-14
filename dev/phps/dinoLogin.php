@@ -4,7 +4,7 @@ session_start();
 
 
 try{
-  require_once("connectBooks.php");
+  require_once("./connectBooks.php");
   $sql = "select * from `member` where mem_id=:mem_id and mem_pw=:mem_pw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":mem_id", $_POST["mem_id"]);

@@ -43,7 +43,6 @@ p{
 //==================================
 .dinoCon{
   display: flex;
-  flex-wrap: wrap;
 }
 .dinoChoose{
   display: flex;
@@ -79,8 +78,10 @@ p{
 .downPage{
   transform:scaleY(-1);
 }
-
-
+.mydino{
+  display: flex;
+  flex-wrap: wrap;
+}
 .dino{
   display: flex;
   flex-wrap: wrap;
@@ -139,6 +140,10 @@ p{
 //我的恐龍配件
 
 .dinoAcc{
+    .acc{
+      display: inline-block;
+    }
+ 
 
   li{
     display: inline-block;
@@ -164,11 +169,11 @@ p{
     background: url(../../dev/images/dinoPersonal/hat.png) no-repeat center center;
   }
 
-.ring{
+.ticket{
     background: url(../../dev/images/dinoPersonal/ring.png) no-repeat center center;
   }
 
-.shoes{
+.back{
     background: url(../../dev/images/dinoPersonal/shoes.png) no-repeat center center;
   }
   

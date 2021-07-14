@@ -33,14 +33,14 @@
         <!-- item -->
         <div class="disnoitem" v-for="item in typeMenu">
           <div class="disnoimg">
-            <img :src="item.imgsrc" alt="dino image">
+            <img :src="item.art_picture" alt="dino image">
           </div>
           <div class="disnocontent">
-            <h2 class="disnoname"><a :href="item.loc">{{item.title}}</a></h2>
+            <h2 class="disnoname"><a :href="item.art_picture">{{item.art_title}}</a></h2>
             <div class="line"></div>
-            <h3 class="disnodate"><i class="far fa-calendar-alt"></i> &nbsp;{{item.date}}</h3>
-            <h3 class="disnopri"><i class="fas fa-user-edit"></i> {{item.author}}</h3>
-            <p class="category">{{item.category}} <span>{{item.span}}</span></p>
+            <h3 class="disnodate"><i class="far fa-calendar-alt"></i> &nbsp;{{item.art_date}}</h3>
+            <h3 class="disnopri"><i class="fas fa-user-edit"></i> {{item.mem_nicname}}</h3>
+            <p class="category">文章類別 :&nbsp;<span>{{item.art_category}}</span></p>
           </div>
         </div>
         <!-- end of item -->
@@ -48,5 +48,6 @@
     </div>
   </section>
 <script src="./js/dinoDisscus.js"></script>
+@@include('layout/footer.html')
 </body>
 </html>

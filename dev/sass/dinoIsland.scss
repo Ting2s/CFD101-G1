@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'DFPLiYuan';
+    src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+}
+
 body {
     height: 100vh;
     background-image: url('../images/dinoIsland/island-bg.jpg');
@@ -17,18 +22,18 @@ body {
 }
 
 .Dino-1 {
-    width: 15%;
+    width: 18%;
     position: absolute;
     left: 11%;
-    top: 3%;
+    top: 2%;
     // background-color: rgba(161, 161, 235, 0.541)
 }
 
-.Dino-1-col{
-    width: 15%;
+.Dino-1-col {
+    width: 18%;
     position: absolute;
     left: 11%;
-    top: 3%;
+    top: 2%;
 }
 
 .Dino-2 {
@@ -132,6 +137,47 @@ body {
 .Dino-3:hover,
 .Dino-4:hover,
 .Dino-5:hover,
-.Dino-6:hover{
+.Dino-6:hover {
     opacity: 0;
+    cursor: pointer;
+}
+
+//介紹框
+.intItem {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: -25%;
+    border-radius: 15px;
+    position: relative;
+    top: 20%;
+    display: none;
+}
+
+.intItem h2 {
+    font-size: 23px;
+    color: #e05301;
+    padding: 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.intItem p {
+    font-size: 20px;
+    color: #6e6e6e;
+    padding: 0 10% 5% 10%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
+
+.intItem h3 {
+    font-size: 22px;
+    color: #4b69ce;
+    padding: 0 10% 5% 10%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
 }

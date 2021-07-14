@@ -1,39 +1,4 @@
 //=====================================
-//更換頁碼
-let pageBar = new Vue({
-
-  el: '#perBox',
-  data: {
-    all: 3, //總頁數
-    cur: 1,//當前頁碼
-    
-  },
-  methods: {
-    //選擇商品
-    choose: function () {
-      
-    }
-  },
-
-  computed: {
-    // 顯示最後一頁
-    showLast: function () {
-      if (this.cur >= this.all) {
-        return false;
-      }
-      return true
-    },
-    
-    // 顯示第一頁
-    showFirst: function () {
-      if (this.cur > 1) {
-        return true
-      }
-      return false;
-    },
-  },
-
-  }); 
   
 //-------------------------------------
 function Id(id){
@@ -94,8 +59,9 @@ deleteTable.style.display = "none";
 deleteBtn.addEventListener("click", function (e) {
   deleteTable.style.display = 'none';
   alert("成功刪除！");
-  Id("li_1_1").style.display = "none";;
-  // ul.removeChild(e.target.parentNode);
+  // Id("li_1").style.display = "none";
+  // console.log(Id("ul_1").childNodes[e]);
+  Id("ul_1").removeChild(Id("ul_1").childNodes[e]);
 })
 }
 // let deleteCard = function (e) {

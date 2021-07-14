@@ -6,13 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @@include('layout/style.html')
-    <link rel="stylesheet" href="css/dinoGameEgg.css">
-    <title>飼養恐龍</title>
+    <link rel="stylesheet" href="css/dinoGet.css">
+    <title>獲得恐龍啦</title>
 </head>
 
 <body>
     @@include('layout/header.html')
-    
+
+    <div class="WrapRange">
+        <div class="text">
+            <img src="./images/dinoGet/success.png" alt="">
+            <img src="./images/dinoGet/text.png" alt="">
+        </div>
+        <img class="dino-sea" src="./images/dinoGet/dino-sea.png" alt="">
+
+        <button class="bt-1">
+            <a href="dinoMall.html">
+                <img src="./images/dinoGet/bt-1.png" alt="">
+            </a>
+        </button>
+        <button class="bt-2">
+            <a href="dinoIsland.html">
+                <img src="./images/dinoGet/bt-2.png" alt="">
+            </a>
+        </button>
+
+    </div>
+
+
 
     <!-- js -->
     <script src="js/dinoGet.js"></script>
