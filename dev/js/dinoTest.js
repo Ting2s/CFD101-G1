@@ -34,100 +34,42 @@ new Vue({
         name: "D",
         option:""  },
     ],
-    questions: [
-      {
-        q: "全世界最重的恐龍大約重達幾公噸？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
-        status: "1",
-        ans: "70噸",
-      },
-      {
-        q: "第一次在中國發現的大型暴龍是？",
-        A: "中國龍",
-        B: "水果龍",
-        C: "海里龍",
-        D: "寶貝龍",
-        status: "2",
-        ans: "中國龍",
-      },
-      {
-        q: "最小的恐龍是？",
-        A: "s",
-        B: "d",
-        C: "e",
-        D: "c",
-        status: "2",
-        ans: "70噸",
-      },
-      {
-        q: "鴨嘴龍會遊泳嗎？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
-        status: "2",
-        ans: "70噸",
-      },
-      {
-        q: "全世界最重的恐龍大約重達幾公噸？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
-        status: "2",
-        ans: "70噸",
-      },
-      {
-        q: "全世界最重的恐龍大約重達幾公噸？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
-        status: "2",
-        ans: "70噸",
-      },
-      {
-        q: "全世界最重的恐龍大約重達幾公噸？",
-        A: "30噸",
-        B: "50噸",
-        C: "70噸",
-        D: "100噸",
-        status: "2",
-        ans: "70噸",
-      }
-    ],
-    quest_rows:[],
-    
+    //被選上的問題
+    questions:[],
+    //問題庫
+    quest_rows: [],
+//============== 
+    clicked: {
+      color: 'red',
+    },   
+//==============   
     isRight: true,
     isShow: false,
-    //分數===========
+//==============
     isStart: false,
     isGame: true,
     isScore: true,
     isWrapper:false,
-
+//分數===========
     point: 0,
     allPoint: 0,
-    
+//評論===========    
     comment_A: "你真是個天才！",
     comment_B: "你真厲害！",
     comment_C: "再加油！",
-
-    //============
+//對錯===========
     rightImg: "images/dinoTest/pic/right.png",
     wrongImg: "images/dinoTest/pic/x.png"
   },
   computed: {
 
 
-    choose: function (i) {
+    choose(i) {
       this.isShow = true;
-    // 決定是否正確
-      if (this.isActive = true &&
-        this.questions[i].target.value == this.questions[i].ans) {
+      this.clicked = true;
+    //顯示對錯
+      if (this.clicked = true &&
+        this.questions[i].target.value == this.questions[i].quiz_a) {
         this.wrongImg = false;
         this.rightImg = true;
       } else {
@@ -135,55 +77,56 @@ new Vue({
         this.rightImg = false;
       }
     },
-    //當選取的選項和ans一樣時 加一分
+    //當選取的按鈕和quiz_a相同時->加一分
     rightPoint() {
-      if (this.isActive = true &&
-        this.questions[i].target.value == this.questions[i].ans) {
+      if (this.clicked = true &&
+        this.questions[i].target.value == this.questions[i].quiz_a) {
         return this.point = 1;
       } else {
         return this.point = 0;
       }
     },
 
-    //將七題的對錯計算
+    //對錯計算
     finalScore() {
       for (let i = 1; i<=7; i++) {
-        return allPoint += rightPoint();
+        return this.allPoint += this.rightPoint();
       };
     },
   },
 
   methods: {
     //遊戲開始*
-    game: function () {
+    game() {
       this.isStart = true;
       this.isGame = false;
     },
 
-    //轉換
+    //轉換選項
     options(i) {
 
       if (this.answers.name="A") {
-        return this.questions[i].A;
+        this.questions[i].quiz_opt1;
       };
       if(this.answers.name="B") {
-        return this.questions[i].B;
+        this.questions[i].quiz_opt2;
       };
       if(this.answers.name="C") {
-        return this.questions[i].C;
+        this.questions[i].quiz_opt3;
       };
       if(this.answers.name="D") {
-        return this.questions[i].D;
+        this.questions[i].quiz_opt4;
       };
       
     },
     
-    //撈資料庫
+    //撈資料庫*
     myQuiz(){
       const xhr = new XMLHttpRequest();
+      const my =this
       xhr.onload = function(){
-        if(xhr.status == 200){
-          this.quest_rows = JSON.parse(xhr.responseText);
+        if (xhr.status == 200) {
+      my.quest_rows = JSON.parse(xhr.responseText);
         }else{
           alert(xhr.status);
         }
@@ -193,15 +136,26 @@ new Vue({
     },
 
     //20題抽7
-    chooseQA() {
-      for (let i = 0; i < this.quest_rows.length; i++) {
-        let choose = Math.floor(Math.random() * 7);
-        choose = this.questions;
+    chooseQustion() {
+      for (let i = 0; i < 7; i++) {
+        let chooseQ = Math.floor(Math.random() * this.quest_rows.length);
+        this.questions= this.quest_rows[chooseQ];
+    
+        //撇除重複
+        for (let j = 0; j < i; j++) 
+        {
+          while (this.questions[i] == this.questions[i])
+        {
+          j = 0; 
+          let chooseQ = Math.floor(Math.random() * this.quest_rows.length);
+          this.questions = this.quest_rows[chooseQ];
+        }
+        }
       }
     },
   
     //切換下頁鍵*
-    nextTitle: function (i) {
+    nextTitle(i) {
       
       if (this.questions[i].status < this.questions[i + 1].status) {
         this.questions[i].status = 2;
@@ -211,7 +165,7 @@ new Vue({
         this.questions[i + 1].status = 2;
         this.questions[i + 2].status = 1;
 
-    //切換分數
+    //切換成分數頁(scoreBoard)
       } else if (this.questions[6].status = 1) {
         this.isGame = true;
         this.isScore = false;
@@ -227,7 +181,7 @@ new Vue({
     // }},
 
     //重新開始*
-    restart: function () {
+    restart() {
       // console.log(this.questions[0].status);
 
       this.questions[0].status = 1
@@ -248,7 +202,7 @@ new Vue({
     },
     
     //評論*
-    comment: function () {
+    comment() {
       if (this.score == 7) {
         return this.comment_A;
       } else if (this.score >= 4 && this.score < 7) {
@@ -261,6 +215,7 @@ new Vue({
 
   mounted() {
     this.myQuiz();
+    this.chooseQustion();
   }
 })
 

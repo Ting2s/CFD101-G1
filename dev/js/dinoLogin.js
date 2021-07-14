@@ -174,28 +174,31 @@ function sendForm() {
 //==========================================
 //註冊會員
 function signForm() {
-   let xhr = new XMLHttpRequest();
-      xhr.onload = function () {
-        if (xhr.status == 200) {
-          let member = JSON.parse(xhr.responseText);
-          if (member.mem_id = undefined) {
-            alert("註冊成功！");
-            // 跳轉到會員中心
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+  if (xhr.status == 200) {
+  let member = JSON.parse(xhr.responseText);
+  if (member.mem_id = undefined) {
+  alert("註冊成功！");
+
+// 跳轉到會員中心 
+  window.location = 'https://tibamef2e.com/cfd101/g1/dinoMem_profile.html';
   
-            window.location = 'https://tibamef2e.com/cfd101/g1/dinoMem_profile.html';
+  } else {
+    return;
+}
+  }else {
+  alert(xhr.status);
+  }
+}
   
-          } else {
-            return;
-          }
-        }else {
-          alert(xhr.status);
-        }
-    }
-  
-    xhr.open("post", "./php/dinoSingup.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  xhr.open("post", "./php/dinoSingup.php", true);
+
+  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
   let data_info =`mem_id=${$id("newAct").value}&mem_pw=${$id("newPsw").value}&mem_email=${$id("newEmail").value}`;
-    xhr.send(data_info);
+  
+  xhr.send(data_info);
   }
 
 //==========================================
