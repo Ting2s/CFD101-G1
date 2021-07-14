@@ -127,32 +127,34 @@ $(function () {
 })
 
 //------------------------
+// $(function () {
+//     $('.like').click(function () { likeFunction(this); });
+//     favorite.classList.toggle("fas").click(function () { dislikeFunction(this);});
+//   });
+  
+  
+//   function likeFunction(caller) {
+//     var postId = caller.parentElement.getAttribute('postid');
+//     $.ajax({
+//         type: "POST",
+//         url: "dinoCardboard.php",
+//         data: 'Action=LIKE&PostID=' + postId,
+//         success: function () {}
+//     });
+//   }
+//   function dislikeFunction(caller) {
+//     var postId = caller.parentElement.getAttribute('postid');
+//     $.ajax({
+//         type: "POST",
+//         url: "dinoCardboard.php",
+//         data: 'Action=DISLIKE&PostID=' + postId,
+//         success: function () {}
+//     });
+//   }
+
+//-----------------------
 function favorite(e) {
     e.classList.toggle("fas");
-  }
+}
 
-//------------------------
-$(function () {
-    $('.like').click(function () { likeFunction(this); });
-    favorite.classList.toggle("fas").click(function () { dislikeFunction(this);});
-  });
-  
-  
-  function likeFunction(caller) {
-    var postId = caller.parentElement.getAttribute('postid');
-    $.ajax({
-        type: "POST",
-        url: "dinoCardboard.php",
-        data: 'Action=LIKE&PostID=' + postId,
-        success: function () {}
-    });
-  }
-  function dislikeFunction(caller) {
-    var postId = caller.parentElement.getAttribute('postid');
-    $.ajax({
-        type: "POST",
-        url: "dinoCardboard.php",
-        data: 'Action=DISLIKE&PostID=' + postId,
-        success: function () {}
-    });
-  }
+//----------------------
