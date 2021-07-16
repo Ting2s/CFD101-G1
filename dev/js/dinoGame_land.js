@@ -10,9 +10,9 @@ clo.addEventListener('click', function (e) {
 //tree & grass click事件
 let Tree_1 = document.getElementById("tree-1");
 let Tree_2 = document.getElementById("tree-2");
-let Grass = document.getElementById("grass");
-// let Fish_4 = document.getElementById("Fish-4");
-// let Fish_5 = document.getElementById("Fish-5");
+let Grass = document.getElementById("grass-1");
+let Grass_2 = document.getElementById("grass-2");
+let Flower = document.getElementById("flower");
 // let Fish_6 = document.getElementById("Fish-6");
 
 //----tree-1事件
@@ -48,27 +48,27 @@ function appear_3() {
     }, 5000);
 }
 
-//----fish-4事件
-// function hide_4() {
-//     Fish_4.classList.add('remove');
-//     add();
-// }
-// function appear_4() {
-//     setInterval(() => {
-//         Fish_4.classList.remove('remove');
-//     }, 5000);
-// }
+// ----grass2事件
+function hide_4() {
+    Grass_2.classList.add('remove');
+    add();
+}
+function appear_4() {
+    setInterval(() => {
+        Grass_2.classList.remove('remove');
+    }, 5000);
+}
 
-// //----fish-5事件
-// function hide_5() {
-//     Fish_5.classList.add('remove');
-//     add();
-// }
-// function appear_5() {
-//     setInterval(() => {
-//         Fish_5.classList.remove('remove');
-//     }, 4000);
-// }
+// //----flower事件
+function hide_5() {
+    Flower.classList.add('remove');
+    add();
+}
+function appear_5() {
+    setInterval(() => {
+        Flower.classList.remove('remove');
+    }, 4000);
+}
 
 // //----fish-6事件
 // function hide_6() {
@@ -89,10 +89,10 @@ function init() {
     appear_3();
     Grass.onclick = hide_3;
     appear_4();
-    // Fish_4.onclick = hide_4;
-    // appear_5();
-    // Fish_5.onclick = hide_5;
-    // appear_6();
+    Grass_2.onclick = hide_4;
+    appear_5();
+    Flower.onclick = hide_5;
+    appear_6();
     // Fish_6.onclick = hide_6;
 }
 
