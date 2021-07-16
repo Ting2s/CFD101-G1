@@ -194,7 +194,18 @@ function signForm() {
 
   let data_info = `mem_id=${$id("newAct").value}&mem_pw=${$id("newPsw").value}&mem_email=${$id("newEmail").value}`;
   xhr.send(data_info);
-  }
+}
+  
+
+//登出(登出鍵暫定id=logout)
+$("#logout").live('click', function () {
+  $.post("./php/dinoSignup.php?action=logout", function (echo) {
+    if (echo == 1) {
+     //登出後將頭貼及登出移除
+     //放回登入鍵
+    }
+});
+  }); 
 
 //==========================================
 function init() {

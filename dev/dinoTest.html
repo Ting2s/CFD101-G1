@@ -60,19 +60,18 @@
 
 
           <!-- 題目內容 -->
-          <div class="testCenter" id="testCenter" v-for="(question,index) in questions" v-if="question.status == '1'">
+          <div class="testCenter" id="testCenter" v-for="(question,key) in questions" v-if="question.status == '1'">
             <!-- 題目 -->
             <h3 class="qusTitle">
-              Q {{index+1}} . {{question.quiz_q}}
+              Q {{key+1}} . {{question.quiz_q}}
             </h3>
 
             <!-- 題目選項 -->
-            <!-- v-for="(,index) in " -->
             <div class="choose">
 
               <div class="buttonBox" v-for="(answer,index) in answers">
-                <button class="chooseBtn" @click="choose(index)" :class="{'clicked' :isClick}">
-                  {{answer.name}}.{{ options(index) }}
+                <button class="chooseBtn" @click="choose(key)" :class="{'clicked' :isClick}">
+                  {{answer.name}}.{{ options(key) }}
                 </button>
 
                 <!-- 判決對錯 -->
@@ -87,7 +86,7 @@
             </div>
             <!-- 去下一題 -->
             <div class="testArrow">
-              <button id="nextArrow" @click="nextTitle(index)"></button>
+              <button id="nextArrow" @click="nextTitle(key)"></button>
             </div>
           </div>
 
