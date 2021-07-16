@@ -8,34 +8,34 @@ let pageBar = new Vue({
     //我的明信片
     cards: [
       {
-        postcard: "images/dinoPersonal/example3.jpg",
+        card_img: "images/dinoPersonal/example3.jpg",
         value:"我與恐龍"
       },
       {
-        postcard: "images/dinoPersonal/example3.jpg",
+        card_img: "images/dinoPersonal/example3.jpg",
         value:"我與恐龍"
       },
       {
-        postcard: "images/dinoPersonal/example3.jpg",
+        card_img: "images/dinoPersonal/example3.jpg",
         value:"我與恐龍"
     },
     ],
     //明信片收藏
     lubcards: [
       {
-        postcard: "images/dinoPersonal/example4.jpg",
+        favorite_img: "images/dinoPersonal/example4.jpg",
         value:"他與恐龍"
       },
       {
-        postcard: "images/dinoPersonal/example3.jpg",
+        favorite_img: "images/dinoPersonal/example3.jpg",
         value:"別人的恐龍"
       },
       {
-        postcard: "images/dinoPersonal/example3.jpg",
+        favorite_img: "images/dinoPersonal/example3.jpg",
         value:"恐龍"
       },
       {
-        postcard: "images/dinoPersonal/example3.jpg",
+        favorite_img: "images/dinoPersonal/example3.jpg",
         value:"黑暗恐龍"
       },
     ],

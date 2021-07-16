@@ -40,7 +40,14 @@ try{
     "game_point"=>$_SESSION["game_point"]
   ];
     echo  json_encode($result);
-  }
+  }elseif ($member == 'logout') 
+  { 
+    //退出 
+  unset($_SESSION); 
+  session_destroy(); 
+  echo '1'; 
+  
+} 
   
 }catch(PDOException $e){
   echo $e->getMessage();  
