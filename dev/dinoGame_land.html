@@ -12,53 +12,55 @@
 
 <body>
     @@include('layout/header.html')
-
-    <!-- <div class="teach" id="teach">-->
+    <!-- 遊戲教學 -->
+    <div class="teach" id="teach">
         <!-- close -->
-        <!-- <button class="close" id="close">
+        <button class="close" id="close">
             <img src="./images/dinoGame_land/close.png" alt="">
-        </button> -->
+        </button>
 
         <!-- Step1 -->
-        <!-- <img class="teach-bg" src="./images/dinoGame_land/teach.png" alt="">
-        <img class="touch-fish" src="./images/dinoGame_sea/touch-fish.png" alt="">
-        <img class="dino" src="./images/dinoGame_sea/dino-teach.png" alt=""> -->
+        <img class="teach-bg_land" src="./images/dinoGame_land/teach.png" alt="">
+        <img class="touch-food" src="./images/dinoGame_land/touch-fish.png" alt="">
+        <img class="stegosaurus-teach" src="./images/dinoGame_land/stegosaurus-teach.png" alt="">
 
         <!-- Step2 -->
-        <!-- <div class="teach-growp-wrap">
-            <img class="GrowUp_1" src="./images/dinoGame_sea/GrowUp_1.png" alt="">
+        <div class="teach-growp-wrap">
+            <img class="GrowUp_1" src="./images/dinoGame_land/GrowUp_1.png" alt="">
             <div class="teach-sq-wrap">
                 <div class="teach-sq">
-                    <img src="./images/dinoGame_sea/GrowUp_sq_OY.png" alt="">
+                    <img src="./images/dinoGame_land/GrowUp_sq_OY.png" alt="">
                 </div>
             </div>
-        </div> -->
-    <!-- </div> --> 
+        </div>
+    </div>
 
-
+<!-- 遊戲區塊 -->
     <div class="GameRange">
         <div class="dino-land1" id="dino">
             <img id="dinopic" src="./images/dinoGame_land/dino-land.png" alt="">
         </div>
         <!-----tree -->
-        <div class="tree-1" id="tree-1">
+        <div class="tree-1 shake" id="tree-1">
             <img src="./images/dinoGame_land/tree-1.png" alt="">
         </div>
-        <div class="tree-2" id="tree-2">
+        <div class="tree-2 gelatine" id="tree-2">
             <img src="./images/dinoGame_land/tree-2.png" alt="">
         </div>
-        
-        <div class="grass" id="grass">
+        <!-- <div class="tree-3" id="tree-3">
+            <img src="./images/dinoGame_land/tree-3.png" alt="">
+        </div> -->
+        <div class="grass grow" id="grass">
             <img src="./images/dinoGame_land/grass.png" alt="">
         </div>
         
         <!-------成長-->
         <div class="GrowUp">
-            <img class="GrowUp_sch" src="./images/dinoGame_land/" alt="">
+            <img class="GrowUp_sch" src="./images/dinoGame_land/GrowUp.png" alt="">
 
             <div class="Grow-sq">
-                <img src="./images/dinoGame_land/" alt="">
-                <img src="./images/dinoGame_land/" alt="">
+                <img src="./images/dinoGame_land/GrowUp_sq.png" alt="">
+                <img src="./images/dinoGame_land/GrowUp_sq.png" alt="">
                 <img src="./images/dinoGame_land/GrowUp_sq.png" alt="">
                 <img src="./images/dinoGame_land/GrowUp_sq_By.png" alt="">
                 <img src="./images/dinoGame_land/GrowUp_sq_YB.png" alt="">
@@ -79,12 +81,12 @@
     <!-- 小測驗1 -->
     <div class="litTest_1 remove" id="litTest_1">
         <button class="teach_close remove" id="teach_close">
-            <img src="./images/dinoGame_land/" alt="">
+            <img src="./images/dinoGame_land/close.png" alt="">
         </button>
-        <h1>Q1最聰明的恐龍是?</h1>
-        <p class="choose" id="Y">傷齒龍</p>
-        <p class="choose" id="N">劍龍</p>
-        <p class="choose" id="N_1">翼手龍</p>
+        <h1>Q1劍龍身高有多高?</h1>
+        <p class="choose" id="N">一層樓高</p>
+        <p class="choose" id="Y">兩層樓高</p>
+        <p class="choose" id="N_1">三層樓高</p>
     </div>
 
     <!-- 小測驗2 -->
@@ -92,17 +94,17 @@
         <button class="teach_close remove" id="teach_close_1">
             <img src="./images/dinoGame_land/close.png" alt="">
         </button>
-        <h1>Q2會照顧寶寶的恐龍是?</h1>
-        <p class="choose" id="N_2">波塞東龍</p>
-        <p class="choose" id="N_3">斑龍</p>
-        <p class="choose" id="Y_1">慈母龍</p>
+        <h1>Q2劍龍的腦有多大?</h1>
+        <p class="choose" id="N_2">一顆西瓜大</p>
+        <p class="choose" id="N_3">一顆蘋果大</p>
+        <p class="choose" id="Y_1">一顆核桃大</p>
     </div>
 
 
 
     @@include('layout/footer.html')
     <!-- js -->
-    <!-- <script src="js/dinoGame_land.js"></script> -->
+    <script src="js/dinoGame_land.js"></script>
 
 </body>
 
