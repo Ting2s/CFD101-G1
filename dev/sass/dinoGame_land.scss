@@ -17,7 +17,6 @@ body {
   position: relative;
   top: 14vh;
   overflow: hidden;
-  // background-color: rgba(95, 158, 160, 0.815);
 }
 
 .dino-land1 {
@@ -36,39 +35,48 @@ body {
 // -------tree
 
 .tree-1 {
-  width: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  width: 20%;
+  top: 20%;
+  left: 70%;
   z-index: 1;
-  animation: animate-1 15s infinite;
-  animation-delay: 0s;
   cursor: pointer;
+}
+.shake{
+  animation: shake 2s ease infinite;
 }
 
 .tree-2 {
-  width: 60%;
   position: absolute;
-  top: 35%;
-  left: -10%;
+  width: 30%;
+  top: 40%;
+  left: -5%;
   z-index: 3;
-  animation: animate-2 10s infinite;
-  animation-delay: 3s;
   cursor: pointer;
 }
-
+// .tree-3 {
+//   position: absolute;
+//   width: 5%;
+//   top: 10%;
+//   left: 5%;
+//   z-index: 1;
+//   cursor: pointer;
+// }
+.gelatine{
+  animation: gelatine 0.5s infinite;
+}
 .grass {
   width: 10%;
   position: absolute;
-  bottom: 35%;
-  left: -10%;
+  top:70%;
+  left: 50%;
   z-index: 1;
-  animation: animate-3 12s infinite;
-  animation-delay: 5s;
   cursor: pointer;
   z-index: 2;
 }
-
+.grow {
+  animation: grow 2s ease infinite;
+}
 
 .tree-1 img,
 .tree-2 img,
@@ -77,39 +85,30 @@ body {
   width: 100%;
 }
 
-//-------animation fish
-@keyframes animate-1 {
-  from {
-      transform:transform: rotate(0deg);
-  }
-  to {
-    transform:transform: rotate(360deg);
-  }
+//-------食物動畫
+// tree1 搖擺
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
 }
-
-@keyframes animate-2 {
-  from {
-      transform: translateX(0%);
-  }
-
-  to {
-      transform: translateX(1200%);
-  }
+// tree2 動感
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
 }
-
-@keyframes animate-3 {
-  from {
-      transform: translateX(0%);
-  }
-
-  to {
-      transform: translateX(1200%);
-  }
+// grass生長
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
 
 
-//----成長
+
+//----恐龍成長
 .GrowUp {
   width: 33%;
   position: relative;
@@ -165,24 +164,24 @@ body {
   z-index: 100;
 }
 
-.teach .teach-bg {
+.teach .teach-bg_land {
   width: 100%;
   margin-top: 32%;
   transform: translateY(-50%);
 }
 
-//teach fish
+// teach food
 
-// .touch-fish {
-//   width: 18%;
-//   position: absolute;
-//   top: 30%;
-//   left: 23%;
-//   z-index: 100;
-//   animation: animate 0.5s infinite;
-//   animation-direction: alternate;
-//   animation-delay: 0s;
-// }
+.touch-food {
+  width: 18%;
+  position: absolute;
+  top: 30%;
+  left: 23%;
+  z-index: 100;
+  animation: animate 0.5s infinite;
+  animation-direction: alternate;
+  animation-delay: 0s;
+}
 
 //---teach group
 
@@ -194,7 +193,6 @@ body {
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  // background-color: rgba(238, 232, 170, 0.712);
 }
 
 .GrowUp_1 {
@@ -209,7 +207,6 @@ body {
   left: 0;
   display: flex;
   flex-direction: column;
-  // background-color: rgba(251, 2, 2, 0.712);
 }
 
 .teach-sq {
@@ -222,7 +219,6 @@ body {
   animation: sq 0.7s infinite;
   animation-direction: alternate;
   animation-delay: 3s;
-  // background-color: rgba(255, 166, 0, 0.493);
 }
 
 .teach-sq img {
@@ -231,10 +227,10 @@ body {
 
 //teach dino
 
-.dino {
+.stegosaurus-teach {
   width: 41%;
   position: absolute;
-  top: 18%;
+  top: 40%;
   right: 15%;
   z-index: 100;
   animation: dino 0.5s infinite;
@@ -280,22 +276,10 @@ body {
 // ----------------------------RWD(1024px)
 
 @media screen and (max-width: 1024px) {
-  .dino-sea1 {
+  .dino-land1 {
       width: 50%;
       top: 7%;
       left: 43%;
-  }
-
-  .SeaweedL {
-      width: 35%;
-      left: -6%;
-      bottom: -35%;
-  }
-
-  .SeaweedR {
-      width: 28%;
-      top: -34%;
-      left: 68%;
   }
 
   .GrowUp {
@@ -306,7 +290,7 @@ body {
       bottom: 2.2%;
   }
 
-  .teach .teach-bg {
+  .teach .teach-bg_land {
       margin-top: 40%;
       transform: translateY(-50%);
   }
@@ -326,7 +310,7 @@ body {
       height: 94.4%;
   }
 
-  .dino {
+  .dino-land1 {
       top: 26%;
       right: 15%;
   }
@@ -343,25 +327,12 @@ body {
 
 @media screen and (max-width: 812px) {
 
-  .dino-sea1 {
+  .dino-land1 {
       width: 25%;
       top: 12%;
       left: 50%;
   }
 
-  .SeaweedL {
-      width: 26%;
-      left: -4%;
-      bottom: -20%;
-  }
-
-  .SeaweedR {
-      width: 20%;
-      height: 52vh;
-      position: relative;
-      top: -44%;
-      left: 73%;
-  }
 
   .GrowUp {
       width: 33%;
@@ -371,7 +342,7 @@ body {
       bottom: 4%;
   }
 
-  .teach .teach-bg {
+  .teach .teach-bg_land {
       margin-top: 28%;
       transform: translateY(-50%);
   }

@@ -7,7 +7,7 @@ clo.addEventListener('click', function (e) {
 })
 
 
-//fish click事件
+//tree & grass click事件
 let Tree_1 = document.getElementById("tree-1");
 let Tree_2 = document.getElementById("tree-2");
 let Grass = document.getElementById("grass");
@@ -26,7 +26,7 @@ function appear() {
     }, 5000);
 }
 
-//----fish-2事件
+//----tree-2事件
 function hide_2() {
   Tree_2.classList.add('remove');
     add();
@@ -37,7 +37,7 @@ function appear_2() {
     }, 5000);
 }
 
-//----fish-3事件
+//----grass事件
 function hide_3() {
   Grass.classList.add('remove');
     add();
