@@ -5,26 +5,29 @@ let pageBar = new Vue({
   el: '#perBox',
  
   data: {
+    isOcean: false,
+    isGround: false,
+    isSky: false,
+    //================
+    isHat: false,
+    isTicket: false,
+    isBack: false,
+    //================
     postcard: "",
     //恐龍
     cards: [
       {
-        class:"ocean",
+        dino_st:"ocean",
         picture:"images/dinoPersonal/d2.png",
         value:"龍春暉",
       },
       {
-        class:"ocean",
+        dino_st:"ground",
         picture:"images/dinoPersonal/d2.png",
         value:"龍春暉",
       },
       {
-        class:"ocean",
-        picture:"images/dinoPersonal/d2.png",
-        value:"龍春暉",
-      },
-      {
-        class:"ocean",
+        dino_st:"sky",
         picture:"images/dinoPersonal/d2.png",
         value:"龍春暉",
       },

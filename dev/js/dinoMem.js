@@ -54,31 +54,12 @@ deleteTable.style.display = "none";
 })
 
   let deleteBtn = Id("deleteBtn");
-  let ul = Id("ul_1");
 
 deleteBtn.addEventListener("click", function (e) {
-  deleteTable.style.display = 'none';
-  alert("成功刪除！");
+deleteTable.style.display = 'none';
+alert("成功刪除！");
   
-  Id("ul_1").removeChild(Id("ul_1").childNodes[e]);
+  //這邊還要寫刪後端的
+
 })
 }
-// let deleteCard = function (e) {
-  
-//   deleteTable.style.display = 'block';
-
-//   let deleteBtn = Id("deleteBtn");
-//   deleteBtn.addEventListener("click", function () {
-//     alert("成功刪除！");
-//     deleteTable.style.display = 'none';
-
-//   })
-  
-//=================================================== 
-
-  
-// }
-
-// window.addEventListener("load", function () {
-//   deleteCard;
-// })

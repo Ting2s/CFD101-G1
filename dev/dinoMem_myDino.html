@@ -105,7 +105,8 @@
 
 
                 <ul v-for="obj, index in getSmallList">
-                  <li class="ocean">
+                  <li :class="{'ocean':isOcean,'ground':isGround, 'sky':isSky}">
+
                     <img :src="obj.picture" alt="" id="dino_1" onclick="openModel(this)">
 
                     <input type="button" :value="obj.value">
@@ -126,7 +127,7 @@
 
                 <ul>
                   <div class="acc" v-for="obj, index in getSmallList_lub">
-                    <li class="hat">
+                    <li :class="{'hat':isHat,'ticket':isTicket, 'back':isBack}">
                       <img :src="obj.picture" onclick="myHat(this)">
                     </li>
                   </div>
