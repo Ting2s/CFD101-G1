@@ -150,7 +150,10 @@ function sendForm() {
       if (member.mem_id != undefined) {
         alert("登入成功！");
         // 跳轉到會員中心
-        window.location.href = 'https://tibamef2e.com/cfd101/g1/dinoMem_profile.html';
+        window.location.replace('./dinoMem_profile.html');
+
+        //替換登入鍵
+        $id
         
       } else {
         alert("帳號密碼有錯誤！");
@@ -166,9 +169,26 @@ function sendForm() {
   let data_info = `mem_id=${$id("mem_id").value}&mem_pw=${$id("mem_pw").value}`;
   xhr.send(data_info);
 }
-
-
-
+//==========================================
+//登出
+// function logout() {
+//   let xhr = new XMLHttpRequest();
+//   xhr.onload = function () {
+//     if (xhr.status == 200) {
+//       let member = JSON.parse(xhr.responseText)
+//       if (member == undefined) {
+//         alert("已順利登出！");
+//       }
+//       else { }
+//     }
+//     else {
+//       alert(xhr.status);
+//     }
+//   }
+//   xhr.open("post", "./php/dinoLogout.php", true);
+//   xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+//   xhr.send(null);
+// }
 
 //==========================================
 //註冊會員
@@ -179,8 +199,9 @@ function signForm() {
   let member = JSON.parse(xhr.responseText);
     
   if (xhr.responseText == 1) {
-    alert("註冊成功！");
-    window.location.href = 'https://tibamef2e.com/cfd101/g1/dinoLogin.html';
+    alert("註冊成功！請重新登入！");
+    
+    window.location.replace('./dinoLogin.html');
   
   } else {
     alert("此帳後已存在，不可註冊！");
@@ -195,22 +216,11 @@ function signForm() {
   let data_info = `mem_id=${$id("newAct").value}&mem_pw=${$id("newPsw").value}&mem_email=${$id("newEmail").value}`;
   xhr.send(data_info);
 }
-  
-
-//登出(登出鍵暫定id=logout)
-$("#logout").live('click', function () {
-  $.post("./php/dinoSignup.php?action=logout", function (echo) {
-    if (echo == 1) {
-     //登出後將頭貼及登出移除
-     //放回登入鍵
-    }
-});
-  }); 
-
 //==========================================
 function init() {
   //點擊登入
   $id('login_btn').onclick = sendForm;
-  $id('signup_btn').onclick =signForm;
+  $id('signup_btn').onclick = signForm;
+  // $id('logout').onclick = logout;
 }; 
 window.onload = init;
