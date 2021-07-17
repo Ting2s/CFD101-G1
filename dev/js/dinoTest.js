@@ -3,7 +3,11 @@ new Vue({
 
   el: ('#app'),
   data: {
-    answers: [{name:"A",option:""}
+    answers:
+      [{
+        name: "A",
+        option: ""
+      }
       ,{name:"B",option:""}
       ,{name:"C",option:""}
       ,{name:"D",option:""}
@@ -97,45 +101,45 @@ new Vue({
       xhr.send(null);
     },
   
-    //切換下頁鍵
-    nextTitle(i) {
-      if (this.questions[i].status < this.questions[i + 1].status) {
-        this.isClick = false;
-        this.isShow = false;
-        this.questions[i].status = 2;
-        this.questions[i + 1].status = 1;
-
-      } else if (this.questions[i].status > this.questions[i + 1].status) {
-        this.isClick = false;
-        this.isShow = false;
-        this.questions[i + 1].status = 2;
-        this.questions[i + 2].status = 1;
-
-    //切換成分數頁(scoreBoard)
-      } else if (this.questions[6].status == 1) {
-        this.isGame = true;
-        this.isScore = false;
-        this.isWrapper = true;
-    }
-    },
-
     //遊玩結果讀入資料庫
     readInRank() {
       const xhr = new XMLHttpRequest();
       xhr.onload = function(){
         if (xhr.status == 200) {
           //存進後台
-
         }else{
           alert(xhr.status);
         }
       }
-      xhr.open("post", "./php/insertRank.php", true);
-      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-    let data_info = `quiz_score=${$id("finalScore").value}`;
-    xhr.send(data_info);
+      xhr.open("get", "./php/insertRank.php", true);
+      xhr.send(null);
     },
+
+    //切換下頁鍵
+    nextTitle(i) {
+      console.log(this.questions[6].status);
+      if (this.questions[i].status < this.questions[i + 1].status) {
+        this.isClick = false;
+        this.isShow = false;
+        this.questions[i].status = 2;
+        this.questions[i + 1].status = 1;
+      }
+    else if(this.questions[i].status > this.questions[i + 1].status) {
+    this.isClick = false;
+    this.isShow = false;
+    this.questions[i + 1].status = 2;
+    this.questions[i + 2].status = 1;
+    }
+    //切換成分數頁(scoreBoard) 
+      else if (this.questions[6].status ==1) { 
+        this.isGame = true;
+        this.isScore = false;
+        this.isWrapper = true;
+    }else{} 
+
+
+    },
+
 
     //重新開始*
     restart() {
@@ -179,38 +183,3 @@ new Vue({
     this.myQuiz();
   }
 })
-
-
-
-//==============================================
-function Id(id) {
-  return document.getElementById(id);
-}
-//==============================================
-// let start_btn =Id("startBtn");
-// start_btn.addEventListener("click", function (e) {
-
-//   Id("testContent").classList.add("none");
-//   Id("testContent_Q").classList.remove("none");
-// })
-
-
-// let toScore = Id("nextArrow");
-// toScore.addEventListener("click", function (e) {
-
-//   Id("testContent_Q").classList.add("none");
-//   Id("scoreBoard").classList.remove("none");
-//   Id("whiteBoard").classList.add("showScore");
-//   Id("whiteBoard").classList.remove("whiteBoard");
-// })
-
-// let restart = Id("restart");
-// restart.addEventListener("click", function (e) {
-
-//   Id("testContent_Q").classList.remove("none");
-//   Id("scoreBoard").classList.add("none");
-//   Id("whiteBoard").classList.remove("showScore");
-//   Id("whiteBoard").classList.add("whiteBoard");
-// })
-
-//==============================================
