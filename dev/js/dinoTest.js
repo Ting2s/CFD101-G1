@@ -1,20 +1,4 @@
-//  :class="{'show':isOK,'none':isNO}"
-// let vue=new Vue({
-//   el:document.getElementById('whiteBoard'),
-//   data: {
-//     isOK:true,
-//     isNO:false
-//   },
-//   computed: {
-//     startBtn() {
-//         this.isOK = false,
-//         this.isNO = true
-//     }
-//   }
-// })
-//判決對錯
 
-//==================================================
 new Vue({
 
   el: ('#app'),
@@ -138,16 +122,19 @@ new Vue({
     //遊玩結果讀入資料庫
     readInRank() {
       const xhr = new XMLHttpRequest();
-      const my =this
       xhr.onload = function(){
         if (xhr.status == 200) {
-      my.questions = JSON.parse(xhr.responseText);
+          //存進後台
+
         }else{
           alert(xhr.status);
         }
       }
-      xhr.open("get", "./php/insertRank.php", true);
-      xhr.send(null);
+      xhr.open("post", "./php/insertRank.php", true);
+      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    let data_info = `quiz_score=${$id("finalScore").value}`;
+    xhr.send(data_info);
     },
 
     //重新開始*
@@ -190,9 +177,6 @@ new Vue({
   
   mounted() {
     this.myQuiz();
-
-    console.log(1);
-    console.log(this.questions[6].status);
   }
 })
 
