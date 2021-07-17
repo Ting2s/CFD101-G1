@@ -65,7 +65,81 @@ li {
     padding: 0;
 }
 
-.SignIn img {
+.Avatar-item{
+    width: 10%;
+    padding: 0 30;
+    position: relative;
+ }
+
+ .Member{
+     background-color: rgba(0, 0, 0, 0.623);
+     right: -90%;
+     bottom: -10px;
+     z-index: 100;
+     position: absolute;
+     padding: 10%;
+     border-radius: 5px;
+     display: none;
+ }
+
+ .Member p{
+     font-size: 18px;
+     color: white;
+ }
+
+ .Avatar-box{
+    position: fixed;
+    top: 12vh;
+    right: 1vw;
+    width: 18%;
+    background-color: rgba(255, 255, 255, 0.678);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    z-index: 99;
+ }
+
+ .Avatar_p{
+     margin: 20px 0 15px 10px;
+     font-size: 30px;
+     font-family: 'DFPLiYuan';
+     letter-spacing: 10px;
+ }
+
+  .bt-1, .bt-2{
+     width: 50%;
+     margin: 30px 0;
+     background-color: #007936;
+     color: white;
+     font-family: 'DFPLiYuan';
+     font-size: 18px;
+     letter-spacing: 8px;
+     padding: 10px;
+     border-radius: 10px;
+ }
+
+.bt-2{
+    background-color: rgb(197, 197, 197);
+    margin-top: 8px;
+}
+
+ hr{
+     width: 80%;
+     margin-top: 20px;
+     height: 3px;
+     background-color: rgba(175, 175, 175, 0.575);
+ }
+
+ .Avatar-box img{
+     padding-top: 5%;
+     width: 40%;
+     margin: auto;
+ }
+
+
+
+.SignIn img, .Avatar img {
     width: 100%;
 }
 
@@ -98,6 +172,7 @@ li {
         width: 23%;
         padding: 0;
     }
+
 
     .Island {
         width: 7%;
