@@ -115,8 +115,6 @@ new Vue({
   
     //切換下頁鍵
     nextTitle(i) {
-      console.log(1);
-      console.log(this.questions[6].status);
       if (this.questions[i].status < this.questions[i + 1].status) {
         this.isClick = false;
         this.isShow = false;
@@ -192,6 +190,9 @@ new Vue({
   
   mounted() {
     this.myQuiz();
+
+    console.log(1);
+    console.log(this.questions[6].status);
   }
 })
 

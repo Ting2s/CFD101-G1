@@ -12,11 +12,9 @@ try{
   $member->execute();
 
   if( $member->rowCount()==0){ //查無此人
-  echo "{}";
+  '{}';
   }else{ //登入成功
     //自資料庫中取回資料
-    
-
     $memRow = $member->fetch(PDO::FETCH_ASSOC);
     //寫入session
     $_SESSION["mem_no"] = $memRow["mem_no"];
@@ -39,20 +37,11 @@ try{
     "mem_status"=>$_SESSION["mem_status"],
     "game_point"=>$_SESSION["game_point"]
   ];
-    echo  json_encode($result);
-  }elseif ($member == 'logout') 
-  { 
-    //退出 
-  unset($_SESSION); 
-  session_destroy(); 
-  echo '1'; 
-  
+    echo  json_encode($result); 
 } 
-  
 }catch(PDOException $e){
   echo $e->getMessage();  
-  
-
 
 }
+
 ?>
