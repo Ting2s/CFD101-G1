@@ -69,6 +69,7 @@ li {
     width: 10%;
     padding: 0 30;
     position: relative;
+    display: none;
  }
 
  .Member{
@@ -128,7 +129,7 @@ li {
      width: 80%;
      margin-top: 20px;
      height: 3px;
-     background-color: rgba(175, 175, 175, 0.575);
+     background-color: rgba(165, 165, 165, 0.781);
  }
 
  .Avatar-box img{
@@ -196,4 +197,14 @@ li {
         right: 30px;
     }
 
+}
+
+//出現消失
+
+.remove{
+    display: none;
+}
+
+.show{
+    display: flex;
 }
