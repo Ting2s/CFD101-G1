@@ -3,64 +3,61 @@ const maxItemPerPage_acc = 8;
 let pageBar = new Vue({
 
   el: '#perBox',
- 
+
   data: {
-    isOcean: false,
-    isGround: false,
-    isSky: false,
+    isOcean: 'ocean',
+    isGround: 'ground',
+    isSky: 'sky',
     //================
+
     isHat: false,
     isTicket: false,
-    isBack: false,
+    isBack: false, 
     //================
     postcard: "",
     //恐龍
     cards: [
       {
-        dino_st:"ocean",
-        picture:"images/dinoPersonal/d2.png",
-        value:"龍春暉",
+        dino_st: 0,
+        picture: "images/dinoPersonal/d2.png",
+        value: "龍春暉",
       },
       {
-        dino_st:"ground",
-        picture:"images/dinoPersonal/d2.png",
-        value:"龍春暉",
+        dino_st: 1,
+        picture: "images/dinoPersonal/d2.png",
+        value: "龍春暉",
       },
       {
-        dino_st:"sky",
-        picture:"images/dinoPersonal/d2.png",
-        value:"龍春暉",
+        dino_st: 2,
+        picture: "images/dinoPersonal/d2.png",
+        value: "龍春暉",
       },
     ],
     //配件
     lubcards: [
       {
-        class: "hat",
-        click:"myhat",
-        picture:"images/dinoPersonal/prod4.png",
+        type: 0,
+        picture: "images/dinoPersonal/prod4.png",
       },
       {
-        class: "hat",
-        click:"myhat",
-        picture:"images/dinoPersonal/prod4.png",
+        type: 1,
+        picture: "images/dinoPersonal/prod4.png",
       },
       {
-        class: "hat",
-        click:"myhat",
-        picture:"images/dinoPersonal/prod4.png",
+        type: 1,
+        picture: "images/dinoPersonal/prod4.png",
       },
       {
-        class: "hat",
-        click:"myhat",
-        picture:"images/dinoPersonal/prod4.png",
+        type: 2,
+        picture: "images/dinoPersonal/prod4.png",
       },
       {
-        class: "hat",
-        click:"myhat",
-        picture:"images/dinoPersonal/prod4.png",
+        type: 2,
+        picture: "images/dinoPersonal/prod4.png",
       },
     ],
-    currentPage: 1
+    currentPage: 1,
+   
   },
   methods: {
     nextPage() {
@@ -70,42 +67,50 @@ let pageBar = new Vue({
       if (this.currentPage > 1) {
         this.currentPage--;
       }
-    }
+    },
 
+    //=============
   },
-
   computed: {
-    //我的恐龍
-    getSmallList() {
-      return this.cards.filter((item, index) => {
-        return (
-          index < this.currentPage * maxItemPerPage &&
-          index >= (this.currentPage - 1) * maxItemPerPage
-        );
-      });
+    style() {
+      console.log(1);
+      if (this.lubcards.type == 0) {
+      this.isHat = true;
+      } 
+    
     },
-    //別人的
-    getSmallList_lub() {
-      return this.lubcards.filter((item, index) => {
-        return (
-          index < this.currentPage * maxItemPerPage_acc &&
-          index >= (this.currentPage - 1) * maxItemPerPage_acc
-        );
-      });
-    },
-    isMaxPage() {
-      return this.currentPage >= this.getLastPage;
-    },
-    isMaxPage_lub() {
-      return this.currentPage >= this.getLastPage_lub;
-    },
-    getLastPage() {
-      return Math.ceil(this.cards.length / maxItemPerPage);
-    },
-    getLastPage_lub() {
-      return Math.ceil(this.lubcards.length / maxItemPerPage_acc);
-    }
+  //我的恐龍
+  getSmallList() {
+    return this.cards.filter((item, index) => {
+      return (
+        index < this.currentPage * maxItemPerPage &&
+        index >= (this.currentPage - 1) * maxItemPerPage
+      );
+    });
+  },
+  //別人的
+  getSmallList_lub() {
+    return this.lubcards.filter((item, index) => {
+      return (
+        index < this.currentPage * maxItemPerPage_acc &&
+        index >= (this.currentPage - 1) * maxItemPerPage_acc
+      );
+    });
+  },
+  isMaxPage() {
+    return this.currentPage >= this.getLastPage;
+  },
+  isMaxPage_lub() {
+    return this.currentPage >= this.getLastPage_lub;
+  },
+  getLastPage() {
+    return Math.ceil(this.cards.length / maxItemPerPage);
+  },
+  getLastPage_lub() {
+    return Math.ceil(this.lubcards.length / maxItemPerPage_acc);
   }
+}
+
 
   }); 
 

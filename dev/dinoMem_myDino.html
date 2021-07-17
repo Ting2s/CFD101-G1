@@ -105,7 +105,7 @@
 
 
                 <ul v-for="obj, index in getSmallList">
-                  <li :class="{'ocean':isOcean,'ground':isGround, 'sky':isSky}">
+                  <li :class="{'ocean':false,'ground':true, 'sky':false}">
 
                     <img :src="obj.picture" alt="" id="dino_1" onclick="openModel(this)">
 
@@ -127,18 +127,11 @@
 
                 <ul>
                   <div class="acc" v-for="obj, index in getSmallList_lub">
-                    <li :class="{'hat':isHat,'ticket':isTicket, 'back':isBack}">
+                    <li :class="{'hat':true,'ticket':false, 'back':false}">
+
                       <img :src="obj.picture" onclick="myHat(this)">
                     </li>
                   </div>
-                  <!-- 
-                  <li class="ticket">
-                    <img src="images/dinoPersonal/prod4.png" onclick="myTicket(this)">
-                  </li>
-
-                  <li class="back">
-                    <img src="images/dinoPersonal/prod6.png" onclick="myBack(this)">
-                  </li> -->
 
                 </ul>
 

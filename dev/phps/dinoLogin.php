@@ -26,8 +26,7 @@ try{
     $_SESSION["game_point"] = $memRow["game_point"];
 
 
-
-    //送出登入者的姓名資料
+    //送出登入者的資料
     $result = [
     "mem_no"=>$_SESSION["mem_no"], 
     "mem_id"=>$_SESSION["mem_id"],
@@ -37,11 +36,15 @@ try{
     "mem_status"=>$_SESSION["mem_status"],
     "game_point"=>$_SESSION["game_point"]
   ];
+  
     echo  json_encode($result); 
+
+
 } 
 }catch(PDOException $e){
   echo $e->getMessage();  
-
 }
+
+// header('Location:../index.html');
 
 ?>
