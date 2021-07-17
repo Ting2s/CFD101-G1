@@ -243,9 +243,9 @@ body {
 //teach dino
 
 .stegosaurus-teach {
-  width: 41%;
+  width: 36%;
   position: absolute;
-  top: 40%;
+  top: 34%;
   right: 15%;
   z-index: 100;
   animation: dino 0.5s infinite;
@@ -274,7 +274,7 @@ body {
 
 @keyframes dino {
   to {
-      width: 42%;
+      width: 37%;
   }
 }
 
