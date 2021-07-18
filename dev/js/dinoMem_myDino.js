@@ -65,12 +65,17 @@ let pageBar = new Vue({
           alert(xhr.status);
         }
       }
-      xhr.open("get", "./php/getAccessory.php", true);
+      xhr.open("get", "./php/getDinoAcc.php", true);
       xhr.send(null);
     },
 
+
     //=============
   },
+  mounted() {
+    this.myAcc();
+  },
+  
   computed: {
     style() {
       if (this.dinoAcc.type == 0) {
@@ -115,9 +120,7 @@ let pageBar = new Vue({
   getLastPage_lub() {
     return Math.ceil(this.dinoAcc.length / maxItemPerPage_acc);
   }
-}
-
-
+  }
   }); 
 
 
