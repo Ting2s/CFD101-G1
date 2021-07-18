@@ -1,8 +1,10 @@
 
 let data = {
     artRows:[],
+    msgRows:[],
     showModal: false,
     artitem:[],
+    msgitem:[],
     url:"",
     cat:"",
     cate:""
@@ -33,9 +35,26 @@ let data = {
         console.log(xhr);
         xhr.send(null);
       },
+
+      getMessage(){
+        let xhr = new XMLHttpRequest();
+        let self =this
+        xhr.onload = function(){
+          if(xhr.status == 200){
+            self.msgRows = JSON.parse(xhr.responseText);
+            self.msgitem = self.msgRows.filter(item => item.art_no === self.url ) 
+          }else{
+            alert(xhr.status);
+          }
+        }
+        xhr.open("get", "./php/dinoMessage.php", true);
+        console.log(xhr);
+        xhr.send(null);
+      }
     },
     mounted() {
       this.geturl()
       this.getArticle()
+      this.getMessage()
     }
 })
