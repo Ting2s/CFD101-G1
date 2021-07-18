@@ -1,160 +1,74 @@
-var nextPageButton = document.getElementById("nextPageButton");
-var previousPageButton = document.getElementById("previousPageButton");
-var totalPages = document.getElementById("totalPages");
-var page = document.getElementsByClassName("jsPage");
-var pageInput = document.getElementById("pageInput");
+let data = {
+    favRows:[],
+  }
+  let vm = new Vue({
+    el: "#app",
+    data: data,
+    methods: {
+      getcard_favorite(){
+        let xhr = new XMLHttpRequest();
+        let self =this
+        xhr.onload = function(){
+          if(xhr.status == 200){
+            self.favRows = JSON.parse(xhr.responseText);
+          }else{
+            alert(xhr.status);
+          }
+        }
+        xhr.open("get", "./php/card_favorite.php", true);
+        console.log(xhr);
+        xhr.send(null);
+      },
 
-var pageInputValue;
-var actualPage = 1;
-var minimumPage = 1;
-var maximumPage;
-
-
-document.addEventListener("DOMContentLoaded", init());
-
-function init() {
-    setPageInputValue();
-    getMaximumPage();
-    setTotalPages();
-	setPageInputMinMax();
-    nextPageOnClick();
-    previousPageOnClick();
-    //throughInputPageOnClick();
-    throughInputPageOnkeypress();
-    // disablePrevNext();
-
-}
-
-
-
-function getMaximumPage() {
-    Object.entries(page).forEach(([i, value]) => {
-        maximumPage = i;
-    });
-    maximumPage = parseInt(maximumPage) + 1;
-}
-
-function setTotalPages() {
-    totalPages.innerText = maximumPage;
-}
-
-function nextPageOnClick() {
-    nextPageButton.addEventListener("click", nextPage);
-}
-
-function nextPage() {
-    if (actualPage < maximumPage) {
-        actualPage = actualPage + 1;
-        Object.entries(page).forEach(([i, value]) => {
-            value.classList.remove("pageShow");
-        });
-        document.getElementById("page" + actualPage).classList.add("pageShow");
-        setPageInputValue();
-        //disablePrevNext();
-    }
-}
-
-function previousPageOnClick() {
-    previousPageButton.addEventListener("click", previousPage);
-}
-
-function previousPage() {
-    if (actualPage > minimumPage) {
-        actualPage = actualPage - 1;
-        Object.entries(page).forEach(([i, value]) => {
-            value.classList.remove("pageShow");
-        });
-        document.getElementById("page" + actualPage).classList.add("pageShow");
-        setPageInputValue();
-        // disablePrevNext();
-    }
-}
-
-function throughInputPageOnClick() {
-    pageInputButton.addEventListener("click", throughInputPage);
-}
-
-function throughInputPageOnkeypress() {
-    pageInput.addEventListener("keypress", throughInputPageKeypress);
-}
-
-function throughInputPageKeypress(e) {
-    if (e.keyCode === 13) {
-        throughInputPage();
-    }
-}
-
-function getPageInput() {
-    pageInputValue = parseInt(pageInput.value);
-}
-
-function throughInputPage() {
-    getPageInput();
-    if (pageInputValue >= minimumPage && pageInputValue <= maximumPage) {
-        actualPage = pageInputValue;
-        Object.entries(page).forEach(([i, value]) => {
-            value.classList.remove("pageShow");
-        });
-        document.getElementById("page" + actualPage).classList.add("pageShow");
-        //disablePrevNext();
-    }
-}
-
-function setPageInputValue() {
-    pageInput.value = actualPage;
-}
-
-function setPageInputMinMax() {
-    pageInput.min = minimumPage;
-    pageInput.max = maximumPage;
-}
+      like(e){
+         if(e.target.className == 'fas fa-heart'){
+            e.target.className = 'far fa-heart';
+         }else{
+            e.target.className = 'fas fa-heart';
+         }
 
 
+        //  $.ajax({
+        //      url:"./php/card_favorite.php",
+        //      data: ,
+        //      success(res){
+        //          console.log(res)
+        //      },
+
+        //  });
+        
+      },
+    },
+    mounted() {
+      this.getcard_favorite()
+    },
+  
+  })
+ 
 //--------------
-$(function () {
-    
-    $('.pic').on('click', function () {
-
-        var src = $(this).attr('src');
-        $('.imgPreview img').attr('src', src);
-        $('.imgPreview').show()
-    });
-
-    $('.imgPreview').on('click', function () {
-
-        $('.imgPreview').hide()
-    });
-})
-
-//------------------------
 // $(function () {
-//     $('.like').click(function () { likeFunction(this); });
-//     favorite.classList.toggle("fas").click(function () { dislikeFunction(this);});
-//   });
-  
-  
-//   function likeFunction(caller) {
-//     var postId = caller.parentElement.getAttribute('postid');
-//     $.ajax({
-//         type: "POST",
-//         url: "dinoCardboard.php",
-//         data: 'Action=LIKE&PostID=' + postId,
-//         success: function () {}
+    
+//     $('.image').on('click', function () {
+
+//         var src = $(this).attr('src');
+//         $('.imgPreview img').attr('src', src);
+//         $('.imgPreview').show()
 //     });
-//   }
-//   function dislikeFunction(caller) {
-//     var postId = caller.parentElement.getAttribute('postid');
-//     $.ajax({
-//         type: "POST",
-//         url: "dinoCardboard.php",
-//         data: 'Action=DISLIKE&PostID=' + postId,
-//         success: function () {}
+
+//     $('.imgPreview').on('click', function () {
+
+//         $('.imgPreview').hide()
 //     });
-//   }
+// })
+  
+//-----------------------
+// if(傳入class有fas 收欌->不收欌)
+    // {
+    //    ajax SQL Delete 收藏項, php 傳入 card_no
+    //    js 移除 fas class
+    // }else{ 不收欌->收欌
+    //     ajax SQL Insert 收藏項
+    //     js 加入 fas class
+    //}
 
 //-----------------------
-function favorite(e) {
-    e.classList.toggle("fas");
-}
-
-//----------------------
