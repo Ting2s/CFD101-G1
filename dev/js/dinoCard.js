@@ -3,6 +3,9 @@ LC.init(
   {imageURLPrefix: 'images/dinoCard'}
 )
 
+
+//canvas.toDataURL() --> dataURL base64
+
 ///////////
 //自動生成圖片
 window.onload = background();
