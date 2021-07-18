@@ -10,13 +10,13 @@ let pageBar = new Vue({
     isSky: 'sky',
     //================
 
-    isHat: false,
-    isTicket: false,
-    isBack: false, 
+    isHat: 'hat',
+    isTicket: 'ticket',
+    isBack: 'back', 
     //================
     postcard: "",
     //恐龍
-    cards: [
+    myDino: [
       {
         dino_st: 0,
         picture: "images/dinoPersonal/d2.png",
@@ -32,32 +32,17 @@ let pageBar = new Vue({
         picture: "images/dinoPersonal/d2.png",
         value: "龍春暉",
       },
+      {
+        dino_st: 2,
+        picture: "images/dinoPersonal/d2.png",
+        value: "龍春暉",
+      },
     ],
     //配件
-    lubcards: [
-      {
-        type: 0,
-        picture: "images/dinoPersonal/prod4.png",
-      },
-      {
-        type: 1,
-        picture: "images/dinoPersonal/prod4.png",
-      },
-      {
-        type: 1,
-        picture: "images/dinoPersonal/prod4.png",
-      },
-      {
-        type: 2,
-        picture: "images/dinoPersonal/prod4.png",
-      },
-      {
-        type: 2,
-        picture: "images/dinoPersonal/prod4.png",
-      },
+    dinoAcc: [
     ],
     currentPage: 1,
-   
+
   },
   methods: {
     nextPage() {
@@ -67,21 +52,42 @@ let pageBar = new Vue({
       if (this.currentPage > 1) {
         this.currentPage--;
       }
+    
+    },
+    //我的配件資料庫
+    myAcc(){
+      const xhr = new XMLHttpRequest();
+      const my =this
+      xhr.onload = function(){
+        if (xhr.status == 200) {
+      my.dinoAcc = JSON.parse(xhr.responseText);
+        }else{
+          alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getAccessory.php", true);
+      xhr.send(null);
     },
 
     //=============
   },
   computed: {
     style() {
-      console.log(1);
-      if (this.lubcards.type == 0) {
-      this.isHat = true;
-      } 
+      if (this.dinoAcc.type == 0) {
+        this.isHat = true;  
+      }
+      if (this.dinoAcc.type == 1) {
+      this.isTicket = true;
+      }
+      if (this.dinoAcc.type == 2) {
+        this.isBack = true;
+      }
+
     
     },
   //我的恐龍
   getSmallList() {
-    return this.cards.filter((item, index) => {
+    return this.myDino.filter((item, index) => {
       return (
         index < this.currentPage * maxItemPerPage &&
         index >= (this.currentPage - 1) * maxItemPerPage
@@ -90,7 +96,7 @@ let pageBar = new Vue({
   },
   //別人的
   getSmallList_lub() {
-    return this.lubcards.filter((item, index) => {
+    return this.dinoAcc.filter((item, index) => {
       return (
         index < this.currentPage * maxItemPerPage_acc &&
         index >= (this.currentPage - 1) * maxItemPerPage_acc
@@ -104,10 +110,10 @@ let pageBar = new Vue({
     return this.currentPage >= this.getLastPage_lub;
   },
   getLastPage() {
-    return Math.ceil(this.cards.length / maxItemPerPage);
+    return Math.ceil(this.myDino.length / maxItemPerPage);
   },
   getLastPage_lub() {
-    return Math.ceil(this.lubcards.length / maxItemPerPage_acc);
+    return Math.ceil(this.dinoAcc.length / maxItemPerPage_acc);
   }
 }
 
@@ -151,7 +157,7 @@ function Id(id){
   return document.getElementById(id);
 };  
 // 帽子拖曳
-function myHat(e) {
+function hat(e) {
 
   Id("myHat").src = e.src;
   Id("myHat").innerHTML = e.alt;
@@ -166,7 +172,7 @@ $(function () {
 });
 
 // 紋身拖曳
-function myTicket(e) {
+function ticket(e) {
   Id("myTicket").src = e.src;
   Id("myTicket").innerHTML = e.alt;
 
@@ -182,7 +188,7 @@ $(function () {
 });
 
 // 背景拖曳
-function myBack(e) {
+function back(e) {
   Id("myBack").src = e.src;
   Id("myBack").innerHTML = e.alt;
 

@@ -5,8 +5,8 @@ let pageBar = new Vue({
  
   data: {
     postcard: "",
-    //我的明信片
-    cards: [
+    //我的文章
+    myArti: [
       {
         title: "你們的劍龍會有這種BUG嗎？",
         time:"2021-06-02",
@@ -31,8 +31,8 @@ let pageBar = new Vue({
       repo:"8",
   },
     ],
-    //明信片收藏
-    lubcards: [
+    //文章收藏
+    arti_lub: [
       {
         title: "三角龍出去玩",
         time:"2021-06-02",
@@ -77,9 +77,9 @@ let pageBar = new Vue({
   },
 
   computed: {
-    //我的恐龍
+    // 我的
     getSmallList() {
-      return this.cards.filter((item, index) => {
+      return this.myArti.filter((item, index) => {
         return (
           index < this.currentPage * maxItemPerPage &&
           index >= (this.currentPage - 1) * maxItemPerPage
@@ -88,7 +88,7 @@ let pageBar = new Vue({
     },
     //別人的
     getSmallList_lub() {
-      return this.lubcards.filter((item, index) => {
+      return this.arti_lub.filter((item, index) => {
         return (
           index < this.currentPage * maxItemPerPage &&
           index >= (this.currentPage - 1) * maxItemPerPage
@@ -102,10 +102,10 @@ let pageBar = new Vue({
       return this.currentPage >= this.getLastPage_lub;
     },
     getLastPage() {
-      return Math.ceil(this.cards.length / maxItemPerPage);
+      return Math.ceil(this.myArti.length / maxItemPerPage);
     },
     getLastPage_lub() {
-      return Math.ceil(this.lubcards.length / maxItemPerPage);
+      return Math.ceil(this.arti_lub.length / maxItemPerPage);
     }
   }
 

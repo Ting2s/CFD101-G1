@@ -111,6 +111,10 @@ body {
         @include respondTo(medium) {
             display: none;
         }
+        li{
+            display: flex;
+            flex-wrap: wrap;
+        }
         .personPart {
             width: 12rem;
             height: 12rem;
@@ -236,7 +240,7 @@ body {
         filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
     }
     p {
-        color: #ff4f8f; //----------------
+        color: #010864; //----------------
         font-size: 32px; //------------
         font-family: DFPLiYuan; //-----------------
         //-webkit-text-stroke: 1px #fff;

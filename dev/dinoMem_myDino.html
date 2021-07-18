@@ -127,9 +127,9 @@
 
                 <ul>
                   <div class="acc" v-for="obj, index in getSmallList_lub">
-                    <li :class="{'hat':true,'ticket':false, 'back':false}">
+                    <li :class="{isHat:true,isTicket:false, isBack:false}">
 
-                      <img :src="obj.picture" onclick="myHat(this)">
+                      <img :src="obj.img" onclick="hat(this)">
                     </li>
                   </div>
 
@@ -158,12 +158,10 @@
 
 
   <!-- js -->
-
-
-
-
   <script src="js/dinoMem.js"></script>
   <script src="js/dinoMem_myDino.js"></script>
+
+  <script src="js/login.js"></script>
 
 </body>
 

@@ -60,7 +60,7 @@
 
 
           <!-- 題目內容 -->
-          <div class="testCenter" id="testCenter" v-for="(question,key) in questions" v-if="question.status == '1'">
+          <div class="testCenter" id="testCenter" v-for="(question,key) in questions" v-show="question.status == '1'">
             <!-- 題目 -->
             <h3 class="qusTitle">
               Q {{key+1}} . {{question.quiz_q}}
@@ -134,6 +134,7 @@
 
   <!-- js -->
   <script src="js/dinoTest.js"></script>
+  <script src="js/login.js"></script>
 
 
 </body>
