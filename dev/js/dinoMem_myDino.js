@@ -10,9 +10,9 @@ let pageBar = new Vue({
     isSky: 'sky',
     //================
 
-    isHat: false,
-    isTicket: false,
-    isBack: false, 
+    isHat: 'hat',
+    isTicket: 'ticket',
+    isBack: 'back', 
     //================
     postcard: "",
     //恐龍
@@ -52,6 +52,7 @@ let pageBar = new Vue({
       if (this.currentPage > 1) {
         this.currentPage--;
       }
+    
     },
     //我的配件資料庫
     myAcc(){
@@ -59,12 +60,12 @@ let pageBar = new Vue({
       const my =this
       xhr.onload = function(){
         if (xhr.status == 200) {
-      my.questions = JSON.parse(xhr.responseText);
+      my.dinoAcc = JSON.parse(xhr.responseText);
         }else{
           alert(xhr.status);
         }
       }
-      xhr.open("get", "./php/getQuestion.php", true);
+      xhr.open("get", "./php/getAccessory.php", true);
       xhr.send(null);
     },
 
@@ -73,8 +74,15 @@ let pageBar = new Vue({
   computed: {
     style() {
       if (this.dinoAcc.type == 0) {
-      return this.isHat = true;
-      } 
+        this.isHat = true;  
+      }
+      if (this.dinoAcc.type == 1) {
+      this.isTicket = true;
+      }
+      if (this.dinoAcc.type == 2) {
+        this.isBack = true;
+      }
+
     
     },
   //我的恐龍

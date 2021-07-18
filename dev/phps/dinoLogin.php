@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 
-
 try{
   require_once("../connect_cfd101g1.php");
   $sql = " SELECT * from `member` where mem_id=:mem_id && mem_pw=:mem_pw";
@@ -25,7 +24,6 @@ try{
     $_SESSION["mem_status"] = $memRow["mem_status"];
     $_SESSION["game_point"] = $memRow["game_point"];
 
-
     //送出登入者的資料
     $result = [
     "mem_no"=>$_SESSION["mem_no"], 
@@ -36,10 +34,7 @@ try{
     "mem_status"=>$_SESSION["mem_status"],
     "game_point"=>$_SESSION["game_point"]
   ];
-  
     echo  json_encode($result); 
-
-
 } 
 }catch(PDOException $e){
   echo $e->getMessage();  
