@@ -262,7 +262,7 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
     transform: scaleX(1) translateY(35px);
   }
 }
-// RWD(1024px)
+// RWD(1024px)ipad
 
 @media screen and (max-width: 1024px) {
   .guide{
@@ -289,11 +289,11 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
   }
 }
 
-// RWD(812px)
+// RWD(812px) iphone X
 
 @media screen and (max-width: 812px) {
   .section{
-    height: 375px;
+    height: 100vh;
   }
   .guide{
     top: 20%;
@@ -301,7 +301,10 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
   }
   .pterodactyl{
     width: 20%;
-    top: 10%;
+    top: 5%;
+  }
+  .sun{
+    top: -20%;
   }
   .cloud-bl,
   .cloud-fl,
@@ -310,5 +313,29 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
     position: absolute;
     width: 100px;
     top: 10px;
+  }
+  .text-wrapper{
+    left: 30%;
+    font-size: 2em;
+  }
+  .plesiosaurus{
+    top: 10%;
+    width: 30%;
+    object-fit: contain;
+  }
+  .stegosaurus{
+    width: 50%;
+    object-fit: contain;
+    top: 5%;
+  }
+  .typing{
+    left: 24%;
+    font-size: 2em;
+  }
+  .eggmove{
+    top: 60%;
+  }
+  .nest{
+    top: 70%;
   }
 }

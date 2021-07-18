@@ -70,16 +70,6 @@ function appear_5() {
     }, 4000);
 }
 
-// //----fish-6事件
-// function hide_6() {
-//     Fish_6.classList.add('remove');
-//     add();
-// }
-// function appear_6() {
-//     setInterval(() => {
-//         Fish_6.classList.remove('remove');
-//     }, 5000);
-// }
 
 function init() {
     appear();
@@ -178,7 +168,7 @@ teach_close_1.addEventListener('click', function (e) {
 })
 
 //恐龍長大
-let dino = document.getElementById('dinopic');
+let dino = document.getElementById('dinopic_land');
 
 //grow up進度條
 let j = 0;
@@ -198,7 +188,7 @@ function add() {
         litTest_2.classList.remove("remove");
     }
     if(j ===15){
-        window.location.href='dinoIsland.html';
+        window.location.href='dinoGet_land.html';
     }
 }
 
