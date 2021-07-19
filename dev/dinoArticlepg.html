@@ -51,7 +51,7 @@
             <h2>新增留言</h2>
               <form action="./php/postmessage.php" method="post" enctype="multipart/form-data">
                 <textarea id="single" name="text" placeholder="" style="height:100px" v-model="input"></textarea>
-                <button class="dinbtn" type="button" @click="send_data()">送出</button>
+                <button class="dinbtn" type="button" @click="send_data">送出</button> 
               </form>
           </div>
           <div class="clickbac" v-if="showModal">

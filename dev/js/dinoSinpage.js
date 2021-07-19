@@ -57,7 +57,7 @@ let data = {
         var form = $('form')[0];
         var formData = new FormData();
         formData.append("text", this.input)
-
+        formData.append("no", this.artitem[0].art_no)
 
 
         $.ajax({
@@ -71,6 +71,7 @@ let data = {
             success: function (res) {       
                 console.log('成功');
                 console.log(res);
+                window.location.reload();
             },
             error: function (res) {
                 console.log('失敗');

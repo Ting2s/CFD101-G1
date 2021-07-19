@@ -6,21 +6,24 @@ session_start();
     // $article_cate = isset($_POST["type"])?$_POST["type"]:""; 
     // $title = isset($_POST["title"])?$_POST["title"]:"";
     $content = isset($_POST["text"])?$_POST["text"]:"";
-
-    // print_r([$mem,$article_cate,$title,$content,$to]);
-
+    $cop = isset($_POST["no"])?$_POST["no"]:"";
+    // print_r([$mem]);
+    echo $cop;
+    // echo $content;
+    // echo $mem;
     //------------------
 try{
     require_once("../connect_cfd101g1.php");
     $sql = "INSERT INTO MSG_ART(
-                MEM_NO,MSG_CONTENT,MSG_STATUS
+                MEM_NO,ART_NO,MSG_CONTENT,MSG_STATUS
             ) 
             VALUES(
-                :MEM_NO,:MSG_CONTENT,1)";
+                :MEM_NO,:ART_NO,:MSG_CONTENT,1)";
     
     $msgart = $pdo->prepare($sql);
     $msgart->bindValue(":MEM_NO", $mem);
     $msgart->bindValue(":MSG_CONTENT", $content);
+    $msgart->bindValue(":ART_NO", $cop);
     $msgart->execute(); 
 // -------------------------------------------------------------------------------------------------
 
