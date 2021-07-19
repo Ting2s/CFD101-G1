@@ -1,3 +1,9 @@
+//==================================
+
+function Id(id){
+  return document.getElementById(id);
+};
+//==================================
 const maxItemPerPage = 3;
 const maxItemPerPage_acc = 8;
 let pageBar = new Vue({
@@ -10,9 +16,9 @@ let pageBar = new Vue({
     isSky: 'sky',
     //================
 
-    isHat: 'hat',
-    isTicket: 'ticket',
-    isBack: 'back', 
+    // isHat: true,
+    // isTicket: false,
+    // isBack: false,
     //================
     postcard: "",
     //恐龍
@@ -39,9 +45,13 @@ let pageBar = new Vue({
       },
     ],
     //配件
-    dinoAcc: [
-    ],
+    dinoAcc: [],
     currentPage: 1,
+
+    //頭貼
+    photoImg: "images/dinoPersonal/d1.png",
+    newImg:"",
+    //新頭貼
 
   },
   methods: {
@@ -55,13 +65,13 @@ let pageBar = new Vue({
     
     },
     //我的配件資料庫
-    myAcc(){
+    myAcc() {
       const xhr = new XMLHttpRequest();
-      const my =this
-      xhr.onload = function(){
+      const my = this
+      xhr.onload = function () {
         if (xhr.status == 200) {
-      my.dinoAcc = JSON.parse(xhr.responseText);
-        }else{
+          my.dinoAcc = JSON.parse(xhr.responseText);
+        } else {
           alert(xhr.status);
         }
       }
@@ -69,30 +79,68 @@ let pageBar = new Vue({
       xhr.send(null);
     },
 
+    //更新頭貼
+    newPhoto() {
 
+      this.photoImg = this.newImg;
+    },
+
+    updatePhoto() {
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+
+        //跳窗
+        let span = document.getElementsByClassName("saveClose")[0];
+        Id('save').onclick = function() {
+        Id('saveBox').style.display = "block";
+        }
+        span.onclick = function() {
+        Id('saveBox').style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == Id('saveBox')) {
+            Id('saveBox').style.display = "none";
+          }
+        }
+        } else {
+          alert(xhr.status);
+        }
+      }
+
+      xhr.open("post", "./php/updatePhoto.php", true);
+      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+  
+      let data_info = `newImg=${$id("facePhoto").src}`;
+      xhr.send(data_info);
+    }
     //=============
-  },
-  mounted() {
-    this.myAcc();
   },
   
   computed: {
     style() {
-      if (this.dinoAcc.type == 0) {
-        this.isHat = true;  
-      }
-      if (this.dinoAcc.type == 1) {
-      this.isTicket = true;
-      }
-      if (this.dinoAcc.type == 2) {
-        this.isBack = true;
-      }
+      let my = this;
+      if (my.dinoAcc.type == 0) {
+        Id("acc").classList.add('hat');
+        Id("acc").classList.remove('ticket');
+        Id("acc").classList.remove('back');
 
-    
+      }
+      if (my.dinoAcc.type == 1) {
+        Id("acc").classList.add('ticket');
+        Id("acc").classList.remove('hat');
+        Id("acc").classList.remove('back');
+      
+      }
+      if (my.dinoAcc.type == 2) {
+        Id("acc").classList.add('back');
+        Id("acc").classList.remove('hat');
+        Id("acc").classList.remove('ticket');
+      }
     },
   //我的恐龍
   getSmallList() {
-    return this.myDino.filter((item, index) => {
+    return this.myDino.filter((obj, index) => {
       return (
         index < this.currentPage * maxItemPerPage &&
         index >= (this.currentPage - 1) * maxItemPerPage
@@ -101,7 +149,7 @@ let pageBar = new Vue({
   },
   //別人的
   getSmallList_lub() {
-    return this.dinoAcc.filter((item, index) => {
+    return this.dinoAcc.filter((obj, index) => {
       return (
         index < this.currentPage * maxItemPerPage_acc &&
         index >= (this.currentPage - 1) * maxItemPerPage_acc
@@ -120,45 +168,63 @@ let pageBar = new Vue({
   getLastPage_lub() {
     return Math.ceil(this.dinoAcc.length / maxItemPerPage_acc);
   }
-  }
+},
+mounted() {
+  this.myAcc();
+},
   }); 
 
 
-
-//==================================
-let dinoAcc_btn = document.getElementById("dinoAcc_btn");
+//================================
+let dinoAcc_btn = Id("dinoAcc_btn");
 dinoAcc_btn.addEventListener("click", function () {
   
-  document.getElementById("dinoCon_my").classList.add("none");
-  document.getElementById("dino_p").classList.add("none");
-  document.getElementById("dinoCon_acc").classList.remove("none");
-  document.getElementById("dinoAcc_p").classList.remove("none");
+  Id("dinoCon_my").classList.add("none");
+  Id("dino_p").classList.add("none");
+  Id("dinoCon_acc").classList.remove("none");
+  Id("dinoAcc_p").classList.remove("none");
   
   
 
-  document.getElementById("dinoAcc_btn").classList.add("active");
-  document.getElementById("dino_btn").classList.remove("active");
+  Id("dinoAcc_btn").classList.add("active");
+  Id("dino_btn").classList.remove("active");
 })
 
 //-----------------------------------
-let dino_btn = document.getElementById("dino_btn");
+let dino_btn =Id("dino_btn");
 dino_btn.addEventListener("click", function () {
   
-  document.getElementById("dinoCon_acc").classList.add("none");
-  document.getElementById("dinoAcc_p").classList.add("none");
-  document.getElementById("dinoCon_my").classList.remove("none");
-  document.getElementById("dino_p").classList.remove("none");
+  Id("dinoCon_acc").classList.add("none");
+  Id("dinoAcc_p").classList.add("none");
+  Id("dinoCon_my").classList.remove("none");
+  Id("dino_p").classList.remove("none");
   
   
-  document.getElementById("dino_btn").classList.add("active");
-  document.getElementById("dinoAcc_btn").classList.remove("active");
+  Id("dino_btn").classList.add("active");
+  Id("dinoAcc_btn").classList.remove("active");
 })
+
+//-----------------------------------
+// 已儲存造型
+
+// let span = document.getElementsByClassName("saveClose")[0];
+
+// Id('save').onclick = function() {
+// Id('saveBox').style.display = "block";
+// }
+
+// span.onclick = function() {
+// Id('saveBox').style.display = "none";
+// }
+// window.onclick = function(event) {
+//   if (event.target == Id('saveBox')) {
+//     Id('saveBox').style.display = "none";
+//   }
+// }
 
 //-----------------------------------
 // 替代圖片
-function Id(id){
-  return document.getElementById(id);
-};  
+
 // 帽子拖曳
 function hat(e) {
 
