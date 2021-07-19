@@ -15,6 +15,7 @@
         @@include('layout/style.html')
         <link rel="stylesheet" href="css/dinoSinglepg.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 
     <body>
@@ -48,9 +49,9 @@
           <hr>
           <div class="pon">
             <h2>新增留言</h2>
-              <form action="">
-                <textarea id="single" name="single" placeholder="" style="height:100px"></textarea>
-                <input class="dinbtn" type="button" value="送出"></input>
+              <form action="./php/postmessage.php" method="post" enctype="multipart/form-data">
+                <textarea id="single" name="text" placeholder="" style="height:100px" v-model="input"></textarea>
+                <button class="dinbtn" type="button" @click="send_data">送出</button> 
               </form>
           </div>
           <div class="clickbac" v-if="showModal">

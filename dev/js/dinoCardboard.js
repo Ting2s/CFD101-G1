@@ -11,35 +11,57 @@ let data = {
         xhr.onload = function(){
           if(xhr.status == 200){
             self.favRows = JSON.parse(xhr.responseText);
+            //let xhr2 = new XMLHttpRequest();
+            //xhr2.open("get","getMyFavorie.php",true);
           }else{
             alert(xhr.status);
           }
         }
-        xhr.open("get", "./php/card_favorite.php", true);
+        //xhr.open("get", "./php/card_favorite.php", true);
+        xhr.open("get", "./php/getCard.php", true);
         console.log(xhr);
         xhr.send(null);
       },
 
-      like(e){
-         if(e.target.className == 'fas fa-heart'){
-            e.target.className = 'far fa-heart';
-         }else{
-            e.target.className = 'fas fa-heart';
-         }
+      like(objData, index){
+        console.log('進入',objData);
+        console.log('我按到第幾個', index);
+        //console.log(this.$refs);
+        let data=objData
+        //  if(e.target.className == 'fas fa-heart'){
+        //     e.target.className = 'far fa-heart';
+        //  }else{
+        //     e.target.className = 'fas fa-heart';
+        //  }
+        let currentIcon = document.getElementById('icon-0')
+        console.log(currentIcon);
 
-
-        //  $.ajax({
-        //      url:"./php/card_favorite.php",
-        //      data: ,
-        //      success(res){
-        //          console.log(res)
-        //      },
-
-        //  });
+         $.ajax({
+             url:"./php/card_favorite.php",
+             data,
+             type:'POST',
+             success(res){
+                console.log(res)
+             },
+             false(res){
+               console.log(res)
+             }
+         });
         
       },
     },
+    // computed:{
+    //   likeOrNot(){
+    //     self.favRows
+    //     for(let i in this.favRows){
+    //       if(this.favRows[i].mem_no == 1){
+
+    //       }
+    //     }
+    //   }
+    // }
     mounted() {
+      //this.getcard_favorite()
       this.getcard_favorite()
     },
   

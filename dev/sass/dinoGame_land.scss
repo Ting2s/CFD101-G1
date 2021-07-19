@@ -36,9 +36,9 @@ body {
 
 .tree-1 {
   position: absolute;
-  width: 20%;
-  top: 10%;
-  left: 80%;
+  width: 22%;
+  top: 8%;
+  left: 73%;
   z-index: 1;
   cursor: pointer;
 }
@@ -49,8 +49,8 @@ body {
 .tree-2 {
   position: absolute;
   width: 20%;
-  top: 30%;
-  left: 10%;
+  top: 31%;
+  left: 13%;
   z-index: 3;
   cursor: pointer;
 }
@@ -59,9 +59,9 @@ body {
 }
 .flower {
   position: absolute;
-  width: 20%;
-  top: 40%;
-  left: 5%;
+  width: 7%;
+  top: 61%;
+  left: 9%;
   z-index: 2;
   cursor: pointer;
 }
@@ -70,17 +70,16 @@ body {
 }
 .grass {
   position: absolute;
-  width: 15%;
-  top:50%;
-  left: 60%;
-  z-index: 1;
+  width: 12%;
+  top:58%;
+  left: 46%;
   cursor: pointer;
   z-index: 2;
 }
 .grass2 {
   position: absolute;
-  width: 5%;
-  top:60%;
+  width: 19%;
+  top:66%;
   left: 70%;
   z-index: 1;
   cursor: pointer;
@@ -92,7 +91,9 @@ body {
 
 .tree-1 img,
 .tree-2 img,
-.grass img
+.grass img,
+.grass2 img,
+.flower img
  {
   width: 100%;
 }
@@ -243,9 +244,9 @@ body {
 //teach dino
 
 .stegosaurus-teach {
-  width: 36%;
+  width: 32%;
   position: absolute;
-  top: 34%;
+  top: 36%;
   right: 15%;
   z-index: 100;
   animation: dino 0.5s infinite;
@@ -274,7 +275,7 @@ body {
 
 @keyframes dino {
   to {
-      width: 37%;
+      width: 33%;
   }
 }
 
@@ -292,9 +293,9 @@ body {
 
 @media screen and (max-width: 1024px) {
   .dino-land1 {
-      width: 50%;
-      top: 7%;
-      left: 43%;
+      width: 45%;
+      top: 17%;
+      left: 51%;
   }
 
   .GrowUp {
@@ -309,10 +310,12 @@ body {
       margin-top: 40%;
       transform: translateY(-50%);
   }
+  .touch-food {
+    top: 33%;
+  }
 
-  .touch-fish {
-      top: 34%;
-      left: 23%;
+  .stegosaurus-teach{
+    top: 40%;
   }
 
   .teach-growp-wrap {
@@ -325,18 +328,25 @@ body {
       height: 94.4%;
   }
 
-  .dino-land1 {
-      top: 26%;
-      right: 15%;
-  }
-
   .close {
       width: 6%;
       top: 6%;
       right: 6%;
   }
+
+  .tree-2 {
+    width: 29%;
+    top: 29%;
+    left: 5%;
+    z-index: 3;
+  }
+
   .grass{
-    left: 600px;
+    top: 66%;
+  }
+
+  .flower {
+    top: 68%;
   }
 
 }
@@ -346,8 +356,8 @@ body {
 @media screen and (max-width: 812px) {
 
   .dino-land1 {
-      width: 25%;
-      top: 12%;
+      width: 32%;
+      top: 15%;
       left: 50%;
   }
 
@@ -365,11 +375,14 @@ body {
       transform: translateY(-50%);
   }
 
-  .touch-fish {
-      width: 16%;
-      top: 30%;
-      left: 23%;
+  .touch-food {
+    top: 28%;
   }
+
+  .stegosaurus-teach{
+    top: 34%;
+  }
+
 
   .teach-growp-wrap {
       width: 39%;
@@ -391,6 +404,56 @@ body {
       top: 5%;
       right: 4%;
   }
+
+  .tree-1 {
+    width: 21%;
+    top: 4%;
+    left: 75%;
+}
+
+  .tree-2 {
+    width: 17%;
+    top: 27%;
+    left: 20%;
+    z-index: 3;
+}
+
+.flower {
+  top: 60%;
+  left: 18%;
+  width: 6%;
+}
+
+.grass{
+  top: 60%;
+}
+
+.grass2 {
+  top: 53%;
+  width: 9%;
+}
+
+.litTest_1 {
+  width: 64%;
+  height: 72vh;
+  position: relative;
+  top: -68%;
+  margin: auto;
+  z-index: 101;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(0,0,0,.527);
+}
+
+.litTest_1 h1, .choose{
+  font-size: 24px;
+  font-family: 'DFPLiYuan';
+  letter-spacing: 10px;
+  color: #ffdc7d;;
+}
 
   //----animate
 

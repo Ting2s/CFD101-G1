@@ -57,7 +57,8 @@
             </div>
 
 
-            <img src="images/dinoPersonal/d1.png" alt="" id="facePhoto">
+            <!-- 頭貼 -->
+            <img :src="photoImg" id="facePhoto">
             <h3>龍春暉</h3>
 
           </div>
@@ -86,14 +87,19 @@
               <!-- 我的恐龍 -->
               <p id="dino_p">點擊後可以查看恐龍哦！</p>
               <!-- 我的恐龍配件 -->
-              <p id="dinoAcc_p" class="none">點擊後就能給擁有的恐龍更換哦！</p>
+              <p id="dinoAcc_p" class="none">點擊後就能給擁有的恐龍更換哦！ <button id="save" @click="updatePhoto">儲存</button></p>
             </div>
 
+            <!-- 儲存跳窗 -->
+            <div id="saveBox" class="saveBox">
+              <div class="saveContent">
+                <span class="saveClose">&times;</span>
+                <p>已儲存造型！</p>
+              </div>
 
-
+            </div>
 
             <!-- 欄位 -->
-
 
 
             <!-- -----我的恐龍----- -->
@@ -123,12 +129,11 @@
               <!-- 選頁按鈕 -->
               @@include('layout/dinoMem_pageBar.html')
               <div class="dinoAcc" id="dinoAcc">
-                <!-- 一頁 -->
 
                 <ul>
-                  <div class="acc" v-for="obj, index in getSmallList_lub">
-                    <li :class="{isHat:true,isTicket:false, isBack:false}">
-
+                  <div class="acc" id="acc" v-for="obj, index in getSmallList_lub">
+                    <li class="hat">
+                      <!-- :class="{'back':isBack,'ticket':isTicket}" -->
                       <img :src="obj.img" onclick="hat(this)">
                     </li>
                   </div>

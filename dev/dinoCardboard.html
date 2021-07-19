@@ -24,17 +24,17 @@
         <div class="personBg">
           <ul class="personItem">
             <li>
-              <div class="personPart" v-for="favRow in favRows">
+              <div class="personPart" v-for="(favRow, index) in favRows" :key="index">
                 <div class="personImg">
-                  <img :src="favRow.favorite_img" class="image">
+                  <img :src="favRow.card_img" class="image">
                 </div>
                 <div class="personContent">
-                  <button class="like" @click="like">
-                    <i class="far fa-heart"></i>
+                  <button class="like" @click="like(favRow, index)" name="mem_id">
+                    <i class="far fa-heart" :id="`icon-${index}`"></i>
                   </button>
-                  <span>{{favRow.mem_nicname}}</span>
+                  <span>{{favRow.mem_id}}</span>
                 </div>
-                <p class="personDate">{{favRow.favorite_date}}</p>
+                <!-- <p class="personDate">{{favRow.favorite_date}}</p> -->
               </div>
             </li>
           </ul>
@@ -84,7 +84,6 @@
   <div class="box-paginacao">
     <input type="radio" name="input-paginacao" id="paginacao1" checked>
     <input type="radio" name="input-paginacao" id="paginacao2">
-    <input type="radio" name="input-paginacao" id="paginacao3">
     <div class="box-vitrines">
       <ul>
         <div class="vitrine1">
@@ -96,12 +95,12 @@
                 <button class="like">
                   <i class="far fa-heart"></i>
                 </button>
-                <span>{{favRow.mem_nicname}}</span>
+                <span>dino</span>
               </div>
-              <p class="personDate2">{{favRow.favorite_date}}</p>
+              <p class="personDate2">2021-07-01</p>
           </li>
         </div>
-        <!-- <div class="vitrine2">
+        <div class="vitrine2">
           <li>
             <div class="personImg2">
               <img src="images/dinoCardboard/person5.jpg" class="pic">
@@ -114,27 +113,12 @@
             </div>
             <p class="personDate2">2021/5/28</p>
           </li>
-        </div> -->
-        <!-- <div class="vitrine3">
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person9.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>龍露西</span>
-            </div>
-            <p class="personDate2">2021/5/01</p>
-          </li>
-        </div> -->
+        </div>
       </ul>                  
       <div class="btn-paginacao">
         <ul>
           <li><label for="paginacao1">1</label></li>
           <li><label for="paginacao2">2</label></li>
-          <li><label for="paginacao3">3</label></li>
         </ul>
       </div>
     </div>
@@ -149,9 +133,11 @@
         </button>
   
         <button class="numberBtn">
-          <input id="pageInput" type="number" min="1" max="1">
-          <span>/</span>
-          <span id="totalPages"></span>
+          <!-- <input id="pageInput" type="number" min="1" max="1"> -->
+          <span>1</span>
+          <!-- <span>/</span> -->
+          <!-- <span id="totalPages"></span> -->
+          
         </button>
   
         <button class="rightBtn" id="nextPageButton">
@@ -177,6 +163,7 @@
   @@include('layout/footer.html')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/dinoCardboard.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>
 
