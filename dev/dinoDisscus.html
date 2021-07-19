@@ -36,7 +36,7 @@
             <img :src="item.art_picture" alt="dino image">
           </div>
           <div class="disnocontent">
-            <h2 class="disnoname"><a :href="item.art_picture">{{item.art_title}}</a></h2>
+            <h2 class="disnoname"><a :href="'dinoArticlepg.html?art_no=' + item.art_no">{{item.art_title}}</a></h2>
             <div class="line"></div>
             <h3 class="disnodate"><i class="far fa-calendar-alt"></i> &nbsp;{{item.art_date}}</h3>
             <h3 class="disnopri"><i class="fas fa-user-edit"></i> {{item.mem_nicname}}</h3>
@@ -48,6 +48,7 @@
     </div>
   </section>
 <script src="./js/dinoDisscus.js"></script>
+<script src="./js/login.js"></script>
 @@include('layout/footer.html')
 </body>
 </html>

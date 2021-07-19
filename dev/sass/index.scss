@@ -11,13 +11,15 @@
 }
 
 .section{
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 /* 天空場景S1 */
 // 動態文字:開頭
 .guide {
   position: absolute;
-  top: 300px;
+  top: 30%;
   left: 52%;
   transform: translateX(-50%);
   color: #402d2d;
@@ -26,7 +28,7 @@
   font-size: 3em;
   line-height: 2em;
   text-transform: uppercase;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.3em;
   overflow: hidden;
   z-index: 10;
 }
@@ -49,59 +51,55 @@ body .section.sky{
   height: 200px;
   top: 30%;
   left: 0%;
-  z-index: 1;
+  z-index: 10;
 }
 .sun{
   position: absolute;
-  height: 800px;
+  height: 80%;
   top: -10%;
   left: 40%;
 }
 body .section .box .cloud-bl{
   position: absolute;
-  width: 800px;
-  /* background-color: #ff4800; */
+  width: 600px;
   left: 0%;
-  top: 300px;
+  top: 400px;
   opacity: 0.8;
 }
 body .section .box .cloud-fl{
   position: absolute;
-  width: 900px;
-  left: -200px;
+  width: 600px;
+  left: 10%;
   top: 500px;
 }
 body .section .box .cloud-br{
   position: absolute;
-  width: 800px;
-  left: 900px;
+  width: 700px;
+  left: 800px;
   top: 300px;
 }
 body .section .box .cloud-r{
   position: absolute;
   width: 700px;
   left: 800px;
-  top: 400px;
+  top: 500px;
 }
 /* 海洋場景S2 */
 // 動態文字:中段介紹
-.slogan {
-  position: absolute;
-  top: 300px;
-  left: 390px;
-  font-weight: 500;
-  z-index: 10;
-}
 
-.slogan .text-wrapper {
-  position: relative;
+.text-wrapper {
+  position: absolute;
   display: inline-block;
+  top: 20%;
+  left: 30%;
   padding-top: 0.2em;
   padding-right: 0.03em;
   padding-bottom: 0.1em;
   font-family: 'DFPLiYuan';
+  color: #402d2d;
+  font-weight: 500;
   font-size: 3em;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.2em;
   overflow: hidden;
 }
 
@@ -177,6 +175,7 @@ body .section .box .cloud-r{
 }
 .nest{
   position: absolute;
+  width: 20%;
   top: 72%;
   left: 41%;
   z-index: 10;
@@ -199,9 +198,9 @@ body .section .box .cloud-r{
 .typing {
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 30%;
   font-family: 'DFPLiYuan';
-  font-size: 40px;
+  font-size: 3em;
   color: #402d2d;
   width: 14em;
   height: 1.1em;
@@ -226,7 +225,7 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
 }
 /* 恐龍蛋hover跳動效果 */
 #egg-g ,#egg-w, #egg-b{
-  width: 80px;
+  width: 5%;
 }
 
 .engrave {
@@ -263,8 +262,80 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
     transform: scaleX(1) translateY(35px);
   }
 }
-// #egg-g:hover::after {
-//   animation: shadow 0.6s 0.6s infinite alternate;
-//   opacity: 1;
-//   transform: scaleX(1.125) translateY(30px);
-// }
+// RWD(1024px)ipad
+
+@media screen and (max-width: 1024px) {
+  .guide{
+    font-size: 2em;
+  }
+  .sun{
+    position: absolute;
+    height: 80%;
+    top: -10%;
+    left: 30%;
+  }
+  .text-wrapper{
+    left: 25%;
+  }
+  .nest{
+    position: absolute;
+    width: 20%;
+    top: 72%;
+    left: 40%;
+    z-index: 10;
+  }
+  .typing{
+    left: 20%;
+  }
+}
+
+// RWD(812px) iphone X
+
+@media screen and (max-width: 812px) {
+  .section{
+    height: 100vh;
+  }
+  .guide{
+    top: 20%;
+    font-size: 1em;
+  }
+  .pterodactyl{
+    width: 20%;
+    top: 5%;
+  }
+  .sun{
+    top: -20%;
+  }
+  .cloud-bl,
+  .cloud-fl,
+  .cloud-br,
+  .cloud-r{
+    position: absolute;
+    width: 100px;
+    top: 10px;
+  }
+  .text-wrapper{
+    left: 30%;
+    font-size: 2em;
+  }
+  .plesiosaurus{
+    top: 10%;
+    width: 30%;
+    object-fit: contain;
+  }
+  .stegosaurus{
+    width: 50%;
+    object-fit: contain;
+    top: 5%;
+  }
+  .typing{
+    left: 24%;
+    font-size: 2em;
+  }
+  .eggmove{
+    top: 60%;
+  }
+  .nest{
+    top: 70%;
+  }
+}

@@ -9,11 +9,12 @@
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/dinoCardboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <title>dinoCardboard</title>
 </head>
 <body>
   @@include('layout/header.html')
-  <section class="boardContent">
+  <section class="boardContent" id="app">
 
     <div class="board">
     
@@ -23,130 +24,38 @@
         <div class="personBg">
           <ul class="personItem">
             <li>
-              <div class="personPart">
+              <div class="personPart" v-for="favRow in favRows">
                 <div class="personImg">
-                  <img src="images/dinoCardboard/person1.jpg" class="pic">
+                  <img :src="favRow.favorite_img" class="image">
                 </div>
                 <div class="personContent">
-                  <button class="like" postid="10">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
+                  <button class="like" @click="like">
+                    <i class="far fa-heart"></i>
                   </button>
-                  <span>龍春暉</span>
+                  <span>{{favRow.mem_nicname}}</span>
                 </div>
-                <p class="personDate">2021/06/30</p>
+                <p class="personDate">{{favRow.favorite_date}}</p>
               </div>
             </li>
-
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person2.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍夏暉</span>
-                </div>
-                <p class="personDate">2021/06/24</p>
-              </div>
-            </li>
-
-            <li>
+          </ul>
+        </div>
+            <!-- <li>
               <div class="personPart">
                 <div class="personImg">
                   <img src="images/dinoCardboard/person3.jpg" class="pic">
                 </div>
                 <div class="personContent">
                   <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
+                    <i class="far fa-heart"></i>
                   </button>
-                  <span>龍秋暉</span>
+                  <span>龍老唐</span>
                 </div>
                 <p class="personDate">2021/06/13</p>
               </div>
-            </li>
+            </li> -->
+      <!-- </div> -->
 
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person4.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍冬暉</span>
-                </div>
-                <p class="personDate">2021/06/07</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person5.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍春春</span>
-                </div>
-                <p class="personDate">2021/05/28</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person6.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍佩佩</span>
-                </div>
-                <p class="personDate">2021/05/18</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart mPort">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person7.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍冬瓜</span>
-                </div>
-                <p class="personDate">2021/05/17</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart mPort">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person8.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍草莓</span>
-                </div>
-                <p class="personDate">2021/05/04</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    
-
-      <div class="person jsPage page" id="page2">
+      <!-- <div class="person jsPage page" id="page2">
         <div class="personBg">
           <ul class="personItem">
             <li>
@@ -156,79 +65,83 @@
                 </div>
                 <div class="personContent">
                   <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
+                    <i class="far fa-heart"></i>
                   </button>
                   <span>龍露西</span>
                 </div>
-                <p class="personDate">2021/05/01</p>
+                <p class="personDate">{{favRow.favorite_date}}</p>
               </div>
             </li>
 
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person10.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍花生</span>
-                </div>
-                <p class="personDate">2021/04/24</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person11.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍老唐</span>
-                </div>
-                <p class="personDate">2021/03/30</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person12.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍洋菓</span>
-                </div>
-                <p class="personDate">2021/02/12</p>
-              </div>
-            </li>
-
-            <li>
-              <div class="personPart">
-                <div class="personImg">
-                  <img src="images/dinoCardboard/person13.jpg" class="pic">
-                </div>
-                <div class="personContent">
-                  <button class="like">
-                    <i onclick="favorite(this)" class="far fa-heart"></i>
-                  </button>
-                  <span>龍藕粉</span>
-                </div>
-                <p class="personDate">2021/02/09</p>
-              </div>
-            </li>
           </ul>
         </div>
-      </div>
-      
+      </div> -->
     </div>
 
+<!-- mobile -->
+<section class="container2">
+
+  <div class="box-paginacao">
+    <input type="radio" name="input-paginacao" id="paginacao1" checked>
+    <input type="radio" name="input-paginacao" id="paginacao2">
+    <input type="radio" name="input-paginacao" id="paginacao3">
+    <div class="box-vitrines">
+      <ul>
+        <div class="vitrine1">
+          <li v-for="favRow in favRows">
+              <div class="personImg2">
+                <img :src="favRow.favorite_img" class="image">
+              </div>
+              <div class="personContent2">
+                <button class="like">
+                  <i class="far fa-heart"></i>
+                </button>
+                <span>{{favRow.mem_nicname}}</span>
+              </div>
+              <p class="personDate2">{{favRow.favorite_date}}</p>
+          </li>
+        </div>
+        <!-- <div class="vitrine2">
+          <li>
+            <div class="personImg2">
+              <img src="images/dinoCardboard/person5.jpg" class="pic">
+            </div>
+            <div class="personContent2">
+              <button class="like">
+                <i class="far fa-heart"></i>
+              </button>
+              <span>龍春春</span>
+            </div>
+            <p class="personDate2">2021/5/28</p>
+          </li>
+        </div> -->
+        <!-- <div class="vitrine3">
+          <li>
+            <div class="personImg2">
+              <img src="images/dinoCardboard/person9.jpg" class="pic">
+            </div>
+            <div class="personContent2">
+              <button class="like">
+                <i class="far fa-heart"></i>
+              </button>
+              <span>龍露西</span>
+            </div>
+            <p class="personDate2">2021/5/01</p>
+          </li>
+        </div> -->
+      </ul>                  
+      <div class="btn-paginacao">
+        <ul>
+          <li><label for="paginacao1">1</label></li>
+          <li><label for="paginacao2">2</label></li>
+          <li><label for="paginacao3">3</label></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</section>
+<!-- end mobile -->
 
       <div class="underBtn">
         <button class="leftBtn" id="previousPageButton">
@@ -246,7 +159,7 @@
         </button>
       </div>
 
-    </div>
+    <!-- </div> -->
 
 
     <button class="camera" value="製作明信片" onclick="location.href='dinoCard.html'">
@@ -261,10 +174,21 @@
 
   </section>  
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.1.4/vue.cjs.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="js/dinoCardboard.js"></script>
   @@include('layout/footer.html')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/dinoCardboard.js"></script>
 </body>
 </html>
+
+<!-- //-------------------
+function favorite(){
+	let xhr = new XML....
+	url = "setFavorite.php?post_id=" + this.parentNode.getAttriute("post_id")
+	xhr.open("get", url, true);	
+	xhr.send();
+}
+
+
+//etFavorite.php?id=...
+收藏 : $_GET["post_id"]
+誰 : 登入者 -->

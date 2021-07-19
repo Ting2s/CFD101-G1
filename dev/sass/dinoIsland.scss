@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .Wrap {
@@ -55,7 +56,7 @@ body {
     width: 25%;
     position: absolute;
     left: 30%;
-    bottom: 30%;
+    bottom: 35%;
     // background-color: rgba(161, 161, 235, 0.541)
 }
 
@@ -63,11 +64,11 @@ body {
     width: 25%;
     position: absolute;
     left: 30%;
-    bottom: 30%;
+    bottom: 35%;
 }
 
 .Dino-4 {
-    width: 18%;
+    width: 20%;
     position: absolute;
     right: 21%;
     top: 28%;
@@ -75,7 +76,7 @@ body {
 }
 
 .Dino-4-col {
-    width: 18%;
+    width: 20%;
     position: absolute;
     right: 21%;
     top: 28%;
@@ -84,8 +85,8 @@ body {
 .Dino-5 {
     width: 24%;
     position: absolute;
-    right: 20%;
-    bottom: 7%;
+    right: 8%;
+    bottom: 23%;
     z-index: 1;
     // background-color: rgba(161, 161, 235, 0.541)
 }
@@ -93,25 +94,25 @@ body {
 .Dino-5-col {
     width: 24%;
     position: absolute;
-    right: 20%;
-    bottom: 7%;
+    right: 8%;
+    bottom: 23%;
     z-index: 1;
 }
 
 .Dino-6 {
-    width: 16%;
+    width: 18%;
     position: absolute;
-    right: 12%;
-    bottom: 23%;
+    right: 23%;
+    bottom: 15%;
     z-index: 2;
     // background-color: rgba(161, 161, 235, 0.541)
 }
 
 .Dino-6-col {
-    width: 16%;
+    width: 18%;
     position: absolute;
-    right: 12%;
-    bottom: 23%;
+    right: 23%;
+    bottom: 15%;
     z-index: 2;
 }
 
@@ -143,6 +144,51 @@ body {
 }
 
 //介紹框
+.intItem-1 h2,
+.intItem-2 h2,
+.intItem-3 h2, 
+.intItem-4 h2,
+.intItem-5 h2,
+.intItem-6 h2 {
+    font-size: 23px;
+    color: #e05301;
+    padding: 5% 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+//翼手龍&共用css
+.intItem-1 p,
+.intItem-2 p,
+.intItem-3 p,
+.intItem-4 p,
+.intItem-5 p,
+.intItem-6 p {
+    font-size: 20px;
+    color: #6e6e6e;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
+
+.intItem-1 h3,
+.intItem-2 h3,
+.intItem-3 h3,
+.intItem-4 h3,
+.intItem-5 h3,
+.intItem-6 h3 {
+    font-size: 22px;
+    color: #4b69ce;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
+
+//翼手龍
 .intItem-1 {
     width: 40%;
     font-family: 'DFPLiYuan';
@@ -152,38 +198,6 @@ body {
     position: relative;
     top: 20%;
     display: none;
-}
-
-.intItem-1 h2,
-.intItem-2 h2 {
-    font-size: 23px;
-    color: #e05301;
-    padding: 5%;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-//翼手龍&共用css
-.intItem-1 p,
-.intItem-2 p {
-    font-size: 20px;
-    color: #6e6e6e;
-    padding: 0 10% 5% 10%;
-    text-align: center;
-    box-sizing: border-box;
-    line-height: 180%;
-    letter-spacing: 1px;
-}
-
-.intItem-1 h3,
-.intItem-2 h3 {
-    font-size: 22px;
-    color: #4b69ce;
-    padding: 0 10% 5% 10%;
-    text-align: center;
-    box-sizing: border-box;
-    line-height: 180%;
-    letter-spacing: 1px;
 }
 
 //始祖鳥
@@ -199,13 +213,49 @@ body {
 }
 
 //暴龍
-// .intItem-3 {
-//     width: 40%;
-//     font-family: 'DFPLiYuan';
-//     background-color: white;
-//     margin-left: -12%;
-//     border-radius: 15px;
-//     position: relative;
-//     top: 35%;
-//     // display: none;
-// }
+.intItem-3 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: -7.3%;
+    border-radius: 15px;
+    position: relative;
+    top: 50%;
+    display: none;
+}
+
+//劍龍
+.intItem-4 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: 78%;
+    border-radius: 15px;
+    position: relative;
+    top: 10%;
+    display: none;
+}
+
+//蛇頸龍
+.intItem-5 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: 82%;
+    border-radius: 15px;
+    position: relative;
+    top: 33%;
+    display: none;
+}
+
+//滄龍
+.intItem-6 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: 20%;
+    border-radius: 15px;
+    position: relative;
+    top: 67%;
+    display: none;
+}

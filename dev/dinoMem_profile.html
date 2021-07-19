@@ -29,46 +29,44 @@
           <h1>會員中心</h1>
           <!-- 頭貼框 -->
           <div class="perFrame">
-            <img src="images/dinoPersonal/photoSticker.jpg" alt="">
+
+            <img src="images/dinoPersonal/d1.png" alt="">
+
             <h3>龍春暉</h3>
           </div>
         </div>
 
         <!-- 右側內容區 -->
         <div class="perContent">
-          <!-- 內容標籤板子 -->
-
-
+          <!-- 內容板子 -->
           <div class="conBtn">
-            <a href="dinoMem_profile.html"> <button class="light">查看會員資料</button></a>
+            <a href="dinoMem_profile.html"> <button class="dark">查看會員資料</button></a>
             <a href="dinoMem_myDino.html"> <button class="dark">恐龍收藏</button></a>
             <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
 
             <a href="dinoMem_arti.html">
-              <button class="dark">文章收藏</button></a>
+              <button class="light">文章收藏</button></a>
           </div>
-
+          <!-- 大板子內容 -->
           <div class="conFrame">
-            <div class="profileForm">
-              <form class="profile" action="">
-                <label class="control-label">會員暱稱</label>
-                <input type="text" placeholder="龍春暉" />
-                <label class="control-label">帳號</label>
-                <input type="email" placeholder="帳號" />
-                <label class="control-label">密碼</label>
-                <input type="password" placeholder="密碼" />
-                <button type="submit">修改</button>
+            <!-- 會員資料表格 -->
+            <div class="container">
+              <span>會員資料</span>
+
+              <form class="form">
+                <input type="text" placeholder="暱稱">
+                <input type="password" placeholder="密碼">
+                <button type="change" id="change-button">修改</button>
               </form>
             </div>
           </div>
+
         </div>
-
-      </div>
-
-    </div>
 
   </main>
 
+  <!-- js -->
+  <script src="js/login.js"></script>
 </body>
 
 </html>

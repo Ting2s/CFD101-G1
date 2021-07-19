@@ -80,8 +80,8 @@
 
                     <button class="deleteCard" onclick="delete_go(this)">
                     </button>
-                    <input type="button" :value="obj.value">
-                    <img :src="obj.postcard" alt="" onclick="openModel(this)">
+                    <input type="button" :value="obj.card_title">
+                    <img :src="obj.card_img" alt="" onclick="openModel(this)">
                   </li>
 
                 </ul>
@@ -104,8 +104,8 @@
                   <li>
                     <button class="deleteCard">
                     </button>
-                    <input type="button" :value="obj.value">
-                    <img :src="obj.postcard" alt="" onclick="openModel(this)">
+                    <input type="button" :value="obj.card_title">
+                    <img :src="obj.favorite_img" alt="" onclick="openModel(this)">
                   </li>
 
                 </ul>
@@ -137,6 +137,7 @@
   <script src="js/dinoMem.js"></script>
   <script src="js/dinoMem_card.js"></script>
 
+  <script src="js/login.js"></script>
 </body>
 
 </html>

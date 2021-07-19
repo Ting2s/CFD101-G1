@@ -8,44 +8,45 @@
   <link rel="stylesheet" href="css/dinoPost.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>我要發文</title>
 </head>
 <body>
   @@include('layout/header.html')
   <div class="container" id="app">
     <div class="formhead">我要發文</div>
-    <form action="">
+    <form action="./php/dinoPost.php" method="post" enctype="multipart/form-data">
       <label for="fname">文章標題</label>
-      <input type="text" id="fname" name="firstname" placeholder="文章標題" maxlength="20" required>
+      <input type="text" id="fname" name="title" placeholder="文章標題" maxlength="20" v-model="title">
       <label for="category">文章類別</label>
-      <select id="category" name="category" required>
+      <select id="category" name="type" placeholder="文章類別" v-model="type">
         <option value="恐龍知識">恐龍知識</option>
         <option value="恐龍創作">恐龍創作</option>
         <option value="恐龍分享">恐龍分享</option>
       </select>
   
       <label for="subject">文章內文</label>
-      <textarea id="subject" name="subject" maxlength="250" style="height:400px" @input="remain" v-model="input" required></textarea>
+      <textarea id="subject" name="text" maxlength="250" style="height:400px" @input="remain" v-model="input" required></textarea>
       <div class="last">剩餘字數:{{lasttext}}</div>
       <div class="center">
         <div class="form-input">
           <label for="file-ip-1">文章圖片上傳</label>
-          <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+          <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="file">
           <div class="preview">
             <img id="file-ip-1-preview">
           </div>
         </div>
       </div>
-      <input class="dinbtn" type="button" @click="showModal = true" value="送出"></input>
+      <button class="dinbtn" type="button" @click="send_data()">送出</button>
     </form>
-  <div class="clickbac" v-if="showModal">
-    <div class="modal">
-      <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
-      <p>🎉發文成功🎉</p>
-    </div>
+
+  <!-- 發文成功燈箱 -->
+   <box></box>
+  <!-- 篩選類別 -->
+   <input class="category" name="category" type="hidden" value="">
   </div>
-  </div>
-  <script src="./js/dinoPost.js"></script>  
+  <script src="./js/dinoPost.js"></script> 
+  <script src="./js/login.js"></script> 
   @@include('layout/footer.html')
 </body>
 </html>

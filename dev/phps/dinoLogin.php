@@ -2,17 +2,16 @@
 ob_start();
 session_start();
 
-
 try{
   require_once("../connect_cfd101g1.php");
-  $sql = "select * from `member` where mem_id=:mem_id && mem_pw=:mem_pw";
+  $sql = " SELECT * from `member` where mem_id=:mem_id && mem_pw=:mem_pw";
   $member = $pdo->prepare($sql);
   $member->bindValue(":mem_id", $_POST["mem_id"]);
   $member->bindValue(":mem_pw", $_POST["mem_pw"]);
   $member->execute();
 
   if( $member->rowCount()==0){ //查無此人
-  echo "{}";
+  '{}';
   }else{ //登入成功
     //自資料庫中取回資料
     $memRow = $member->fetch(PDO::FETCH_ASSOC);
@@ -25,9 +24,7 @@ try{
     $_SESSION["mem_status"] = $memRow["mem_status"];
     $_SESSION["game_point"] = $memRow["game_point"];
 
-
-
-    //送出登入者的姓名資料
+    //送出登入者的資料
     $result = [
     "mem_no"=>$_SESSION["mem_no"], 
     "mem_id"=>$_SESSION["mem_id"],
@@ -37,9 +34,12 @@ try{
     "mem_status"=>$_SESSION["mem_status"],
     "game_point"=>$_SESSION["game_point"]
   ];
-    echo  json_encode($result);
-  }
+    echo  json_encode($result); 
+} 
 }catch(PDOException $e){
-  echo $e->getMessage();
+  echo $e->getMessage();  
 }
+
+// header('Location:../index.html');
+
 ?>
