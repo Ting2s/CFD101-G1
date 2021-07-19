@@ -119,29 +119,12 @@ function openModalBoxC(){
 };
 
 
-
-function saveImage(){
+ function saveImage(){
   // let canvasTest = document.querySelectorAll(".modal-content canvas");
-    let timerId;
-    function catchcanvas(){
       let canvas = document.getElementsByTagName("canvas")[0];
             console.log(canvas);
-      var dataURLTest = canvas.toDataURL("image/png");
-            console.log(dataURLTest);
-            clearInterval(timerId);
-            // return dataURLTest;
-      }
-
-      timerId = setInterval(catchcanvas, 3000);
-
-
-      // var dataURL = catchcanvas();
-      // console.log("12345",dataURL);
-
-    // let canvas = document.getElementsByTagName("canvas")[0];
-    //   console.log(canvas);
-    // let dataURL = canvas.toDataURL("image/png");
-    //   console.log(dataURL);
+      var dataURL = canvas.toDataURL("image/png");
+            console.log(dataURL);
 
 
     document.getElementById('hidden_data').value = dataURL;
@@ -163,6 +146,7 @@ function saveImage(){
   xhr.open('POST', '../dist/php/dinoMallCanvas.php', true);
   xhr.send(formData);
 }
+
 
 // closeModalBox A / C
 function closeModalBoxA(){
@@ -186,12 +170,12 @@ function closeModalBoxB(){
 
   function showCart(){
     // getId("bgColor").style.display='block';
-    getId("bgColor").classList.toggle(`show`);
+    getId("bgColor").classList.toggle(`showOpen`);
   };
 
   function closesShoppingCart(){
     // getId("bgColor").style.display='none';
-    getId("bgColor").classList.remove(`show`);
+    getId("bgColor").classList.remove(`showOpen`);
   };
 
 

@@ -7,7 +7,6 @@ new Vue({
       isImgSticks:true,
       isActive:true,
       smallCartImg:'./images/dinoMall/smallCart.png',
-      colors: ['red','orange','yellow','green','blue','indigo','violet'],
       dinos:['選擇恐龍','脫光光','儲存造型'],
        
       itemImgs:[

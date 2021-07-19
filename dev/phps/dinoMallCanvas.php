@@ -11,7 +11,7 @@ if( ! file_exists($upload_dir )){
 $img = $_POST['hidden_data'];
 echo $img;
 $img = str_replace('data:image/png;base64,', '', $img);
-$img = str_replace(' ', '+', $img);
+// $img = str_replace(' ', '+', $img);
 $data = base64_decode($img);
 $fileName = date("Ymd");
 $file = $upload_dir . $fileName . ".png"; //"images/20210709.png"
