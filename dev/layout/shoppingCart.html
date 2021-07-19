@@ -9,7 +9,8 @@
               <span class="cart-quantity cart-header cart-column">數量</span>
           </div>
           <div class="cart-items">
-                        <!-- <div class="cart-row">
+                <!--
+                        <div class="cart-row">
                             <div class="cart-item cart-column">
                                 <img class="cart-item-image" src="././images/dinoMall/prod1.png" width="50" height="50">
                                 <span class="cart-item-title">海盜帽</span>
@@ -30,17 +31,23 @@
                                     <input class="cart-quantity-input" type="number" value="2">
                                     <button class="btn btn-danger" type="button">刪除</button>
                                 </div>
-                        </div> -->
+                        </div>    -->
           </div> 
-          <form action="" id="cardForm">
+          <form action="InsertMall.php" id="cardForm" method="">
                 <div class="cart-total">                    
                     <strong class="cart-total-title">Total</strong>
                     <span class="cart-total-price">$0</span>
+                    <span class=""></span>
                 </div>
                 <div class="infoCart">
                     <span>目前餘額</span>
-                    <span id="showBalance">$10</span>
+                    <span id="showBalance">$500</span>
                 </div>
+                <!-- <input name="hidden_data1" id='hidden_data1' type="text" value="titlePhp"/><br>
+                <input name="hidden_data2" id='hidden_data2' type="text" value="pricePhp"/><br>
+                <input name="hidden_data3" id='hidden_data3' type="text" value="quantityPhp"/><br>
+                <input name="hidden_data4" id='hidden_data4' type="hidden" value="C"/><br> -->
+
                 <button class="btn btn-primary btn-purchase" type="button">購買</button>
           </form>
       </div>
@@ -49,4 +56,3 @@
 
 <!-- js -->
 <script src="./js/dinoMall.js"></script>
-<!-- <script src="./js/dinoMallCart.js"></script> -->

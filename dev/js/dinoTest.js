@@ -136,13 +136,6 @@ new Vue({
       }
     },
     //當選取的選項和ans一樣時 加一分
-<<<<<<< HEAD
-    // rightPoint() {
-    //   if () {
-    //     return this.point = 1
-    //   }
-    // },
-=======
     rightPoint() {
       if (this.isActive = true &&
         this.questions[i].target.value == this.questions[i].ans) {
@@ -152,7 +145,6 @@ new Vue({
       }
     },
 
->>>>>>> 211491889a7f59d63524b46c9a46d4e1cbbbeb6a
     //將七題的對錯計算
     finalScore() {
       for (let i = 1; i<=7; i++) {
