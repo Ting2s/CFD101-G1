@@ -1,3 +1,6 @@
+function $id(id) {
+  return document.getElementById(id);
+}
 
 new Vue({
 
@@ -5,19 +8,15 @@ new Vue({
   data: {
     //題庫
     questions:[],
-//============== 
-    isClick:'clicked',
-//==============   
-
+//判斷==============   
     isShow: false,
-//==============
+//畫面==============
     isStart: false,
     isGame: true,
     isScore: true,
     isWrapper:false,
 //分數===========
-    point: 0,
-    allPoint: 0,
+    totalPoint:0,
 //評論===========    
     comment_A: "你真是個天才！",
     comment_B: "你真厲害！",
@@ -25,7 +24,7 @@ new Vue({
 //對錯===========
     rightImg: "images/dinoTest/pic/right.png",
     wrongImg: "images/dinoTest/pic/x.png",
-//對錯===========
+//判定===========
     isRight_1: false,
     isWrong_1: false,
     isRight_2: false,
@@ -52,7 +51,7 @@ new Vue({
         this.isRight_4 = false;
         this.isWrong_4 = false;
     },
-    //判定
+    //判定*
     see_1(i) {
       this.init();
       this.isShow = true;
@@ -60,28 +59,30 @@ new Vue({
       this.choose_1 = true;
     //顯示對錯
       if (this.questions[i].quiz_opt1 == this.questions[i].quiz_a) {
-        // console.log(i);
         this.isRight_1 = true;
         this.isWrong_2 = true;
         this.isWrong_3 = true;
         this.isWrong_4 = true;
+        this.totalPoint += 1;
+      } else {
+        this.isWrong_1 = true;
+        this.isWrong_2 = true;
+        this.isWrong_3 = true;
+        this.isWrong_4 = true;
+        if (this.questions[i].quiz_a == this.questions[i].quiz_opt2) {
+          this.isRight_2 = true;
+          this.isWrong_2 = false;
+        }
+        if (this.questions[i].quiz_a == this.questions[i].quiz_opt3) {
+          this.isRight_3 = true;
+          this.isWrong_3 = false;
+        }
+        if (this.questions[i].quiz_a == this.questions[i].quiz_opt4) {
+          this.isRight_4 = true;
+          this.isWrong_4 = false;
+        }
+        
       }
-      // } else if (this.questions[i].quiz_opt2 == this.questions[i].quiz_a) {
-      //   this.isRight_2 = true;
-      //   this.isWrong_1 = true;
-      //   this.isWrong_3 = true;
-      //   this.isWrong_4 = true;
-      // } else if (this.questions[i].quiz_opt3 == this.questions[i].quiz_a) {
-      //   this.isRight_3 = true;
-      //   this.isWrong_1 = true;
-      //   this.isWrong_2 = true;
-      //   this.isWrong_4 = true;
-      // } else if (this.questions[i].quiz_opt4 == this.questions[i].quiz_a) {
-      //   this.isRight_4 = true;
-      //   this.isWrong_1 = true;
-      //   this.isWrong_2 = true;
-      //   this.isWrong_3 = true;
-      // }
     },
 
     see_2(i) {
@@ -95,8 +96,25 @@ new Vue({
       this.isWrong_1 = true;
       this.isWrong_3 = true;
       this.isWrong_4 = true;
+      this.totalPoint += 1;
     } else {
+      this.isWrong_1 = true;
       this.isWrong_2 = true;
+      this.isWrong_3 = true;
+      this.isWrong_4 = true;
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt1) {
+        this.isRight_1 = true;
+        this.isWrong_1 = false;
+      }
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt3) {
+        this.isRight_3 = true;
+        this.isWrong_3 = false;
+      }
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt4) {
+        this.isRight_4 = true;
+        this.isWrong_4 = false;
+      }
+      
     }
     },
 
@@ -111,8 +129,25 @@ new Vue({
       this.isWrong_1 = true;
       this.isWrong_2 = true;
       this.isWrong_4 = true;
+      this.totalPoint += 1;
     } else {
+      this.isWrong_1 = true;
+      this.isWrong_2 = true;
       this.isWrong_3 = true;
+      this.isWrong_4 = true;
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt1) {
+        this.isRight_1 = true;
+        this.isWrong_1 = false;
+      }
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt2) {
+        this.isRight_2 = true;
+        this.isWrong_2 = false;
+      }
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt4) {
+        this.isRight_4 = true;
+        this.isWrong_4 = false;
+      }
+      
     }
     },
 
@@ -127,40 +162,26 @@ new Vue({
       this.isWrong_1 = true;
       this.isWrong_2 = true;
       this.isWrong_3 = true;
-    } else {
+      this.totalPoint += 1;
+    }else {
+      this.isWrong_1 = true;
+      this.isWrong_2 = true;
+      this.isWrong_3 = true;
       this.isWrong_4 = true;
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt1) {
+        this.isRight_1 = true;
+        this.isWrong_1 = false;
+      }
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt3) {
+        this.isRight_3 = true;
+        this.isWrong_3 = false;
+      }
+      if (this.questions[i].quiz_a == this.questions[i].quiz_opt2) {
+        this.isRight_2 = true;
+        this.isWrong_2 = false;
+      }  
     }
-    },
-     //當選取的按鈕和quiz_a相同時->加一分
-    rightPoint(i) {
-      if (this.choose_1 == true &&
-        this.questions[i].quiz_opt1 == this.questions[i].quiz_a) {
-        this.point = 1;
-      } else {
-        this.point = 0;
-      }
-
-      if (this.choose_2 == true &&
-        this.questions[i].quiz_opt2 == this.questions[i].quiz_a) {
-        this.point = 1;
-      } else {
-        this.point = 0;
-      }
-
-      if (this.choose_3 == true &&
-        this.questions[i].quiz_opt3 == this.questions[i].quiz_a) {
-        this.point = 1;
-      } else {
-        this.point = 0;
-      }
-
-      if (this.choose_4 == true &&
-        this.questions[i].quiz_opt4 == this.questions[i].quiz_a) {
-        this.point = 1;
-      } else {
-        this.point = 0;
-      }
-    },
+    },   
     //遊戲開始*
     game() {
       this.isStart = true;
@@ -185,6 +206,23 @@ new Vue({
     },
     //切換下頁鍵*
     nextTitle(i) {
+      if(this.choose_1 ==false && this.choose_2 ==false &&
+        this.choose_3 ==false && this.choose_4 == false) {
+        //跳窗
+        let span = document.getElementsByClassName("saveClose")[0];
+        $id('nextArrow').onclick = function() {
+        $id('saveBox').style.display = "block";
+        }
+        span.onclick = function() {
+        $id('saveBox').style.display = "none";
+        }
+        window.onclick = function(event) {
+          if (event.target == $id('saveBox')) {
+            $id('saveBox').style.display = "none";
+          }
+        }
+        return;
+        }
       
       if (this.questions[i].status < this.questions[i + 1].status) {
         this.choose_1 = false;
@@ -212,13 +250,6 @@ new Vue({
         this.isScore = false;
         this.isWrapper = true;
     }else{} 
-
-    // if(this.isClick_1 ==false && this.isClick_2 ==false &&
-    //   this.isClick_3 ==false && this.isClick_4 == false) {
-    //   alert("嘿！你還有題目沒答喔！");
-    //   return;
-      
-    //   }
     },
 
 
@@ -264,27 +295,12 @@ new Vue({
       }
     }
   },
-
-  computed: {
-    //對錯計算
-      finalScore() {
-        for (let i = 1; i<=7; i++) {
-          return this.allPoint += this.rightPoint(index);
-        };
-      },
-    },
-  
-  
-  
   mounted() {
     this.myQuiz();
   }
 })
 
 //==========================================
-function $id(id) {
-  return document.getElementById(id);
-}
 function insertRank() {
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -304,6 +320,6 @@ function insertRank() {
 
 
 function init() {
-  insertRank();
+  $id("scoreBoard").onchange = insertRank;
 }; 
 window.onload = init;

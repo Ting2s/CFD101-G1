@@ -139,8 +139,17 @@
                   <img :src="rightImg" v-show="isRight_4">
                 </div>
               </div>
+            </div>
+
+            <!-- 儲存跳窗 -->
+            <div id="saveBox" class="saveBox">
+              <div class="saveContent">
+                <span class="saveClose">&times;</span>
+                <p>嘿！你還沒有答題哦！</p>
+              </div>
 
             </div>
+
             <!-- 去下一題 -->
             <div class="testArrow">
               <button id="nextArrow" @click="nextTitle(key)"></button>
@@ -163,7 +172,7 @@
           <p>嘿！你答對了……</p>
 
           <div class="score">
-            <span id="finalScore">{{allPoint}}</span>/7題
+            <span id="finalScore">{{totalPoint}}</span>/7題
             <span class="comment">
               {{comment()}}
             </span>
