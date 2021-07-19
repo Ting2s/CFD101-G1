@@ -7,7 +7,8 @@ let data = {
     msgitem:[],
     url:"",
     cat:"",
-    cate:""
+    cate:"",
+    input: "",
   }
 
   let vm = new Vue({
@@ -50,11 +51,39 @@ let data = {
         xhr.open("get", "./php/dinoMessage.php", true);
         console.log(xhr);
         xhr.send(null);
-      }
+      },
+
+      send_data() {
+        var form = $('form')[0];
+        var formData = new FormData();
+        formData.append("text", this.input)
+        formData.append("no", this.artitem[0].art_no)
+
+
+        $.ajax({
+            url: './php/postmessage.php', 
+            method: 'POST',               
+            dataType: 'text',             
+            contentType: false,
+            cache: false,
+            processData: false,
+            data: formData,  
+            success: function (res) {       
+                console.log('成功');
+                console.log(res);
+                window.location.reload();
+            },
+            error: function (res) {
+                console.log('失敗');
+                console.log(res);
+            },
+        });
+      },
     },
     mounted() {
       this.geturl()
       this.getArticle()
       this.getMessage()
+      this.send_data()
     }
 })
