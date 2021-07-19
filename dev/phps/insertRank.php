@@ -13,7 +13,6 @@ try{
   $newRank->bindValue(":mem_no", $mem_no);
   $newRank->bindValue(":quiz_score", $_POST['score']);
   $newRank->execute();  
-  }
 
 }catch(PDOException $e){
   echo "error";
