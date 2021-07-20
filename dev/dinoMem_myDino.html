@@ -131,8 +131,8 @@
               <div class="dinoAcc" id="dinoAcc">
 
                 <ul>
-                  <div class="acc" id="acc" v-for="obj, index in getSmallList_lub">
-                    <li class="hat">
+                  <div class="acc" v-for="obj, index in getSmallList_lub">
+                    <li class="hat" id="style">
                       <!-- :class="{'back':isBack,'ticket':isTicket}" -->
                       <img :src="obj.img" onclick="hat(this)">
                     </li>
