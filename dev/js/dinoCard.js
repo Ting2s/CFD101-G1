@@ -1,66 +1,116 @@
-LC.init(
-  document.getElementsByClassName('myDrawing')[0],
-  {imageURLPrefix: 'images/dinoCard'}
-)
+var lc = LC.init(document.getElementsByClassName('myDrawing')[0],{imageURLPrefix: 'images/dinoCard'},);
+
+window.onload = function () {
+  
+  let btn = document.getElementById('save')
+  btn.addEventListener('click', function (e) {
+      console.log('e', e);
+      e.preventDefault();
+      let fetchImg = lc.getImage().toDataURL()
+      console.log('fetchImg', fetchImg);
+  }, false);
+};
+// LC .init(
+//   document.getElementsByClassName('myDrawing')[0],
+
+//   // {imageURLPrefix: 'images/dinoCard'},
+
+// )
+
+// var canvas = document.getElementsByTagName("canvas");
+// var dataURL = canvas[0].toDataURL("image/png");
+// console.log(dataURL);
+
+// var submit = document.getElementById("save");
+
+// submit.addEventListener('click', function (e) {
+//       console.log('e', e);
+//       e.preventDefault();
+//       let fetchImg = lc.getImage().toDataURL()
+//       console.log('fetchImg', fetchImg);
+//   }, false);
+// };
 
 
-//canvas.toDataURL() --> dataURL base64
 
+//canvas.toDataURL(type, encoderOptions);
+// canvas.toDataURL() --> dataURL base64
+
+
+// function getBase64(url){
+//   var Img = new Image(),
+//   dataURL='';
+//   Img.src=url;
+//   Img.onload=function(){
+//   var canvas = document.createElement("canvas"),
+//   width=Img.width,
+//   height=Img.height;
+//   canvas.width=width;
+//   canvas.height=height;
+//   canvas.getContext("2d").drawImage(Img,0,0,width,height);
+//   dataURL=canvas.toDataURL('image/jpeg');
+//   callback?callback(dataURL):null;
+//   };
+// }
+
+// getBase64('//upload.jianshu.io/users/upload_avatars/555630/fdd1b798e6b0.jpg',(dataURL)=>{
+// console.log(dataURL);
+// });
 ///////////
 //自動生成圖片
-window.onload = background();
+// window.onload = background();
 
-function background() {
-  $.ajax({
-    method: "POST",
-    url: "../dinoCard.php",
-    data: {
-      'postcard_category': 1,
-    },
-    dataType: "text",
-    success: function (response) {
-      //更新html內容
-      // console.log(response);
-      let postImg = document.getElementsByClassName('post_img')[0].querySelector('ul');
-      postImg.innerHTML = response;
-      changePic();
-    },
-    error: function (exception) {
-      alert("發生錯誤: " + exception.status);
-    }
-  });
-  //換背景圖片
-  function changePic() {
-    let changeImg = document.getElementsByClassName('post_img')[0].querySelectorAll('img');
-    let cardImg = document.getElementsByClassName('postcard_bg')[0];
-    for (let i = 0; i < changeImg.length; i++) {
-      changeImg[i].addEventListener('click', function () {
-        let imgSrc = changeImg[i].getAttribute('src');
-        cardImg.style.backgroundImage = "url('" + imgSrc + "')";
-      })
-    }
-  }
-}
-function logo() {
-  $.ajax({
-    method: "POST",
-    url: "./assets/php/front/cardImg.php",
-    data: {
-      'postcard_category': 2,
-    },
-    dataType: "text",
-    success: function (response) {
-      //更新html內容
-      // console.log(response);
-      let postImg = document.getElementsByClassName('post_img')[0].querySelector('ul');
-      postImg.innerHTML = response;
-      dragDrop();
-    },
-    error: function (exception) {
-      alert("發生錯誤: " + exception.status);
-    }
-  });
-}
+// function background() {
+//   $.ajax({
+//     method: "POST",
+//     url: "../dinoCard.php",
+//     data: {
+//       'postcard_category': 1,
+//     },
+//     dataType: "text",
+//     success: function (response) {
+//       //更新html內容
+//       // console.log(response);
+//       let postImg = document.getElementsByClassName('post_img')[0].querySelector('ul');
+//       postImg.innerHTML = response;
+//       changePic();
+//     },
+//     error: function (exception) {
+//       alert("發生錯誤: " + exception.status);
+//     }
+//   });
+//   //換背景圖片
+//   function changePic() {
+//     let changeImg = document.getElementsByClassName('post_img')[0].querySelectorAll('img');
+//     let cardImg = document.getElementsByClassName('postcard_bg')[0];
+//     for (let i = 0; i < changeImg.length; i++) {
+//       changeImg[i].addEventListener('click', function () {
+//         let imgSrc = changeImg[i].getAttribute('src');
+//         cardImg.style.backgroundImage = "url('" + imgSrc + "')";
+//       })
+//     }
+//   }
+// }
+// function logo() {
+//   $.ajax({
+//     method: "POST",
+//     url: "./assets/php/front/cardImg.php",
+//     data: {
+//       'postcard_category': 2,
+//     },
+//     dataType: "text",
+//     success: function (response) {
+//       //更新html內容
+//       // console.log(response);
+//       let postImg = document.getElementsByClassName('post_img')[0].querySelector('ul');
+//       postImg.innerHTML = response;
+//       dragDrop();
+//     },
+//     error: function (exception) {
+//       alert("發生錯誤: " + exception.status);
+//     }
+//   });
+// }
 // //drop and drag 素材
 // function dragDrop() {
 //   let img = document.getElementsByClassName('post_img')[0].querySelectorAll('img');
