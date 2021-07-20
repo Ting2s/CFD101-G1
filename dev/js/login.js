@@ -8,8 +8,7 @@ function sendForm() {
 let xhr = new XMLHttpRequest();
 xhr.onload = function () {
   if (xhr.status == 200) {
-    let member = JSON.parse(xhr.responseText);
-
+    var member = JSON.parse(xhr.responseText);
       if (member.mem_id != undefined) {
         alert("登入成功！");
          //替換登入鍵
@@ -37,7 +36,6 @@ function checkLog() {
   let xhr = new XMLHttpRequest();
 
   xhr.onload = function () {
-    console.log(xhr);
     let member = JSON.parse(xhr.responseText);
     if (member.mem_id != undefined) {
     //替換登入鍵
@@ -54,8 +52,8 @@ function signForm() {
 let xhr = new XMLHttpRequest();
 xhr.onload = function () {
 if (xhr.status == 200) {
-let member = JSON.parse(xhr.responseText);
-  
+
+
 if (xhr.responseText == 1) {
   alert("註冊成功！請重新登入！");
   location.reload();
