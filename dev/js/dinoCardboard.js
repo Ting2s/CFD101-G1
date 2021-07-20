@@ -1,9 +1,8 @@
-let data = {
-    favRows:[],
-  }
-  let vm = new Vue({
+let vm = new Vue({
     el: "#app",
-    data: data,
+    data: {
+      favRows:[]
+    },
     methods: {
       getcard_favorite(){
         let xhr = new XMLHttpRequest();
@@ -24,15 +23,26 @@ let data = {
       },
 
       like(objData, index){
+        console.log('=========0')
+        if (member.mem_id == undefined){
+          window.alert("尚未登入，請登入");
+          console.log('=========1')
+          return;
+        }else{
+          console.log('=========2')
+        }
         console.log('進入',objData);
         console.log('我按到第幾個', index);
         //console.log(this.$refs);
         let data=objData
-        //  if(e.target.className == 'fas fa-heart'){
-        //     e.target.className = 'far fa-heart';
-        //  }else{
-        //     e.target.className = 'fas fa-heart';
-        //  }
+        let heart=document.getElementById(`icon-${index}`)
+         if(heart.className == 'fas fa-heart'){
+            heart.className = 'far fa-heart';
+            data.like="unlike";
+         }else{
+            heart.className = 'fas fa-heart';
+            data.like="like";
+         }
         let currentIcon = document.getElementById('icon-0')
         console.log(currentIcon);
 
@@ -50,6 +60,8 @@ let data = {
         
       },
     },
+ 
+    
     // computed:{
     //   likeOrNot(){
     //     self.favRows
@@ -66,22 +78,6 @@ let data = {
     },
   
   })
- 
-//--------------
-// $(function () {
-    
-//     $('.image').on('click', function () {
-
-//         var src = $(this).attr('src');
-//         $('.imgPreview img').attr('src', src);
-//         $('.imgPreview').show()
-//     });
-
-//     $('.imgPreview').on('click', function () {
-
-//         $('.imgPreview').hide()
-//     });
-// })
   
 //-----------------------
 // if(傳入class有fas 收欌->不收欌)
