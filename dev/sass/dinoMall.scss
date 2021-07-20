@@ -259,7 +259,7 @@ body {
                      @include fontSz($font-h3,null);
                      @include pdMargin(null,15px);
                      @include colorBgcolor($yellow-second,null);
-                     margin-top: 10%;
+                  //    margin-top: 10%;
                   }
       }
 }

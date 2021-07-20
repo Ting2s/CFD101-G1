@@ -59,11 +59,11 @@ new Vue({
       this.choose_1 = true;
     //顯示對錯
       if (this.questions[i].quiz_opt1 == this.questions[i].quiz_a) {
+        this.totalPoint += 1;
         this.isRight_1 = true;
         this.isWrong_2 = true;
         this.isWrong_3 = true;
-        this.isWrong_4 = true;
-        this.totalPoint += 1;
+        this.isWrong_4 = true;  
       } else {
         this.isWrong_1 = true;
         this.isWrong_2 = true;
@@ -91,12 +91,12 @@ new Vue({
     //亮燈
       this.choose_2 = true;
     //顯示對錯
-    if (this.questions[i].quiz_opt2 == this.questions[i].quiz_a) {
+      if (this.questions[i].quiz_opt2 == this.questions[i].quiz_a) {
+      this.totalPoint += 1;
       this.isRight_2 = true;
       this.isWrong_1 = true;
       this.isWrong_3 = true;
       this.isWrong_4 = true;
-      this.totalPoint += 1;
     } else {
       this.isWrong_1 = true;
       this.isWrong_2 = true;
@@ -124,12 +124,12 @@ new Vue({
     //亮燈
       this.choose_3 = true;
     //顯示對錯
-    if (this.questions[i].quiz_opt3 == this.questions[i].quiz_a) {
+      if (this.questions[i].quiz_opt3 == this.questions[i].quiz_a) {
+      this.totalPoint += 1;
       this.isRight_3 = true;
       this.isWrong_1 = true;
       this.isWrong_2 = true;
       this.isWrong_4 = true;
-      this.totalPoint += 1;
     } else {
       this.isWrong_1 = true;
       this.isWrong_2 = true;
@@ -157,12 +157,13 @@ new Vue({
     //亮燈
     this.choose_4 = true;
     //顯示對錯
-    if (this.questions[i].quiz_opt4 == this.questions[i].quiz_a) {
+      if (this.questions[i].quiz_opt4 == this.questions[i].quiz_a) {
+      this.totalPoint += 1;
       this.isRight_4 = true;
       this.isWrong_1 = true;
       this.isWrong_2 = true;
       this.isWrong_3 = true;
-      this.totalPoint += 1;
+      
     }else {
       this.isWrong_1 = true;
       this.isWrong_2 = true;
@@ -246,9 +247,26 @@ new Vue({
     }
     //切換成分數頁(scoreBoard) 
     if (this.questions[7].status ==1) { 
-        this.isGame = true;
-        this.isScore = false;
-        this.isWrapper = true;
+      this.isGame = true;
+      this.isScore = false;
+      this.isWrapper = true;
+      //-------------------------------------
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+        //存進後台
+        }else {
+        alert(xhr.status);
+      }
+      }
+  
+      xhr.open("post", "./php/insertRank.php", true);
+      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+      
+      let data_info = `score=${this.totalPoint}`;
+      xhr.send(data_info);
+      //-------------------------------------
+
     }else{} 
     },
 
@@ -301,25 +319,3 @@ new Vue({
 })
 
 //==========================================
-function insertRank() {
-  let xhr = new XMLHttpRequest();
-  xhr.onload = function () {
-    if (xhr.status == 200) {
-    //存進後台
-    }else {
-    alert(xhr.status);
-  }
-  }
-
-  xhr.open("post", "./php/insertRank.php", true);
-  xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  
-  let data_info = `score=${$id("finalScore").value}`;
-  xhr.send(data_info);
-}
-
-
-function init() {
-  $id("scoreBoard").onchange = insertRank;
-}; 
-window.onload = init;
