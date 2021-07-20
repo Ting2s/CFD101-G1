@@ -60,7 +60,6 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
 
 
 
-   
 
   h1{  
     margin: auto;
@@ -279,9 +278,8 @@ background-image: url(../../dev/images/dinoTest/pic/testBoard.png) ;
   display: inline-block;
 
 img{
-  position: relative;
-  left: 10px;
-  top:10px;
+  position: absolute;
+  padding: 10px;
   width: 30px;
 }
 }

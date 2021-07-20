@@ -89,7 +89,6 @@ let pageBar = new Vue({
       let xhr = new XMLHttpRequest();
       xhr.onload = function () {
         if (xhr.status == 200) {
-
         //跳窗
         let span = document.getElementsByClassName("saveClose")[0];
         Id('save').onclick = function() {
@@ -121,21 +120,21 @@ let pageBar = new Vue({
     style() {
       let my = this;
       if (my.dinoAcc.type == 0) {
-        Id("acc").classList.add('hat');
-        Id("acc").classList.remove('ticket');
-        Id("acc").classList.remove('back');
+        Id("style").classList.add('hat');
+        Id("style").classList.remove('ticket');
+        Id("style").classList.remove('back');
 
       }
       if (my.dinoAcc.type == 1) {
-        Id("acc").classList.add('ticket');
-        Id("acc").classList.remove('hat');
-        Id("acc").classList.remove('back');
+        Id("style").classList.add('ticket');
+        Id("style").classList.remove('hat');
+        Id("style").classList.remove('back');
       
       }
       if (my.dinoAcc.type == 2) {
-        Id("acc").classList.add('back');
-        Id("acc").classList.remove('hat');
-        Id("acc").classList.remove('ticket');
+        Id("style").classList.add('back');
+        Id("style").classList.remove('hat');
+        Id("style").classList.remove('ticket');
       }
     },
   //我的恐龍
