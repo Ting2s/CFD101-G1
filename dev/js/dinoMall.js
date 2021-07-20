@@ -113,8 +113,6 @@ function openModalBoxC(){
     // console.log(new Date().getMinutes());
     setTimeout(saveImage, 3000);    
     });
- // saveImage(); // 送到 server
-  // console.log(canvasObj); // 一個物件
   closeModalBoxB();   // 清空物件   
 };
 
@@ -122,35 +120,31 @@ function openModalBoxC(){
  function saveImage(){
       // console.log(new Date().getMinutes());
 
-  // let canvasTest = document.querySelectorAll(".modal-content canvas");
       let canvas = document.getElementsByTagName("canvas")[0];
             console.log(canvas);
       var dataURL = canvas.toDataURL("image/png");
             // console.log(dataURL);
-
-
     document.getElementById('hidden_data').value = dataURL;
 
     let formData = new FormData(document.getElementById("myForm"));
-console.log(formData);
-
 
     var xhr = new XMLHttpRequest();
-  xhr.onload = function() {
-        if( xhr.status == 200 ){
-          alert('Succesfully uploaded'); 
-          // console.log( xhr.responseText);
-          // console.log("檔名 : ", xhr.responseText);
-            // document.getElementById("download").href = xhr.responseText;
-            // document.getElementById("download").innerText = "下載";
-        }else{
-          alert(xhr.status);
-        }
-  }; 
-  xhr.open('POST', './php/dinoMallCanvas.php', true);
-  // xhr.send({hidden_data:dataURL});
-  // xhr.send(formData);
+      xhr.onload = function() {
+            if( xhr.status == 200 ){
+              alert('Succesfully uploaded'); 
+              // console.log( xhr.responseText);
+              // console.log("檔名 : ", xhr.responseText);
+                // document.getElementById("download").href = xhr.responseText;
+                // document.getElementById("download").innerText = "下載";
+            }else{
+              alert(xhr.status);
+            }
+      }; 
+    xhr.open('POST', './php/dinoMallCanvas.php', true);
+    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+    xhr.send(formData);
+    // xhr.send(`data=${dataURL}`);
 
 
 }
