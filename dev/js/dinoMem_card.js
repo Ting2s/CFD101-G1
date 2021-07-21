@@ -1,4 +1,8 @@
 const maxItemPerPage = 2;
+
+function Id(id) {
+  return document.getElementById(id);
+}; 
 let pageBar = new Vue({
 
   el: '#perBox',
@@ -22,7 +26,83 @@ let pageBar = new Vue({
         this.currentPage--;
       }
     },
+    delete_go(here, index) {
+      let my = this;
 
+      let deleteTable = Id("deleteTable");
+      deleteTable.style.display = 'block';
+      
+      let dele_close = Id('dele_close');
+      dele_close.addEventListener("click", function () {
+        deleteTable.style.display = "none";
+      })
+      
+      let cancelBtn = Id('cancelBtn');
+      cancelBtn.addEventListener("click", function () {
+        deleteTable.style.display = "none";
+      })
+      let deleteBtn = Id("deleteBtn");
+      deleteBtn.addEventListener("click", function (e) {
+      deleteTable.style.display = 'none';
+      
+        my.cards.splice(index, 1);
+        
+      //後端刪除
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            //傳入後端
+            alert("成功刪除！");
+          } else {
+            alert(xhr.status);
+          }
+        }
+        xhr.open("post", "./php/deleteCard.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+        
+        let data_info =`card_no=${Id("cardNO").innerHTML}`;
+        xhr.send(data_info);
+    })
+    },
+
+    delete_go_lub(here, index) {
+      let my = this;
+
+      let deleteTable = Id("deleteTable");
+      deleteTable.style.display = 'block';
+      
+      let dele_close = Id('dele_close');
+      dele_close.addEventListener("click", function () {
+        deleteTable.style.display = "none";
+      })
+      
+      let cancelBtn = Id('cancelBtn');
+      cancelBtn.addEventListener("click", function () {
+        deleteTable.style.display = "none";
+      })
+      let deleteBtn = Id("deleteBtn");
+      deleteBtn.addEventListener("click", function (e) {
+      deleteTable.style.display = 'none';
+      
+      my.lubcards.splice(index, 1);
+        
+      //後端刪除
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            //傳入後端
+            alert("成功刪除！");
+          } else {
+            alert(xhr.status);
+          }
+        }
+        xhr.open("post", "./php/deleteLubCard.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");      
+        let data_info =`card_no=${Id("cardNO").innerHTML}`;
+        xhr.send(data_info);
+    })
+    },
     //拉我的明信片
     myCard() {
       const xhr = new XMLHttpRequest();
@@ -111,9 +191,6 @@ let pageBar = new Vue({
   }); 
 
 
-  function Id(id){
-    return document.getElementById(id);
-  }; 
 
 //===================================================
 let card_btn = document.getElementById("card_btn");
@@ -143,44 +220,6 @@ myCard_btn.addEventListener("click", function () {
 
 
 //-----------------------------------
-//刪除我的明信片
-function delete_go() {
-
-  let deleteTable = Id("deleteTable");
-  deleteTable.style.display = 'block';
-
-
-  let dele_close = Id('dele_close');
-  dele_close.addEventListener("click", function () {
-    deleteTable.style.display = "none";
-  })
-  
-  let cancelBtn = Id('cancelBtn');
-  cancelBtn.addEventListener("click", function () {
-    deleteTable.style.display = "none";
-  })
-  let deleteBtn = Id("deleteBtn");
-  deleteBtn.addEventListener("click", function (e) {
-    deleteTable.style.display = 'none';
-    
-  
-    //後端刪除
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-      if (xhr.status == 200) {
-        //傳入後端
-        alert("成功刪除！");
-      } else {
-        alert(xhr.status);
-      }
-    }
-    xhr.open("post", "./php/deleteCard.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-    let data_info =`card_no=${Id("cardNO").value}`;
-    xhr.send(data_info);
-})
-}
 
 //-----------------------------------
 //刪除明信片

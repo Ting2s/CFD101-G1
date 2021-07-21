@@ -133,7 +133,6 @@ function openModalBoxC(){
             if( xhr.status == 200 ){
               alert('Succesfully uploaded'); 
               // console.log( xhr.responseText);
-              // console.log("檔名 : ", xhr.responseText);
                 // document.getElementById("download").href = xhr.responseText;
                 // document.getElementById("download").innerText = "下載";
             }else{
@@ -141,12 +140,9 @@ function openModalBoxC(){
             }
       }; 
     xhr.open('POST', './php/dinoMallCanvas.php', true);
-    // xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xhr.send(formData);
     // xhr.send(`data=${dataURL}`);
-
-
 }
 
 
@@ -478,9 +474,7 @@ function postCart(){
 
     for(let i = 0; i < items.length; i++){
         let itemInfo = JSON.parse(storage.getItem(items[i])); // value => $10  $20 $30 ...
-        // console.log(itemInfo);
         let psn = parseInt(items[i]); //  1 ~ 12
-        // console.log(psn);
         let item = {};
         item.psn = psn;
         item.price = itemInfo.price;

@@ -1,14 +1,3 @@
-$(function(){
-  $('#pic').on('click',function(){
-    var src = $(this).attr('src');
-    $('.imgPreview img').attr('src',src);
-    $('.imgPreview').show()
-  });
-  $('.imgPreview').on('click',function(){
-    $('.imgPreview').hide()
-  });
-})
-
 let vm = new Vue({
     el: "#app",
     data: {
@@ -70,36 +59,34 @@ let vm = new Vue({
          });
         
       },
+
+
     },
  
     
-    // computed:{
-    //   likeOrNot(){
-    //     self.favRows
-    //     for(let i in this.favRows){
-    //       if(this.favRows[i].mem_no == 1){
+      mounted() {
+        //this.getcard_favorite()
+        this.getcard_favorite(),
 
-    //       }
-    //     }
-    //   }
-    // }
-    mounted() {
-      //this.getcard_favorite()
-      this.getcard_favorite()
-    },
+        function(){
+          this.init();
+        }
+      },
   
-  })
-
+    })
 
   
-//-----------------------
-// if(傳入class有fas 收欌->不收欌)
-    // {
-    //    ajax SQL Delete 收藏項, php 傳入 card_no
-    //    js 移除 fas class
-    // }else{ 不收欌->收欌
-    //     ajax SQL Insert 收藏項
-    //     js 加入 fas class
-    //}
+  $(document).ready(function(){
 
-//-----------------------
+    $(function(){
+      $('.pic').on('click',function(){
+        var src = $(this).attr('src');
+        $('.imgPreview img').attr('src',src);
+        $('.imgPreview').show()
+      });
+      $('.imgPreview').on('click',function(){
+        $('.imgPreview').hide()
+      });
+    });
+
+})

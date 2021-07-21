@@ -31,11 +31,11 @@ window.onload = function () {
 
   }, false);
   
+
+
+// canvas.toDataURL() --> dataURL base64
 };
 
-
- 
-// canvas.toDataURL() --> dataURL base64
 
 ///////////
 //自動生成圖片
