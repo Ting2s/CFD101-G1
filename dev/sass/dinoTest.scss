@@ -327,3 +327,100 @@ img{
   cursor: pointer;
   }
 }
+
+//==================================
+@media screen and (max-width: 1024px){
+  .showScore, .whiteBoard {
+    height: 500px;
+    padding-top: 30px;}
+  
+.testContent_Q .restartPlay {
+      right: 270px;
+      bottom: 75px;}
+.testArrow {
+    bottom: 60px;}
+
+.testContent .smRemind {
+  margin-bottom: 0;
+}
+}
+
+//==================================
+@media screen and (max-width: 812px) {
+
+ .showScore, .whiteBoard {
+    height: 320px;
+    padding-top: 40px;
+}
+  h1 {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .testContent h3 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+.testContent p {
+  font-size: 16px;
+}
+.testStart_btn button {
+  padding: 30px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.testContent_Q h3 {
+  font-size: 18px;
+}
+.testContent_Q .restartPlay button {
+  width: 120px;
+  padding: 15px;
+  font-size: 15px;
+}
+.testArrow {
+      left: 27%;
+  }
+.testContent_Q .restartPlay {
+    right: 180px;
+    bottom: 55px;
+}
+.choose {
+  padding-top: 5px;
+  width: 350px;
+}
+
+.choose button {
+  width: 120px;
+  padding: 14px 10px;
+  font-size: 12px;
+  margin: 5px;
+}
+.testArrow button {
+  width: 70px;
+}
+.scoreBox {
+  padding-top: 0;
+}
+
+.scoreTitle h3 {
+  font-size: 17px;
+  line-height: 43px;}
+
+  .scoreTitle {
+    height: 45px;
+    padding-top: 0px;
+}
+.scoreBoard p {
+  margin: 5px;
+}
+.score {
+  height: 45px;
+  font-size: 15px;
+}
+
+.score span {
+  font-size: 35px;
+}
+.scoreBtn button {
+  margin: 15px;
+  width: 120px;}
+}
