@@ -173,7 +173,7 @@ body{
     @include respondTo(medium) {
       width: 46%;
       left: calc(50% - 23%);
-      margin-top: 1.4em;
+      margin-top: .2em;
       box-shadow:4px 4px 6px -2px rgba(20%,20%,40%,0.5);
     }
   }
@@ -351,6 +351,88 @@ body{
 }
 
 
+// .downBtn{
+//   display: flex;
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   justify-content: center;
+//   margin-top: 10rem;
+//   @include respondTo(large) {
+//     margin-top: 6.8rem;
+//   }
+//   @include respondTo(medium) {
+//     margin-top: 5rem;
+//     position: absolute;
+//     display: inline-grid;
+//     right: 10rem;
+//   }
+   
+//   .save,
+//   .downLoad,
+//   .post,
+//   .share {
+//     width: 17%;
+//     margin: 20px;
+//     position: relative;
+//     @include respondTo(large) {
+//       width: 14%;
+//     }
+//     @include respondTo(medium) {
+//       margin-top: 2.2rem;
+//     }
+
+//     img{
+//       width: 100%;
+//       @include respondTo(medium) {
+//         display: none;
+//       }
+//     }
+
+//     span{
+//       position: absolute;
+//       font-size: 24px;//----------------
+//       font-family: DFPLiYuan;//-----------------
+//       color: white;//----------------
+//       letter-spacing: 1px;
+//       @include respondTo(large) {
+//         font-size: 18px;
+//       }
+//       @include respondTo(medium) {
+//         color: rgb(255, 255, 255);
+//         font-size: 12px;
+//         width: 60px;
+//       }
+//     }
+
+//     .downText1,
+//     .downText2{
+//       left:calc(50% - 24%);
+//       padding-top: 24px;
+//       @include respondTo(large) {
+//         padding-top: 17px;
+//       }
+//       @include respondTo(medium) {
+//         //background-image: url(../images/dinoCard/mBtn.png);
+//         //background-size: cover;
+//         padding: 1rem 1.5rem 1rem 1.7rem;
+//       }
+//     }
+//     .downText3,
+//     .downText4{
+//       left:calc(50% - 12%);
+//       padding-top: 24px;
+//       @include respondTo(large) {
+//         padding-top: 17px;
+//       }
+//       @include respondTo(medium) {
+//         //background-image: url(../images/dinoCard/mBtn.png);
+//         //background-size: cover;
+//         padding: 1rem 1.7rem 1rem 1.7rem;
+//       }
+//     }
+//   }
+// }
+
 .downBtn{
   display: flex;
   max-width: 1200px;
@@ -361,21 +443,22 @@ body{
     margin-top: 6.8rem;
   }
   @include respondTo(medium) {
-    margin-top: 5rem;
+    margin-top: 3.5rem;
     position: absolute;
     display: inline-grid;
-    right: 10rem;
+    right: 5rem;
   }
    
   .save,
   .downLoad,
   .post,
   .share {
-    width: 17%;
+    width: 12rem;
     margin: 20px;
+    justify-content: center;
     position: relative;
     @include respondTo(large) {
-      width: 14%;
+      width: 9rem;
     }
     @include respondTo(medium) {
       margin-top: 2.2rem;
@@ -400,24 +483,42 @@ body{
       @include respondTo(medium) {
         color: rgb(255, 255, 255);
         font-size: 12px;
-        width: 26px;
+        width: 54px;
       }
     }
 
     .downText1,
-    .downText2,
-    .downText3,
-    .downText4{
+    .downText2{
       left:calc(50% - 12%);
       padding-top: 24px;
       @include respondTo(large) {
         padding-top: 17px;
       }
       @include respondTo(medium) {
-        background-image: url(../images/dinoCard/mBtn.png);
-        background-size: cover;
-        padding: .7rem 1.2rem .6rem 1.4rem;
+        //background-image: url(../images/dinoCard/mBtn.png);
+        //background-size: cover;
+        border: olivedrab 1px solid;
+        padding: .6rem .6rem .6rem .6rem;
+        border-radius: 3px;
+        background-color: rgba(106, 142, 35, 0.7) ;
       }
     }
-  }
-}
+    .downText3,
+    .downText4{
+      left:calc(50% - 23%);
+      padding-top: 24px;
+      @include respondTo(large) {
+        padding-top: 17px;
+      }
+      @include respondTo(medium) {
+        left:calc(50% - 12%);
+        //background-image: url(../images/dinoCard/mBtn.png);
+        //background-size: cover;
+        border: olivedrab 1px solid;
+        padding: .6rem .6rem .6rem .6rem;
+        border-radius: 3px;
+        background-color: rgba(106, 142, 35, 0.7) ;
+      }
+    }
+   }
+ }
