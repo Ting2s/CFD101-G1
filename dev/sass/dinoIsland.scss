@@ -263,92 +263,74 @@ body {
 // ----------------------------RWD(1024px)
 
 @media screen and (max-width: 1024px) {
+
     .Dino-1 {
-        width: 18%;
-        position: absolute;
-        left: 11%;
-        top: 2%;
+        width: 23%;
+        left: -1%;
+        top: 5%;
     }
 
+
     .Dino-1-col {
-        width: 18%;
-        position: absolute;
-        left: 11%;
-        top: 2%;
+        width: 23%;
+        left: -1%;
+        top: 5%;
     }
 
     .Dino-2 {
-        width: 14%;
-        position: absolute;
-        left: 26%;
-        top: 20%;
+        width: 20%;
+        left: 18%;
+        top: 18%;
     }
 
     .Dino-2-col {
-        width: 14%;
-        position: absolute;
-        left: 26%;
-        top: 20%;
+        width: 20%;
+        left: 18%;
+        top: 18%;
     }
 
     .Dino-3 {
-        width: 25%;
-        position: absolute;
-        left: 30%;
-        bottom: 35%;
+        width: 34%;
+        left: 15%;
+        bottom: 36%;
     }
 
     .Dino-3-col {
-        width: 25%;
-        position: absolute;
-        left: 30%;
-        bottom: 35%;
+        width: 34%;
+        left: 15%;
+        bottom: 36%;
     }
 
     .Dino-4 {
-        width: 20%;
-        position: absolute;
-        right: 21%;
-        top: 28%;
+        width: 29%;
     }
 
     .Dino-4-col {
-        width: 20%;
-        position: absolute;
-        right: 21%;
-        top: 28%;
+        width: 29%;
     }
 
     .Dino-5 {
-        width: 24%;
-        position: absolute;
-        right: 8%;
-        bottom: 23%;
+        width: 35%;
+        right: -4%;
+        bottom: 25%;
         z-index: 1;
     }
 
     .Dino-5-col {
-        width: 24%;
-        position: absolute;
-        right: 8%;
-        bottom: 23%;
+        width: 35%;
+        right: -4%;
+        bottom: 25%;
         z-index: 1;
     }
 
     .Dino-6 {
-        width: 18%;
-        position: absolute;
-        right: 23%;
-        bottom: 15%;
-        z-index: 2;
+        width: 24%;
+        right: 16%;
     }
 
     .Dino-6-col {
-        width: 18%;
-        position: absolute;
-        right: 23%;
-        bottom: 15%;
-        z-index: 2;
+        width: 24%;
+        right: 16%;
     }
 
     .intItem-1 h2,
@@ -383,12 +365,181 @@ body {
     //翼手龍
     .intItem-1 {
         width: 40%;
-        font-family: 'DFPLiYuan';
-        background-color: white;
         margin-left: -25%;
-        border-radius: 15px;
-        position: relative;
-        top: 34%;
-        display: none;
+        top: 30%;
+    }
+
+    //始祖鳥
+    .intItem-2 {
+        margin-left: -24%;
+    }
+
+    //暴龍
+    .intItem-3 {
+        background-color: #fff;
+        margin-left: -21%;
+        top: 44%;
+    }
+
+    //劍龍
+    .intItem-4 {
+        margin-left: 80%;
+        top: 5%;
+    }
+
+    //蛇頸龍
+    .intItem-5 {
+        top: 10%;
+    }
+
+    //滄龍
+    .intItem-6 {
+        width: 67%;
+        margin-left: -6%;
+        top: 62%;
+    }
+}
+
+// ----------------------------RWD(812px)
+
+@media screen and (max-width: 812px) {
+
+    .Dino-1 {
+        width: 18%;
+        left: 10%;
+        top: 1%;
+    }
+
+
+    .Dino-1-col {
+        width: 18%;
+        left: 10%;
+        top: 1%;
+    }
+
+    .Dino-2 {
+        width: 17%;
+        left: 27%;
+        top: 11%;
+    }
+
+    .Dino-2-col {
+        width: 17%;
+        left: 27%;
+        top: 11%;
+    }
+
+    .Dino-3 {
+        width: 27%;
+        left: 23%;
+        bottom: 28%;
+    }
+
+    .Dino-3-col {
+        width: 27%;
+        left: 23%;
+        bottom: 28%;
+    }
+
+    .Dino-4 {
+        width: 21%;
+        top: 24%;
+    }
+
+    .Dino-4-col {
+        width: 21%;
+        top: 24%;
+    }
+
+    .Dino-5 {
+        width: 35%;
+        right: -4%;
+        bottom: 25%;
+        z-index: 1;
+    }
+
+    .Dino-5-col {
+        width: 35%;
+        right: -4%;
+        bottom: 25%;
+        z-index: 1;
+    }
+
+    .Dino-6 {
+        width: 19%;
+        right: 23%;
+        bottom: 8%;
+    }
+
+    .Dino-6-col {
+        width: 19%;
+        right: 23%;
+        bottom: 8%;
+    }
+
+    .intItem-1 h2,
+    .intItem-2 h2,
+    .intItem-3 h2,
+    .intItem-4 h2,
+    .intItem-5 h2,
+    .intItem-6 h2 {
+        font-size: 14px;
+        line-height: 137%;
+    }
+
+    .intItem-1 p,
+    .intItem-2 p,
+    .intItem-3 p,
+    .intItem-4 p,
+    .intItem-5 p,
+    .intItem-6 p {
+        font-size: 12px;
+        line-height: 154%;
+    }
+
+    .intItem-1 h3,
+    .intItem-2 h3,
+    .intItem-3 h3,
+    .intItem-4 h3,
+    .intItem-5 h3,
+    .intItem-6 h3 {
+        font-size: 14px;
+    }
+
+    //翼手龍
+    .intItem-1 {
+        width: 40%;
+        margin-left: -25%;
+        top: 12%;
+    }
+
+    //始祖鳥
+    .intItem-2 {
+        margin-left: -19%;
+        top: 31%;
+    }
+
+    //暴龍
+    .intItem-3 {
+        margin-left: -24%;
+        width: 49%;
+        top: 39%;
+    }
+
+    //劍龍
+    .intItem-4 {
+        margin-left: 82%;
+    }
+
+    //蛇頸龍
+    .intItem-5 {
+        top: 10%;
+    }
+
+    //滄龍
+    .intItem-6 {
+        width: 40%;
+        margin-left: 84%;
+        top: 6%;
     }
 }
