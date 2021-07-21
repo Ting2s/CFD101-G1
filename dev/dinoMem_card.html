@@ -79,15 +79,18 @@
               <!-- 欄位格子 -->
               <div class="myCard" id="myCard">
                 <!-- 第一頁 -->
-                <ul v-for="obj, index in getSmallList" id="ul_1">
+                <ul v-for="(obj, index) in getSmallList" :key="index" id="ul_1">
 
-                  <li id="li_1">
-                    <button class="deleteCard" onclick="delete_go(this)">
+                  <li id="li_1" class="li">
+                    <button class="deleteCard" @click="delete_go(this,index)">
                     </button>
+
                     <span id="cardNO" style="display: none;">{{obj.card_no}}</span>
+
                     <input type="button" value="我的明信片">
-                    <img :src="obj.card_img" alt="" onclick="openModel(this)">
+                    <img :src="obj.card_img" id="cardImg" onclick="openModel(this)">
                   </li>
+
 
                 </ul>
 
@@ -107,11 +110,12 @@
                 <ul v-for="obj, index in getSmallList_lub">
 
                   <li>
-                    <button class="deleteCard" onclick="delete_go(this)">
+                    <button class="deleteCard" @click="delete_go_lub(this,index)">
                     </button>
                     <span id="cardNO" style="display: none;">{{obj.card_no}}</span>
+
                     <input type="button" value="珍藏明信片">
-                    <img :src="obj.card_img" alt="" onclick="openModel(this)">
+                    <img :src="obj.card_img" onclick="openModel(this)">
                   </li>
 
                 </ul>
