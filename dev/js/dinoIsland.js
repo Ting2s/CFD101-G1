@@ -62,31 +62,41 @@ dino_6.addEventListener('mouseleave', () => {
     intItem_6.style.display = `none`
 });
 
+//------判斷得到龍龍(從資料庫取得)
 
-//-------------------------海平面
 function get() {
     let xhr = new XMLHttpRequest();
 }
 
+// let myDino
+
+
 function initElement() {
-    let getDino = document.getElementById("getDinoSea");
-    getDino.onclick = function(){
-        let xhr = new XMLHttpRequest();
-            xhr.onload = function () {
-              if (xhr.status == 200) {
-        
-                alert("得到恐龍！");
-              } else {
-                alert(xhr.status);
-              }
+    console.log('in');
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.status == 200) {
+            //    myDino = xhr.response;
+            let myDinoNum = JSON.parse(xhr.responseText);
+            console.log(myDinoNum);
+
+            let mydino = document.querySelector('.Dino-5').children[1].value;
+
+            document.querySelector('.Dino-5').children[1].value =
+                myDinoNum[0].dino_no;
+
+            if (mydino ==0){
+                document.querySelector('.Dino-5').style.display = `none`
             }
-            xhr.open("post", "./php/dinoGame.php", true);
-            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-            xhr.send(document.getElementById("getDinoSea").value);
-    };
-  };
+                
+               
+              } else {
+            // alert(xhr.status);
+        }
+    }
+    xhr.open("get", "./php/dinoIsland.php", true);
+    xhr.send();
+};
+initElement();
 
-
-
-    // let data_info = `mydino = document.getElementById("getDinoSea").value}`;
-    // xhr.send(data_info);
