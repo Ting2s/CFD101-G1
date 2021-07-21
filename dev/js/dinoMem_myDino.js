@@ -49,7 +49,7 @@ let pageBar = new Vue({
     currentPage: 1,
 
     //會員資料
-    memberRows:{},
+    memberRows:[]
 
   },
   methods: {
@@ -140,7 +140,7 @@ let pageBar = new Vue({
     xhr.open("post", "./php/updatePhoto.php", true);
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
-    let data_info = `newImg=${$id('facePhoto').src}`;
+    let data_info = `newImg=${Id('facePhoto').src}`;
     xhr.send(data_info);
   }
 

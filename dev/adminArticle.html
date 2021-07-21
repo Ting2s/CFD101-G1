@@ -62,14 +62,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="artRow in artRows">
+                                <tr v-for="artRow in artRows" :key="artRow.art_no">
                                     <th scope="row">{{artRow.art_no}}</th>
                                     <td>{{artRow.art_title}}</td>
                                     <td>{{artRow.art_category}}</td>
                                     <td>{{artRow.art_date}}</td>
                                     <td>
                                         <div class="form-group">
-                                            <select class="form-control" id="exampleFormControlSelect1">
+                                            <select class="form-control" id="exampleFormControlSelect1" @change="postArticle(artRow.art_no,artRow.art_status)" v-model="artRow.art_status">
                                               <option selected :value="artRow.art_status">{{artRow.art_status==1?"上架 ":" 下架 "}}</option>
                                               <option :value="artRow.art_status==1?0:1">{{artRow.art_status==1?"下架 ":" 上架 "}}</option>
                                             </select>

@@ -34,7 +34,7 @@ let data = {
             alert(xhr.status);
           }
         }
-        xhr.open("get", "./php/getArticle.php", true);
+        xhr.open("get", "./php/gcarticle.php", true);
         console.log(xhr);
         xhr.send(null);
       }
