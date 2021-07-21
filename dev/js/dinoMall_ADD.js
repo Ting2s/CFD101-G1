@@ -1,6 +1,10 @@
+
+
+
 new Vue({
   el: '#app',
   data: {  
+      prodRows:[], 
       message:"恐龍商城",
       isImgClassHat   :true,
       isShopItemImage :true,
@@ -8,7 +12,6 @@ new Vue({
       isActive:true,
       smallCartImg:'./images/dinoMall/smallCart.png',
       dinos:['選擇恐龍','脫光光','儲存造型'],
-       
       itemImgs:[
                  {
                   imgURL:"./images/dinoMall/prod1.png",
@@ -91,32 +94,50 @@ new Vue({
                 productID:"12"
                 }
               ],
-            },
-  computed: {
-    ground(){
-    }
-  },
+       },
   created() {
     // console.log(this.crownImgs[0].hat);
   },
   methods: {
-    btnSelect(index){
-        if( index == 0 ){
-          return "btnSelect_a" ;
-        }else if(index == 1){
-          return "btnSelect_b" ;
-        }else{
-          return "btnSelect_c" ;
-        }
-    }
-  },
+                  btnSelect(index){
+                        if( index == 0 ){
+                        return "btnSelect_a" ;
+                        }else if(index == 1){
+                        return "btnSelect_b" ;
+                        }else{
+                        return "btnSelect_c" ;
+                        }
+                  },
+                  getProduct(){
+                        let xhr = new XMLHttpRequest();
+                        let self = this;
+                        xhr.onload = function(){
+                              if(xhr.status == 200){
+                              // this.prodRows = xhr.responseText;
+                              self.prodRows = JSON.parse(xhr.responseText);
+                              console.log(self.prodRows);
+                              }else{
+                              alert(xhr.status);
+                                    }
+                         }
+                         xhr.open("get", "./php/dinoMall.php", true);
+                         xhr.send(null);
+                   },
+                   changedata(){
+
+                   }
+             },
+  mounted(){
+            this.getProduct();
+    },
+
   components:{
       'my-component':{
-            props:["item-imgs","small-img","hat-class","item-image"],
+            props:["item-imgs","small-img","hat-class","item-image"], 
             template:`
                 <div class="btnCard-1" id="btnCard-1">
-                      <div class="imgCard" v-for="itemImg in itemImgs">
-                            <div class="card" >
+                      <div class="imgCard" v-for="itemImg in itemImgs" >
+                           <div class="card" >
                                   <img :src="itemImg.imgURL" 
                                   :class="{imgClassHat:hatClass,shopItemImage:itemImage}"   :title="itemImg.hat">
                                   <span class="shopItemPrice">{{itemImg.price}}</span>
@@ -126,8 +147,7 @@ new Vue({
                                   </div>
                             </div>
                       </div>     
-                </div>
-          `
+                </div> `
       },
       'next-component':{
             props:["crown-imgs","small-img","hat-class","item-image"],
@@ -144,8 +164,7 @@ new Vue({
                                 </div>
                           </div>
                     </div>     
-              </div>
-              `
+              </div>  `
       },
       'last-component':{
             props:["beret-imgs","small-img","hat-class","item-image"],
@@ -162,8 +181,7 @@ new Vue({
                               </div>
                         </div>
                   </div>     
-            </div>
-            `
+            </div> `
       },
 
       'secnd-component':{
