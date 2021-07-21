@@ -15,6 +15,7 @@
         @@include('layout/style.html')
         <link rel="stylesheet" href="css/dinoSinglepg.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 
     <body>
@@ -35,22 +36,24 @@
           </article>
           <hr>
           <h2>文章留言</h2>
-          <div class = "disnoitem">
+          <div class = "disnoitem" v-for="msgRow in msgitem">
             <div class = "disnoimg">
-              <img src = "./images/disscus/member.jpg" alt = "food image">
-              <p>呂阿暉</p>
+              <img :src = "msgRow.mem_img" alt = "會員頭像">
+              <p>{{msgRow.mem_nicname}}</p>
             </div>
             <div class = "disnocontent">
-              <h2 class = "disnoname">讚讚讚讚讚~~~~~~~讚讚讚讚讚</h2>
-              <p class = "category">發表於: 2021-01-12 13:48:01&nbsp;&nbsp; <span @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
+              <h2 class = "disnoname">{{msgRow.msg_content}}</h2>
+              <p class = "category">發表於: {{msgRow.msg_date}}&nbsp;&nbsp; <span @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
             </div>
           </div>
           <hr>
-          <h2>新增留言</h2>
-          <form action="">
-            <textarea id="single" name="single" placeholder="" style="height:100px"></textarea>
-            <input class="dinbtn" type="button" value="送出"></input>
-          </form>
+          <div class="pon">
+            <h2>新增留言</h2>
+              <form action="./php/postmessage.php" method="post" enctype="multipart/form-data">
+                <textarea id="single" name="text" placeholder="" style="height:100px" v-model="input"></textarea>
+                <button class="dinbtn" type="button" @click="send_data">送出</button> 
+              </form>
+          </div>
           <div class="clickbac" v-if="showModal">
             <div class="modal">
               <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
@@ -67,6 +70,7 @@
           </div>
         </div>
         <script src="./js/dinoSinpage.js"></script>
+        <script src="./js/login.js"></script>
         @@include('layout/footer.html')
     </body>
 </html>

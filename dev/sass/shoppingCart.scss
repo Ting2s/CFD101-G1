@@ -4,7 +4,7 @@
 @import '../../guideline_sass/sass/base/var';
 
 
-.bgColor.show{
+.bgColor.showOpen{
   transform: translateX(0%);
 }
 
@@ -16,7 +16,7 @@
           overflow-y: auto;
           border:5px solid rgb(185, 185, 92);
           background-color: rgb(194, 228, 133);
-          transform: translateX(-100%);  //   cart 版面 總開關
+          transform: translateX(-100%);  //   cart 版面 總開關   cart 版面 總開關
           transition:all 1s ease-in-out;
           .closeCart{
                       @include posiTion(absolute,14px,null){

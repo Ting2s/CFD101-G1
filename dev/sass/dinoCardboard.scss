@@ -144,14 +144,14 @@ body {
                     margin: 0 auto;
                     font-size: 16px;
                     font-family: DFPLiYuan; //-----------------
-                    padding-top: .5rem;
+                    padding-top: .4rem;
                     @include respondTo(large) {
                         font-size: 14px;
-                        padding-top: .4rem;
+                        //adding-top: .4rem;
                     }
-                    @include respondTo(medium) {
-                        font-size: 9px;
-                    }
+                    // @include respondTo(medium) {
+                    //     font-size: 9px;
+                    // }
                 }
             }
             .personDate {
@@ -193,7 +193,7 @@ body {
         background-image: url(../images/dinoCardboard/numberBtn.png);
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 0 1.1rem 0 .7rem;
+        padding: 0 2.6rem 0 2.2rem;
         background-position: center;
         input {
             width: 42px;
@@ -406,14 +406,14 @@ body {
   }
 
   .personContent2{
-      display: flex;
+      display: block;
       padding-top: 2px;
       .like{
         font-size: 16px;
       }
       span{
-          font-size: 16px;
-          padding-left: 1rem;
+        font-size: 14px;
+        padding-left: 1.5rem;
       }
   }
 

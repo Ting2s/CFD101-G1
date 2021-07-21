@@ -16,11 +16,9 @@ body {
 .wrapMall {
       @include rect(80%,null){
             max-width            : 1920px;
-            // background-color: antiquewhite;
       }; 
       @include d-flex(grid){
             grid-template-columns: 1fr 1fr;
-            // align-items: center;
             margin: auto;
             padding-top: 7%;  // *****版面
       };   
@@ -29,7 +27,6 @@ body {
 // 左方塊 ==============================================
 
       #{$titleLeft}{
-                  // @include rect(100%,null);
                   .cardLeft{
                                                 background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
                         // text-align: center;
@@ -133,9 +130,17 @@ body {
                               background: url('#{$pathMall}/next.png') no-repeat center center / contain;
                              }
                     }
+              .btnCard-2  .info{
+                  @include d-flex() 
+              }    
+              .btnCard-1 {
+                  @include d-flex(); // (新增)
+              }
               .btnCard-1 , .btnCard-2{
+                                   
                                     .imgCard{
-                                          @include d-flex();
+                                          // @include d-flex(); (原版)
+                                          // margin: 5px 5px; // (新增)
                                                 .card{
                                                       background: url('#{$pathMall}/frame.png') no-repeat top center / contain;
                                                       margin:0 1%;
@@ -266,7 +271,7 @@ body {
                   //    @include fontSz($font-h3,null);
                      @include pdMargin(null,15px);
                      @include colorBgcolor($yellow-second,null);
-                     margin-top: 10%;
+                  //    margin-top: 10%;
                   }
       }
 }

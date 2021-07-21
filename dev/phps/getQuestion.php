@@ -4,7 +4,7 @@ try{
 	$sql = "SELECT DISTINCT *
 	FROM `quiz_question`
 	ORDER BY Rand()
-	limit 7";
+	limit 8";
 	$question = $pdo->query($sql);
 	$questions = $question->fetchAll(PDO::FETCH_ASSOC);
 	echo json_encode($questions);

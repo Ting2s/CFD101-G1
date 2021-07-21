@@ -1,3 +1,9 @@
+//==================================
+
+function Id(id){
+  return document.getElementById(id);
+};
+//==================================
 const maxItemPerPage = 3;
 const maxItemPerPage_acc = 8;
 let pageBar = new Vue({
@@ -10,12 +16,12 @@ let pageBar = new Vue({
     isSky: 'sky',
     //================
 
-    isHat: 'hat',
-    isTicket: 'ticket',
-    isBack: 'back', 
+    // isHat: true,
+    // isTicket: false,
+    // isBack: false,
     //================
     postcard: "",
-    //恐龍
+    //我的恐龍
     myDino: [
       {
         dino_st: 0,
@@ -38,10 +44,12 @@ let pageBar = new Vue({
         value: "龍春暉",
       },
     ],
-    //配件
-    dinoAcc: [
-    ],
+    //我的配件
+    dinoAcc: [],
     currentPage: 1,
+
+    //會員資料
+    memberRows:{},
 
   },
   methods: {
@@ -55,39 +63,114 @@ let pageBar = new Vue({
     
     },
     //我的配件資料庫
-    myAcc(){
+    myAcc() {
       const xhr = new XMLHttpRequest();
-      const my =this
-      xhr.onload = function(){
+      const my = this;
+      xhr.onload = function () {
         if (xhr.status == 200) {
-      my.dinoAcc = JSON.parse(xhr.responseText);
-        }else{
+          my.dinoAcc = JSON.parse(xhr.responseText);
+        } else {
           alert(xhr.status);
         }
       }
-      xhr.open("get", "./php/getAccessory.php", true);
+      xhr.open("get", "./php/getDinoAcc.php", true);
       xhr.send(null);
     },
 
-    //=============
-  },
-  computed: {
-    style() {
-      if (this.dinoAcc.type == 0) {
-        this.isHat = true;  
+    //個人資料
+    member() {
+      const xhr = new XMLHttpRequest();
+      const my = this;
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          my.memberRows = JSON.parse(xhr.responseText);
+        } else {
+          alert(xhr.status);
+        }
       }
-      if (this.dinoAcc.type == 1) {
-      this.isTicket = true;
-      }
-      if (this.dinoAcc.type == 2) {
-        this.isBack = true;
-      }
+      xhr.open("get", "./php/getMember.php", true);
+      xhr.send(null);
+    },
 
     
+//================================
+    updatePhoto() {
+    //點擊後獲取新頭像
+    console.log(1);
+    // let my = this;
+    html2canvas(Id("myPhoto"), {     
+      onrendered: function (canvas) {
+      document.body.appendChild(canvas);
+        
+      let leCanvas = document.getElementsByTagNam("canvas")[0];
+      console.log(leCanvas);
+      let newImg = leCanvas.toDataURL("image/png");  
+        console.log('<img src="' + newImg + '"/>');
+      
+      Id("saveImg").src = newImg ;
+        
+      //跳窗提醒傳入成功
+      let span = document.getElementsByClassName("saveClose")[0];
+      Id('save').onclick = function() {
+      Id('saveBox').style.display = "block";
+      }
+      span.onclick = function() {
+      Id('saveBox').style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == Id('saveBox')) {
+          Id('saveBox').style.display = "none";
+        }
+        }
+        // Id("facePhoto").src = newImg ;
+      },
+      width:320,
+      height:220
+  });
+
+    //傳入後端
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        //傳入後端
+      } else {
+        alert(xhr.status);
+      }
+    }
+    xhr.open("post", "./php/updatePhoto.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    let data_info = `newImg=${$id('facePhoto').src}`;
+    xhr.send(data_info);
+  }
+
+    //=============
+  },
+  
+  computed: {
+    style() {
+      const my = this;
+      if (my.dinoAcc.type == 0) {
+        Id("style").classList.add('hat');
+        Id("style").classList.remove('ticket');
+        Id("style").classList.remove('back');
+
+      }
+      if (my.dinoAcc.type == 1) {
+        Id("style").classList.add('ticket');
+        Id("style").classList.remove('hat');
+        Id("style").classList.remove('back');
+      
+      }
+      if (my.dinoAcc.type == 2) {
+        Id("style").classList.add('back');
+        Id("style").classList.remove('hat');
+        Id("style").classList.remove('ticket');
+      }
     },
   //我的恐龍
   getSmallList() {
-    return this.myDino.filter((item, index) => {
+    return this.myDino.filter((obj, index) => {
       return (
         index < this.currentPage * maxItemPerPage &&
         index >= (this.currentPage - 1) * maxItemPerPage
@@ -96,7 +179,7 @@ let pageBar = new Vue({
   },
   //別人的
   getSmallList_lub() {
-    return this.dinoAcc.filter((item, index) => {
+    return this.dinoAcc.filter((obj, index) => {
       return (
         index < this.currentPage * maxItemPerPage_acc &&
         index >= (this.currentPage - 1) * maxItemPerPage_acc
@@ -115,47 +198,65 @@ let pageBar = new Vue({
   getLastPage_lub() {
     return Math.ceil(this.dinoAcc.length / maxItemPerPage_acc);
   }
-}
+},
+mounted() {
+  this.myAcc();
+  this.member();
+},
+});
+  
 
 
-  }); 
-
-
-
-//==================================
-let dinoAcc_btn = document.getElementById("dinoAcc_btn");
+//================================
+let dinoAcc_btn = Id("dinoAcc_btn");
 dinoAcc_btn.addEventListener("click", function () {
   
-  document.getElementById("dinoCon_my").classList.add("none");
-  document.getElementById("dino_p").classList.add("none");
-  document.getElementById("dinoCon_acc").classList.remove("none");
-  document.getElementById("dinoAcc_p").classList.remove("none");
+  Id("dinoCon_my").classList.add("none");
+  Id("dino_p").classList.add("none");
+  Id("dinoCon_acc").classList.remove("none");
+  Id("dinoAcc_p").classList.remove("none");
   
   
 
-  document.getElementById("dinoAcc_btn").classList.add("active");
-  document.getElementById("dino_btn").classList.remove("active");
+  Id("dinoAcc_btn").classList.add("active");
+  Id("dino_btn").classList.remove("active");
 })
 
 //-----------------------------------
-let dino_btn = document.getElementById("dino_btn");
+let dino_btn =Id("dino_btn");
 dino_btn.addEventListener("click", function () {
   
-  document.getElementById("dinoCon_acc").classList.add("none");
-  document.getElementById("dinoAcc_p").classList.add("none");
-  document.getElementById("dinoCon_my").classList.remove("none");
-  document.getElementById("dino_p").classList.remove("none");
+  Id("dinoCon_acc").classList.add("none");
+  Id("dinoAcc_p").classList.add("none");
+  Id("dinoCon_my").classList.remove("none");
+  Id("dino_p").classList.remove("none");
   
   
-  document.getElementById("dino_btn").classList.add("active");
-  document.getElementById("dinoAcc_btn").classList.remove("active");
+  Id("dino_btn").classList.add("active");
+  Id("dinoAcc_btn").classList.remove("active");
 })
+
+//-----------------------------------
+// 已儲存造型
+
+// let span = document.getElementsByClassName("saveClose")[0];
+
+// Id('save').onclick = function() {
+// Id('saveBox').style.display = "block";
+// }
+
+// span.onclick = function() {
+// Id('saveBox').style.display = "none";
+// }
+// window.onclick = function(event) {
+//   if (event.target == Id('saveBox')) {
+//     Id('saveBox').style.display = "none";
+//   }
+// }
 
 //-----------------------------------
 // 替代圖片
-function Id(id){
-  return document.getElementById(id);
-};  
+
 // 帽子拖曳
 function hat(e) {
 

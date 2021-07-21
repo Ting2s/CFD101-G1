@@ -217,3 +217,65 @@ body {
         transform: rotate(10deg);
     }
 }
+
+// ----------------------------RWD(1024px)
+
+@media screen and (max-width: 1024px) {
+
+    .Wrap {
+        padding-top: 45%;
+    }
+    .egg-1 {
+        bottom: 4vh;
+    }
+    .egg-2 {
+        bottom: 3vh;
+    }
+    .egg-3 {
+        bottom: 4vh;
+    }
+    .egg-1-touch {
+        animation: eggmove 0.5s 0.3s infinite alternate;
+        bottom: 27vh;
+        left: -20%;
+        width: 30%;
+    }
+    .egg-2-touch {
+        animation: eggmove 0.5s 0.3s infinite alternate;
+        bottom: 27vh;
+        width: 28%;
+    }
+    .egg-3-touch {
+        animation: eggmove 0.5s 0.3s infinite alternate;
+        bottom: 27vh;
+        left: 85%;
+        width: 28%;
+    }
+}
+// ----------------------------RWD(812px)
+
+@media screen and (max-width: 812px) {
+
+    .Wrap {
+        padding-top: 30%;
+    }
+    .egg-1-touch {
+        animation: eggmove 0.5s 0.3s infinite alternate;
+        bottom: 27vh;
+        left: -20%;
+        width: 30%;
+    }
+    .egg-2-touch {
+        animation: eggmove 0.5s 0.3s infinite alternate;
+        bottom: 27vh;
+        width: 28%;
+    }
+    .egg-3-touch {
+        animation: eggmove 0.5s 0.3s infinite alternate;
+        bottom: 27vh;
+        left: 85%;
+        width: 28%;
+    }
+}
+
+
