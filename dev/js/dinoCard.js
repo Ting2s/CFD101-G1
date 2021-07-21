@@ -8,54 +8,35 @@ window.onload = function () {
       e.preventDefault();
       let fetchImg = lc.getImage().toDataURL()
       console.log('fetchImg', fetchImg);
+
+      document.getElementById('hidden_data').value = fetchImg;
+      var formData = new FormData(document.getElementById("myForm"));
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          alert('Succesfully uploaded'); 
+          //console.log( xhr.responseText);
+          // console.log("檔名 : ", xhr.responseText);
+          // document.getElementById("download").href = xhr.responseText;
+          // document.getElementById("download").innerText = "下載";
+        } else {
+          alert(xhr.status);
+        }
+      };
+
+  xhr.open('POST', './php/makeCard.php', true); 
+
+  xhr.send(formData);
+
   }, false);
+  
 };
-// LC .init(
-//   document.getElementsByClassName('myDrawing')[0],
-
-//   // {imageURLPrefix: 'images/dinoCard'},
-
-// )
-
-// var canvas = document.getElementsByTagName("canvas");
-// var dataURL = canvas[0].toDataURL("image/png");
-// console.log(dataURL);
-
-// var submit = document.getElementById("save");
-
-// submit.addEventListener('click', function (e) {
-//       console.log('e', e);
-//       e.preventDefault();
-//       let fetchImg = lc.getImage().toDataURL()
-//       console.log('fetchImg', fetchImg);
-//   }, false);
-// };
 
 
-
-//canvas.toDataURL(type, encoderOptions);
+ 
 // canvas.toDataURL() --> dataURL base64
 
-
-// function getBase64(url){
-//   var Img = new Image(),
-//   dataURL='';
-//   Img.src=url;
-//   Img.onload=function(){
-//   var canvas = document.createElement("canvas"),
-//   width=Img.width,
-//   height=Img.height;
-//   canvas.width=width;
-//   canvas.height=height;
-//   canvas.getContext("2d").drawImage(Img,0,0,width,height);
-//   dataURL=canvas.toDataURL('image/jpeg');
-//   callback?callback(dataURL):null;
-//   };
-// }
-
-// getBase64('//upload.jianshu.io/users/upload_avatars/555630/fdd1b798e6b0.jpg',(dataURL)=>{
-// console.log(dataURL);
-// });
 ///////////
 //自動生成圖片
 // window.onload = background();
@@ -130,155 +111,6 @@ window.onload = function () {
 //     drag();
 //   })
 // }
-// //文字框 CLICK 出現 
-// function message() {
-//   let postcard_message = document.getElementsByClassName('postcard_message')[0];
-//   if (postcard_message.style.opacity == 0) {
-//     postcard_message.style.opacity = 1;
-//   } else {
-//     postcard_message.style.opacity = 0;
-//   }
-// }
-// //message saved and 創造
-// function messageSave() {
-//   let pos_textbox = document.getElementsByClassName('pos_textbox')[0];
-//   let span = document.createElement("span");
-//   let textarea = document.getElementsByTagName('textarea')[0];
-//   span.classList.add('drag');
-//   span.style.color = "white";
-//   span.style.fontSize = textarea.style.fontSize;
-//   span.style.color = textarea.style.color;
-//   span.style.position = 'absolute';
-//   span.style.top = '50%';
-//   span.style.right = '50%';
-//   span.innerHTML = pos_textbox.value;
-//   let postcard_bg = document.getElementsByClassName('postcard_bg')[0];
-//   postcard_bg.appendChild(span);
-//   textarea.value = "";
-//   drag();
-
-// }
-// // message 自由拖拉
-// function drag() {
-//   $(document).ready(function () {
-//     $('.drag').draggable({
-//       cursor: 'pointer',
-//       opacity: 0.6,
-//       containment: 'parent',
-//       scroll: false,
-//     });
-//   });
-// }
-// //訊息點擊外框
-// document.addEventListener('click', function outline(e) {
-//   if (e.target.classList.contains('drag')) {
-//     if (e.target.classList.contains('outline')) {
-//       e.target.classList.remove('outline')
-//     } else {
-//       e.target.classList.add('outline');
-//     }
-//   }
-// })
-// //訊息刪除
-// function messageDel(e) {
-//   let mesSelect = document.querySelectorAll('.outline');
-//   [...mesSelect].forEach(item => item.remove());
-// }
-// //改變大小
-// function changeLineWidth(e) {
-//   //點選可更改
-//   let postcard_bg = document.getElementsByClassName('postcard_bg')[0];
-//   let span = postcard_bg.getElementsByTagName('span')[1];
-//   let outline = document.getElementsByClassName('drag');
-//   let newWidth = document.getElementsByClassName('input-range')[0].value;
-//   if (postcard_bg.contains(span)) {
-//     for (let i = 0; i < outline.length; i++) {
-//       if (outline[i].classList.contains('outline')) {
-//         let mesSelect = document.querySelectorAll('.outline');
-//         [...mesSelect].forEach(item => item.style.fontSize = newWidth + 'px');
-//       } else {//僅輸入框更改
-//         let textarea = document.getElementsByTagName('textarea')[0];
-//         textarea.style.fontSize = newWidth + 'px';
-//       }
-//     }
-//   } else {
-//     let textarea = document.getElementsByTagName('textarea')[0];
-//     textarea.style.fontSize = newWidth + 'px';
-//   }
-// }
-// //改變顏色
-// function changeLineColor() {
-//   let postcard_bg = document.getElementsByClassName('postcard_bg')[0];
-//   let span = postcard_bg.getElementsByTagName('span')[1];
-//   let outline = document.getElementsByClassName('drag');
-//   let newColor = document.getElementById('shadowColorInput').value;
-//   if (postcard_bg.contains(span)) {
-//     for (let i = 0; i < outline.length; i++) {
-//       if (outline[i].classList.contains('outline')) {
-//         let mesSelect = document.querySelectorAll('.outline');
-//         [...mesSelect].forEach(item => item.style.color = newColor);
-//       } else {//僅輸入框更改
-//         let textarea = document.getElementsByTagName('textarea')[0];
-//         textarea.style.color = newColor;
-//       }
-//     }
-//   } else {
-//     let textarea = document.getElementsByTagName('textarea')[0];
-//     textarea.style.color = newColor;
-//   }
-// }
-// //canvas 畫板
-// $('.fa-pen').click(function () {
-//   let markerWidth = 1;
-//   let markerColor = 'black';
-//   let lastEvent;
-//   let mouseDown = false;
-
-//   let canvas = $('canvas');
-
-//   let context = $('canvas')[0].getContext('2d');
-
-//   canvas.mousedown(function (e) {
-//     lastEvent = e;
-//     mouseDown = true;
-//   }).mousemove(function (e) {
-//     if (mouseDown) {
-
-//       context.beginPath();
-
-//       context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-//       context.lineTo(e.offsetX, e.offsetY);
-//       context.lineWidth = markerWidth;
-//       context.strokeStyle = markerColor;
-//       context.lineCap = 'round';
-//       context.stroke();
-
-//       lastEvent = e;
-
-//     }
-//   }).mouseup(function () {
-//     mouseDown = false;
-//   });
-
-//   var changeWidth = function () {
-//     markerWidth = $('.input-range').val();
-//   }
-//   var changeColor = function () {
-//     markerColor = $('#shadowColorInput').val();
-//   }
-
-//   var clear = function () {
-//     context.clearRect(0, 0, 690, 390);
-//   }
-
-//   $('.fa-eraser').on('click', clear);
-
-//   $('.input-range').change(changeWidth);
-
-//   $('#shadowColorInput').change(changeColor);
-
-
-// });
 
 // //localhost
 // function getLocalstorage() {
@@ -351,21 +183,4 @@ window.onload = function () {
 //     }
 //   });
 
-// }
-
-// let width = $(window).width();
-// if (width <= 1920 && width > 1440) {
-//   $('#canvas').removeClass('none');
-//   $('#canvas1').addClass('none');
-//   $('#canvas2').addClass('none');
-
-// } else if (width <= 1440 && width > 1280) {
-//   $('#canvas').addClass('none');
-//   $('#canvas1').removeClass('none');
-//   $('#canvas2').addClass('none');
-
-// } else if (width <= 1280) {
-//   $('#canvas').addClass('none');
-//   $('#canvas1').addClass('none');
-//   $('#canvas2').removeClass('none');
 // }

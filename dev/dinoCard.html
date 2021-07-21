@@ -43,7 +43,7 @@
     <img class="titleBtn" src="images/dinoCard/titleBtn.png" alt="">
     <h1 class="titleText">客製化明信片</h1>
 
-    <form class="addMore">
+    <!-- <form class="addMore">
       <a href="###" onclick="background()">
       <button class="addmoreText1">
         <img src="images/dinoCard/addmoreBtn.png">
@@ -55,7 +55,7 @@
         <img src="images/dinoCard/addmoreBtn.png">
         <span>上傳頭貼</span>
       </button>
-    </form>
+    </form> -->
 
     <div id="whiteBoard" class="whiteBoard">
       <div class="myDrawing"></div>
@@ -68,29 +68,34 @@
     </form> -->
     
   </div>
-    
 
-      <form class="downBtn">
+  <section class="downBtn">
+    <form method="post" accept-charset="utf-8" id="myForm">
         <button class="save" type="submit" id="save">
           <img src="images/dinoCard/woodTitle.png">
-          <span class="downText1">儲存</span>
+          <input name="hidden_data" id='hidden_data' type="hidden"/>
+          <span class="downText1">投稿</span>
         </button>
-
-        <button class="downLoad" id="saveToImage">
+    </form> 
+    <form>
+        <button class="downLoad">
           <img src="images/dinoCard/woodTitle.png">
           <span class="downText2">下載</span>
         </button>
-
-        <button onclick="self.location.href='#'" class="post">
+    </form>
+    <form>
+        <button type="export" class="post" id="">
           <img src="images/dinoCard/woodTitle.png">
-          <span class="downText3">投稿</span>
+          <span class="downText3">上傳背景</span>
         </button>
-
-        <button onclick="self.location.href='#'" class="share">
-          <img src="images/dinoCard/woodTitle.png">
-          <span class="downText4">分享</span>
-        </button>
-      </form>
+    </form>
+    <form>
+          <button type="submit" id="" class="share">
+            <img src="images/dinoCard/woodTitle.png">
+            <span class="downText4">上傳頭貼</span>
+          </button>
+    </form>
+  </section>    
 
     
 
@@ -98,6 +103,7 @@
     
 
   <script src="js/dinoCard.js"></script>
+  <!-- <script src="js/login.js"></script> -->
   @@include('layout/footer.html')
 </body>
 </html>
