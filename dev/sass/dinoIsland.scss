@@ -197,7 +197,7 @@ body {
     border-radius: 15px;
     position: relative;
     top: 20%;
-    // display: none;
+    display: none;
 }
 
 //始祖鳥
@@ -358,10 +358,6 @@ body {
     .intItem-5 h2,
     .intItem-6 h2 {
         font-size: 20px;
-        color: #e05301;
-        padding: 5% 0;
-        box-sizing: border-box;
-        text-align: center;
         line-height: 137%;
     }
 
@@ -373,5 +369,26 @@ body {
     .intItem-6 p {
         font-size: 18px;
         line-height: 154%;
+    }
+
+    .intItem-1 h3,
+    .intItem-2 h3,
+    .intItem-3 h3,
+    .intItem-4 h3,
+    .intItem-5 h3,
+    .intItem-6 h3 {
+        font-size: 20px;
+    }
+
+    //翼手龍
+    .intItem-1 {
+        width: 40%;
+        font-family: 'DFPLiYuan';
+        background-color: white;
+        margin-left: -25%;
+        border-radius: 15px;
+        position: relative;
+        top: 34%;
+        display: none;
     }
 }
