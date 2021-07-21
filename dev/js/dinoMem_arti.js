@@ -62,6 +62,8 @@ let pageBar = new Vue({
       repo:"8",
 },
     ],
+    //會員資料
+    memberRows:[],
     currentPage: 1
   },
   methods: {
@@ -72,7 +74,21 @@ let pageBar = new Vue({
       if (this.currentPage > 1) {
         this.currentPage--;
       }
-    }
+    },
+     //個人資料
+    member() {
+      const xhr = new XMLHttpRequest();
+      const my = this;
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          my.memberRows = JSON.parse(xhr.responseText);
+        } else {
+          alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getMember.php", true);
+      xhr.send(null);
+    },
 
   },
 
@@ -107,12 +123,39 @@ let pageBar = new Vue({
     getLastPage_lub() {
       return Math.ceil(this.arti_lub.length / maxItemPerPage);
     }
+  },
+  mounted() {
+    this.member();
   }
 
   }); 
 
 
 
+//===================================================
+//刪除明信片
+function delete_go() {
+
+  let deleteTable = Id("deleteTable");
+  deleteTable.style.display = 'block';
+
+
+  let dele_close = Id('dele_close');
+  dele_close.addEventListener("click", function () {
+    deleteTable.style.display = "none";
+  })
+  
+  let cancelBtn = Id('cancelBtn');
+  cancelBtn.addEventListener("click", function () {
+    deleteTable.style.display = "none";
+  })
+
+  let deleteBtn = Id("deleteBtn");
+
+  deleteBtn.addEventListener("click", function (e) {
+    deleteTable.style.display = 'none';
+})
+}
 
 //===================================================
 let card_btn = document.getElementById("arti_btn");
