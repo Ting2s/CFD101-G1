@@ -26,7 +26,7 @@ button{
 width: 100vw;
 height: 100vh;   
 margin: auto;
-
+overflow: scroll;
 background-image: url(../images/disscus/board3.jpg);
 background-size: cover;
 background-position: center center;
@@ -172,45 +172,34 @@ margin: auto;
   
   }
 //==================================
-@media screen and (max-width: 1200px) {
-  .rankContent {
-    width: 45%;
-    }
-  }
-
+@media screen and (max-width: 1024px) {
+  .rankBox {
+    margin: auto;
+    padding-top: 70px;
+    width: 700px;
+    background-image: none;
+}
+}
 
 //==================================
-@media screen and (max-width: 768px) {
-
-.rankTitle h1 {
-  padding-top:110px;
-
+@media screen and (max-width: 812px) {
+.rankTitle {
+ padding-top:0;
 }
-.rankContent {
-  margin-top: 80px;
-  padding: 30px 8px;
-  width: 60%;
-}
-
-.rankBox {
-  margin: -20px;}
-
 
 .rankBtn button {
     font-size: 20px;
-    margin-top: 40px;
   }
+  .rankTitle h1 {
+    padding: 20px;
+    font-size: 20px;
+}
+.rankContent {
+  padding: 5px;
+  width: 80%;
+}
+.rankBtn {
+  margin-bottom: 25px;
+}
 }
 //==================================
-
-//==================================
-@media screen and (max-width: 414px) {
-
-  .rankBox {
-  background:none;
-  }
-  .rankContent{
-    width: 95%;
-}
-
-}
