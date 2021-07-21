@@ -31,7 +31,7 @@ body {
       #{$titleLeft}{
                   // @include rect(100%,null);
                   .cardLeft{
-                        background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
+                                                background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
                         // text-align: center;
                         @include pdMargin(25%,null);
                         }
@@ -54,7 +54,7 @@ body {
                         @include rect(100%,null);
                         @include d-flex();
                         .btnSelect{
-                                  @include rect(22%,null);
+                              //     @include rect(22%,null);
                                   @include fontSz($font-h4,$font-bold);
                                   @include colorBgcolor($white,null);
                                   margin: 20px 10px;
@@ -91,15 +91,15 @@ body {
                               margin-right: 10px;
                               text-align  : center; 
                                     h3{
-                                    @include fontSz($font-h3,null);
+                                    // @include fontSz($font-h3,null);
                                     @include colorBgcolor($yellow-second,null);
+                                    // font-size: 30px
+                                  
                                     }                
                               }
-                        .cart{
-                              @include  posiTion(relative,null,null);
-                              @include rect(10%,10%);
+                        .cart{ 
                                     p{
-                                          @include posiTion(absolute,10%,null){
+                                          @include  posiTion(absolute, 10%,null){
                                                 right:10%;
                                                 @include colorBgcolor($white,$red);
                                                 @include pdMargin(5px,null);                                               
@@ -116,14 +116,14 @@ body {
               .arrow{
                     @include d-flex(){
                           align-items: center;
-                          margin-bottom: 15px;
+                          
                     }
                     .prePage{
                             @include rect(50px,50px);
                             background: url('#{$pathMall}/pre.png') no-repeat center center / contain;
                             }
                     span{
-                            @include fontSz($font-h4,$font-bold);
+                        //     @include fontSz($font-h4,$font-bold);
                             @include colorBgcolor($brown,null);
                             vertical-align: 12px;
                             margin: 0 6px;
@@ -141,7 +141,7 @@ body {
                                                       margin:0 1%;
                                                       > img{  
                                                             margin: 0px 14px;
-                                                            padding: 31px 20px 15px;
+                                                            // padding: 31px 20px 15px;
                                                             object-fit: cover;
                                                             cursor: pointer; 
                                                             }
@@ -216,9 +216,20 @@ body {
             }
       }
 }
-
-
-
+.card {
+      width: 20%;
+      margin: 10px;
+}
+.cart{
+      width: 10%;
+      transform: translate();
+}
+#counter{
+      transform: translate(-840%,180%);
+}
+.btnSelect{
+      width: 40%;
+}
 
 //  Mall_Modal_BoxC   
 .bg-modal{    
@@ -252,7 +263,7 @@ body {
                         }
                   }
                   h3{
-                     @include fontSz($font-h3,null);
+                  //    @include fontSz($font-h3,null);
                      @include pdMargin(null,15px);
                      @include colorBgcolor($yellow-second,null);
                      margin-top: 10%;
@@ -279,58 +290,152 @@ body {
       }
 }
 
-@media screen and (max-width: 992px){
+// @media screen and (max-width: 992px){
+//       .wrapMall{
+//             grid-template-columns:1fr;
+//             margin: 20% auto;            
+//       }
+//       .itemLeft{
+//             margin-bottom: 20%;
+//       }
+//       #counter{
+//             font-size:14px;
+//             padding: 4px;
+//             top:2%;    
+//       }
+// }
+@media screen and (max-width: 1024px){
+      
       .wrapMall{
-            grid-template-columns:1fr;
-            margin: 20% auto;            
-      }
-      .itemLeft{
-            margin-bottom: 20%;
-      }
-      #counter{
-            font-size:14px;
-            padding: 4px;
-            top:2%;    
-      }
-}
-@media screen and (max-width: 1025px){
-      .wrapMall{
-            padding-top:20%;
+            
             align-items: center;
       }
       .itemLeft{
-            margin: 10px;
+            transform: translate(-10%,0);
+            width: 120%;
+      }
+      .btnSelect{
+            width: 50%;
+      }
+      .title{
+            width: 35%;
+            transform: translate(-120%,0);
+      }
+      .title h3{
+            font-size: 30px;
+      }
+      .arrow{
+            transform: translate(0,-120%);
+            // z-index: 10;
+      }
+      .arrow span{
+            font-size: 20px;  
+      }
+      .imgCard{
+            margin-bottom: 30px;
+      }
+      .card{
+            width: 40%;
+            margin: 0;
+      }
+      .cart img{
+            width: 100%;
       }
       .wrapMall .itemLeft .groundButton .btnSelect{
             font-size: 17px;
       }
       .wrapMall .itemRight {
-            margin: 35px;
-            background-size: cover;
+            background-size: contain;
       }
       .wrapMall .itemRight .groundImgCard .groundTitle .cart p{
             top:2%;
             right: -10%;
             font-size: 10px;
       }
-      .wrapMall .itemRight .groundImgCard .groundTitle .cart img{
-            width: 130%;
+      .btnCard-1{
+            transform: translate(0,-7%);
       }
+      .shopItemPrice{
+            transform: translateY(60%);
+      }
+      .imgCard img{
+            transform: translateY(30%);     
+      }
+      .smallCart{
+            width: 30%;
+            transform: translate(20%,60%);
+      }
+      #counter{
+            transform: translate(10%,50%);
+      }
+
   }
   
 
-  @media screen and (max-width: 813px){
-            .groundButton{
-                  margin-bottom: 15%;
-            }
-            
-            .wrapMall .itemRight{
-                  padding: 15%;
-            }
-            .wrapMall .itemRight .groundImgCard{
-                  padding-bottom: 0;
-            }
-            .wrapMall .itemRight .groundImgCard .btnCard-1 .imgCard .card, .wrapMall .itemRight .groundImgCard .btnCard-2 .imgCard .card {
-                  margin: 3% 4%;
-            }
+  @media screen and (max-width: 817px){
+    .itemLeft{
+          width: 90%;
+          transform: translateY(-20%);
+    }  
+    .groundButton{
+          transform: translateY(-40%);
+    }
+    .btnSelect{
+          width: 30%;
+          margin:5px;
+    }
+    .itemRight{
+          width: 70%;
+      //     height: 40%;
+           transform: translate(10%,-22%);
+    }  
+    .groundTitle .title{
+          width: 30%;
+          transform: translate(160%,100%);
+    }
+    .arrow{
+          width:50%;
+          transform: translate(200%,130%);
+    }
+    .arrow span{
+          font-size: 16px;
+    }
+    
+    .title h3{
+          font-size: 15px;
+    }
+    .cart{
+          width: 20%;
+          transform: translate(150%,400%);
+    }
+    #counter{
+      transform: translate(50%,-10%);  
+      z-index: 10;
+    }
+    .imgCard {
+          margin-bottom: 0;
+    }
+    .imgCard .card{
+          width: 40%;
+      //     height: 20%;
+          transform: translate(0,-30%);
+    }
+    .imgCard .card>img{
+          width: 50%;
+    }
+    .shopItemPrice{
+          padding-bottom: 0px;
+          transform: translateY(10%);
+    }
+    .imgClassHat {
+          transform: translate(-10%,15%);
+    }
+    .smallCart{
+          
+      transform: translateY(-20%);
+    }
+    .smallCart img{
+          width: 30%;
+          
+    }
 }
