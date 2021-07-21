@@ -1,3 +1,14 @@
+$(function(){
+  $('#pic').on('click',function(){
+    var src = $(this).attr('src');
+    $('.imgPreview img').attr('src',src);
+    $('.imgPreview').show()
+  });
+  $('.imgPreview').on('click',function(){
+    $('.imgPreview').hide()
+  });
+})
+
 let vm = new Vue({
     el: "#app",
     data: {
@@ -78,6 +89,8 @@ let vm = new Vue({
     },
   
   })
+
+
   
 //-----------------------
 // if(傳入class有fas 收欌->不收欌)

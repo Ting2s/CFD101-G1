@@ -26,7 +26,7 @@
             <li>
               <div class="personPart" v-for="(favRow, index) in favRows" :key="index">
                 <div class="personImg">
-                  <img :src="favRow.card_img" class="image">
+                  <img :src="favRow.card_img" class="image pic">
                 </div>
                 <div class="personContent">
                   <button class="like" @click="like(favRow, index)" name="mem_id">
@@ -155,6 +155,10 @@
 </section>
 <!-- end mobile -->
 
+      <div class="imgPreview">
+        <img id="imgPreview" src="#">
+      </div>
+
       <div class="underBtn">
         <button class="leftBtn" id="previousPageButton">
           <img src="images/dinoCardboard/leftBtn.png">
@@ -192,7 +196,7 @@
   @@include('layout/footer.html')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/dinoCardboard.js"></script>
-  <script src="js/login.js"></script>
+  <!-- <script src="js/login.js"></script> -->
 </body>
 </html>
 
