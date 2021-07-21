@@ -21,7 +21,7 @@ let pageBar = new Vue({
     // isBack: false,
     //================
     postcard: "",
-    //恐龍
+    //我的恐龍
     myDino: [
       {
         dino_st: 0,
@@ -44,14 +44,12 @@ let pageBar = new Vue({
         value: "龍春暉",
       },
     ],
-    //配件
+    //我的配件
     dinoAcc: [],
     currentPage: 1,
 
-    //頭貼
-    photoImg: "images/dinoPersonal/d1.png",
-    newImg:"",
-    //新頭貼
+    //會員資料
+    memberRows:{},
 
   },
   methods: {
@@ -67,7 +65,7 @@ let pageBar = new Vue({
     //我的配件資料庫
     myAcc() {
       const xhr = new XMLHttpRequest();
-      const my = this
+      const my = this;
       xhr.onload = function () {
         if (xhr.status == 200) {
           my.dinoAcc = JSON.parse(xhr.responseText);
@@ -79,46 +77,79 @@ let pageBar = new Vue({
       xhr.send(null);
     },
 
-    //更新頭貼
-    newPhoto() {
-
-      this.photoImg = this.newImg;
-    },
-
-    updatePhoto() {
-      let xhr = new XMLHttpRequest();
+    //個人資料
+    member() {
+      const xhr = new XMLHttpRequest();
+      const my = this;
       xhr.onload = function () {
         if (xhr.status == 200) {
-        //跳窗
-        let span = document.getElementsByClassName("saveClose")[0];
-        Id('save').onclick = function() {
-        Id('saveBox').style.display = "block";
-        }
-        span.onclick = function() {
-        Id('saveBox').style.display = "none";
-        }
-        window.onclick = function(event) {
-          if (event.target == Id('saveBox')) {
-            Id('saveBox').style.display = "none";
-          }
-        }
+          my.memberRows = JSON.parse(xhr.responseText);
         } else {
           alert(xhr.status);
         }
       }
+      xhr.open("get", "./php/getMember.php", true);
+      xhr.send(null);
+    },
 
-      xhr.open("post", "./php/updatePhoto.php", true);
-      xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-  
-      let data_info = `newImg=${$id("facePhoto").src}`;
-      xhr.send(data_info);
+    
+//================================
+    updatePhoto() {
+    //點擊後獲取新頭像
+    console.log(1);
+    // let my = this;
+    html2canvas(Id("myPhoto"), {     
+      onrendered: function (canvas) {
+      document.body.appendChild(canvas);
+        
+      let leCanvas = document.getElementsByTagNam("canvas")[0];
+      console.log(leCanvas);
+      let newImg = leCanvas.toDataURL("image/png");  
+        console.log('<img src="' + newImg + '"/>');
+      
+      Id("saveImg").src = newImg ;
+        
+      //跳窗提醒傳入成功
+      let span = document.getElementsByClassName("saveClose")[0];
+      Id('save').onclick = function() {
+      Id('saveBox').style.display = "block";
+      }
+      span.onclick = function() {
+      Id('saveBox').style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == Id('saveBox')) {
+          Id('saveBox').style.display = "none";
+        }
+        }
+        // Id("facePhoto").src = newImg ;
+      },
+      width:320,
+      height:220
+  });
+
+    //傳入後端
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        //傳入後端
+      } else {
+        alert(xhr.status);
+      }
     }
+    xhr.open("post", "./php/updatePhoto.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    let data_info = `newImg=${$id('facePhoto').src}`;
+    xhr.send(data_info);
+  }
+
     //=============
   },
   
   computed: {
     style() {
-      let my = this;
+      const my = this;
       if (my.dinoAcc.type == 0) {
         Id("style").classList.add('hat');
         Id("style").classList.remove('ticket');
@@ -170,8 +201,10 @@ let pageBar = new Vue({
 },
 mounted() {
   this.myAcc();
+  this.member();
 },
-  }); 
+});
+  
 
 
 //================================
