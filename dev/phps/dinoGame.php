@@ -17,19 +17,19 @@ try{
   //isset資料是否存在  
   if( isset($_SESSION['mem_no']) ){
     $mem_no=$_SESSION['mem_no'];
-    $sql = "INSERT INTO `quiz`(quiz_score, mem_no) values (:quiz_score, :mem_no)";
+    $sql = "INSERT INTO `mem_dino`(DINO_NO,mem_no) values (:DINO_NO,:mem_no)";
 
-    $newRank = $pdo->prepare($sql);
-    $newRank->bindValue(":mem_no", $mem_no);
+    $getDino = $pdo->prepare($sql);
+    $getDino->bindValue(":mem_no", $mem_no);
 
   }else{
-    $sql = "INSERT INTO `quiz`(quiz_score, mem_no) values (:quiz_score, null)";
+    $sql =  "INSERT INTO `mem_dino`(DINO_NO,mem_no) values (:DINO_NO,null)";
 
-    $newRank = $pdo->prepare($sql);
+    $getDino = $pdo->prepare($sql);
   } 
 
-  $newRank->bindValue(":quiz_score", $_POST['score']);
-  $newRank->execute();  
+  $getDino->bindValue(":DINO_NO", $_POST['mydino']);
+  $getDino->execute();  
 
 }catch(PDOException $e){
   echo $e->getMessage();
