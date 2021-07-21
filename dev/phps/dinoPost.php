@@ -12,7 +12,7 @@ session_start();
 
     switch ( $_FILES["file"]["error"]){
         case 0:
-            $dir = "./images/disscus";
+            $dir = "../images/disscus";
             //檢查資夾是否存在
             if(file_exists($dir) === false){
                 mkdir($dir);
@@ -22,8 +22,10 @@ session_start();
             copy($from, $to);
         break;
     };
-    print_r([$mem,$article_cate,$title,$content,$to]);
-
+    // echo $_FILES["file"]["error"];
+    // print_r([$mem,$article_cate,$title,$content,$to]);
+    $webdir = "./images/disscus/";
+    $webpic = $webdir.$_FILES['file']['name'];
     $type = $_POST["type"];
             if ($type == "恐龍創作") {
                 $article_cate = "恐龍創作";
@@ -46,7 +48,7 @@ try{
     $article->bindValue(":ART_CATEGORY", $article_cate);
     $article->bindValue(":ART_TITLE", $title);
     $article->bindValue(":ART_CONTENT", $content);
-    $article->bindValue(":ART_PICTURE", $to);
+    $article->bindValue(":ART_PICTURE", $webpic);
     $article->execute(); 
 // -------------------------------------------------------------------------------------------------
 

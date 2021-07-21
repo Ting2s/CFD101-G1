@@ -25,7 +25,7 @@
               <header class="post-info">
                   <h2 class="post-title">{{artRow.art_title}}</h2>
                   <p class="post-date">{{cat}}<span>{{cate}}</span></p>
-                  <p class="post-cat"><i class="fas fa-user-edit"></i> {{artRow.mem_nicname}}&nbsp;&nbsp;<span class="warn" @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
+                  <p class="post-cat"><i class="fas fa-user-edit"></i> {{artRow.mem_nicname}}</p>
               </header>
               <img :src="artRow.art_picture" alt="恐龍知識">
               <p>
@@ -43,7 +43,7 @@
             </div>
             <div class = "disnocontent">
               <h2 class = "disnoname">{{msgRow.msg_content}}</h2>
-              <p class = "category">發表於: {{msgRow.msg_date}}&nbsp;&nbsp; <span @click="showModal = true"><i class="fas fa-exclamation-circle"></i> 檢舉</span></p>
+              <p class = "category">發表於: {{msgRow.msg_date}}</p>
             </div>
           </div>
           <hr>
@@ -53,20 +53,6 @@
                 <textarea id="single" name="text" placeholder="" style="height:100px" v-model="input"></textarea>
                 <button class="dinbtn" type="button" @click="send_data">送出</button> 
               </form>
-          </div>
-          <div class="clickbac" v-if="showModal">
-            <div class="modal">
-              <div class="cross"><i class="fas fa-times" @click="showModal = false"></i></div>
-             <h1>檢舉原因</h1>
-             <form action="">
-                <label><input type="radio" name="result" value="惡意中傷">惡意中傷</label><br>
-                <label><input type="radio" name="result" value="散布謠言">散布謠言</label><br>
-                <label><input type="radio" name="result" value="不雅字眼">不雅字眼</label><br>
-              <br>
-              <input class="button" type="button" value="送出" @click="showModal = false">
-              </input>
-             </form>
-            </div>
           </div>
         </div>
         <script src="./js/dinoSinpage.js"></script>

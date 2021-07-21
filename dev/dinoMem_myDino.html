@@ -57,13 +57,12 @@
               <img src="images/dinoPersonal/prod4.png" alt="" id="myBack" class="draggable ui-widget-content">
             </div>
 
-            <div class="myPhoto" id="myPhoto">
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
               <!-- 頭貼 -->
-              <img :src="memberRows[0].mem_img" id="facePhoto">
+              <img :src="member.mem_img" id="facePhoto">
+
+              <h3>{{member.mem_nicname}}</h3>
             </div>
-
-            <h3>{{memberRows[0].mem_nicname}}</h3>
-
           </div>
         </div>
 
