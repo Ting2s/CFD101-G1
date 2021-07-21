@@ -265,6 +265,9 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
 // RWD(1024px)ipad
 
 @media screen and (max-width: 1024px) {
+  .land{
+    height: 768px;
+  }
   .guide{
     font-size: 2em;
   }
@@ -277,21 +280,27 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
   .text-wrapper{
     left: 25%;
   }
+  .stegosaurus{
+    top: 10%;
+  }
   .nest{
     position: absolute;
     width: 20%;
-    top: 72%;
-    left: 40%;
+    top: 65%;
+    left: 41%;
     z-index: 10;
   }
+  
   .typing{
-    left: 20%;
+    font-size: 2em;
+    left: 30%;
   }
 }
 
 // RWD(812px) iphone X
 
 @media screen and (max-width: 812px) {
+  
   .cloud-sea{
     top: 1%;
     height: 153px;
@@ -319,26 +328,41 @@ from, to { box-shadow: 1px 0 0 0 transparent; }
     width: 100px;
     top: 10px;
   }
+  // .wave-0{
+  //   top: 90px;
+  // }
+  // .wave-1{
+  //   top: 170px;
+  //   height: 30%;
+  // }
+ 
+  // .wave-3{
+  //   top: 170px;
+  // }
   .text-wrapper{
     left: 30%;
     font-size: 2em;
   }
   .plesiosaurus{
-    top: 10%;
+    top: -10%;
     width: 30%;
     object-fit: contain;
+  }
+  .land{
+    height: 375px;
   }
   .stegosaurus{
     width: 50%;
     object-fit: contain;
-    top: 5%;
+    top: -18%;
   }
   .typing{
+    top: 25%;
     left: 24%;
     font-size: 2em;
   }
   .eggmove{
-    top: 50%;
+    top: 60%;
    
   }
   .nest{

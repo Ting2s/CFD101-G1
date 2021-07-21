@@ -34,9 +34,14 @@
         <div class="perPhoto">
           <h1>會員中心</h1>
           <!-- 頭貼框 -->
-          <div class="perFrame">
-            <img src="images/dinoPersonal/d1.png" alt="">
-            <h3>龍春暉</h3>
+          <div class="perFrame" id="perFrame">
+
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
+              <!-- 頭貼 -->
+              <img :src="member.mem_img" id="facePhoto">
+
+              <h3>{{member.mem_nicname}}</h3>
+            </div>
           </div>
         </div>
 
@@ -77,10 +82,10 @@
                 <ul v-for="obj, index in getSmallList" id="ul_1">
 
                   <li id="li_1">
-
                     <button class="deleteCard" onclick="delete_go(this)">
                     </button>
-                    <input type="button" :value="obj.card_title">
+                    <span id="cardNO" style="display: none;">{{obj.card_no}}</span>
+                    <input type="button" value="我的明信片">
                     <img :src="obj.card_img" alt="" onclick="openModel(this)">
                   </li>
 
@@ -102,10 +107,11 @@
                 <ul v-for="obj, index in getSmallList_lub">
 
                   <li>
-                    <button class="deleteCard">
+                    <button class="deleteCard" onclick="delete_go(this)">
                     </button>
-                    <input type="button" :value="obj.card_title">
-                    <img :src="obj.favorite_img" alt="" onclick="openModel(this)">
+                    <span id="cardNO" style="display: none;">{{obj.card_no}}</span>
+                    <input type="button" value="珍藏明信片">
+                    <img :src="obj.card_img" alt="" onclick="openModel(this)">
                   </li>
 
                 </ul>

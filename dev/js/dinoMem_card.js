@@ -6,39 +6,11 @@ let pageBar = new Vue({
   data: {
     postcard: "",
     //我的明信片
-    cards: [
-      {
-        card_img: "images/dinoPersonal/example3.jpg",
-        value:"我與恐龍"
-      },
-      {
-        card_img: "images/dinoPersonal/example3.jpg",
-        value:"我與恐龍"
-      },
-      {
-        card_img: "images/dinoPersonal/example3.jpg",
-        value:"我與恐龍"
-    },
-    ],
+    cards: [],
     //明信片收藏
-    lubcards: [
-      {
-        favorite_img: "images/dinoPersonal/example4.jpg",
-        value:"他與恐龍"
-      },
-      {
-        favorite_img: "images/dinoPersonal/example3.jpg",
-        value:"別人的恐龍"
-      },
-      {
-        favorite_img: "images/dinoPersonal/example3.jpg",
-        value:"恐龍"
-      },
-      {
-        favorite_img: "images/dinoPersonal/example3.jpg",
-        value:"黑暗恐龍"
-      },
-    ],
+    lubcards: [],
+    //會員資料
+    memberRows:[],
     currentPage: 1
   },
   methods: {
@@ -49,12 +21,57 @@ let pageBar = new Vue({
       if (this.currentPage > 1) {
         this.currentPage--;
       }
-    }
+    },
+
+    //拉我的明信片
+    myCard() {
+      const xhr = new XMLHttpRequest();
+      const my = this;
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          my.cards = JSON.parse(xhr.responseText);
+        } else {
+          alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getMyCard.php", true);
+      xhr.send(null);
+    },
+
+    //拉別人的明信片
+    cardFavorite() {
+      const xhr = new XMLHttpRequest();
+      const my = this;
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          my.lubcards = JSON.parse(xhr.responseText);
+        } else {
+          alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getLubcards.php", true);
+      xhr.send(null);
+    },
+
+    //個人資料
+    member() {
+      const xhr = new XMLHttpRequest();
+      const my = this;
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          my.memberRows = JSON.parse(xhr.responseText);
+        } else {
+          alert(xhr.status);
+        }
+      }
+      xhr.open("get", "./php/getMember.php", true);
+      xhr.send(null);
+    },
 
   },
 
   computed: {
-    //我的恐龍
+    //我的明信片
     getSmallList() {
       return this.cards.filter((item, index) => {
         return (
@@ -84,12 +101,19 @@ let pageBar = new Vue({
     getLastPage_lub() {
       return Math.ceil(this.lubcards.length / maxItemPerPage);
     }
-  }
+  },
 
+  mounted() {
+    this.myCard();
+    this.cardFavorite();
+    this.member();
+  }
   }); 
 
 
-
+  function Id(id){
+    return document.getElementById(id);
+  }; 
 
 //===================================================
 let card_btn = document.getElementById("card_btn");
@@ -118,12 +142,45 @@ myCard_btn.addEventListener("click", function () {
 
 
 
-
-
-
-
-
 //-----------------------------------
+//刪除我的明信片
+function delete_go() {
+
+  let deleteTable = Id("deleteTable");
+  deleteTable.style.display = 'block';
+
+
+  let dele_close = Id('dele_close');
+  dele_close.addEventListener("click", function () {
+    deleteTable.style.display = "none";
+  })
+  
+  let cancelBtn = Id('cancelBtn');
+  cancelBtn.addEventListener("click", function () {
+    deleteTable.style.display = "none";
+  })
+  let deleteBtn = Id("deleteBtn");
+  deleteBtn.addEventListener("click", function (e) {
+    deleteTable.style.display = 'none';
+    
+  
+    //後端刪除
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        //傳入後端
+        alert("成功刪除！");
+      } else {
+        alert(xhr.status);
+      }
+    }
+    xhr.open("post", "./php/deleteCard.php", true);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    let data_info =`card_no=${Id("cardNO").value}`;
+    xhr.send(data_info);
+})
+}
 
 //-----------------------------------
 //刪除明信片

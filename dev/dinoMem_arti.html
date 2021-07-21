@@ -33,11 +33,14 @@
         <div class="perPhoto">
           <h1>會員中心</h1>
           <!-- 頭貼框 -->
-          <div class="perFrame">
+          <div class="perFrame" id="perFrame">
 
-            <img src="images/dinoPersonal/d1.png" alt="">
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
+              <!-- 頭貼 -->
+              <img :src="member.mem_img" id="facePhoto">
 
-            <h3>龍春暉</h3>
+              <h3>{{member.mem_nicname}}</h3>
+            </div>
           </div>
         </div>
 
