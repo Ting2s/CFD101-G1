@@ -68,3 +68,81 @@ body {
 .bt-2 img:hover{
     bottom: 24%;
 }
+
+// ----------------------------RWD(1024px)
+
+@media screen and (max-width: 1024px) {
+    .text {
+      width: 43%;
+      left: 9%;
+      top: 4%;
+    }
+  
+    .text img:nth-child(1) {
+      margin-top: 4%;
+      width: 100%;
+    }
+  
+    .text img:nth-child(2) {
+      margin-top: 4%;
+      width: 100%;
+    }
+  
+    .dino-sea {
+        width: 66%;
+        left: 46%;
+        top: 50%;
+    }
+  
+    .bt-1 img {
+      width: 19%;
+      right: 9%;
+      bottom: 45%;
+    }
+  
+    .bt-2 img {
+      width: 14%;
+      right: 13%;
+      bottom: 32%;
+    }
+  
+    //bt hover
+    .bt-1 img:hover {
+      bottom: 46%;
+    }
+  
+    .bt-2 img:hover {
+      bottom: 31%;
+    }
+  }
+
+  // ----------------------------RWD(812px)
+
+@media screen and (max-width: 812px) {
+    .text {
+      width: 35%;
+    }
+  
+    .dino-sea {
+      width: 49%;
+      left: 45%;
+      top: 52%;
+    }
+  
+    .bt-1 img {
+      width: 16%;
+      right: 17%;
+    }
+  
+    .bt-2 img {
+      width: 13%;
+      right: 19%;
+      bottom: 28%;
+    }
+    //bt hover
+  
+    .bt-2 img:hover {
+      bottom: 27%;
+    }
+  
+  }
