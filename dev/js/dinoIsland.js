@@ -7,6 +7,7 @@ let dino_3 = document.querySelector('.Dino-3');
 let intItem_4 = document.querySelector('.intItem-4');
 let dino_4 = document.querySelector('.Dino-4');
 let intItem_5 = document.querySelector('.intItem-5');
+let dino_5_col = document.querySelector('.Dino-5-col');
 let dino_5 = document.querySelector('.Dino-5');
 let intItem_6 = document.querySelector('.intItem-6');
 let dino_6 = document.querySelector('.Dino-6');
@@ -51,6 +52,12 @@ dino_5.addEventListener('mouseenter', () => {
     intItem_5.style.display = `block`
 });
 dino_5.addEventListener('mouseleave', () => {
+    intItem_5.style.display = `none`
+});
+dino_5_col.addEventListener('mouseenter', () => {
+    intItem_5.style.display = `block`
+});
+dino_5_col.addEventListener('mouseleave', () => {
     intItem_5.style.display = `none`
 });
 
