@@ -9,7 +9,7 @@ try{
   $data = json_decode($_POST["data"],true); 
   $cartTotal = $data["cartTotal"];
   $items = $data["items"];
-
+  $_SESSION["mem_no"]=1;
 
       if(isset($_SESSION["mem_no"])){ //已登入 ===================沒有成功判斷
 
