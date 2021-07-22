@@ -9,11 +9,12 @@ try{
   $data = json_decode($_POST["data"],true); 
   $cartTotal = $data["cartTotal"];
   $items = $data["items"];
-  $_SESSION["mem_no"]=1;
+
+  // $_SESSION["mem_no"]=1;
 
       if(isset($_SESSION["mem_no"])){ //已登入 ===================沒有成功判斷
 
-            echo $_SESSION["mem_no"];
+            // echo $_SESSION["mem_no"];
             $mem_no = $_SESSION["mem_no"];
             $sql="insert into orders value(null, $mem_no, now(), $cartTotal)";
             $pdo->exec($sql);

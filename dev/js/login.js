@@ -96,9 +96,11 @@ $id('logout').addEventListener('click', function () {
 
 //==========================================
 
-function init() {
+
+window.addEventListener("load", function(){
   checkLog();
   $id('signup_btn').onclick = signForm;
-  $id('login_btn').onclick = sendForm;
-}; 
-window.onload = init;
+  $id('login_btn').onclick = sendForm;  
+})
+
+

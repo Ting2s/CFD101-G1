@@ -433,7 +433,11 @@ function init(){
   doFirst();
 }
 
-window.onload = init;  
+
+window.addEventListener('load',function(){
+    init();
+});
+// window.onload = init;  
 // =================================================================================================
 
 
