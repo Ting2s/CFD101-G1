@@ -67,7 +67,6 @@ flex-wrap: wrap;
     text-align: center;
   }
   }
-
 }
 
 
@@ -251,5 +250,76 @@ flex-wrap: wrap;
 @media screen and (max-width: 300px) {
   .cancelBtn, .deleteBtn {
   width: 100%;
+  }
+}
+
+// RWD(1024px)ipad
+
+@media screen and (max-width: 1024px) {
+  .perFrame{
+    width: 20%;
+    margin: 5px 30px;
+  }
+  .conFrame{
+    width: 600px;
+  }
+  .conBtn{
+    position: absolute;
+    top: 10%;
+    padding: 0;
+
+  }
+  .conBtn button{
+    width: 120px;
+    margin: 0 10px;
+  }
+}
+
+
+// RWD(812px) iphone X
+
+@media screen and (max-width: 812px) {
+  .perPhoto .perFrame{
+
+    margin: 5px 10px ;
+  }
+  .conFrame{
+    width: 600px;
+  }
+  .conBtn{
+    position: absolute;
+    top: 10%;
+    padding: 0;
+
+  }
+  .conBtn button{
+    width: 60px;
+    margin: 0 10px;
+  }
+  .conFrame{
+    width: 600px;
+  }
+  .conBtn{
+    position: absolute;
+    top: 10%;
+    padding: 0;
+
+  }
+  .conBtn button{
+    width: 120px;
+    margin: 0 10px;
+  }
+  .conFrame{
+    width: 450px;
+  }
+  .conBtn{
+    position: absolute;
+    top: 10%;
+    padding: 0;
+
+  }
+  .conBtn button{
+    width: 120px;
+    margin: 0 10px;
   }
 }

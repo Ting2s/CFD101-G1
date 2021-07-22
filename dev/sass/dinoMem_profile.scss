@@ -54,9 +54,26 @@ form button {
   background-color: white;
   border: 0;
   padding: 10px 15px;
+  margin: 10px 0;
   border-radius: 3px;
   width: 250px;
   cursor: pointer;
   font-size: 18px;
   transition-duration: 0.25s;
+}
+form #change-button{
+  background-color: $yellow-second;
+}
+
+// RWD(1024px)ipad
+
+@media screen and (max-width: 1024px) {
+  
+  }
+}
+
+// RWD(812px) iphone X
+
+@media screen and (max-width: 812px) {
+
 }
