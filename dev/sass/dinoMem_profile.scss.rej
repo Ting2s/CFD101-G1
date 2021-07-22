@@ -1,0 +1,15 @@
+diff a/dev/sass/dinoMem_profile.scss b/dev/sass/dinoMem_profile.scss	(rejected hunks)
+@@ -67,10 +67,10 @@
+ 
+ // RWD(1024px)ipad
+ 
+-@media screen and (max-width: 1024px) {
++// @media screen and (max-width: 1024px) {
+   
+-  }
+-}
++//   }
++
+ 
+ // RWD(812px) iphone X
+ 
