@@ -25,7 +25,7 @@ transition: all .5s ease-in-out;;
 //==================================
 .loginWrap {
 position: relative;
-
+overflow: hidden;
 width: 100vw;
 height: 100vh;
 background-image: url(../images/dinoPersonal/jungle.png);
@@ -272,4 +272,36 @@ float: left;
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
+}
+
+
+//==================================
+@media screen and (max-width: 1024px){
+
+}
+
+//==================================
+@media screen and (max-width: 812px) {
+.loginCon {
+  background-image: none;
+  top: 40%;
+  height: 500px;
+}
+.conBack {
+  top: 52%;
+  height: 300px;
+}
+.forms {
+  top: 150px;
+  height: 300px;
+}
+.loginStr {
+  top: 80px;
+}
+.form_signup>input {
+  padding: 10px 2px;
+  margin-left: 10px;
+  margin-top: 8px;
+  width: 240px;
+}
 }

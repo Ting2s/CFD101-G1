@@ -66,30 +66,30 @@ li {
     padding: 0;
 }
 
-.Avatar-item{
+.Avatar-item {
     width: 10%;
     padding: 0 30;
     position: relative;
     display: none;
- }
+}
 
- .Member{
-     background-color: rgba(0, 0, 0, 0.623);
-     right: -90%;
-     bottom: -10px;
-     z-index: 100;
-     position: absolute;
-     padding: 10%;
-     border-radius: 5px;
-     display: none;
- }
+.Member {
+    background-color: rgba(0, 0, 0, 0.623);
+    right: -90%;
+    bottom: -10px;
+    z-index: 100;
+    position: absolute;
+    padding: 10%;
+    border-radius: 5px;
+    display: none;
+}
 
- .Member p{
-     font-size: 18px;
-     color: white;
- }
+.Member p {
+    font-size: 18px;
+    color: white;
+}
 
- .Avatar-box{
+.Avatar-box {
     position: fixed;
     top: 12vh;
     right: 1vw;
@@ -100,48 +100,50 @@ li {
     align-items: center;
     border-radius: 15px;
     z-index: 99;
- }
+}
 
- .Avatar_p{
-     margin: 20px 0 15px 10px;
-     font-size: 30px;
-     font-family: 'DFPLiYuan';
-     letter-spacing: 10px;
- }
+.Avatar_p {
+    margin: 20px 0 15px 10px;
+    font-size: 30px;
+    font-family: 'DFPLiYuan';
+    letter-spacing: 10px;
+}
 
-  .MemberCentre-bt, .SignOut-bt{
-     width: 50%;
-     margin: 30px 0;
-     background-color: #007936;
-     color: white;
-     font-family: 'DFPLiYuan';
-     font-size: 18px;
-     letter-spacing: 8px;
-     padding: 10px;
-     border-radius: 10px;
- }
+.MemberCentre-bt,
+.SignOut-bt {
+    width: 50%;
+    margin: 30px 0;
+    background-color: #007936;
+    color: white;
+    font-family: 'DFPLiYuan';
+    font-size: 18px;
+    letter-spacing: 8px;
+    padding: 10px;
+    border-radius: 10px;
+}
 
-.SignOut-bt{
+.SignOut-bt {
     background-color: rgb(197, 197, 197);
     margin-top: 8px;
 }
 
- hr{
-     width: 80%;
-     margin-top: 20px;
-     height: 3px;
-     background-color: rgba(165, 165, 165, 0.781);
- }
+hr {
+    width: 80%;
+    margin-top: 20px;
+    height: 3px;
+    background-color: rgba(165, 165, 165, 0.781);
+}
 
- .Avatar-box img{
-     padding-top: 5%;
-     width: 40%;
-     margin: auto;
- }
+.Avatar-box img {
+    padding-top: 5%;
+    width: 40%;
+    margin: auto;
+}
 
 
 
-.SignIn img, .Avatar img {
+.SignIn img,
+.Avatar img {
     width: 100%;
 }
 
@@ -175,6 +177,10 @@ li {
         padding: 0;
     }
 
+    .Avatar-box {
+        width: 26%;
+    }
+
 
     .Island {
         width: 7%;
@@ -202,10 +208,10 @@ li {
 
 //出現消失
 
-.remove{
+.remove {
     display: none;
 }
 
-.show{
+.show {
     display: flex;
 }
