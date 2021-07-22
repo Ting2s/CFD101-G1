@@ -55,8 +55,8 @@
 
             <a href="dinoMem_card.html"> <button class="light">明信片收藏</button></a>
 
-            <a href="dinoMem_arti.html">
-              <button class="dark">文章收藏</button></a>
+            <!-- <a href="dinoMem_arti.html">
+              <button class="dark">文章收藏</button></a> -->
           </div>
 
           <!-- 大板子內容 -->
@@ -112,7 +112,7 @@
                   <li>
                     <button class="deleteCard" @click="delete_go_lub(this,index)">
                     </button>
-                    <span id="cardNO" style="display: none;">{{obj.card_no}}</span>
+                    <span id="cardNO_lub" style="display: none;">{{obj.card_no}}</span>
 
                     <input type="button" value="珍藏明信片">
                     <img :src="obj.card_img" onclick="openModel(this)">

@@ -16,6 +16,8 @@ try{
   $newPhoto->bindValue(":card_no", $_POST['card_no']);
   $newPhoto->execute();  
 
+  echo $mem_no;
+  echo $_POST['card_no'];
   
 }catch(PDOException $e){
   echo $e->getMessage();

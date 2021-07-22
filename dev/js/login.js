@@ -43,7 +43,6 @@ function checkLog() {
     $id('Avatar').style.display = "block";
     $id('SignIn').classList.add("remove");
     }
-    console.log(member);
   }
   xhr.open("get", "./php/checkLog.php",true);
   xhr.send(null);
@@ -81,7 +80,8 @@ $id('logout').addEventListener('click', function () {
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status == 200) {
-      alert("已順利登出！");     
+      member = {};
+      alert("已順利登出！");
       //歸還登入鍵
       $id('Avatar').style.display = "none";
       $id('SignIn').classList.remove("remove");
