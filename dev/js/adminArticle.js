@@ -32,7 +32,7 @@ let data = {
             alert(xhr.status);
           }
         }
-        xhr.open("post", "./php/adminstatus.php", true);
+        xhr.open("post", "./php/adminStatus.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
         console.log(xhr);
         xhr.send(bo);

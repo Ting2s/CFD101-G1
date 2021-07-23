@@ -14,16 +14,16 @@ session_start();
     //------------------
 try{
     require_once("../connect_cfd101g1.php");
-    $sql = "INSERT INTO MSG_ART(
-                MEM_NO,ART_NO,MSG_CONTENT,MSG_STATUS
+    $sql = "INSERT INTO msg_art(
+                mem_no,art_no,msg_content,msg_status
             ) 
             VALUES(
-                :MEM_NO,:ART_NO,:MSG_CONTENT,1)";
+                :mem_no,:art_no,:msg_content,1)";
     
     $msgart = $pdo->prepare($sql);
-    $msgart->bindValue(":MEM_NO", $mem);
-    $msgart->bindValue(":MSG_CONTENT", $content);
-    $msgart->bindValue(":ART_NO", $cop);
+    $msgart->bindValue(":mem_no", $mem);
+    $msgart->bindValue(":msg_content", $content);
+    $msgart->bindValue(":art_no", $cop);
     $msgart->execute(); 
 // -------------------------------------------------------------------------------------------------
 

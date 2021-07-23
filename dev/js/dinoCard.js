@@ -7,12 +7,13 @@ window.onload = function () {
       console.log('e', e);
       e.preventDefault();
       let fetchImg = lc.getImage().toDataURL()
+      //fetchImg = fetchImg.replace("data:image/png;base64,", "");
       console.log('fetchImg', fetchImg);
 
       document.getElementById('hidden_data').value = fetchImg;
       var formData = new FormData(document.getElementById("myForm"));
       var xhr = new XMLHttpRequest();
-
+      
       xhr.onload = function () {
         if (xhr.status == 200) {
           alert('Succesfully uploaded'); 
@@ -25,6 +26,10 @@ window.onload = function () {
         }
       };
 
+      //----------------
+     
+      //----------------
+
   xhr.open('POST', './php/makeCard.php', true); 
 
   xhr.send(formData);
@@ -32,7 +37,7 @@ window.onload = function () {
   }, false);
   
 
-
+  
 // canvas.toDataURL() --> dataURL base64
 };
 
