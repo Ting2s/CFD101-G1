@@ -1,3 +1,4 @@
+let pageNo = 0;
 let vm = new Vue({
     el: "#app",
     data: {
@@ -5,6 +6,35 @@ let vm = new Vue({
     },
     methods: {
       getcard_favorite(){
+        pageNo ++;
+        let xhr = new XMLHttpRequest();
+        let self =this
+        xhr.onload = function(){
+          
+          if(xhr.status == 200){
+            self.favRows = JSON.parse(xhr.responseText);
+            //let xhr2 = new XMLHttpRequest();
+            //xhr2.open("get","getMyFavorie.php",true);
+          }else{
+            alert(xhr.status);
+          }
+        }
+        console.log("=======",window.innerWidth);
+        let records;
+        if(window.innerWidth>812){
+          records = 8;
+        }else{
+          records = 4;
+        }
+        xhr.open("get", "./php/getCard.php?pageNo="+pageNo+"&records="+records, true);
+        //xhr.open("get", "./php/card_favorite.php", true);
+        //xhr.open("get", "./php/getCard.php?pageNo="+pageNo, true);
+        console.log(xhr);
+        xhr.send(null);
+      },
+      getcard_favorite2(){
+        if (pageNo == 1) return;
+        pageNo --;
         let xhr = new XMLHttpRequest();
         let self =this
         xhr.onload = function(){
@@ -16,8 +46,17 @@ let vm = new Vue({
             alert(xhr.status);
           }
         }
+        console.log("=======",window.innerWidth);
+        let records;
+        if(window.innerWidth>812){
+          records = 8;
+        }else{
+          records = 4;
+        }
+        xhr.open("get", "./php/getCard.php?pageNo="+pageNo+"&records="+records, true);
+
         //xhr.open("get", "./php/card_favorite.php", true);
-        xhr.open("get", "./php/getCard.php", true);
+        //xhr.open("get", "./php/getCard.php?pageNo="+pageNo, true);
         console.log(xhr);
         xhr.send(null);
       },
@@ -65,19 +104,16 @@ let vm = new Vue({
  
     
       mounted() {
-        //this.getcard_favorite()
-        this.getcard_favorite(),
-
-        function(){
-          this.init();
-        }
+        this.getcard_favorite();
+        document.getElementById("previousPageButton").onclick = this.getcard_favorite2;
+        document.getElementById("nextPageButton").onclick = this.getcard_favorite;
       },
-  
+
     })
 
   
   $(document).ready(function(){
-
+    
     $(function(){
       $('.pic').on('click',function(){
         var src = $(this).attr('src');
