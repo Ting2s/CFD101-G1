@@ -6,7 +6,7 @@
 body {
   background-color: rgb(143, 213, 223);
   font-family:'DFPLiYuan';
-  //   overflow-y: hidden;
+//     overflow-y: hidden;
 }
 
 .none{
@@ -378,7 +378,7 @@ body {
       }
       .arrow{
             transform: translate(0,-100%);
-            // z-index: 10;
+            z-index: 10;
       }
       .arrow span{
             font-size: 20px;  
@@ -480,9 +480,9 @@ body {
           position: absolute;  
           top: 200%;
           left: 200%;
-      //     transform: translateY(90%);
+          transform: translateY(90%);
           z-index: 300;
-      }  
+      } 
       .groundImgCard{
             width: 50%;
       }
