@@ -32,7 +32,7 @@ let data_info = `mem_id=${$id("mem_id").value}&mem_pw=${$id("mem_pw").value}`;
 xhr.send(data_info);
 }
 
-let member;
+var member;
 function checkLog() {
   let xhr = new XMLHttpRequest();
 
@@ -80,7 +80,6 @@ $id('logout').addEventListener('click', function () {
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
     if (xhr.status == 200) {
-      member = {};
       alert("已順利登出！");
       //歸還登入鍵
       $id('Avatar').style.display = "none";
