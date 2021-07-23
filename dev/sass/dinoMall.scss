@@ -253,7 +253,7 @@ body {
 .cart{
       position: relative;
       width: 10%;
-      transform: translate(30%,90%);
+      // transform: translate(30%,90%);
 }
 #counter{
       font-size: 26px;
@@ -432,59 +432,6 @@ body {
             transform: translate(20%,60%);
       }
       
-
   }
   
-
-  @media screen and (max-width: 817px){
-      .wrapMall {
-            position: relative;
-            padding-top: 2%;
-            align-items: center;
-        }
-      .title{
-            width: 100%;
-      transform: translate(-300%,100%);
-      padding: 8px;
-      }
-      .title h3{
-            font-size: 20px;
-      }  
-    .itemLeft{
-          width: 90%;
-          transform: translateY(-10%);
-    } 
-    .groundButton{
-          transform: translateY(-30%);
-    }
-    .itemRight{
-            width: 70%;
-            transform: translate(10%,-10%);
-      } 
-      .groundTitle{
-            position: relative;
-      }
-      .arrow {
-            transform: translate(0,-20%);
-      }
-      #showName{
-            font-size: 15px;
-      }
-      .cart{
-          width: 50%;  
-          position: absolute;  
-          top: 200%;
-          left: 200%;
-      //     transform: translateY(90%);
-          z-index: 300;
-      }  
-      .groundImgCard{
-            width: 50%;
-      }
-      .btnCard-1{
-            transform: translate(40%,-30%);
-      }
-      .shopItemPrice{
-            font-size: 12px;
-      }
 }
