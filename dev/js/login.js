@@ -32,16 +32,18 @@ let data_info = `mem_id=${$id("mem_id").value}&mem_pw=${$id("mem_pw").value}`;
 xhr.send(data_info);
 }
 
+let member;
 function checkLog() {
   let xhr = new XMLHttpRequest();
 
   xhr.onload = function () {
-    let member = JSON.parse(xhr.responseText);
+    member = JSON.parse(xhr.responseText);
     if (member.mem_id != undefined) {
     //替換登入鍵
     $id('Avatar').style.display = "block";
     $id('SignIn').classList.add("remove");
     }
+    console.log(member);
   }
   xhr.open("get", "./php/checkLog.php",true);
   xhr.send(null);
@@ -96,11 +98,8 @@ $id('logout').addEventListener('click', function () {
 
 //==========================================
 
-
 window.addEventListener("load", function(){
   checkLog();
   $id('signup_btn').onclick = signForm;
   $id('login_btn').onclick = sendForm;  
 })
-
-

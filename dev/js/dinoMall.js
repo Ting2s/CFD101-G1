@@ -314,7 +314,14 @@ function closeModalBoxB(){
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
   };
 
-  function purchaseClicked(){    
+  function purchaseClicked(){   
+    
+    if(member.mem_id == undefined){
+        alert("請先登入會員") ;
+        // console.log(member);
+        return; 
+    }
+
     //  POST PHP -> SERVER
     postCart();
 
@@ -338,7 +345,7 @@ function closeModalBoxB(){
 
 
 // =========================================================
-function init(){
+function myinit(){
   // let imgs =  document.getElementsByClassName("imgClass");
   // 點擊 帽子
   let imgs =  document.querySelectorAll('.imgClassHat');
@@ -435,7 +442,7 @@ function init(){
 
 
 window.addEventListener('load',function(){
-    init();
+    myinit();
 });
 // window.onload = init;  
 // =================================================================================================
