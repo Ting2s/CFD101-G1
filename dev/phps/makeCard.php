@@ -13,14 +13,15 @@ try{
     //   echo  json_encode($result);
     // };
 
+
     $img = $_POST['hidden_data'];
-    $img = str_replace('data:image/png;base64,', '', $img);
-    // $img = str_replace(' ', '+', $img);
+    //$img = str_replace('data:image/png;base64,', '', $img);
+    $img = str_replace('', '+', $img);
     $data = base64_decode($img);
     $fileName = date("Ymd");
     $file = $fileName; //  20210709
-    $success = file_put_contents($file, $data); 
-
+    $success = file_put_contents($file, $data);
+    
     $sql = "INSERT INTO `card` (`card_no`, `card_img`,`card_status`,`mem_no`) VALUES (null,$file,0,1)";
     $dino = $pdo->exec($sql);
 
