@@ -102,7 +102,7 @@ function openModalBoxC(){
   ct++;
   if(ct>2){
     alert("最多儲存 2 張");
-    return -1;
+    return;
   };
   // 打開 MallModalBoxC.html
   getId("bg-modal").style.display='flex';
