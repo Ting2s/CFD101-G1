@@ -65,8 +65,13 @@ form #change-button{
   background-color: $yellow-second;
 }
 
-// RWD(812px) iphone X
+// RWD ipad 
 
-// @media screen and (max-width: 812px) {
-
-// }
+@media screen and (max-width: 1024px) {
+  form input{
+    margin: 0 auto 10px auto;
+  }
+  form button {
+    margin:5px 0;
+  }
+}
