@@ -51,12 +51,12 @@ form input:focus {
   color: $black;
 }
 form button {
+  width: 250px;
   background-color: white;
   border: 0;
   padding: 10px 15px;
   margin: 10px 0;
   border-radius: 3px;
-  width: 250px;
   cursor: pointer;
   font-size: 18px;
   transition-duration: 0.25s;
@@ -65,6 +65,34 @@ form #change-button{
   background-color: $yellow-second;
 }
 
+<<<<<<< HEAD
+=======
+// RWD(1024px)ipad
+
+@media screen and (max-width: 1024px) {
+  form{
+  margin: 5px;
+  padding: 10px 0;
+  transform: translateY(20%); 
+  }
+  form input{
+  width: 200px;
+  padding: 10px 5px;
+  margin: 0 auto 10px auto;
+  }
+  form button{
+  width: 200px;
+  padding: 10px 15px;
+  margin-top: 5px;
+  }
+  span{
+  position: absolute;
+  top: 10%;
+  }
+}
+
+
+>>>>>>> tingting
 // RWD(812px) iphone X
 
 // @media screen and (max-width: 812px) {

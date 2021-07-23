@@ -239,12 +239,20 @@ body {
       transform: translate();
 }
 #counter{
-      transform: translate(-900%,180%);
+      transform: translate(-750%,180%);
 }
 .btnSelect{
       width: 40%;
 }
-
+.imgClassHat {
+      transform: translateY(40%);
+}
+.shopItemPrice{
+      transform: translateY(90%);
+}
+.smallCart{
+      transform: translateY(60%);
+}
 //  Mall_Modal_BoxC   
 .bg-modal{    
       @include posiTion(absolute,0,null){
@@ -328,6 +336,9 @@ body {
             transform: translate(-10%,0);
             width: 120%;
       }
+      .itemRight{
+            transform: translateX(10%);
+      }
       .btnSelect{
             width: 50%;
       }
@@ -346,18 +357,28 @@ body {
             font-size: 20px;  
       }
       .imgCard{
-            margin-bottom: 30px;
+            margin: 0, 10px;
       }
       .card{
             width: 100%;
-            margin: 0;
+            margin: 15px;
+            transform: translateX(-10%);
       }
       .card img{
-            transform: translateY(10%);  
+            transform: translateY(30%);  
+      }
+      .cart{
+            width: 20%;
+            transform: translate(10%,-20%);
       }
       .cart img{
             width: 100%;
             transform: translateY(50%);
+      }
+      #counter{
+            font-size: 25px;
+            transform: translate(10%,90%);
+            z-index: 20;
       }
       .wrapMall .itemLeft .groundButton .btnSelect{
             font-size: 17px;
@@ -371,7 +392,7 @@ body {
             font-size: 10px;
       }
       .btnCard-1{
-            transform: translate(0,-7%);
+            transform: translate(0,-30%);
       }
       .shopItemPrice{
             transform: translateY(40%);
@@ -381,11 +402,9 @@ body {
       }
       .smallCart{
             width: 30%;
-            transform: translate(106%,30%);
+            transform: translate(106%,60%);
       }
-      #counter{
-            transform: translate(10%,50%);
-      }
+      
 
   }
   
