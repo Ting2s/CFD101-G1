@@ -1,3 +1,7 @@
+function Id(id) {
+  return document.getElementById(id);
+}; 
+
 new Vue({
   el: '#app',
   data: {
@@ -19,7 +23,7 @@ new Vue({
       }
       xhr.open("get", "./php/getMember.php", true);
       xhr.send(null);
-    },
+    }
   },
   mounted() {
     this.member();
