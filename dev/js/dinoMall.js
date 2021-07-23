@@ -351,7 +351,7 @@ function closeModalBoxB(){
 
 
 // =========================================================
-function myinit(){
+function myInit(){
   // let imgs =  document.getElementsByClassName("imgClass");
   // 點擊 帽子
   let imgs =  document.querySelectorAll('.imgClassHat');
@@ -437,7 +437,7 @@ function myinit(){
   } // myinit()
 
   window.addEventListener('load',function(){
-      myinit();
+      myInit();
   });
 // window.onload = init;  
 // =================================================================================================
