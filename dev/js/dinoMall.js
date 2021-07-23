@@ -68,7 +68,7 @@ function showImgSticks(e){
       for(let i=0;i<kk.length;i++){
         kk[i].style.display="none";
       };
-      getId("showName").innerText = "紋身貼紙";
+      getId("showName").innerText = "貼紙";
 };
 
 function nextPageshowImg(){
