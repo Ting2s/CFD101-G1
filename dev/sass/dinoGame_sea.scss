@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'DFPLiYuan';
     src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
-  }
+}
 
 body {
     height: 100vh;
@@ -10,6 +10,29 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+//--------------------
+
+.Avatar_p {
+    padding-left: 37%;
+}
+
+.MemberCentre-bt,
+.SignOut-bt {
+    margin-left: 25%;
+}
+
+.SignOut-bt {
+    background-color: rgb(197, 197, 197);
+    margin-top: 8px;
+}
+
+
+.Avatar-box img {
+    padding-left: 30%;
+}
+
+//--------------------
 
 .GameRange {
     width: 100%;
@@ -219,6 +242,7 @@ body {
     position: absolute;
     transform: rotate(0deg);
 }
+
 //----成長
 .GrowUp {
     width: 33%;
@@ -251,8 +275,9 @@ body {
     margin: 0 0.3%;
     display: none;
 }
+
 //小測驗1
-.litTest_1{
+.litTest_1 {
     width: 85%;
     height: 80vh;
     position: relative;
@@ -267,20 +292,22 @@ body {
     background-color: rgba(0, 0, 0, 0.527);
 }
 
-.litTest_1 h1, .choose{
+.litTest_1 h1,
+.choose {
     font-size: 45px;
     font-family: 'DFPLiYuan';
     letter-spacing: 10px;
-    color: #ffdc7d;;
+    color: #ffdc7d;
+    ;
 }
 
-.choose{
+.choose {
     color: white;
     cursor: pointer;
 }
 
 //小測驗2
-.litTest_2{
+.litTest_2 {
     width: 85%;
     height: 80vh;
     position: relative;
@@ -295,14 +322,15 @@ body {
     background-color: rgba(0, 0, 0, 0.527);
 }
 
-.litTest_2 h1, .choose{
+.litTest_2 h1,
+.choose {
     font-size: 45px;
     font-family: 'DFPLiYuan';
     letter-spacing: 10px;
     color: #ffdc7d;
 }
 
-.choose{
+.choose {
     color: white;
     cursor: pointer;
 }
@@ -446,6 +474,29 @@ body {
 // ----------------------------RWD(1024px)
 
 @media screen and (max-width: 1024px) {
+
+    //--------------------
+
+    .Avatar_p {
+        padding-left: 37%;
+    }
+
+    .MemberCentre-bt,
+    .SignOut-bt {
+        margin-left: 25%;
+    }
+
+    .SignOut-bt {
+        background-color: rgb(197, 197, 197);
+        margin-top: 8px;
+    }
+
+
+    .Avatar-box img {
+        padding-left: 30%;
+    }
+
+    //--------------------
     .dino-sea1 {
         width: 50%;
         top: 14%;
@@ -488,7 +539,7 @@ body {
         left: 55%;
     }
 
-    .teach-sq {  
+    .teach-sq {
         height: 94.4%;
     }
 
@@ -503,11 +554,12 @@ body {
         right: 6%;
     }
 
-    #teach_close, #teach_close_1{
+    #teach_close,
+    #teach_close_1 {
         width: 8%;
         right: 4%;
         top: 6%;
-        }
+    }
 }
 
 // ----------------------------RWD(812px)
@@ -559,7 +611,7 @@ body {
         left: 48%;
     }
 
-    .teach-sq {  
+    .teach-sq {
         height: 95%;
     }
 
@@ -573,50 +625,52 @@ body {
         top: 5%;
         right: 4%;
     }
+
     //小測驗1
-.litTest_1, .litTest_2{
-    width: 64%;
-    height: 72vh;
-    position: relative;
-    top: -68%;
-    margin: auto;
-    z-index: 101;
-    border-radius: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: rgba(0, 0, 0, .527);
-  }
-  
-  .litTest_1 h1,
-  .choose {
-    font-size: 24px;
-    font-family: 'DFPLiYuan';
-    letter-spacing: 10px;
-    color: #ffdc7d;
-    ;
-  }
-  
-  .choose {
-    color: white;
-    cursor: pointer;
-  }
-  
-  //小測驗2
-  .litTest_2 h1,
-  .choose {
-    font-size: 24px;
-    font-family: 'DFPLiYuan';
-    letter-spacing: 10px;
-    color: #ffdc7d;
-  }
-  
-  
-  .choose {
-    color: white;
-    cursor: pointer;
-  }
+    .litTest_1,
+    .litTest_2 {
+        width: 64%;
+        height: 72vh;
+        position: relative;
+        top: -68%;
+        margin: auto;
+        z-index: 101;
+        border-radius: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgba(0, 0, 0, .527);
+    }
+
+    .litTest_1 h1,
+    .choose {
+        font-size: 24px;
+        font-family: 'DFPLiYuan';
+        letter-spacing: 10px;
+        color: #ffdc7d;
+        ;
+    }
+
+    .choose {
+        color: white;
+        cursor: pointer;
+    }
+
+    //小測驗2
+    .litTest_2 h1,
+    .choose {
+        font-size: 24px;
+        font-family: 'DFPLiYuan';
+        letter-spacing: 10px;
+        color: #ffdc7d;
+    }
+
+
+    .choose {
+        color: white;
+        cursor: pointer;
+    }
 
     //----anmate
 
@@ -630,14 +684,15 @@ body {
 
 //--------------------------------
 
-.right{
+.right {
     color: rgb(0, 255, 0);
 }
-.er{
+
+.er {
     color: rgb(138, 138, 138);
 }
 
-.teach_close{
+.teach_close {
     position: absolute;
     width: 4%;
     top: 5%;
@@ -646,7 +701,7 @@ body {
     z-index: 100;
 }
 
-.teach_close img{
+.teach_close img {
     width: 100%;
 }
 
@@ -658,4 +713,3 @@ body {
 .show {
     display: block;
 }
-

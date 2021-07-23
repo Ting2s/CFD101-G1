@@ -25,13 +25,13 @@ let pageBar = new Vue({
     myDino: [
       {
         dino_st: 0,
-        picture: "images/dinoPersonal/d2.png",
-        value: "龍春暉",
+        picture: "images/dinoPersonal/d1.png",
+        value: "霆霆辛肝",
       },
       {
         dino_st: 1,
-        picture: "images/dinoPersonal/d2.png",
-        value: "龍春暉",
+        picture: "images/dinoPersonal/d3.png",
+        value: "冠呈學長",
       },
       {
         dino_st: 2,
@@ -40,8 +40,8 @@ let pageBar = new Vue({
       },
       {
         dino_st: 2,
-        picture: "images/dinoPersonal/d2.png",
-        value: "龍春暉",
+        picture: "images/dinoPersonal/d3.png",
+        value: "冠誠SENPAI",
       },
     ],
     //我的配件
@@ -95,25 +95,20 @@ let pageBar = new Vue({
     
 //================================
     updatePhoto() {
-    //點擊後獲取新頭像
-    console.log(1);
-    // let my = this;
-    html2canvas(Id("myPhoto"), {     
+    //點擊後獲取新頭像   
+    html2canvas(Id("myPhoto"), { 
       onrendered: function (canvas) {
-      document.body.appendChild(canvas);
-        
-      let leCanvas = document.getElementsByTagNam("canvas")[0];
+      Id("myPhoto").appendChild(canvas);
+      let leCanvas = document.getElementsByTagName("canvas")[0];
       console.log(leCanvas);
-      let newImg = leCanvas.toDataURL("image/png");  
-        console.log('<img src="' + newImg + '"/>');
+      let newImg = leCanvas.toDataURL("image/png");
+      console.log('<img src="' + newImg + '"/>');
       
       Id("saveImg").src = newImg ;
-        
-      //跳窗提醒傳入成功
-      let span = document.getElementsByClassName("saveClose")[0];
-      Id('save').onclick = function() {
       Id('saveBox').style.display = "block";
-      }
+        
+      //跳窗傳入
+      let span = document.getElementsByClassName("saveClose")[0];
       span.onclick = function() {
       Id('saveBox').style.display = "none";
       }
@@ -122,47 +117,47 @@ let pageBar = new Vue({
           Id('saveBox').style.display = "none";
         }
         }
+
+      //傳後端
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            //傳入後端
+          } else {
+            alert(xhr.status);
+          }
+        }
+        xhr.open("post", "./php/updatePhoto.php", true);
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    
+        // let saveImg = Id("saveImg");
+        let data_info = `newImg=${saveImg.src}`;
+        xhr.send(data_info);
         // Id("facePhoto").src = newImg ;
       },
-      width:320,
-      height:220
-  });
 
-    //傳入後端
-    let xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-      if (xhr.status == 200) {
-        //傳入後端
-      } else {
-        alert(xhr.status);
-      }
-    }
-    xhr.open("post", "./php/updatePhoto.php", true);
-    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-
-    let data_info = `newImg=${Id('facePhoto').src}`;
-    xhr.send(data_info);
-  }
-
+      width:500,
+      height:600
+  });   
+    },
     //=============
   },
   
   computed: {
     style() {
-      const my = this;
-      if (my.dinoAcc.type == 0) {
+      if (this.dinoAcc.type == 0) {
         Id("style").classList.add('hat');
         Id("style").classList.remove('ticket');
         Id("style").classList.remove('back');
 
       }
-      if (my.dinoAcc.type == 1) {
+      if (this.dinoAcc.type == 1) {
         Id("style").classList.add('ticket');
         Id("style").classList.remove('hat');
         Id("style").classList.remove('back');
       
       }
-      if (my.dinoAcc.type == 2) {
+      if (this.dinoAcc.type == 2) {
         Id("style").classList.add('back');
         Id("style").classList.remove('hat');
         Id("style").classList.remove('ticket');
