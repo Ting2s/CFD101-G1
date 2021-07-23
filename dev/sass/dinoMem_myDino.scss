@@ -103,6 +103,15 @@ p{
 }
 
 //關閉時
+@keyframes bounce{
+  from{transform:translateY(10px)}
+  to{transform:translateY(-10px)}}
+
+  @keyframes bounce_2{
+    from{transform:translateY(10px) scaleY(-1);}
+    to{transform:translateY(-10px) scaleY(-1);}
+  }
+  
 
 //==================================
 .dinoCon{
@@ -136,11 +145,16 @@ p{
   height: 80px;
   background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
   background-size: contain;
+}
+.upPage:hover{
+  animation: bounce .5s infinite alternate;
 
 }
-
 .downPage{
   transform:scaleY(-1);
+  &:hover{
+    animation: bounce_2 .5s infinite alternate;
+}
 }
 .mydino{
   display: flex;
@@ -268,4 +282,10 @@ p{
 .ticket_frame,.hat_frame,.back_frame{
 display: none; 
 cursor: pointer;
+}
+
+
+#saveImg{
+  margin: 0;
+  text-align: center;
 }
