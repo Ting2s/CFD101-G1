@@ -73,17 +73,19 @@
         </button>
     </form> 
     <form>
-        <button class="downLoad" id="download">
-          <img src="images/dinoCard/woodTitle.png">
+      <button class="downLoad" id="download" style="visibility: hidden;" type="button">
+        <img src="images/dinoCard/woodTitle.png">
+        <a href="" id="my_download" download>
           <span class="downText2">下載</span>
-        </button>
+        </a>
+      </button>
     </form>
-    <form>
+    <!-- <form>
         <button type="export" class="post" id="">
           <img src="images/dinoCard/woodTitle.png">
           <span class="downText3">上傳圖片</span>
         </button>
-    </form>
+    </form> -->
     <!-- <form>
           <button type="" id="" class="share">
             <img src="images/dinoCard/woodTitle.png">
@@ -101,7 +103,7 @@
     
 
   <script src="js/dinoCard.js"></script>
-  <!-- <script src="js/login.js"></script> -->
+  <script src="js/login.js"></script>
   @@include('layout/footer.html')
 </body>
 </html>
