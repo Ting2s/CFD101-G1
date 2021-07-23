@@ -156,12 +156,12 @@ body {
             }
             .personDate {
                 font-size: 8px; //-----------
-                padding: .8rem 0;
-                padding-left: 50%;
+                padding: .5rem 0;
+                display: flex;
+                justify-content: center;
                 @include respondTo(large) {
                     font-size: 6px;
-                    padding-top: .4rem;
-                    padding-left: 45%;
+                    padding-top: .3rem;
                 }
                 @include respondTo(medium) {
                     display: none;
