@@ -112,7 +112,7 @@ new Vue({
                               if(xhr.status == 200){
                               // this.prodRows = xhr.responseText;
                               self.prodRows = JSON.parse(xhr.responseText);
-                              console.log(self.prodRows);
+                              // console.log(self.prodRows);
                               }else{
                               alert(xhr.status);
                                     }
@@ -120,9 +120,6 @@ new Vue({
                          xhr.open("get", "./php/dinoMall.php", true);
                          xhr.send(null);
                    },
-                   changedata(){
-
-                   }
              },
   mounted(){
             this.getProduct();
