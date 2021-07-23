@@ -221,37 +221,60 @@ body {
             }
       }
 }
+
+//修正
+.wrapMall{
+      padding-top: 2%;
+}
+.itemLeft{
+      transform: translateY(8%);
+}
+.itemRight{
+      transform: translateY(5%);
+}
 .title h3{
       font-size: 30px;
+}
+.arrow{
+      transform: translateY(15%);
 }
 #showName{
       font-size: 30px;
 }
 .btnCard-1{
       width: 100%;
+      transform: translateX(-5%);
 }
+
 .card {
       width: 100%;
-      margin: 10px;
+      margin: 30px;
 }
 .cart{
+      position: relative;
       width: 10%;
-      transform: translate();
+      transform: translate(30%,90%);
 }
 #counter{
-      transform: translate(-750%,180%);
+      font-size: 26px;
+      transform: translate(50%,-60%);
 }
 .btnSelect{
       width: 40%;
 }
 .imgClassHat {
+      width: 50%;
       transform: translateY(40%);
 }
 .shopItemPrice{
+      font-size: 24px;
       transform: translateY(90%);
 }
 .smallCart{
-      transform: translateY(60%);
+      transform: translateY(100%);
+}
+.smallCart img{
+      width: 30%;
 }
 //  Mall_Modal_BoxC   
 .bg-modal{    
@@ -329,7 +352,7 @@ body {
 @media screen and (max-width: 1024px){
       
       .wrapMall{
-            
+            padding-top: 7%;
             align-items: center;
       }
       .itemLeft{
@@ -344,13 +367,13 @@ body {
       }
       .title{
             width: 35%;
-            transform: translate(-120%,0);
+            transform: translate(-240%,0);
       }
       .title h3{
             font-size: 30px;
       }
       .arrow{
-            transform: translate(0,-120%);
+            transform: translate(0,-100%);
             // z-index: 10;
       }
       .arrow span{
@@ -365,7 +388,7 @@ body {
             transform: translateX(-10%);
       }
       .card img{
-            transform: translateY(30%);  
+            transform: translateY(40%);  
       }
       .cart{
             width: 20%;
@@ -394,15 +417,19 @@ body {
       .btnCard-1{
             transform: translate(0,-30%);
       }
-      .shopItemPrice{
-            transform: translateY(40%);
+      .btnCard-2{
+            transform: translate(0,-10%);
+      }
+      .shopItemPrice span{
+            font-size: 10px;
+            transform: translateY(-20%);
       }
       .shopItemImage{
             transform: translateY(40%);     
       }
       .smallCart{
-            width: 30%;
-            transform: translate(106%,60%);
+            width: 80%;
+            transform: translate(20%,60%);
       }
       
 
@@ -410,71 +437,54 @@ body {
   
 
   @media screen and (max-width: 817px){
+      .wrapMall {
+            position: relative;
+            padding-top: 2%;
+            align-items: center;
+        }
+      .title{
+            width: 100%;
+      transform: translate(-300%,100%);
+      padding: 8px;
+      }
+      .title h3{
+            font-size: 20px;
+      }  
     .itemLeft{
           width: 90%;
-          transform: translateY(-20%);
-    }  
+          transform: translateY(-10%);
+    } 
     .groundButton{
-          transform: translateY(-40%);
-    }
-    .btnSelect{
-          width: 30%;
-          margin:5px;
+          transform: translateY(-30%);
     }
     .itemRight{
-          width: 70%;
-      //     height: 40%;
-           transform: translate(10%,-22%);
-    }  
-    .groundTitle .title{
-          width: 30%;
-          transform: translate(160%,100%);
-    }
-    .arrow{
-          width:50%;
-          transform: translate(200%,130%);
-    }
-    .arrow span{
-          font-size: 16px;
-    }
-    
-    .title h3{
-          font-size: 15px;
-    }
-    .cart{
-          width: 20%;
-          transform: translate(150%,400%);
-    }
-    #counter{
-      transform: translate(50%,-10%);  
-      z-index: 10;
-    }
-    .btnCard-1 {
-      transform: translate(0,-30%);
-  }
-    .imgCard {
-          margin-bottom: 0;
-    }
-    .imgCard .card{
-          width: 90%;
-      //     height: 20%;
-          transform: translate(0,-30%);
-    }
-    .imgCard .card>img{
-          width: 50%;
-    }
-    .shopItemPrice{
-          padding-bottom: 0px;
-          transform: translateY(10%);
-    }
-    .imgClassHat {
-          transform: translate(-10%,15%);
-    }
-    .smallCart{  
-      transform: translate(40%,20%);
-    }
-    .smallCart img{
-          width: 100%;
-          
-    }
+            width: 70%;
+            transform: translate(10%,-10%);
+      } 
+      .groundTitle{
+            position: relative;
+      }
+      .arrow {
+            transform: translate(0,-20%);
+      }
+      #showName{
+            font-size: 15px;
+      }
+      .cart{
+          width: 50%;  
+          position: absolute;  
+          top: 200%;
+          left: 200%;
+      //     transform: translateY(90%);
+          z-index: 300;
+      }  
+      .groundImgCard{
+            width: 50%;
+      }
+      .btnCard-1{
+            transform: translate(40%,-30%);
+      }
+      .shopItemPrice{
+            font-size: 12px;
+      }
 }
