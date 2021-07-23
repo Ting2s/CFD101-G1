@@ -68,7 +68,7 @@ function showImgSticks(e){
       for(let i=0;i<kk.length;i++){
         kk[i].style.display="none";
       };
-      getId("showName").innerText = "紋身貼紙";
+      getId("showName").innerText = "貼紙";
 };
 
 function nextPageshowImg(){
@@ -176,7 +176,7 @@ function closeModalBoxB(){
 
   function showCart(){
     // getId("bgColor").style.display='block';
-    // console.log("123");
+    // console.log("===========123");
     getId("bgColor").classList.toggle(`showOpen`);
   };
 
@@ -403,7 +403,7 @@ function my_init(){
   // showCart
   // const cart = document.getElementsByClassName('cart')[0];
   let cart = document.getElementById('cart');
-  // console.log(cart); 
+  console.log(cart); 
   cart.onclick = showCart;  
   let  btnCloseCart= getId("closeCart"); 
   btnCloseCart.onclick = closesShoppingCart;
