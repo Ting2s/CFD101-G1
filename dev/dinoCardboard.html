@@ -34,126 +34,13 @@
                   </button>
                   <span>{{favRow.mem_id}}</span>
                 </div>
-                <!-- <p class="personDate">{{favRow.mem_no}}</p> -->
+                <p class="personDate">{{favRow.mem_nicname}}</p>
               </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
-
-<!-- mobile -->
-<section class="container2">
-
-  <div class="box-paginacao">
-    <input type="radio" name="input-paginacao" id="paginacao1" checked>
-    <input type="radio" name="input-paginacao" id="paginacao2">
-    <div class="box-vitrines">
-      <ul>
-        <div class="vitrine1">
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person1.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot</span>
-            </div>
-          </li>
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person2.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot2</span>
-            </div>
-          </li>
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person3.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot3</span>
-            </div>
-          </li>
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person4.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot</span>
-            </div>
-          </li>
-        </div>
-        <div class="vitrine2">
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person5.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot2</span>
-            </div>
-          </li>
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person6.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot3</span>
-            </div>
-          </li>
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person7.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot</span>
-            </div>
-          </li>
-          <li>
-            <div class="personImg2">
-              <img src="images/dinoCardboard/person8.jpg" class="pic">
-            </div>
-            <div class="personContent2">
-              <button class="like">
-                <i class="far fa-heart"></i>
-              </button>
-              <span>rootroot2</span>
-            </div>
-          </li>
-        </div>
-      </ul>                  
-      <div class="btn-paginacao">
-        <ul>
-          <li><label for="paginacao1">1</label></li>
-          <li><label for="paginacao2">2</label></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
-</section>
-<!-- end mobile -->
 
       <div class="imgPreview">
         <img id="imgPreview" src="#">
@@ -164,12 +51,12 @@
           <img src="images/dinoCardboard/leftBtn.png">
         </button>
   
-        <button class="numberBtn">
+        <!-- <button class="numberBtn"> -->
           <!-- <input id="pageInput" type="number" min="1" max="1"> -->
-          <span>1</span>
+          <!-- <span id="app">{{pageNo}}</span> -->
           <!-- <span>/</span> -->
           <!-- <span id="totalPages"></span> -->
-        </button>
+        <!-- </button> -->
   
         <button class="rightBtn" id="nextPageButton">
           <img src="images/dinoCardboard/rightBtn.png">
@@ -190,25 +77,11 @@
       <img id="imgPreview" src="#">
     </div>
 
-
   </section>  
 
   @@include('layout/footer.html')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/dinoCardboard.js"></script>
-  <!-- <script src="js/login.js"></script> -->
+  <script src="js/login.js"></script>
 </body>
 </html>
-
-<!-- //-------------------
-function favorite(){
-	let xhr = new XML....
-	url = "setFavorite.php?post_id=" + this.parentNode.getAttriute("post_id")
-	xhr.open("get", url, true);	
-	xhr.send();
-}
-
-
-//etFavorite.php?id=...
-收藏 : $_GET["post_id"]
-誰 : 登入者 -->

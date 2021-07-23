@@ -68,7 +68,7 @@ function showImgSticks(e){
       for(let i=0;i<kk.length;i++){
         kk[i].style.display="none";
       };
-      getId("showName").innerText = "紋身貼紙";
+      getId("showName").innerText = "貼紙";
 };
 
 function nextPageshowImg(){
@@ -99,15 +99,23 @@ function openModalBoxA(){
 // 儲存恐龍
 let ct = 0;
 function openModalBoxC(){
+
+  if(member.mem_id == undefined){
+    alert("請先登入會員") ;
+    // console.log(member);
+    return; 
+  };
+
   ct++;
   if(ct>2){
     alert("最多儲存 2 張");
-    return -1;
+    return;
   };
   // 打開 MallModalBoxC.html
   getId("bg-modal").style.display='flex';
 
-  let modalContent = document.getElementsByClassName("modal-content")[0];
+  // let modalContent = document.getElementsByClassName("modal-content")[0];
+  let modalContent = document.getElementsByClassName("newCanvas")[0];
   let canvasObj = html2canvas(document.getElementsByClassName("cardLeft")[0]).then(canvas => {
     modalContent.appendChild(canvas);
     // console.log(new Date().getMinutes());
@@ -118,8 +126,8 @@ function openModalBoxC(){
 
 
  function saveImage(){
-      // console.log(new Date().getMinutes());
 
+      // console.log(new Date().getMinutes());
       let canvas = document.getElementsByTagName("canvas")[0];
             console.log(canvas);
       var dataURL = canvas.toDataURL("image/png");
@@ -168,6 +176,7 @@ function closeModalBoxB(){
 
   function showCart(){
     // getId("bgColor").style.display='block';
+    // console.log("===========123");
     getId("bgColor").classList.toggle(`showOpen`);
   };
 
@@ -175,8 +184,6 @@ function closeModalBoxB(){
     // getId("bgColor").style.display='none';
     getId("bgColor").classList.remove(`showOpen`);
   };
-
-
 
   
   // addItem storage
@@ -314,7 +321,14 @@ function closeModalBoxB(){
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
   };
 
-  function purchaseClicked(){    
+  function purchaseClicked(){   
+    
+    if(member.mem_id == undefined){
+        alert("請先登入會員") ;
+        // console.log(member);
+        return; 
+    }
+
     //  POST PHP -> SERVER
     postCart();
 
@@ -338,7 +352,7 @@ function closeModalBoxB(){
 
 
 // =========================================================
-function init(){
+function my_init(){
   // let imgs =  document.getElementsByClassName("imgClass");
   // 點擊 帽子
   let imgs =  document.querySelectorAll('.imgClassHat');
@@ -389,6 +403,7 @@ function init(){
   // showCart
   // const cart = document.getElementsByClassName('cart')[0];
   let cart = document.getElementById('cart');
+  console.log(cart); 
   cart.onclick = showCart;  
   let  btnCloseCart= getId("closeCart"); 
   btnCloseCart.onclick = closesShoppingCart;
@@ -416,24 +431,17 @@ function init(){
   };
 
 
-
   // purchase
   document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked);
 
-                  //   let kk = document.getElementsByClassName('smallCart');
-                  //   kk.addEventListener("click",function(){
-                  //     if(storage.getItem("memNo")){
-                  //         document.location.href="BearMJ_cartShow.php";
-                  //     }else{
-                  //         $('#alertText').text('請先登入!');
-                  //         $('.alertWrap').show();
-                  //     }
-                  // },false);
   let storage = sessionStorage;
   doFirst();
-}
+  } // myinit()
 
-window.onload = init;  
+  window.addEventListener('load',function(){
+        my_init();
+  });
+// window.onload = init;  
 // =================================================================================================
 
 

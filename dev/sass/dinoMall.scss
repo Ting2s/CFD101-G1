@@ -6,7 +6,7 @@
 body {
   background-color: rgb(143, 213, 223);
   font-family:'DFPLiYuan';
-  //   overflow-y: hidden;
+//     overflow-y: hidden;
 }
 
 .none{
@@ -28,8 +28,7 @@ body {
 
       #{$titleLeft}{
                   .cardLeft{
-                                                background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
-                        // text-align: center;
+                        background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
                         @include pdMargin(25%,null);
                         }
                         .showImgA{
@@ -51,7 +50,6 @@ body {
                         @include rect(100%,null);
                         @include d-flex();
                         .btnSelect{
-                              //     @include rect(22%,null);
                                   @include fontSz($font-h4,$font-bold);
                                   @include colorBgcolor($white,null);
                                   margin: 20px 10px;
@@ -88,9 +86,7 @@ body {
                               margin-right: 10px;
                               text-align  : center; 
                                     h3{
-                                    // @include fontSz($font-h3,null);
                                     @include colorBgcolor($yellow-second,null);
-                                    // font-size: 30px
                                   
                                     }                
                               }
@@ -120,7 +116,6 @@ body {
                             background: url('#{$pathMall}/pre.png') no-repeat center center / contain;
                             }
                     span{
-                        //     @include fontSz($font-h4,$font-bold);
                             @include colorBgcolor($brown,null);
                             vertical-align: 12px;
                             margin: 0 6px;
@@ -134,19 +129,16 @@ body {
                   @include d-flex() 
               }    
               .btnCard-1 {
-                  @include d-flex(); // (新增)
+                  @include d-flex(); 
               }
               .btnCard-1 , .btnCard-2{
                                    
                                     .imgCard{
-                                          // @include d-flex(); (原版)
-                                          // margin: 5px 5px; // (新增)
                                                 .card{
                                                       background: url('#{$pathMall}/frame.png') no-repeat top center / contain;
-                                                      margin:0 1%;
+                                                      
                                                       > img{  
                                                             margin: 0px 14px;
-                                                            // padding: 31px 20px 15px;
                                                             object-fit: cover;
                                                             cursor: pointer; 
                                                             }
@@ -221,20 +213,70 @@ body {
             }
       }
 }
+
+//修正
+.wrapMall{
+      padding-top: 2%;
+}
+.itemLeft{
+      transform: translateY(8%);
+}
+.itemRight{
+      transform: translateY(5%);
+}
+.title h3{
+      font-size: 30px;
+}
+.arrow{
+      transform: translateY(15%);
+}
+#showName{
+      font-size: 30px;
+}
+.btnCard-1{
+      width: 100%;
+      transform: translateX(-5%);
+}
+.btnCard-2{
+      width: 100%;
+      transform: translateX(-5%);
+}
 .card {
-      width: 20%;
-      margin: 10px;
+      width: 100%;
+      margin: 30px;
 }
 .cart{
+      position: relative;
       width: 10%;
-      transform: translate();
 }
 #counter{
-      transform: translate(-840%,180%);
+      font-size: 26px;
+      transform: translate(50%,-60%);
 }
 .btnSelect{
       width: 40%;
 }
+.imgClassHat {
+      width: 50%;
+      transform: translateY(40%);
+}
+.imgSticks{
+      width: 50%;
+      transform: translateY(40%);
+} 
+.shopItemPrice{
+      font-size: 24px;
+      transform: translateY(90%);
+}
+.smallCart{
+      transform: translateY(100%);
+}
+.smallCart img{
+      width: 30%;
+}
+
+
+
 
 //  Mall_Modal_BoxC   
 .bg-modal{    
@@ -268,10 +310,8 @@ body {
                         }
                   }
                   h3{
-                  //    @include fontSz($font-h3,null);
                      @include pdMargin(null,15px);
                      @include colorBgcolor($yellow-second,null);
-                  //    margin-top: 10%;
                   }
       }
 }
@@ -295,56 +335,67 @@ body {
       }
 }
 
-// @media screen and (max-width: 992px){
-//       .wrapMall{
-//             grid-template-columns:1fr;
-//             margin: 20% auto;            
-//       }
-//       .itemLeft{
-//             margin-bottom: 20%;
-//       }
-//       #counter{
-//             font-size:14px;
-//             padding: 4px;
-//             top:2%;    
-//       }
-// }
 @media screen and (max-width: 1024px){
       
       .wrapMall{
-            
+            padding-top: 7%;
             align-items: center;
       }
       .itemLeft{
             transform: translate(-10%,0);
             width: 120%;
       }
+      .itemRight{
+            transform: translateX(10%);
+      }
       .btnSelect{
             width: 50%;
       }
       .title{
             width: 35%;
-            transform: translate(-120%,0);
+            transform: translate(-240%,0);
       }
       .title h3{
             font-size: 30px;
       }
       .arrow{
-            transform: translate(0,-120%);
-            // z-index: 10;
+            transform: translate(0,-100%);
+            z-index: 10;
       }
       .arrow span{
             font-size: 20px;  
       }
       .imgCard{
-            margin-bottom: 30px;
+            margin: 0, 10px;
       }
       .card{
-            width: 40%;
-            margin: 0;
+            width: 100%;
+            margin: 15px;
+            transform: translateX(-10%);
       }
+      .card img{
+            transform: translateY(40%);  
+      }
+      .cart{
+            width: 20%;
+            transform: translate(10%,-20%);
+      }
+
+
+      .shake {
+            animation: shakeCart .0s ease-in-out;
+        }
+
+
       .cart img{
             width: 100%;
+            transform: translateY(50%);
+      }
+      
+      #counter{
+            font-size: 25px;
+            transform: translate(10%,90%);
+            z-index: 20;
       }
       .wrapMall .itemLeft .groundButton .btnSelect{
             font-size: 17px;
@@ -358,89 +409,77 @@ body {
             font-size: 10px;
       }
       .btnCard-1{
-            transform: translate(0,-7%);
+            transform: translate(0,-30%);
       }
-      .shopItemPrice{
-            transform: translateY(60%);
+      .btnCard-2{
+            transform: translate(0,-10%);
       }
-      .imgCard img{
-            transform: translateY(30%);     
+      .shopItemPrice span{
+            font-size: 10px;
+            transform: translateY(-20%);
+      }
+      .shopItemImage{
+            transform: translateY(40%);     
       }
       .smallCart{
-            width: 30%;
+            width: 80%;
             transform: translate(20%,60%);
       }
-      #counter{
-            transform: translate(10%,50%);
-      }
-
+      
   }
-  
+
+ 
 
   @media screen and (max-width: 817px){
+      .wrapMall {
+            position: relative;
+            padding-top: 2%;
+            align-items: center;
+        }
+      .title{
+            width: 100%;
+      transform: translate(-300%,100%);
+      padding: 8px;
+      }
+      .title h3{
+            font-size: 20px;
+      }  
     .itemLeft{
           width: 90%;
-          transform: translateY(-20%);
-    }  
+          transform: translateY(-10%);
+    } 
     .groundButton{
-          transform: translateY(-40%);
-    }
-    .btnSelect{
-          width: 30%;
-          margin:5px;
+          transform: translateY(-30%);
     }
     .itemRight{
-          width: 70%;
-      //     height: 40%;
-           transform: translate(10%,-22%);
-    }  
-    .groundTitle .title{
-          width: 30%;
-          transform: translate(160%,100%);
-    }
-    .arrow{
-          width:50%;
-          transform: translate(200%,130%);
-    }
-    .arrow span{
-          font-size: 16px;
-    }
-    
-    .title h3{
-          font-size: 15px;
-    }
-    .cart{
-          width: 20%;
-          transform: translate(150%,400%);
-    }
-    #counter{
-      transform: translate(50%,-10%);  
-      z-index: 10;
-    }
-    .imgCard {
-          margin-bottom: 0;
-    }
-    .imgCard .card{
-          width: 40%;
-      //     height: 20%;
-          transform: translate(0,-30%);
-    }
-    .imgCard .card>img{
-          width: 50%;
-    }
-    .shopItemPrice{
-          padding-bottom: 0px;
-          transform: translateY(10%);
-    }
-    .imgClassHat {
-          transform: translate(-10%,15%);
-    }
-    .smallCart{
-          
-      transform: translateY(-20%);
-    }
-    .smallCart img{
-          width: 30%;
-          
-    }
+            width: 70%;
+            transform: translate(10%,-10%);
+      } 
+      .groundTitle{
+            position: relative;
+      }
+      .arrow {
+            transform: translate(0,-20%);
+      }
+      #showName{
+            font-size: 15px;
+      }
+      .cart{
+          width: 50%;  
+          position: absolute;  
+          top: 200%;
+          left: 200%;
+          transform: translateY(90%);
+          z-index: 300;
+      } 
+      .groundImgCard{
+            width: 50%;
+      }
+      .btnCard-1{
+            transform: translate(40%,-30%);
+      }
+      .shopItemPrice{
+            font-size: 12px;
+      }
+  
 }

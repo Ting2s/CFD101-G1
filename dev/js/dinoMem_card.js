@@ -99,7 +99,7 @@ let pageBar = new Vue({
         }
         xhr.open("post", "./php/deleteLubCard.php", true);
         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");      
-        let data_info =`card_no=${Id("cardNO").innerHTML}`;
+        let data_info =`card_no=${Id("cardNO_lub").innerHTML}`;
         xhr.send(data_info);
     })
     },
