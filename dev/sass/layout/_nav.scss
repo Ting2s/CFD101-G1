@@ -67,7 +67,7 @@ li {
 }
 
 .Avatar-item {
-    width: 10%;
+    width: 12%;
     padding: 0 30;
     position: relative;
     display: none;
@@ -172,10 +172,15 @@ hr {
         padding: 0 2%;
     }
 
+    .Avatar-item {
+        width: 15%;
+    }
+
     .SignIn {
         width: 23%;
         padding: 0;
     }
+    
 
     .Avatar-box {
         width: 26%;
@@ -214,4 +219,5 @@ hr {
 
 .show {
     display: flex;
+    justify-content: center;
 }

@@ -6,7 +6,7 @@ function get() {
 function initElement() {
     console.log('in');
     let getDino = document.getElementById("getDinoSea");
-    getDino.onclick = function(){
+    getDino.onclick = function(){debugger;
         let xhr = new XMLHttpRequest();
             xhr.onload = function () {
               if (xhr.status == 200) {
