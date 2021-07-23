@@ -99,15 +99,23 @@ function openModalBoxA(){
 // 儲存恐龍
 let ct = 0;
 function openModalBoxC(){
+
+  if(member.mem_id == undefined){
+    alert("請先登入會員") ;
+    // console.log(member);
+    return; 
+  };
+
   ct++;
   if(ct>2){
     alert("最多儲存 2 張");
-    return -1;
+    return;
   };
   // 打開 MallModalBoxC.html
   getId("bg-modal").style.display='flex';
 
-  let modalContent = document.getElementsByClassName("modal-content")[0];
+  // let modalContent = document.getElementsByClassName("modal-content")[0];
+  let modalContent = document.getElementsByClassName("newCanvas")[0];
   let canvasObj = html2canvas(document.getElementsByClassName("cardLeft")[0]).then(canvas => {
     modalContent.appendChild(canvas);
     // console.log(new Date().getMinutes());
@@ -118,8 +126,8 @@ function openModalBoxC(){
 
 
  function saveImage(){
-      // console.log(new Date().getMinutes());
 
+      // console.log(new Date().getMinutes());
       let canvas = document.getElementsByTagName("canvas")[0];
             console.log(canvas);
       var dataURL = canvas.toDataURL("image/png");
@@ -175,8 +183,6 @@ function closeModalBoxB(){
     // getId("bgColor").style.display='none';
     getId("bgColor").classList.remove(`showOpen`);
   };
-
-
 
   
   // addItem storage
@@ -423,27 +429,16 @@ function myinit(){
   };
 
 
-
   // purchase
   document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked);
 
-                  //   let kk = document.getElementsByClassName('smallCart');
-                  //   kk.addEventListener("click",function(){
-                  //     if(storage.getItem("memNo")){
-                  //         document.location.href="BearMJ_cartShow.php";
-                  //     }else{
-                  //         $('#alertText').text('請先登入!');
-                  //         $('.alertWrap').show();
-                  //     }
-                  // },false);
   let storage = sessionStorage;
   doFirst();
-}
+  } // myinit()
 
-
-window.addEventListener('load',function(){
-    myinit();
-});
+  window.addEventListener('load',function(){
+      myinit();
+  });
 // window.onload = init;  
 // =================================================================================================
 

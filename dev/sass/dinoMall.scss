@@ -253,6 +253,10 @@ body {
 .smallCart{
       transform: translateY(60%);
 }
+
+
+
+
 //  Mall_Modal_BoxC   
 .bg-modal{    
       @include posiTion(absolute,0,null){
@@ -407,7 +411,8 @@ body {
       
 
   }
-  
+
+ 
 
   @media screen and (max-width: 817px){
     .itemLeft{
