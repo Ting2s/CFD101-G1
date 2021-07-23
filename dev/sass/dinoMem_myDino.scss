@@ -266,6 +266,31 @@ p{
 }
 
 .ticket_frame,.hat_frame,.back_frame{
-display: none; 
-cursor: pointer;
+  display: none; 
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .switchBtn {
+    transform: translate(20%,100%);
+    padding: 10px;
+    margin: 5px;
+}
+  .changePage {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    margin-left: 0px;
+  }
+  .dinoCon{
+    width: 70%;
+  }
+  .dino{
+    transform: translate(30%,20%);
+  }
+  .dino li{
+    width: 120px;
+  }
+  .dino li input{
+    width: 120px;
+  }
 }

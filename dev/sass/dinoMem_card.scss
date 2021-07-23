@@ -257,3 +257,17 @@ font-size: ($font-h4)-10px;
 }
 
 //=====================
+@media screen and (max-width: 1024px) {
+  .switchBtn {
+    transform: translate(20%,100%);
+    padding: 10px;
+    margin: 5px;
+}
+  .changePage {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    margin-left: 0px;
+  }
+
+}
