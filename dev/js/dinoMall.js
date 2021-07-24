@@ -139,8 +139,8 @@ function openModalBoxC(){
     var xhr = new XMLHttpRequest();
       xhr.onload = function() {
             if( xhr.status == 200 ){
-              alert('Succesfully uploaded'); 
-              console.log( xhr.responseText);
+              // alert('Succesfully uploaded'); 
+              // console.log( xhr.responseText);
                 document.getElementById("download").href = xhr.responseText;
                 document.getElementById("download").style.visibility = "visible"
                 // document.getElementById("download").innerText = "下載";
