@@ -25,12 +25,12 @@ let pageBar = new Vue({
     myDino: [
       {
         dino_st: 0,
-        picture: "images/dinoPersonal/d1.png",
+        picture: "images/dinoPersonal/d2.png",
         value: "霆霆辛肝",
       },
       {
         dino_st: 1,
-        picture: "images/dinoPersonal/d3.png",
+        picture: "images/dinoPersonal/d2.png",
         value: "冠呈學長",
       },
       {
@@ -40,7 +40,7 @@ let pageBar = new Vue({
       },
       {
         dino_st: 2,
-        picture: "images/dinoPersonal/d3.png",
+        picture: "images/dinoPersonal/d2.png",
         value: "冠誠SENPAI",
       },
     ],
