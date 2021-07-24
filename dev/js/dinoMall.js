@@ -129,7 +129,7 @@ function openModalBoxC(){
 
       // console.log(new Date().getMinutes());
       let canvas = document.getElementsByTagName("canvas")[0];
-            console.log(canvas);
+            // console.log(canvas);
       var dataURL = canvas.toDataURL("image/png");
             // console.log(dataURL);
     document.getElementById('hidden_data').value = dataURL;
@@ -140,8 +140,9 @@ function openModalBoxC(){
       xhr.onload = function() {
             if( xhr.status == 200 ){
               alert('Succesfully uploaded'); 
-              // console.log( xhr.responseText);
-                // document.getElementById("download").href = xhr.responseText;
+              console.log( xhr.responseText);
+                document.getElementById("download").href = xhr.responseText;
+                document.getElementById("download").style.visibility = "visible"
                 // document.getElementById("download").innerText = "下載";
             }else{
               alert(xhr.status);
