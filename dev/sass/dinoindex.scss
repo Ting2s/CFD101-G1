@@ -8,14 +8,14 @@ align-items: center;
 perspective: 1200px;
 background-image: url(../images/dinoindex/bg.jpg);
 background-size: cover;
-
+background-position: center;
 }
 .wrap{
 }
 .book {
 transform-style: preserve-3d;
 position: relative;
-height: 300px;
+height: 400px;
 cursor: pointer;
 backface-visibility: visible;
 }
@@ -23,7 +23,7 @@ backface-visibility: visible;
 .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
 transform-style: preserve-3d;
 position: absolute;
-width: 200px;
+width: 300px;
 height: 100%;
 top: 0; left: 0;
 transform-origin: left center;
@@ -48,27 +48,27 @@ border-top-right-radius: .5em;
 }
 
 .page1 { 
-background: #efefef;
+background: #FEFEFB;
 }
 
 .page2 {
-background: #efefef;
+background: #FEFDF1;
 }
 
 .page3 {
-background: #f5f5f5;
+background: #FEFEFB;
 }
 
 .page4 {
-background: #f5f5f5;
+background: #FEFDF1;
 }
 
 .page5 {
-background: #fafafa;
+background: #FEFDF1;
 }
 
 .page6 {
-background: #fdfdfd;
+background: #FEFDF1;
 }
 
 .book:hover .front {
@@ -108,4 +108,24 @@ box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
 
 .book:hover .back {
 transform: rotateY(-20deg) scale(1.1);
+}
+.page5, .page6{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.entry {
+  width: 50%;
+}
+.left{
+  transform: translateX(50%);
+}
+.right{
+  transform: translateX(50%);
+}
+.front p{
+  margin: 20% 25%;
+  font-family: 'DFPLiYuan';
+  font-size: 20px;
+  color: #FEFEFB;
 }
