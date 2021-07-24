@@ -19,7 +19,8 @@ try{
     $success = file_put_contents($file, $data);
     $file2 = substr($file,1);
     
-    $sql = "INSERT INTO `dino` (`dino_no`, `img`) VALUES (null,'$file2')";
+    // $sql = "INSERT INTO `dino` (`dino_no`, `img`) VALUES (null,'$file2')";
+    $sql = "INSERT INTO `dino`(`DINO_NO`, `img`, `MYDINO_NO`) VALUES ('0','$file2',null)";
     $dino = $pdo->exec($sql);
     echo $file2;
 
