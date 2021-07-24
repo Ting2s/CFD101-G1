@@ -68,6 +68,15 @@ form #change-button{
 // RWD ipad 
 
 @media screen and (max-width: 1024px) {
+  span{
+    position: absolute;
+    top: 22%;
+    left: 37%;
+
+  }
+  form{
+    transform: translateY(20%);
+  }
   form input{
     margin: 0 auto 10px auto;
   }
