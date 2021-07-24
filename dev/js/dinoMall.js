@@ -96,7 +96,7 @@ function openModalBoxA(){
     }
   }
 
-// 儲存恐龍
+// 儲存恐龍  
 let ct = 0;
 function openModalBoxC(){
 
