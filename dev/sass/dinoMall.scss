@@ -425,7 +425,10 @@ body {
       .smallCart{
             width: 80%;
             transform: translate(20%,60%);
-      }      
+      } 
+      .wrapMall .itemRight .groundImgCard .btnCard-1 .imgCard .card span, .wrapMall .itemRight .groundImgCard .btnCard-2 .imgCard .card span {
+            padding-top: 2px;
+        }     
   }
 
  
