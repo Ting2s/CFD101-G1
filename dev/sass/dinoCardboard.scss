@@ -137,6 +137,10 @@ body {
                 margin: 0 auto;
                 img {
                     width: 100%;
+<<<<<<< HEAD
+=======
+                    height: 140px;
+>>>>>>> 62a86c3fe07f789d81cd9ea97ca339b281b27e6f
                     @include respondTo(large) {
                         height: 120px;
                     }
