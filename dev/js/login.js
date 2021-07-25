@@ -85,7 +85,7 @@ $id('logout').addEventListener('click', function () {
       $id('Avatar').style.display = "none";
       $id('SignIn').classList.remove("remove");
       //跳回首頁
-      window.location.href='./index.html';
+      window.location.href='./welcome.html';
     }
     else {
       alert(xhr.status);
