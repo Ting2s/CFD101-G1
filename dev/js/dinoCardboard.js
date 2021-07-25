@@ -109,7 +109,7 @@ let vm = new Vue({
         document.getElementById("nextPageButton").onclick = this.getcard_favorite;
       },
 
-    })
+    });
 
   
   $(document).ready(function(){
