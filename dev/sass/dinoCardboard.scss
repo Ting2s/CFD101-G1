@@ -137,6 +137,12 @@ body {
                 margin: 0 auto;
                 img {
                     width: 100%;
+                    @include respondTo(large) {
+                        height: 120px;
+                    }
+                    @include respondTo(medium) {
+                        height: 100px;
+                    }
                 }
             }
             .personContent {
