@@ -224,6 +224,8 @@ function closeModalBoxB(){
 
   let cartTotal = 0; 
   function updateCartTotal(){
+  let cartTotalInner = 0; 
+
     let cartItemContainer = document.getElementsByClassName('cart-items')[0];
     let cartRows = cartItemContainer.getElementsByClassName('cart-row');
     // console.log(cartRows);
@@ -241,9 +243,11 @@ function closeModalBoxB(){
         // localstorage
         let obj = {price, quantity} ;
         storage.setItem(productID,JSON.stringify(obj));
-        cartTotal = cartTotal + (price * quantity);     //  訂單總額
+        // cartTotal = cartTotal + (price * quantity);     //  訂單總額
+        cartTotalInner = cartTotalInner + (price * quantity);     //  訂單總額
+        cartTotal = cartTotalInner ;
     };
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + cartTotal;
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + cartTotalInner;
   };
 
   // input change 
