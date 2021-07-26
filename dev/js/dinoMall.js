@@ -201,6 +201,7 @@ function closeModalBoxB(){
 
   function deleteItem(itemId){
           storage.removeItem(itemId);
+          storage['addItemList'] = storage['addItemList'].replace(`${itemId}, `,'');  // 更正
   }
 
   function removeCartItem(e) {
