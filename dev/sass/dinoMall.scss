@@ -379,7 +379,8 @@ body {
       }
       .cart{
             width: 20%;
-            transform: translate(10%,-20%);
+            // transform: translate(10%,-20%);
+            transform: translate(15%,20%);// 0728
       }
 
 
@@ -389,13 +390,14 @@ body {
 
 
       .cart img{
-            width: 100%;
-            transform: translateY(50%);
+            // width: 100%;  // 0728
+            // transform: translateY(50%); // 0728
       }
       
       #counter{
             font-size: 25px;
-            transform: translate(10%,90%);
+            // transform: translate(10%,90%);
+            transform: translateY(-30%); // 0728
             z-index: 20;
       }
       .wrapMall .itemLeft .groundButton .btnSelect{
