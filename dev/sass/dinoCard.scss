@@ -1,0 +1,524 @@
+@import 'base/reset';
+// @import '../../guideline_sass/sass/base/var';
+@import 'base/font';
+@import 'layout/footer';
+@import 'layout/nav';
+
+
+@mixin respondTo($breakpoint) {
+  @if $breakpoint == "small" {
+      @media (max-width: 767px) {
+          @content;
+      }
+  }
+  @else if $breakpoint == "medium" {
+      @media (max-width: 812px) {
+          @content;
+      }
+  }
+  @else if $breakpoint == "large" {
+      @media (max-width: 1024px) {
+          @content;
+      }
+  }
+}
+
+
+body{
+  height: 100vh;
+  box-sizing: border-box;
+
+  nav{
+    z-index: 999;
+  }
+
+  .Island{
+    z-index: 999;
+  }
+
+  .content{
+     height: 100vh;
+   }
+}
+
+/* centerboard */
+.sectionBg{
+  position: relative;
+  width: 100%;
+  //height: 100%;
+}
+
+#background{
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+}
+
+.cloud{
+  width: 90%;
+  left: 5%;
+  object-fit: cover;
+  position: absolute;
+  animation: pulse;
+  animation-duration:8s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+  box-sizing: border-box;
+}
+
+//
+
+.board{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  top: 10rem;
+  display: flex;
+  justify-content: center;
+  //align-items: center;
+  @include respondTo(large) {
+    top: 7rem;
+  }
+  @include respondTo(medium) {
+    top: 5rem;
+  }
+
+  .meanBoard{
+    width: 80%;
+    //margin: 0 auto;
+    @include respondTo(large) {
+      width: 60%;
+    }
+    @include respondTo(medium) {
+      display: none;
+    }
+    
+    img{
+      width: 100%;
+      max-height: 650px;
+      min-height: 450px;
+      //margin: 0 auto;
+      //position: relative;//----------
+      @include respondTo(large) {
+        max-height: 480px;
+      }
+    }
+  }
+
+  //
+
+  .titleBtn{
+    width: 17%;
+    height: 4.6rem;
+    position: absolute;
+    //top: 1.8em;
+    margin-top: 2rem;
+    left:calc(50% - 33%);
+    @include respondTo(large) {
+      width: 14%;
+      height: 3.8rem;
+      margin-top: 1.6rem;
+      left:calc(50% - 26%);
+    }
+    @include respondTo(medium) {
+      display: none;
+    }
+  }
+
+  .titleText{
+    font-size: 28px;//----------------
+    font-family: DFPLiYuan;//-----------------
+    color: white;//----------------
+    position: absolute;
+    //top: 2.1em;
+    margin-top: 3.4rem;
+    left:calc(50% - 31.5%);
+    letter-spacing: 1px;
+    @include respondTo(large) {
+      font-size: 20px;//----------------
+      margin-top: 2.8rem;
+      left:calc(50% - 25%);
+      letter-spacing: 1px;
+    }
+    @include respondTo(medium) {
+      font-size: 16px;//----------------
+      left:calc(50% - 37%);
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      transform: rotate(-90deg);
+      //text-shadow: rgb(255, 255, 255) 1px 1px 3px;
+      padding: 10px;
+      box-shadow: 0px 3px darkseagreen;
+      color: darkgreen;
+      line-height: 18px;
+      top: .7rem;
+    }
+  }
+
+  .whiteBoard{
+    position: absolute;
+    //top: 6.2rem;
+    margin-top: 7.8rem;
+    width: 66%;
+    left: calc(50% - 33%);
+    @include respondTo(large) {
+      width: 52%;
+      left: calc(50% - 26%);
+      margin-top: 6rem;
+    }
+    @include respondTo(medium) {
+      width: 46%;
+      left: calc(50% - 23%);
+      margin-top: .2em;
+      box-shadow:4px 4px 6px -2px rgba(20%,20%,40%,0.5);
+    }
+  }
+
+//
+
+  .addMore{
+    position: absolute;
+    margin-top: 2.4rem;
+    left:50%;
+    @include respondTo(large) {
+      margin-top: 1.8rem;
+    }
+    @include respondTo(medium) {
+      z-index: 888;
+      left:6.2rem;
+      margin-top: 9rem;
+    }
+
+    .addmoreText1{
+      width: 32%;
+      @include respondTo(large) {
+        width: 26%;
+      }
+      @include respondTo(medium) {
+        
+      }
+
+      img{
+        width: 100%;
+        position: relative;
+        @include respondTo(medium) {
+          display: none;
+        }
+      }
+
+      span{
+        position: absolute;
+        left: 17px;
+        top: 22px;
+        font-size: 22px;//----------------
+        font-family: DFPLiYuan;//-----------------
+        color: white;//----------------
+        letter-spacing: 2px;
+        @include respondTo(large) {
+          left: 18px;
+          top: 20px;
+          font-size: 16px;
+        }
+        @include respondTo(medium) {
+          font-size: 12px;
+          width: 56px;
+          color: #ffffff;
+          border: 1px solid #e6e6e6;
+          padding: .5rem;
+          border-radius: 5px;
+          //background-color: #e6e6e6;
+          cursor: pointer;
+        }
+      }
+      
+    }
+
+    .addmoreText2{
+      width: 32%;
+      @include respondTo(large) {
+        width: 26%;
+      }
+      @include respondTo(medium) {
+        
+      }
+
+      img{
+        width: 100%;
+        position: relative;
+        @include respondTo(medium) {
+          display: none;
+        }
+      }
+
+      span{
+        position: absolute;
+        left: 150px;
+        top: 22px;
+        font-size: 22px;//----------------
+        font-family: DFPLiYuan;//-----------------
+        color: white;//----------------
+        letter-spacing: 2px;
+        @include respondTo(large) {
+          left: 128px;
+          top: 20px;
+          font-size: 16px;
+        }
+        @include respondTo(medium) {
+          font-size: 12px;
+          width: 56px;
+          color: rgb(255, 255, 255);
+          border: 1px solid #e6e6e6;
+          padding: .5rem;
+          border-radius: 5px;
+          top: 4.5rem;
+          left: 1.1rem;
+          //background-color: #e6e6e6;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.literally {
+  background-color: white !important;
+  min-height: 480px !important;
+  @include respondTo(large) {
+    min-height: 350px !important;
+  }
+  @include respondTo(medium) {
+    min-height: 240px !important;
+    // position: initial !important;
+  }
+
+  svg{
+    @include respondTo(medium) {
+      width: 22px !important;
+      height: 22px !important;
+    }
+  }
+  
+  .horz-toolbar{
+    @include respondTo(medium) {
+      height: auto !important;
+    }
+  }
+
+  .color-well-color-container{
+    @include respondTo(medium) {
+      width: 22px !important;
+      height: 22px !important;
+    }
+  }
+
+  .lc-picker{
+    @include respondTo(medium) {
+      width: 68px !important;
+      border: none !important;
+    }
+  }
+
+  .lc-options{
+    @include respondTo(medium) {
+      left: 68px !important;
+      border: none !important;
+    }
+  }
+
+  .color-well{
+    @include respondTo(medium) {
+      width: 45px !important;
+    }
+  }
+}
+
+.toolbar-button{
+  @include respondTo(medium) {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+.square-toolbar-button{
+  @include respondTo(medium) {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
+
+
+// .downBtn{
+//   display: flex;
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   justify-content: center;
+//   margin-top: 10rem;
+//   @include respondTo(large) {
+//     margin-top: 6.8rem;
+//   }
+//   @include respondTo(medium) {
+//     margin-top: 5rem;
+//     position: absolute;
+//     display: inline-grid;
+//     right: 10rem;
+//   }
+   
+//   .save,
+//   .downLoad,
+//   .post,
+//   .share {
+//     width: 17%;
+//     margin: 20px;
+//     position: relative;
+//     @include respondTo(large) {
+//       width: 14%;
+//     }
+//     @include respondTo(medium) {
+//       margin-top: 2.2rem;
+//     }
+
+//     img{
+//       width: 100%;
+//       @include respondTo(medium) {
+//         display: none;
+//       }
+//     }
+
+//     span{
+//       position: absolute;
+//       font-size: 24px;//----------------
+//       font-family: DFPLiYuan;//-----------------
+//       color: white;//----------------
+//       letter-spacing: 1px;
+//       @include respondTo(large) {
+//         font-size: 18px;
+//       }
+//       @include respondTo(medium) {
+//         color: rgb(255, 255, 255);
+//         font-size: 12px;
+//         width: 60px;
+//       }
+//     }
+
+//     .downText1,
+//     .downText2{
+//       left:calc(50% - 24%);
+//       padding-top: 24px;
+//       @include respondTo(large) {
+//         padding-top: 17px;
+//       }
+//       @include respondTo(medium) {
+//         //background-image: url(../images/dinoCard/mBtn.png);
+//         //background-size: cover;
+//         padding: 1rem 1.5rem 1rem 1.7rem;
+//       }
+//     }
+//     .downText3,
+//     .downText4{
+//       left:calc(50% - 12%);
+//       padding-top: 24px;
+//       @include respondTo(large) {
+//         padding-top: 17px;
+//       }
+//       @include respondTo(medium) {
+//         //background-image: url(../images/dinoCard/mBtn.png);
+//         //background-size: cover;
+//         padding: 1rem 1.7rem 1rem 1.7rem;
+//       }
+//     }
+//   }
+// }
+
+.downBtn{
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  margin-top: 10rem;
+  @include respondTo(large) {
+    margin-top: 6.8rem;
+  }
+  @include respondTo(medium) {
+    margin-top: 5.5rem;
+    position: absolute;
+    display: inline-grid;
+    right: 5rem;
+  }
+   
+  .save,
+  .downLoad,
+  .post,
+  .share {
+    width: 12rem;
+    margin: 20px;
+    justify-content: center;
+    position: relative;
+    @include respondTo(large) {
+      width: 9rem;
+    }
+    @include respondTo(medium) {
+      margin-top: 2.2rem;
+    }
+
+    img{
+      width: 100%;
+      @include respondTo(medium) {
+        display: none;
+      }
+    }
+
+    span{
+      position: absolute;
+      font-size: 24px;//----------------
+      font-family: DFPLiYuan;//-----------------
+      color: white;//----------------
+      letter-spacing: 1px;
+      @include respondTo(large) {
+        font-size: 18px;
+      }
+      @include respondTo(medium) {
+        color: rgb(255, 255, 255);
+        font-size: 12px;
+        width: 54px;
+      }
+    }
+
+    .downText1,
+    .downText2{
+      left:calc(50% - 12%);
+      padding-top: 24px;
+      @include respondTo(large) {
+        padding-top: 17px;
+      }
+      @include respondTo(medium) {
+        //background-image: url(../images/dinoCard/mBtn.png);
+        //background-size: cover;
+        border: olivedrab 1px solid;
+        padding: .6rem .6rem .6rem .6rem;
+        border-radius: 3px;
+        background-color: rgba(106, 142, 35, 0.7) ;
+      }
+    }
+    .downText3,
+    .downText4{
+      left:calc(50% - 23%);
+      padding-top: 24px;
+      @include respondTo(large) {
+        padding-top: 17px;
+      }
+      @include respondTo(medium) {
+        left:calc(50% - 12%);
+        //background-image: url(../images/dinoCard/mBtn.png);
+        //background-size: cover;
+        border: olivedrab 1px solid;
+        padding: .6rem .6rem .6rem .6rem;
+        border-radius: 3px;
+        background-color: rgba(106, 142, 35, 0.7) ;
+      }
+    }
+   }
+ }

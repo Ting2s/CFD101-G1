@@ -1,0 +1,543 @@
+@font-face {
+    font-family: 'DFPLiYuan';
+    src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+}
+
+body {
+    height: 100vh;
+    background-image: url('../images/dinoIsland/island-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.Wrap {
+    width: 65%;
+    height: 85vh;
+    position: relative;
+    top: 12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    // background-color: rgba(161, 161, 235, 0.541);
+}
+
+.Dino-1 {
+    width: 18%;
+    position: absolute;
+    left: 11%;
+    top: 2%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-1-col {
+    width: 18%;
+    position: absolute;
+    left: 11%;
+    top: 2%;
+}
+
+.Dino-2 {
+    width: 14%;
+    position: absolute;
+    left: 26%;
+    top: 20%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-2-col {
+    width: 14%;
+    position: absolute;
+    left: 26%;
+    top: 20%;
+}
+
+.Dino-3 {
+    width: 25%;
+    position: absolute;
+    left: 30%;
+    bottom: 35%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-3-col {
+    width: 25%;
+    position: absolute;
+    left: 30%;
+    bottom: 35%;
+}
+
+.Dino-4 {
+    width: 20%;
+    position: absolute;
+    right: 21%;
+    top: 28%;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-4-col {
+    width: 20%;
+    position: absolute;
+    right: 21%;
+    top: 28%;
+}
+
+.Dino-5 {
+    width: 24%;
+    position: absolute;
+    right: 8%;
+    bottom: 23%;
+    z-index: 1;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-5-col {
+    width: 24%;
+    position: absolute;
+    right: 8%;
+    bottom: 23%;
+    z-index: 1;
+}
+
+.Dino-6 {
+    width: 18%;
+    position: absolute;
+    right: 23%;
+    bottom: 15%;
+    z-index: 2;
+    // background-color: rgba(161, 161, 235, 0.541)
+}
+
+.Dino-6-col {
+    width: 18%;
+    position: absolute;
+    right: 23%;
+    bottom: 15%;
+    z-index: 2;
+}
+
+.Dino-1 img,
+.Dino-2 img,
+.Dino-3 img,
+.Dino-4 img,
+.Dino-5 img,
+.Dino-6 img,
+.Dino-1-col img,
+.Dino-2-col img,
+.Dino-3-col img,
+.Dino-4-col img,
+.Dino-5-col img,
+.Dino-6-col img {
+    width: 100%;
+}
+
+//-----hover
+
+.Dino-1:hover,
+.Dino-2:hover,
+.Dino-3:hover,
+.Dino-4:hover,
+.Dino-5:hover,
+.Dino-6:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+//介紹框
+.intItem-1 h2,
+.intItem-2 h2,
+.intItem-3 h2,
+.intItem-4 h2,
+.intItem-5 h2,
+.intItem-6 h2 {
+    font-size: 23px;
+    color: #e05301;
+    padding: 5% 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+//翼手龍&共用css
+.intItem-1 p,
+.intItem-2 p,
+.intItem-3 p,
+.intItem-4 p,
+.intItem-5 p,
+.intItem-6 p {
+    font-size: 20px;
+    color: #6e6e6e;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
+
+.intItem-1 h3,
+.intItem-2 h3,
+.intItem-3 h3,
+.intItem-4 h3,
+.intItem-5 h3,
+.intItem-6 h3 {
+    font-size: 22px;
+    color: #4b69ce;
+    padding: 0 5% 3% 5%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 180%;
+    letter-spacing: 1px;
+}
+
+//翼手龍
+.intItem-1 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: -25%;
+    border-radius: 15px;
+    position: relative;
+    top: 20%;
+    display: none;
+}
+
+//始祖鳥
+.intItem-2 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: -12%;
+    border-radius: 15px;
+    position: relative;
+    top: 35%;
+    display: none;
+}
+
+//暴龍
+.intItem-3 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: -7.3%;
+    border-radius: 15px;
+    position: relative;
+    top: 50%;
+    display: none;
+}
+
+//劍龍
+.intItem-4 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: 78%;
+    border-radius: 15px;
+    position: relative;
+    top: 10%;
+    display: none;
+}
+
+//蛇頸龍
+.intItem-5 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: 82%;
+    border-radius: 15px;
+    position: relative;
+    top: 33%;
+    display: none;
+}
+
+//滄龍
+.intItem-6 {
+    width: 40%;
+    font-family: 'DFPLiYuan';
+    background-color: white;
+    margin-left: 20%;
+    border-radius: 15px;
+    position: relative;
+    top: 67%;
+    display: none;
+}
+
+// ----------------------------RWD(1024px)
+
+@media screen and (max-width: 1024px) {
+
+    .Dino-1 {
+        width: 23%;
+        left: -1%;
+        top: 5%;
+    }
+
+
+    .Dino-1-col {
+        width: 23%;
+        left: -1%;
+        top: 5%;
+    }
+
+    .Dino-2 {
+        width: 20%;
+        left: 18%;
+        top: 18%;
+    }
+
+    .Dino-2-col {
+        width: 20%;
+        left: 18%;
+        top: 18%;
+    }
+
+    .Dino-3 {
+        width: 34%;
+        left: 15%;
+        bottom: 36%;
+    }
+
+    .Dino-3-col {
+        width: 34%;
+        left: 15%;
+        bottom: 36%;
+    }
+
+    .Dino-4 {
+        width: 29%;
+    }
+
+    .Dino-4-col {
+        width: 29%;
+    }
+
+    .Dino-5 {
+        width: 35%;
+        right: -4%;
+        bottom: 25%;
+        z-index: 1;
+    }
+
+    .Dino-5-col {
+        width: 35%;
+        right: -4%;
+        bottom: 25%;
+        z-index: 1;
+    }
+
+    .Dino-6 {
+        width: 24%;
+        right: 16%;
+    }
+
+    .Dino-6-col {
+        width: 24%;
+        right: 16%;
+    }
+
+    .intItem-1 h2,
+    .intItem-2 h2,
+    .intItem-3 h2,
+    .intItem-4 h2,
+    .intItem-5 h2,
+    .intItem-6 h2 {
+        font-size: 20px;
+        line-height: 137%;
+    }
+
+    .intItem-1 p,
+    .intItem-2 p,
+    .intItem-3 p,
+    .intItem-4 p,
+    .intItem-5 p,
+    .intItem-6 p {
+        font-size: 18px;
+        line-height: 154%;
+    }
+
+    .intItem-1 h3,
+    .intItem-2 h3,
+    .intItem-3 h3,
+    .intItem-4 h3,
+    .intItem-5 h3,
+    .intItem-6 h3 {
+        font-size: 20px;
+    }
+
+    //翼手龍
+    .intItem-1 {
+        width: 40%;
+        margin-left: -25%;
+        top: 30%;
+    }
+
+    //始祖鳥
+    .intItem-2 {
+        margin-left: -24%;
+    }
+
+    //暴龍
+    .intItem-3 {
+        background-color: #fff;
+        margin-left: -21%;
+        top: 44%;
+    }
+
+    //劍龍
+    .intItem-4 {
+        margin-left: 80%;
+        top: 5%;
+    }
+
+    //蛇頸龍
+    .intItem-5 {
+        top: 10%;
+    }
+
+    //滄龍
+    .intItem-6 {
+        width: 67%;
+        margin-left: -6%;
+        top: 62%;
+    }
+}
+
+// ----------------------------RWD(812px)
+
+@media screen and (max-width: 812px) {
+
+    .Dino-1 {
+        width: 18%;
+        left: 10%;
+        top: 1%;
+    }
+
+
+    .Dino-1-col {
+        width: 18%;
+        left: 10%;
+        top: 1%;
+    }
+
+    .Dino-2 {
+        width: 17%;
+        left: 27%;
+        top: 11%;
+    }
+
+    .Dino-2-col {
+        width: 17%;
+        left: 27%;
+        top: 11%;
+    }
+
+    .Dino-3 {
+        width: 27%;
+        left: 27%;
+        bottom: 28%;
+    }
+
+    .Dino-3-col {
+        width: 27%;
+        left: 27%;
+        bottom: 28%;
+    }
+
+    .Dino-4 {
+        width: 21%;
+        top: 24%;
+    }
+
+    .Dino-4-col {
+        width: 21%;
+        top: 24%;
+    }
+
+    .Dino-5 {
+        width: 26%;
+        right: 5%;
+        bottom: 16%;
+    }
+
+    .Dino-5-col {
+        width: 26%;
+        right: 5%;
+        bottom: 16%;
+    }
+
+    .Dino-6 {
+        width: 19%;
+        right: 23%;
+        bottom: 8%;
+    }
+
+    .Dino-6-col {
+        width: 19%;
+        right: 23%;
+        bottom: 8%;
+    }
+
+    .intItem-1 h2,
+    .intItem-2 h2,
+    .intItem-3 h2,
+    .intItem-4 h2,
+    .intItem-5 h2,
+    .intItem-6 h2 {
+        font-size: 14px;
+        line-height: 137%;
+    }
+
+    .intItem-1 p,
+    .intItem-2 p,
+    .intItem-3 p,
+    .intItem-4 p,
+    .intItem-5 p,
+    .intItem-6 p {
+        font-size: 12px;
+        line-height: 154%;
+    }
+
+    .intItem-1 h3,
+    .intItem-2 h3,
+    .intItem-3 h3,
+    .intItem-4 h3,
+    .intItem-5 h3,
+    .intItem-6 h3 {
+        font-size: 14px;
+    }
+
+    //翼手龍
+    .intItem-1 {
+        width: 40%;
+        margin-left: -25%;
+        top: 12%;
+    }
+
+    //始祖鳥
+    .intItem-2 {
+        margin-left: -19%;
+        top: 31%;
+    }
+
+    //暴龍
+    .intItem-3 {
+        margin-left: -24%;
+        width: 49%;
+        top: 39%;
+    }
+
+    //劍龍
+    .intItem-4 {
+        margin-left: 82%;
+    }
+
+    //蛇頸龍
+    .intItem-5 {
+        top: 10%;
+    }
+
+    //滄龍
+    .intItem-6 {
+        width: 40%;
+        margin-left: 84%;
+        top: 6%;
+    }
+}

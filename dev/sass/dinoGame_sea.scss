@@ -1,0 +1,715 @@
+@font-face {
+    font-family: 'DFPLiYuan';
+    src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+}
+
+body {
+    height: 100vh;
+    background-image: url('../images/dinoGame_sea/bg-sea.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+//--------------------
+
+.Avatar_p {
+    padding-left: 37%;
+}
+
+.MemberCentre-bt,
+.SignOut-bt {
+    margin-left: 25%;
+}
+
+.SignOut-bt {
+    background-color: rgb(197, 197, 197);
+    margin-top: 8px;
+}
+
+
+.Avatar-box img {
+    padding-left: 30%;
+}
+
+//--------------------
+
+.GameRange {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    top: 14vh;
+    overflow: hidden;
+    // background-color: rgba(95, 158, 160, 0.815);
+}
+
+.dino-sea1 {
+    width: 35%;
+    position: absolute;
+    top: 12%;
+    left: 48%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.dino-sea1 img {
+    width: 100%;
+}
+
+// ---------------fish
+
+.Fish-1 {
+    width: 18%;
+    position: absolute;
+    top: 35%;
+    right: -1%;
+    z-index: 1;
+    animation: animate-1 15s infinite;
+    animation-delay: 0s;
+    cursor: pointer;
+}
+
+.Fish-2 {
+    width: 10%;
+    position: absolute;
+    top: 35%;
+    left: -10%;
+    z-index: 3;
+    animation: animate-2 10s infinite;
+    animation-delay: 3s;
+    cursor: pointer;
+}
+
+.Fish-3 {
+    width: 10%;
+    position: absolute;
+    bottom: 35%;
+    left: -10%;
+    z-index: 1;
+    animation: animate-3 12s infinite;
+    animation-delay: 5s;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.Fish-4 {
+    width: 13%;
+    position: absolute;
+    top: 15%;
+    left: -13%;
+    z-index: 3;
+    animation: animate-4 17s infinite;
+    animation-delay: 10s;
+    cursor: pointer;
+}
+
+.Fish-5 {
+    width: 8%;
+    position: absolute;
+    bottom: 25%;
+    right: -8%;
+    z-index: 1;
+    animation: animate-5 18s infinite;
+    animation-delay: 0s;
+    cursor: pointer;
+}
+
+.Fish-6 {
+    width: 8%;
+    position: absolute;
+    top: 5%;
+    right: -10%;
+    z-index: 3;
+    animation: animate-6 16s infinite;
+    animation-delay: 3s;
+    cursor: pointer;
+}
+
+.Fish-1 img,
+.Fish-2 img,
+.Fish-3 img,
+.Fish-4 img,
+.Fish-5 img,
+.Fish-6 img {
+    width: 100%;
+}
+
+//-------animation fish
+@keyframes animate-1 {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-600%);
+    }
+}
+
+@keyframes animate-2 {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(1200%);
+    }
+}
+
+@keyframes animate-3 {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(1200%);
+    }
+}
+
+@keyframes animate-4 {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(1100%);
+    }
+}
+
+@keyframes animate-5 {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-1500%);
+    }
+}
+
+@keyframes animate-6 {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-1500%);
+    }
+}
+
+//-----水草
+.SeaweedL {
+    width: 33%;
+    height: 69vh;
+    position: relative;
+    bottom: -18%;
+    left: -4%;
+    overflow: hidden;
+    // background-color: aquamarine;
+}
+
+.SeaweedL .Seaweed-1 {
+    width: 100%;
+    position: absolute;
+    left: -9%;
+    transform: rotate(-20deg);
+}
+
+.SeaweedL .Seaweed-2 {
+    width: 100%;
+    left: 10%;
+    position: absolute;
+    transform: rotate(0deg);
+}
+
+.SeaweedR {
+    width: 26%;
+    height: 52vh;
+    position: relative;
+    top: -44%;
+    left: 71%;
+    overflow: hidden;
+}
+
+.SeaweedR .Seaweed-1 {
+    width: 100%;
+    position: absolute;
+    left: -9%;
+    transform: rotate(-20deg);
+}
+
+.SeaweedR .Seaweed-2 {
+    width: 100%;
+    left: 10%;
+    position: absolute;
+    transform: rotate(0deg);
+}
+
+//----成長
+.GrowUp {
+    width: 33%;
+    position: relative;
+    bottom: 67%;
+    left: 50%;
+    transform: translateX(-50%);
+    // background-color: blanchedalmond;
+}
+
+.GrowUp .GrowUp_sch {
+    width: 100%;
+}
+
+.Grow-sq {
+    width: 99.4%;
+    height: 45%;
+    position: absolute;
+    bottom: 1%;
+    left: 50.7%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    // background-color: rgba(255, 127, 80, 0.479);
+}
+
+.Grow-sq img {
+    width: 6%;
+    height: 76%;
+    margin: 0 0.3%;
+    display: none;
+}
+
+//小測驗1
+.litTest_1 {
+    width: 85%;
+    height: 80vh;
+    position: relative;
+    top: -72%;
+    margin: auto;
+    z-index: 101;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+
+.litTest_1 h1,
+.choose {
+    font-size: 45px;
+    font-family: 'DFPLiYuan';
+    letter-spacing: 10px;
+    color: #ffdc7d;
+    ;
+}
+
+.choose {
+    color: white;
+    cursor: pointer;
+}
+
+//小測驗2
+.litTest_2 {
+    width: 85%;
+    height: 80vh;
+    position: relative;
+    top: -72%;
+    margin: auto;
+    z-index: 101;
+    border-radius: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+
+.litTest_2 h1,
+.choose {
+    font-size: 45px;
+    font-family: 'DFPLiYuan';
+    letter-spacing: 10px;
+    color: #ffdc7d;
+}
+
+.choose {
+    color: white;
+    cursor: pointer;
+}
+
+
+//---teach
+.close {
+    position: fixed;
+    width: 4%;
+    top: 5%;
+    right: 7%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close img {
+    width: 100%;
+}
+
+.teach {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.678);
+    z-index: 100;
+}
+
+.teach .teach-bg {
+    width: 100%;
+    margin-top: 32%;
+    transform: translateY(-50%);
+}
+
+//teach fish
+
+.touch-fish {
+    width: 18%;
+    position: absolute;
+    top: 30%;
+    left: 23%;
+    z-index: 100;
+    animation: animate 0.5s infinite;
+    animation-direction: alternate;
+    animation-delay: 0s;
+}
+
+//---teach group
+
+.teach-growp-wrap {
+    width: 40%;
+    position: relative;
+    bottom: 86%;
+    left: 48%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    // background-color: rgba(238, 232, 170, 0.712);
+}
+
+.GrowUp_1 {
+    width: 100%;
+}
+
+.teach-sq-wrap {
+    width: 100%;
+    height: 44%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgba(251, 2, 2, 0.712);
+}
+
+.teach-sq {
+    width: 6.4%;
+    height: 94%;
+    position: absolute;
+    bottom: 0%;
+    right: 33.7%;
+    z-index: 100;
+    animation: sq 0.7s infinite;
+    animation-direction: alternate;
+    animation-delay: 3s;
+    // background-color: rgba(255, 166, 0, 0.493);
+}
+
+.teach-sq img {
+    width: 100%;
+}
+
+//teach dino
+
+.dino {
+    width: 41%;
+    position: absolute;
+    top: 18%;
+    right: 15%;
+    z-index: 100;
+    animation: dino 0.5s infinite;
+    animation-direction: alternate;
+    animation-delay: 7s;
+}
+
+
+//---animate
+
+@keyframes animate {
+    to {
+        width: 19%;
+    }
+}
+
+@keyframes sq {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dino {
+    to {
+        width: 42%;
+    }
+}
+
+.closeAnimation {
+    animation: close 0.3s forwards;
+}
+
+@keyframes close {
+    to {
+        transform: scale(0);
+    }
+}
+
+// ----------------------------RWD(1024px)
+
+@media screen and (max-width: 1024px) {
+
+    //--------------------
+
+    .Avatar_p {
+        padding-left: 37%;
+    }
+
+    .MemberCentre-bt,
+    .SignOut-bt {
+        margin-left: 25%;
+    }
+
+    .SignOut-bt {
+        background-color: rgb(197, 197, 197);
+        margin-top: 8px;
+    }
+
+
+    .Avatar-box img {
+        padding-left: 30%;
+    }
+
+    //--------------------
+    .dino-sea1 {
+        width: 50%;
+        top: 14%;
+        left: 47%;
+    }
+
+    .SeaweedL {
+        width: 35%;
+        left: -6%;
+        bottom: -35%;
+    }
+
+    .SeaweedR {
+        width: 28%;
+        top: -34%;
+        left: 68%;
+    }
+
+    .GrowUp {
+        width: 43%;
+    }
+
+    .Grow-sq {
+        bottom: 2.2%;
+    }
+
+    .teach .teach-bg {
+        margin-top: 40%;
+        transform: translateY(-50%);
+    }
+
+    .touch-fish {
+        top: 34%;
+        left: 23%;
+    }
+
+    .teach-growp-wrap {
+        width: 55%;
+        bottom: 63%;
+        left: 55%;
+    }
+
+    .teach-sq {
+        height: 94.4%;
+    }
+
+    .dino {
+        top: 26%;
+        right: 15%;
+    }
+
+    .close {
+        width: 6%;
+        top: 6%;
+        right: 6%;
+    }
+
+    #teach_close,
+    #teach_close_1 {
+        width: 8%;
+        right: 4%;
+        top: 6%;
+    }
+}
+
+// ----------------------------RWD(812px)
+
+@media screen and (max-width: 812px) {
+
+    .dino-sea1 {
+        width: 33%;
+        top: 12%;
+        left: 50%;
+    }
+
+    .SeaweedL {
+        width: 26%;
+        left: -4%;
+        bottom: -20%;
+    }
+
+    .SeaweedR {
+        width: 20%;
+        height: 52vh;
+        position: relative;
+        top: -44%;
+        left: 73%;
+    }
+
+    .GrowUp {
+        width: 33%;
+    }
+
+    .Grow-sq {
+        bottom: 4%;
+    }
+
+    .teach .teach-bg {
+        margin-top: 28%;
+        transform: translateY(-50%);
+    }
+
+    .touch-fish {
+        width: 16%;
+        top: 30%;
+        left: 23%;
+    }
+
+    .teach-growp-wrap {
+        width: 39%;
+        bottom: 108%;
+        left: 48%;
+    }
+
+    .teach-sq {
+        height: 95%;
+    }
+
+    .dino {
+        top: 16%;
+        right: 15%;
+    }
+
+    .close {
+        width: 5%;
+        top: 5%;
+        right: 4%;
+    }
+
+    //小測驗1
+    .litTest_1,
+    .litTest_2 {
+        width: 64%;
+        height: 72vh;
+        position: relative;
+        top: -68%;
+        margin: auto;
+        z-index: 101;
+        border-radius: 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgba(0, 0, 0, .527);
+    }
+
+    .litTest_1 h1,
+    .choose {
+        font-size: 24px;
+        font-family: 'DFPLiYuan';
+        letter-spacing: 10px;
+        color: #ffdc7d;
+        ;
+    }
+
+    .choose {
+        color: white;
+        cursor: pointer;
+    }
+
+    //小測驗2
+    .litTest_2 h1,
+    .choose {
+        font-size: 24px;
+        font-family: 'DFPLiYuan';
+        letter-spacing: 10px;
+        color: #ffdc7d;
+    }
+
+
+    .choose {
+        color: white;
+        cursor: pointer;
+    }
+
+    //----anmate
+
+    @keyframes animate {
+        to {
+            width: 17%;
+        }
+    }
+}
+
+
+//--------------------------------
+
+.right {
+    color: rgb(0, 255, 0);
+}
+
+.er {
+    color: rgb(138, 138, 138);
+}
+
+.teach_close {
+    position: absolute;
+    width: 4%;
+    top: 5%;
+    right: 7%;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.teach_close img {
+    width: 100%;
+}
+
+//---remove
+.remove {
+    display: none;
+}
+
+.show {
+    display: block;
+}

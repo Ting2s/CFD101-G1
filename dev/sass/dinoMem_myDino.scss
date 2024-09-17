@@ -1,0 +1,315 @@
+@import 'dinoMem.scss';
+
+//==================================
+//更換按鈕
+
+// canvas {
+//   position: absolute;
+//   top: 30px;
+//   left: 30px;
+//   height: 300px;
+//   width: 260px;
+//   visibility: hidden;
+// }
+//==================================
+.switchBtn{
+  padding: 20px 60px;
+  margin: 20px;
+
+  
+
+button{
+  padding: 5px 30px;
+  font-size: ($font-h4)-6px;
+  
+  &:hover{
+    color: $yellow-second;
+  }
+}
+
+p{
+  padding: 20px 10px 0px 10px;
+  color: $yellow-second;
+  font-size: ($font-h4)-12px;
+}
+}
+
+#save{
+  color: $yellow-first;
+  background-color: $brown;
+  padding: 5px 30px;
+  margin-left: 10px;
+  border-radius: 10px;
+
+  &:hover{
+    color: red;
+  }
+}
+
+.saveBox {
+  display: none; 
+  position: fixed; 
+  z-index: 4; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width:100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.saveContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 30%;
+  
+
+  p{
+    color: $brown;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+.saveClose {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover{
+  color:red;
+  text-decoration: none;
+  cursor: pointer;
+  }
+}
+//==================================
+//標題按鈕被選取時的CSS
+.active{
+  padding: 5px 30px;
+  border-radius: $btn-radius;
+  border:3px solid $brown;
+  background-color:$yellow-second;
+  color:$brown;
+
+  &:hover{
+    background-color: $brown;
+    color:$yellow-second;
+  }
+}
+
+//關閉時
+@keyframes bounce{
+  from{transform:translateY(10px)}
+  to{transform:translateY(-10px)}}
+
+  @keyframes bounce_2{
+    from{transform:translateY(10px) scaleY(-1);}
+    to{transform:translateY(-10px) scaleY(-1);}
+  }
+  
+
+//==================================
+.dinoCon{
+  display: flex;
+}
+.dinoChoose{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.changePage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 30px;
+  li{
+    position: relative;
+    left: 30px;
+    margin: 0 20px;
+    margin-right: 40px;
+    font-size: $font-h4;
+    color: $yellow-second;
+  }
+
+}
+.upPage,.downPage{
+  margin: 20px 10px;
+  width: 80px;
+  height: 80px;
+  background: url(../../dev/images/dinoPersonal/arrowSmall.png) no-repeat center center;
+  background-size: contain;
+}
+.upPage:hover{
+  animation: bounce .5s infinite alternate;
+
+}
+.downPage{
+  transform:scaleY(-1);
+  &:hover{
+    animation: bounce_2 .5s infinite alternate;
+}
+}
+.mydino{
+  display: flex;
+  flex-wrap: wrap;
+}
+.dino{
+  display: flex;
+  flex-wrap: wrap;
+
+
+  li{
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    cursor: pointer;
+
+    img{
+      display:block;
+      margin: auto;
+      margin-top: 60px;
+      width: 50%;
+      
+      //彈窗動畫
+      transition: 0.3s;
+
+      &:hover {
+        opacity: 0.7;}
+    }
+    
+    input{
+      display: block;
+      margin: auto;
+      margin-top: 50px;
+      width: 150px;
+      height: 60px;
+      border: none;
+      background: url(../../dev/images/dinoPersonal/goldWood.png) no-repeat center center;
+      background-size: contain;    
+      
+      color: $brown;
+      font-size: ($font-h4)-8px;
+      font-weight: $font-bold;
+
+    }
+}
+  }
+.ocean{ 
+  background: url(../../dev/images/dinoPersonal/eggocean.png) no-repeat center center;
+ } 
+.ground{
+  background: url(../../dev/images/dinoPersonal/egggress.png) no-repeat center center;
+}
+.sky{
+  background: url(../../dev/images/dinoPersonal/eggfly.png) no-repeat center center;
+}
+
+
+//==================================
+//我的恐龍配件
+
+.dinoAcc{
+    .acc{
+      display: inline-block;
+    }
+ 
+
+  li{
+    display: inline-block;
+    margin:0 10px;
+    width: 140px;
+    height: 140px;
+    cursor: pointer;
+    background-size: contain;
+
+    img{
+      display:block;
+      margin: auto;
+      width: 40%;
+      margin-top: 40px;
+
+      &:hover {
+        opacity: 0.7;}
+    }
+  }
+}
+
+.hat{
+    background: url(../../dev/images/dinoPersonal/hat.png) no-repeat center center;
+  }
+
+.ticket{
+    background: url(../../dev/images/dinoPersonal/ring.png) no-repeat center center;
+  }
+
+.back{
+    background: url(../../dev/images/dinoPersonal/shoes.png) no-repeat center center;
+  }
+  
+  
+  
+//=====================打開開關clas 
+.none{
+  display: none;
+}
+//============================================
+//身上配件
+
+.perFrame .hat_frame img{
+  position: absolute; 
+  width: 70px;
+}
+
+.perFrame .ticket_frame img{
+  position: absolute; 
+  width: 70px;
+}
+
+.perFrame .back_frame img{
+  position: absolute; 
+  width: 70px;
+}
+
+.ticket_frame,.hat_frame,.back_frame{
+  display: none; 
+  cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .switchBtn {
+    transform: translate(20%,100%);
+    padding: 10px;
+    margin: 5px;
+}
+  .changePage {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    margin-left: 0px;
+  }
+  .dinoCon{
+    width: 70%;
+  }
+  .dino{
+    transform: translate(30%,20%);
+  }
+  .dino li{
+    width: 120px;
+  }
+  .dino li input{
+    width: 120px;
+  }
+
+#saveImg{
+  margin: 0;
+  text-align: center;
+ }
+}

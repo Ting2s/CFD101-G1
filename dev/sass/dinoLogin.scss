@@ -1,0 +1,307 @@
+//@import './base/reset';
+@import './base/font';
+@import '../../guideline_sass/sass/base/var';
+
+//==================================
+
+body{
+color: $brown;
+font-family:'DFPLiYuan';
+text-align: center;
+}
+button{
+cursor: pointer;
+color: $brown;
+font-family:'DFPLiYuan';
+
+transition: all .5s ease-in-out;;
+&:hover{
+  transform: scale(.9);
+}
+}
+
+
+
+//==================================
+.loginWrap {
+position: relative;
+overflow: hidden;
+width: 100vw;
+height: 100vh;
+background-image: url(../images/dinoPersonal/jungle.png);
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+}
+
+.loginBox{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+ /* 登入框 */
+.loginCon{
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+width: 1000px;
+max-width: 1000px;
+height: 600px;
+
+background-image: url(../images/dinoPersonal/backTreeBoard.png);
+background-size: contain;
+background-position: center center;
+background-repeat: no-repeat;
+}
+
+// 底白色
+.conBack {  
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+
+margin-top: 40px;
+float: left;
+width: 640px;
+height: 280px;
+overflow: hidden;
+border-radius: 10px;
+background-color: rgba(224, 224, 224, 0.8);
+}
+
+// 表單
+.forms {
+position: absolute;
+overflow: hidden;
+top:200px;
+left: 180px;
+width: 320px;
+height: 280px;
+
+border-radius: 10px;
+background-image: url(../images/dinoLogin/backgroundInTalk.jpg);
+transition: all 0.5s;
+}
+
+// 點擊時的login表單
+.form_login_active {
+height: 420px;  
+top:100px;
+left: 180px;
+      
+transition: all 0.5s;
+}
+
+// 點擊時的sign表單
+.form_signup_active {
+height: 420px;  
+top:100px;
+left: 500px;
+
+transition: all 0.5s;
+}
+
+
+// .form_login_active > .imgBack_sign {
+// top:0px;  
+// transition: all 0.5s;
+// }
+      
+// .form_login_active > .imgBack_sign {
+// top:0px;  
+// left: -435px;
+// transition: all 0.5s;}
+
+
+.loginStr {
+position: absolute;
+width: 640px;
+// height: 280px;
+top: 100px;
+z-index: 1;} 
+
+
+
+.login_md {
+position: relative;
+float: left;
+width: 50%;}
+
+
+// 登入註冊button
+.login_btn,.signup_btn{ 
+padding: 15px;
+width: 200px;
+margin: 20px;
+
+border: none;
+background-image: url(../images/dinoPersonal/brownBoard.png);
+background-size: contain;
+background-position: center center;
+background-repeat: no-repeat;
+color: $yellow-second;
+}
+
+.signup_md {
+position: relative;
+float: left;
+width: 50%;  
+}
+
+/* 背景 */
+.changeOpcitiy {
+position: relative;
+margin: auto;
+margin-top: 150px;
+padding: 15px 0px;
+width: 80%;
+border-radius:3px;
+background-color: rgba(134, 108, 108, 0.55);
+
+h2 {
+font-size: ($font-h2)-10px;
+color: $brown;
+}
+p {
+font-size: ($font-h4)-12px;
+margin-top: 15px;
+color:$yellow-second;
+}
+}
+.form_signup_active {z-index: 2;}
+
+
+// @keyframes identifier {
+// from { transform: scale(1); }
+// to { transform: scale(1.5); }
+// }
+
+// login輸入
+.form_login {
+position: absolute;
+opacity: 0;
+display: none;
+width: 320px;      
+transition: all 0.5s;
+}
+.form_login_active {z-index: 2;}
+
+
+.form_signup {
+position: absolute;
+display: none;
+width: 320px;
+float: left;
+opacity: 0;
+transition: all 0.5s;
+}
+
+.form_signup > input {
+text-align: left;
+padding: 15px 5px;
+margin-left: 10px;
+margin-top: 20px;
+width: 260px;
+border: none;
+}
+
+.form_signup h2,.form_login h2 {
+margin-top: 30px; 
+}
+.form_signup img,.form_login img {
+position: absolute;
+left: 0;
+margin: 10px;
+width: 30px;
+}
+
+.form_login > input {
+padding: 15px 5px;
+margin-left: 10px;
+margin-top: 20px;
+width: 260px;
+border: none;
+text-align: left;
+color: #757575;
+}
+
+
+.form_login,.form_signup {
+position: relative;
+float: left;
+}
+
+
+//============================================
+//冒泡提醒
+/* The actual popup */
+.popuptext {
+  display: none;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+}
+
+/* Popup arrow */
+.popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+  z-index: 4;
+}
+
+.show {
+  display: block;
+  animation: fadeIn 1s;
+ 
+}
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+//==================================
+@media screen and (max-width: 1024px){
+
+}
+
+//==================================
+@media screen and (max-width: 812px) {
+.loginCon {
+  background-image: none;
+  top: 40%;
+  height: 500px;
+}
+.conBack {
+  top: 52%;
+  height: 300px;
+}
+.forms {
+  top: 150px;
+  height: 300px;
+}
+.loginStr {
+  top: 80px;
+}
+.form_signup>input {
+  padding: 10px 2px;
+  margin-left: 10px;
+  margin-top: 8px;
+  width: 240px;
+}
+}

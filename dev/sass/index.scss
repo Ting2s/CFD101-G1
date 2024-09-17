@@ -1,0 +1,371 @@
+@font-face {
+  font-family: 'DFPLiYuan';
+  src: url('../font/DFPLiYuan.woff.ttf') format("truetype");
+}
+@import './base/font';
+@import './layout/footer';
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* 天空場景S1 */
+// 動態文字:開頭
+.guide {
+  position: absolute;
+  top: 30%;
+  left: 52%;
+  transform: translateX(-50%);
+  color: #402d2d;
+  padding: 40px 0;
+  font-family: 'DFPLiYuan';
+  font-size: 3em;
+  line-height: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.guide .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+// 天空背景
+body .section.sky{
+  position: relative;
+  height: 1080px;
+  background-image: url(../images/index/S1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pterodactyl{
+  position: absolute;
+  height: 200px;
+  top: 30%;
+  left: 0%;
+  z-index: 10;
+}
+.sun{
+  position: absolute;
+  height: 80%;
+  top: -10%;
+  left: 40%;
+}
+body .section .box .cloud-bl{
+  position: absolute;
+  width: 600px;
+  left: 0%;
+  top: 400px;
+  opacity: 0.8;
+}
+body .section .box .cloud-fl{
+  position: absolute;
+  width: 600px;
+  left: 10%;
+  top: 500px;
+}
+body .section .box .cloud-br{
+  position: absolute;
+  width: 700px;
+  left: 800px;
+  top: 300px;
+}
+body .section .box .cloud-r{
+  position: absolute;
+  width: 700px;
+  left: 800px;
+  top: 500px;
+}
+/* 海洋場景S2 */
+// 動態文字:中段介紹
+
+.text-wrapper {
+  position: absolute;
+  display: inline-block;
+  top: 20%;
+  left: 30%;
+  padding-top: 0.2em;
+  padding-right: 0.03em;
+  padding-bottom: 0.1em;
+  font-family: 'DFPLiYuan';
+  color: #402d2d;
+  font-weight: 500;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  overflow: hidden;
+}
+
+.slogan .letter {
+  transform-origin: 50% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+.sea{
+  position: relative;
+  height: 1080px;
+  background-image: url(../images/index/S2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.plesiosaurus{   
+  position: absolute;
+  height: 400px;
+  top: 30%;
+  left: 90%;
+}
+.cloud-sea{
+  position: absolute;
+  height: 200px;
+  top: 10%;
+  left: 10%;
+  z-index: 2;
+}
+.wave-0{
+  position: absolute;
+  width: 350px;
+  top: 410px;
+}
+.wave-1{
+  position: absolute;
+  width: 1930px;
+  top: 490px;
+  opacity: 0.9;
+}
+.wave-2{
+  position: absolute;
+  top: 550px;
+  opacity: 0.8;
+}
+.wave-3{
+  position: absolute;
+  top: 610px;
+}
+.wave-4{
+  position: absolute;
+  top: 655px;
+}
+/* 陸地場景S3 */
+.land{
+  position: relative;
+  display: flex;
+  height: 1080px;
+  background-image: url(../images/index/S3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.stegosaurus{
+  position: absolute;
+  height: 300px;
+  top: 30%;
+  left: -30%;
+}
+#egg-g ,#egg-w, #egg-b{
+  position: absolute;
+  top: 70%;
+}
+.nest{
+  position: absolute;
+  width: 20%;
+  top: 72%;
+  left: 41%;
+  z-index: 10;
+}
+#egg-g{
+  left: 44%;
+}
+#egg-w{
+  left: 48%;
+  z-index: 1;
+}
+#egg-b{
+  left: 52%;
+}
+
+.EggIn{
+  cursor: pointer;
+}
+//遊戲說明欄
+.typing {
+  position: absolute;
+  top: 50%;
+  left: 36%;
+  font-family: 'DFPLiYuan';
+  font-size: 3em;
+  color: #402d2d;
+  width: 14em;
+  height: 1.1em;
+  white-space: nowrap;
+  border-right: 2px solid transparent;
+  animation: typing 3.5s steps(14, end), blink-caret .75s step-end infinite;
+  overflow: hidden;
+}
+/* 列印效果 */
+@keyframes typing {
+from { width: 0; }
+to { width: 14em; }
+}
+.typing{
+  animation-name: typing;
+  animation-iteration-count: infinite;
+}
+/* 游標閃爍 */
+@keyframes blink-caret {
+from, to { box-shadow: 1px 0 0 0 transparent; }
+50% { box-shadow: 1px 0 0 0; }
+}
+/* 恐龍蛋hover跳動效果 */
+#egg-g ,#egg-w, #egg-b{
+  width: 5%;
+}
+
+.engrave {
+  transition: transform 0.3s;
+}
+// .eggmove::after {
+//   position: absolute;
+//   display: block;
+//   content: "";
+//   width: 100%;
+//   height: 10px;
+//   background: radial-gradient(closest-side, black, transparent);
+//   bottom: 0;
+//   opacity: 0;
+//   transform: scaleX(1) translateY(0);
+//   transition: transform 0.3s;
+// }
+.eggmove{
+  animation: eggmove 0.3s 0.3s infinite alternate;
+  transform: scale(1.25) translateY(-70px);
+}
+.eggmove{
+  animation-name: eggmove;
+  animation-iteration-count: infinite;
+}
+@keyframes eggmove {
+  to {
+    transform: scale(1.25) translateY(-45px);
+  }
+}
+@keyframes shadow {
+  to {
+    opacity: 1;
+    transform: scaleX(1) translateY(35px);
+  }
+}
+// RWD(1024px)ipad
+
+@media screen and (max-width: 1024px) {
+  .land{
+    height: 768px;
+  }
+  .guide{
+    font-size: 2em;
+  }
+  .sun{
+    position: absolute;
+    height: 80%;
+    top: -10%;
+    left: 30%;
+  }
+  .text-wrapper{
+    left: 25%;
+  }
+  .stegosaurus{
+    top: 10%;
+  }
+  .nest{
+    position: absolute;
+    width: 20%;
+    top: 65%;
+    left: 41%;
+    z-index: 10;
+  }
+  
+  .typing{
+    font-size: 2em;
+    left: 30%;
+  }
+}
+
+// RWD(812px) iphone X
+
+@media screen and (max-width: 812px) {
+  
+  .cloud-sea{
+    top: 1%;
+    height: 153px;
+  }
+
+  .section{
+    height: 100vh;
+  }
+  .guide{
+    top: 20%;
+    font-size: 1em;
+  }
+  .pterodactyl{
+    width: 20%;
+    top: 5%;
+  }
+  .sun{
+    top: -20%;
+  }
+  .cloud-bl,
+  .cloud-fl,
+  .cloud-br,
+  .cloud-r{
+    position: absolute;
+    width: 100px;
+    top: 10px;
+  }
+  // .wave-0{
+  //   top: 90px;
+  // }
+  // .wave-1{
+  //   top: 170px;
+  //   height: 30%;
+  // }
+ 
+  // .wave-3{
+  //   top: 170px;
+  // }
+  .text-wrapper{
+    left: 30%;
+    font-size: 2em;
+  }
+  .plesiosaurus{
+    top: -10%;
+    width: 30%;
+    object-fit: contain;
+  }
+  .land{
+    height: 375px;
+  }
+  .stegosaurus{
+    width: 50%;
+    object-fit: contain;
+    top: -18%;
+  }
+  .typing{
+    top: 25%;
+    left: 24%;
+    font-size: 2em;
+  }
+  .eggmove{
+    top: 60%;
+   
+  }
+  .nest{
+    top: 70%;
+  }
+}

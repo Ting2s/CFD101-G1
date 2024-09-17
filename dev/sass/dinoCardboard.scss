@@ -1,0 +1,319 @@
+@import 'base/reset';
+@import 'base/font';
+@import 'layout/footer';
+@import 'layout/nav';
+
+@mixin respondTo($breakpoint) {
+    @if $breakpoint == "small" {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "medium" {
+        @media (max-width: 812px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "large" {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+  }
+
+  @media(min-width: 813px){
+    .container2{
+      display: none;
+  }
+}
+
+body {
+    height: 100vh;
+    background-image: url('../images/dinoCardboard/bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    .titleText {
+        font-size: 26px; //----------------
+        font-family: DFPLiYuan; //-----------------
+        color: white; //----------------
+        position: absolute;
+        top: 10.5rem;//2
+        letter-spacing: 1px;
+        z-index: 3;
+        @include respondTo(large) {
+            font-size: 22px;
+            top: 7rem;
+            background-image: url(../images/dinoCardboard/titleBoard.png);
+            background-size: cover;
+            padding: 1.5rem 2.8rem 1.5rem 2.8rem;
+        }
+        @include respondTo(medium) {
+            font-size: 18px;
+            top: 4rem;
+            background-image: url(../images/dinoCardboard/titleBoard.png);
+            background-size: cover;
+            padding: 1rem 1.7rem 1rem 1.7rem;
+        }
+    }
+}
+
+.person {
+    //------------------------------
+    margin-top: 8.4rem;//2
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    @include respondTo(large) {
+        margin-top: 7rem;
+    }
+    .personBg {
+        background-image: url('../images/dinoCardboard/meanBoard.png');
+        //width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 6.2rem 5.2rem 4.8rem 5.2rem;
+        margin: 0 auto;
+        @include respondTo(large) {
+            background-image: none;
+            padding: 4.7rem 3.7rem 3.3rem 3.7rem;
+        }
+        @include respondTo(medium) {
+            background-image: none;
+            padding: 0;
+        }
+    }
+    .personItem {
+        display: flex;
+        flex-wrap: wrap;
+        width: 884px;
+        height: 445px;
+        margin: 0 auto;
+        //justify-content: center;
+        //align-items: center;
+        @include respondTo(large) {
+            width: 717px;
+            height: 256px;
+        }
+        @include respondTo(medium) {
+            width: 590px;
+            height: 240px;
+        }
+        li{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .personPart {
+            width: 12rem;
+            height: 12rem;
+            background-color: white;
+            padding: .6rem;
+            margin: .3rem .3rem;
+            box-shadow: 2px 2px 2px rgba(20%, 20%, 40%, 0.5), 3px 3px 5px rgba(20%, 20%, 40%, 0.3), 4px 4px 8px rgba(20%, 20%, 40%, 0.3);
+            @include respondTo(large) {
+                width: 10rem;
+                height: 10.2rem;
+                padding: .3rem;
+            }
+            @include respondTo(medium) {
+                width: 8rem;
+                height: 8.5rem;
+            }
+            .personImg {
+                width: 100%;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                    height: 140px;
+                    height: 140px;
+                    @include respondTo(large) {
+                        height: 120px;
+                    }
+                    @include respondTo(medium) {
+                        height: 100px;
+                    }
+                }
+            }
+            .personContent {
+                display: flex;
+                //padding-top: .5rem;
+                img {
+                    width: 12%;
+                }
+                span {
+                    margin: 0 auto;
+                    font-size: 16px;
+                    font-family: DFPLiYuan; //-----------------
+                    padding-top: .4rem;
+                    @include respondTo(large) {
+                        font-size: 14px;
+                    }
+                    @include respondTo(medium) {
+                        font-size: 9px;
+                    }
+                }
+            }
+            .personDate {
+                font-size: 8px; //-----------
+                padding: .5rem 0;
+                display: flex;
+                justify-content: center;
+                @include respondTo(large) {
+                    font-size: 6px;
+                    padding-top: .3rem;
+                }
+            }
+        }
+    }
+}
+
+.underBtn {
+    display: flex;
+    position: absolute;
+    top: 47rem;
+    justify-content: center;
+    width: 100%;
+    @include respondTo(large) {
+        top: 36rem;
+    }
+    @include respondTo(medium) {
+        top: 18rem;
+    }
+    img {
+        width: 60%;
+        @include respondTo(large) {
+            width: 50%;
+        }
+        @include respondTo(medium) {
+            width: 35%;
+        }
+    }
+    .numberBtn {
+        background-image: url(../images/dinoCardboard/numberBtn.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0 2.6rem 0 2.2rem;
+        background-position: center;
+        @include respondTo(medium) {
+            background-image: none;
+            padding: 0 ;
+        }
+        input {
+            width: 42px;
+            @include respondTo(large) {
+                width: 30px;
+            }
+        }
+        span {
+            color: white; //----------------
+            font-weight: bold;
+            font-size: 18px; //------------
+            font-family: DFPLiYuan; //-----------------
+            @include respondTo(medium) {
+                color: black;
+            }
+        }
+    }
+}
+
+.page {
+    display: none;
+}
+
+.pageShow {
+    display: block;
+    animation: fadeInUp .6s;
+}
+
+.camera {
+    position: absolute;
+    width: 24%;
+    bottom: 2rem;
+    left: 10px;
+    animation: rotate-taichi 2s ease-in infinite alternate;
+    @include respondTo(large) {
+        width: 22%;
+        bottom: 1.2rem;
+        left: 1px;
+    }
+    @include respondTo(medium) {
+        width: 14%;
+    }
+    img {
+        width: 100%;
+        -webkit-filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+        filter: drop-shadow(0px 0px 16px rgb(255, 255, 255));
+    }
+    p {
+        color: #010864; //----------------
+        font-size: 32px; //------------
+        font-family: DFPLiYuan; //-----------------
+        //-webkit-text-stroke: 1px #fff;
+        padding-top: .2rem;
+        letter-spacing: 1px;
+        text-shadow: 0 0 0.6em #fff, 0 0 0.6em #fff, 0 0 0.6em #fff;
+        @include respondTo(large) {
+            font-size: 22px;
+        }
+        @include respondTo(medium) {
+            font-size: 14px;
+        }
+    }
+}
+
+@keyframes rotate-taichi {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.pic {
+    cursor: pointer;
+}
+
+.imgPreview {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    cursor: zoom-in;
+}
+
+.imgPreview img {
+    z-index: 999;
+    width: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: zoom-in;
+}
+
+.like {
+    font-size: 1.2rem;
+    color: #ff0015;
+    display: block;
+    @include respondTo(medium) {
+        font-size: 1rem;
+    }
+}

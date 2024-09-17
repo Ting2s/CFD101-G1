@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="utf-8">
+        <title>文章內頁</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        @@include('layout/style.html')
+        <link rel="stylesheet" href="css/dinoSinglepg.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+
+    <body>
+        @@include('layout/header.html')
+        <div class="news-contents wrapper" id="app">
+          <article  v-for="artRow in artitem">
+              <header class="post-info">
+                  <h2 class="post-title">{{artRow.art_title}}</h2>
+                  <p class="post-date">{{cat}}<span>{{cate}}</span></p>
+                  <p class="post-cat"><i class="fas fa-user-edit"></i> {{artRow.mem_nicname}}</p>
+              </header>
+              <img :src="artRow.art_picture" alt="恐龍知識">
+              <p>
+                {{artRow.art_content}}
+              </p>
+              <p>
+              </p>
+          </article>
+          <hr>
+          <h2>文章留言</h2>
+          <div class = "disnoitem" v-for="msgRow in msgitem">
+            <div class = "disnoimg">
+              <img :src = "msgRow.mem_img" alt = "會員頭像">
+              <p>{{msgRow.mem_nicname}}</p>
+            </div>
+            <div class = "disnocontent">
+              <h2 class = "disnoname">{{msgRow.msg_content}}</h2>
+              <p class = "category">發表於: {{msgRow.msg_date}}</p>
+            </div>
+          </div>
+          <hr>
+          <div class="pon">
+            <h2>新增留言</h2>
+              <form action="./php/postmessage.php" method="post" enctype="multipart/form-data">
+                <textarea id="single" name="text" placeholder="" style="height:100px" v-model="input"></textarea>
+                <button class="dinbtn" type="button" @click="send_data">送出</button> 
+              </form>
+          </div>
+        </div>
+        <script src="./js/dinoSinpage.js"></script>
+        <script src="./js/login.js"></script>
+        @@include('layout/footer.html')
+    </body>
+</html>

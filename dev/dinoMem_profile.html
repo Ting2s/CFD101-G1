@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GOGO龍會員資料</title>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+  <!-- js -->
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoMem_profile.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+    <div class="perWrap" id="app">
+      <div class="perHeader">
+      </div>
+      <div class="perBox">
+        <!-- 左側個人頭像區 -->
+        <div class="perPhoto">
+          <h1>會員中心</h1>
+          <!-- 頭貼框 -->
+          <div class="perFrame" id="perFrame">
+
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
+              <!-- 頭貼 -->
+              <img :src="member.mem_img" id="facePhoto">
+
+              <h3>{{member.mem_nicname}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側內容區 -->
+        <div class="perContent">
+          <!-- 內容板子 -->
+          <div class="conBtn">
+            <a href="dinoMem_profile.html"> <button class="light">查看會員資料</button></a>
+            <a href="dinoMem_myDino.html"> <button class="dark">恐龍收藏</button></a>
+            <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
+
+            <!-- <a href="dinoMem_arti.html">
+              <button class="light">文章收藏</button></a> -->
+          </div>
+          <!-- 大板子內容 -->
+          <div class="conFrame">
+            <!-- 會員資料表格 -->
+            <div class="container">
+              <span>會員資料</span>
+
+              <form class="form">
+                <input type="text" placeholder="暱稱" id="nicName">
+                <input type="password" placeholder="密碼" id="psw">
+                <button type="change" id="changePhoto-button">更換頭貼</button>
+                <button type="change" id="change-button">修改資料</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+  </main>
+
+  <!-- js -->
+  <script src="js/login.js"></script>
+  <script src="js/dinoMemprofile.js"></script>
+</body>
+
+</html>

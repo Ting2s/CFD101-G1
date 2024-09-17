@@ -1,0 +1,20 @@
+<!-- 選頁按鈕 -->
+<div id="pageBar" class="dinoChoose">
+  <ul class="changePage">
+    <li><a>
+        <button id="upPage" class="upPage" value="prev" @click.prevent="prePage()"
+          :disabled="currentPage === 1"></button>
+
+      </a></li>
+
+    <li>
+      {{ currentPage }}
+    </li>
+
+    <li>
+      <a>
+        <button id="downPage" class="downPage" value="next" @click.prevent="nextPage()" :disabled="isMaxPage"></button>
+      </a>
+    </li>
+  </ul>
+</div>

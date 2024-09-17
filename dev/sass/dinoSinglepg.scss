@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    background-image: url('../images/disscus/2935.jpg');
+    background-size: cover;
+}
+a {
+    text-decoration: none;
+}
+
+
+.news-contents {
+    max-width: 920px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .77);
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 150px ;
+}
+
+.news-contents h2{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.news-contents img {
+    max-width: 100%;
+}
+
+article {
+    width: 100%;
+}
+
+.post-info {
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-date {
+    background: #ff9505;
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+
+.post-date span {
+    font-size: 1rem;
+    border-top: 1px rgba(255,255,255,.5) solid;
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.news-contents .post-title {
+    font-family: "Yu Mincho", "YuMincho", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+.post-title,
+.post-cat {
+    margin-left: 120px;
+}
+
+.warn{
+    cursor: pointer;
+}
+article img {
+    margin-bottom: 20px;
+}
+article p {
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+
+
+
+
+/* 手機版
+------------------------------- */
+@media (max-width: 600px) {
+    
+    .news-contents {
+        flex-direction: column;
+    }
+    article{
+        width: 100%;
+    }
+
+    .post-info {
+        margin-bottom: 30px;
+    }
+    .post-date {
+        width: 70px;
+        height: 70px;
+        font-size: 1rem;
+    }
+    .post-date span {
+        font-size: 0.875rem;
+        padding-top: 2px;
+    }
+    .news-contents .post-title {
+        font-size: 1.375rem;
+    }
+    .post-cat {
+        font-size: 0.875rem;
+        margin-top: 10px;
+    }
+    .post-title,
+    .post-cat {
+        margin-left: 80px;
+    }
+}
+
+.disnoitem{
+    border-radius: 4px;
+    overflow: hidden;
+    /* background: #fff; */
+    color: #000;
+    margin: 0.6rem 0;
+    /* box-shadow: 0 0 16px -4px rgba(0, 0, 0, 0.75); */
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.disnoimg{
+    width: 70%;
+    margin: auto;
+}
+
+.disnoimg img{
+    border-radius: 999em;
+}
+
+.disnoimg p {
+    text-align: center;
+}
+.disnocontent{
+    padding: 1rem;
+    background-color: rgb(247, 247, 247);
+    border-radius: 15px;
+}
+.disnoname {
+    font-family: var(--Mont);
+    font-weight: 500;
+    // text-transform: capitalize;
+    font-size: 1.2rem;
+    padding-bottom: 4rem;
+    padding-left:1rem ;
+}
+
+.category{
+    padding-top: 0.2rem;
+    padding-left:1rem ;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--Mont);
+}
+.category span{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px){
+    .disnoitem{
+        display: grid;
+        grid-template-columns: 25% auto;
+        align-items: center;
+        padding: 1rem;
+        column-gap: 1rem;
+    }
+    .disnocontent{
+        padding: 0;
+    }
+
+    .disnoimg{
+        width: 70%;
+    }
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    resize: none;
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+}
+
+/* button start */
+.dinbtn {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .dinbtn:hover {
+    background-color: rgb(82, 81, 81);
+  }
+  /* button end */
+
+
+  .button {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    
+    &:hover {
+        background-color: rgb(82, 81, 81);
+    }
+   }
+   
+   
+   .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 300px;
+    background-color: #FFF;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7);
+    
+     h1 {
+     color: #222;
+     font-size: 32px;
+     font-weight: 900;
+     margin-bottom: 15px;
+     text-align: center;
+    }
+
+    form{
+        text-align: center;
+    }
+}
+
+.cross .fa-times{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.clickbac{
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+ hr{
+    width: 100% !important;
+}
+

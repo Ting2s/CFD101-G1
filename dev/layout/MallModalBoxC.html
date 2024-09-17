@@ -1,0 +1,42 @@
+<!-- 儲存造型 -->
+<style>
+    .modal-content canvas{
+        max-width: 50%;
+        max-height: 10%;
+        height: 310px !important;
+        object-fit: contain;
+    }
+    .newCanvas{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+    }
+
+    @media screen and (max-width: 1024px){
+        .modal-content canvas{
+            max-width: 40%;
+            max-height: 50%;
+        }
+        .newCanvas{
+            align-items: flex-start !important;
+            margin-top: 0;
+        }
+    }
+
+</style>
+<section>
+    <div class="bg-modal" id="bg-modal">
+        <div class="modal-content" id="modal-content">
+            <div class="close" id="close">&times;</div>
+            <h3>儲存成功</h3>
+            <a id="download" href="" style="color:black; visibility: hidden;" download>下載</a>
+            <div class="newCanvas"></div>
+        </div>
+        <form method="post" accept-charset="utf-8" id="myForm">
+            <input name="hidden_data" id='hidden_data' type="hidden"/>
+        </form>
+
+    </div>
+</section>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>

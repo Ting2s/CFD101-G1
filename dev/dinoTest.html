@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恐龍知識小測驗</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+
+  <!-- gsap -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoTest.css">
+
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+
+
+
+  <main>
+    <div class="testWrapper" id="app">
+
+      <!-- 有白板區 -->
+      <div class="whiteBoard" id="whiteBoard" :class="{'showScore' :isWrapper}">
+
+        <!-- 結算時會消失 -->
+
+        <h1>恐龍知多少？</h1>
+        <!-- ================================================== -->
+        <!-- 首頁內容區 -->
+        <div class="testContent" id="testContent" :class="{'none' :isStart}">
+          <h3>恐龍知識大挑戰</h3>
+          <p>你對恐龍的了解究竟有多少呢？
+            現在就來測試你的實力吧！</p>
+          <!-- <p class="smRemind">小提醒：測試後換取的代幣可以在恐龍商城裡使用哦！</p> -->
+          <div class="testStart_btn">
+            <button @click="game" id="startBtn">開始遊戲</button>
+          </div>
+        </div>
+        <!-- ================================================== -->
+        <!-- 測驗畫面 -->
+        <div class="testContent_Q" id="testContent_Q" :class="{'none' :isGame}">
+          <!-- 遊戲開始才有 -->
+
+          <!-- 重新開始 -->
+          <div class="restartPlay">
+
+            <button @click="restart">重新開始</button>
+          </div>
+
+
+          <!-- 題目內容 -->
+          <div class="testCenter" id="testCenter" v-for="(question,key) in questions" v-if="question.status == '1'">
+            <!-- 題目 -->
+            <h3 class="qusTitle">
+              Q {{key+1}} . {{question.quiz_q}}
+            </h3>
+
+            <!-- 題目選項 -->
+            <div class="choose">
+
+              <!-- <div class="buttonBox" v-for="(answer,index) in answers">
+                <button class="chooseBtn" @click="choose(key)" :class="{'clicked' :isClick}">
+                  {{answer.name}}.{{ options(key) }}
+                </button>
+
+                <!- 判決對錯 -->
+              <!-- <div class="judge" v-show="isShow">
+                  <img :src="wrongImg">
+                  <img :src="rightImg">
+
+                </div>
+              </div> -->
+              <div class="buttonBox" id="op_1">
+                <button class="chooseBtn" @click="see_1(key)" :class="{'clicked' :choose_1}">
+                  A.{{ question.quiz_opt1 }}
+                </button>
+
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <!-- 錯的 -->
+                  <img :src="wrongImg" v-show="isWrong_1">
+                  <!-- 對的 -->
+                  <img :src="rightImg" v-show="isRight_1">
+
+                </div>
+              </div>
+
+              <div class="buttonBox" id="op_2">
+                <button class="chooseBtn" @click="see_2(key)" :class="{'clicked' :choose_2}">
+                  B.{{ question.quiz_opt2 }}
+                </button>
+
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <!-- 錯的 -->
+                  <img :src="wrongImg" v-show="isWrong_2">
+                  <!-- 對的 -->
+                  <img :src="rightImg" v-show="isRight_2">
+
+                </div>
+              </div>
+
+              <div class="buttonBox" id="op_3">
+                <button class="chooseBtn" @click="see_3(key)" :class="{'clicked' :choose_3}">
+                  C.{{ question.quiz_opt3 }}
+                </button>
+
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <!-- 錯的 -->
+                  <img :src="wrongImg" v-show="isWrong_3">
+                  <!-- 對的 -->
+                  <img :src="rightImg" v-show="isRight_3">
+
+                </div>
+              </div>
+
+              <div class="buttonBox" id="op_4">
+                <button class="chooseBtn" @click="see_4(key)" :class="{'clicked' :choose_4}">
+                  D.{{ question.quiz_opt4 }}
+                </button>
+
+                <!-- 判決對錯 -->
+                <div class="judge" v-show="isShow">
+                  <!-- 錯的 -->
+                  <img :src="wrongImg" v-show="isWrong_4">
+                  <!-- 對的 -->
+                  <img :src="rightImg" v-show="isRight_4">
+                </div>
+              </div>
+            </div>
+
+            <!-- 儲存跳窗 -->
+            <div id="saveBox" class="saveBox">
+              <div class="saveContent">
+                <span class="saveClose">&times;</span>
+                <p>嘿！你還沒有答題哦！</p>
+              </div>
+
+            </div>
+
+            <!-- 去下一題 -->
+            <div class="testArrow">
+              <button id="nextArrow" @click="nextTitle(key)"></button>
+            </div>
+          </div>
+
+
+
+        </div>
+        <!-- ================================================== -->
+        <!-- 答題結算 -->
+        <div class="scoreBoard" id="scoreBoard" :class="{'none':isScore}">
+
+          <div class="scoreBox">
+            <div class="scoreTitle">
+              <h3>遊玩結果</h3>
+            </div>
+          </div>
+
+          <p>嘿！你答對了……</p>
+
+          <div class="score">
+            <span id="finalScore">{{totalPoint}}</span>/7題
+            <span class="comment">
+              {{comment()}}
+            </span>
+          </div>
+
+          <div class="scoreBtn">
+            <button @click="playAgain">
+              再玩一次
+            </button>
+
+
+            <a href="dinoTest_rank.html"><button>看排行榜</button></a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </main>
+
+
+  @@include('layout/footer.html')
+
+  <!-- js -->
+  <script src="js/dinoTest.js"></script>
+  <script src="js/login.js"></script>
+
+
+</body>
+
+</html>

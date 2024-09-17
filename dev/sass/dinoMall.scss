@@ -1,0 +1,495 @@
+@import './base/font';
+@import './base/dinoMall_var';
+@import './mixins/mixin_Mall';
+@import '../../guideline_sass/sass/base/var';
+
+body {
+  background-color: rgb(143, 213, 223);
+  font-family:'DFPLiYuan';
+//     overflow-y: hidden;
+}
+
+.none{
+      display: none;
+    }
+
+.wrapMall {
+      @include rect(80%,null){
+            max-width            : 1920px;
+      }; 
+      @include d-flex(grid){
+            grid-template-columns: 1fr 1fr;
+            margin: auto;
+            padding-top: 7%;  // *****版面
+      };   
+}
+
+// 左方塊 ==============================================
+
+      #{$titleLeft}{
+                  .cardLeft{
+                        background: url('#{$pathMall}/stoneframe.png') no-repeat center center / contain;
+                        @include pdMargin(25%,null);
+                        }
+                        .showImgA{
+                              @include posiTion(absolute,52%,19%);  // HAT  
+                              img{
+                                  @include rect(90%,null);
+                              }
+                        }
+                        .showImgB{
+                              @include posiTion(absolute,32%,19%);  // sticks  
+                              img{
+                                  @include rect(90%,null);
+                              }
+                        }
+                        .showImg_Mall{
+                                      @include rect(100%,null);
+                                      }                       
+                  .groundButton{
+                        @include rect(100%,null);
+                        @include d-flex();
+                        .btnSelect{
+                                  @include fontSz($font-h4,$font-bold);
+                                  @include colorBgcolor($white,null);
+                                  margin: 20px 10px;
+                                  background: url('#{$pathMall}/goldWood.png') no-repeat center center / contain;
+                                  padding: 20px 0 25px;
+                                  transition: all .7s ease-in-out;
+                                  &:hover{
+                                    transform: scale(.9); 
+                                  }                              
+                                  img{
+                                       @include rect(100%,null);
+                                        object-fit: cover;     
+                                      }
+                                  }
+                               }
+                    }
+
+                    
+// 右方塊 ==============================================
+#{$titleRight}{
+        background: url('#{$pathMall}/stornBoard.png') no-repeat center center / contain;
+        @include pdMargin(2%,null);
+        .groundImgCard{
+              text-align    : center;
+              padding-bottom: 14%;
+              align-items: center;
+              .groundTitle{
+                        @include d-flex();
+                        align-items: center;
+                        margin-left    : 10%;              
+                        .title{
+                              background  : url('#{$pathMall}/woodBlank.png') no-repeat center center / contain;
+                              @include pdMargin(28px,null);
+                              margin-right: 10px;
+                              text-align  : center; 
+                                    h3{
+                                    @include colorBgcolor($yellow-second,null);
+                                  
+                                    }                
+                              }
+                        .cart{ 
+                                    p{
+                                          @include  posiTion(absolute, 10%,null){
+                                                right:10%;
+                                                @include colorBgcolor($white,$red);
+                                                @include pdMargin(5px,null);                                               
+                                                @include fontSz($font-base,$font-bold);
+                                                border-radius: 50%;
+                                          }
+                                    }
+                                    img{
+                                          @include rect(100%,null);
+                                          cursor: pointer;
+                                    }                  
+                              }
+                        }
+              .arrow{
+                    @include d-flex(){
+                          align-items: center;
+                          
+                    }
+                    .prePage{
+                            @include rect(50px,50px);
+                            background: url('#{$pathMall}/pre.png') no-repeat center center / contain;
+                            }
+                    span{
+                            @include colorBgcolor($brown,null);
+                            vertical-align: 12px;
+                            margin: 0 6px;
+                        }
+                    .nextPage{
+                              @include rect(50px,50px);
+                              background: url('#{$pathMall}/next.png') no-repeat center center / contain;
+                             }
+                    }
+              .btnCard-2  .info{
+                  @include d-flex() 
+              }    
+              .btnCard-1 {
+                  @include d-flex(); 
+              }
+              .btnCard-1 , .btnCard-2{
+                                   
+                                    .imgCard{
+                                                .card{
+                                                      background: url('#{$pathMall}/frame.png') no-repeat top center / contain;
+                                                      
+                                                      > img{  
+                                                            margin: 0px 14px;
+                                                            object-fit: cover;
+                                                            cursor: pointer; 
+                                                            }
+                                                      span{
+                                                            display: block;
+                                                            color:$yellow-first ;
+                                                            padding-bottom: 12px;
+                                                            padding-top: 6px;
+                                                            }
+                                                      }
+                                                      .smallCart{
+                                                            cursor: pointer;     
+                                                      }
+                                          }
+                        }             
+              }
+        }
+
+        
+//  Mall_Modal_BoxA     
+.bg-modal-a{
+      @include posiTion(absolute,0,null){
+                  z-index: 99;
+      };
+      @include rect(100%,100%);
+      @include d-flex(){
+            align-items: center;   
+            background-color: rgba(0,0,0,.7);
+      };
+      display:none ;
+      .modal-wrap{
+            @include posiTion(relative,20%,null);  
+            @include rect(50%,null){
+                  @include pdMargin(33px,null);
+                  @include colorBgcolor(null,$white);
+                  border-radius: 4px;
+                  text-align: center;
+            };
+            .close-a{
+                  @include posiTion(absolute,14px,null){
+                        @include fontSz($font-h4,$font-bold);                        
+                        @include colorBgcolor($gray_Mall,null);
+                        right:14px;
+                        cursor: pointer;
+                  };
+                  &:hover{
+                        @include colorBgcolor($black,null);
+                        cursor: pointer;
+                  }
+            }
+            .boxs{
+                  @include d-flex(inline-grid){
+                        grid-template-columns: 1fr 1fr 1fr;
+                  }
+                  .box{ 
+                        @include pdMargin(20px,0 15px);
+                        background-color: rgb(83, 180, 18);
+                        align-self: normal;
+                        transition: all 1s ease-in-out;
+                        img{
+                              @include rect(100%,100%);
+                              @include pdMargin(10px,null);
+                              object-fit: contain;
+                        };
+                        span{
+                              @include fontSz(30px,null);
+                        }
+                        &:hover{
+                              @include colorBgcolor($yellow-first,null);
+                              transform:translateY(-10px);
+                        }
+                  }          
+            }
+      }
+}
+
+//修正
+.wrapMall{
+      padding-top: 2%;
+}
+.itemLeft{
+      transform: translateY(8%);
+}
+.itemRight{
+      transform: translateY(5%);
+}
+.title h3{
+      font-size: 30px;
+}
+.arrow{
+      transform: translateY(15%);
+}
+#showName{
+      font-size: 30px;
+}
+.btnCard-1{
+      width: 100%;
+      transform: translateX(-5%);
+}
+.btnCard-2{
+      width: 100%;
+      transform: translateX(-5%);
+}
+.card {
+      width: 100%;
+      margin: 30px;
+}
+.cart{
+      position: relative;
+      width: 10%;
+}
+#counter{
+      font-size: 26px;
+      transform: translate(50%,-60%);
+}
+.btnSelect{
+      width: 40%;
+}
+.imgClassHat {
+      width: 50%;
+      transform: translateY(40%);
+}
+.imgSticks{
+      width: 50%;
+      transform: translateY(40%);
+} 
+.shopItemPrice{
+      font-size: 24px;
+      transform: translateY(90%);
+}
+.smallCart{
+      transform: translateY(100%);
+}
+.smallCart img{
+      width: 30%;
+}
+
+
+
+
+//  Mall_Modal_BoxC   
+.bg-modal{    
+      @include posiTion(absolute,0,null){
+            z-index: 99;
+      };  
+      @include rect(100%,100%);
+      @include d-flex(){
+            align-items: center;   
+            background-color: rgba(0,0,0,.7);
+      };
+      display:none ;
+      .modal-content{
+                  @include posiTion(relative,null,null);  
+                  @include rect(660px,550px){
+                        @include pdMargin(20px,null);
+                        @include colorBgcolor(null,$white);      
+                        border-radius: 10px;
+                        text-align: center;
+                  };
+                  .close{
+                        @include posiTion(absolute,14px,null){
+                              @include fontSz($font-h4,$font-bold);
+                              right:14px;
+                              @include colorBgcolor($gray_Mall,null);
+                              cursor: pointer;
+                        };
+                        &:hover{
+                              @include colorBgcolor($black,null);
+                              cursor: pointer;
+                        }
+                  }
+                  h3{
+                     @include pdMargin(null,15px);
+                     @include colorBgcolor($yellow-second,null);
+                  }
+      }
+}
+
+.shake{
+      width: 10%;
+      animation: shakeCart .4s ease-in-out;
+}
+@keyframes shakeCart{
+      25%{
+            transform: translateX(6px);
+      }
+      50%{
+            transform: translateX(-4px);
+      }
+      75%{
+            transform: translateX(2px);
+      }
+      100%{
+            transform: translateX(0);
+      }
+}
+
+@media screen and (max-width: 1024px){
+      
+      .wrapMall{
+            padding-top: 7%;
+            align-items: center;
+      }
+      .itemLeft{
+            transform: translate(-10%,0);
+            width: 120%;
+      }
+      .itemRight{
+            transform: translateX(10%);
+      }
+      .btnSelect{
+            width: 50%;
+      }
+      .title{
+            width: 35%;
+            transform: translate(-240%,0);
+      }
+      .title h3{
+            font-size: 30px;
+      }
+      .arrow{
+            transform: translate(0,-100%);
+            z-index: 10;
+      }
+      .arrow span{
+            font-size: 20px;  
+      }
+      .imgCard{
+            margin: 0, 10px;
+      }
+      .card{
+            width: 100%;
+            margin: 15px;
+            transform: translateX(-10%);
+      }
+      .card img{
+            transform: translateY(40%);  
+      }
+      .cart{
+            width: 20%;
+            // transform: translate(10%,-20%);
+            transform: translate(15%,20%);// 0728
+      }
+
+
+      .shake {
+            animation: shakeCart .0s ease-in-out;
+        }
+
+
+      .cart img{
+            // width: 100%;  // 0728
+            // transform: translateY(50%); // 0728
+      }
+      
+      #counter{
+            font-size: 25px;
+            // transform: translate(10%,90%);
+            transform: translateY(-30%); // 0728
+            z-index: 20;
+      }
+      .wrapMall .itemLeft .groundButton .btnSelect{
+            font-size: 17px;
+      }
+      .wrapMall .itemRight {
+            background-size: contain;
+      }
+      .wrapMall .itemRight .groundImgCard .groundTitle .cart p{
+            top:2%;
+            right: -10%;
+            font-size: 10px;
+      }
+      .btnCard-1{
+            transform: translate(0,-30%);
+      }
+      .btnCard-2{
+            transform: translate(0,-10%);
+      }
+      .shopItemPrice span{
+            font-size: 10px;
+            transform: translateY(-20%);
+      }
+      .shopItemImage{
+            transform: translateY(40%);     
+      }
+      .smallCart{
+            width: 80%;
+            transform: translate(20%,60%);
+      } 
+      .wrapMall .itemRight .groundImgCard .btnCard-1 .imgCard .card span, .wrapMall .itemRight .groundImgCard .btnCard-2 .imgCard .card span {
+            padding-top: 2px;
+        } 
+
+      //  Mall_Modal_BoxA
+      .bg-modal-a .modal-wrap .boxs .box span {
+            font-size: 20px; // 0728
+       }  
+      }
+
+ 
+
+  @media screen and (max-width: 817px){
+      .wrapMall {
+            position: relative;
+            padding-top: 2%;
+            align-items: center;
+        }
+      .title{
+            width: 100%;
+      transform: translate(-300%,100%);
+      padding: 8px;
+      }
+      .title h3{
+            font-size: 20px;
+      }  
+    .itemLeft{
+          width: 90%;
+          transform: translateY(-10%);
+    } 
+    .groundButton{
+          transform: translateY(-30%);
+    }
+    .itemRight{
+            width: 70%;
+            transform: translate(10%,-10%);
+      } 
+      .groundTitle{
+            position: relative;
+      }
+      .arrow {
+            transform: translate(0,-20%);
+      }
+      #showName{
+            font-size: 15px;
+      }
+      .cart{
+          width: 50%;  
+          position: absolute;  
+          top: 200%;
+          left: 200%;
+          transform: translateY(90%);
+          z-index: 300;
+      } 
+      .groundImgCard{
+            width: 50%;
+      }
+      .btnCard-1{
+            transform: translate(40%,-30%);
+      }
+      .shopItemPrice{
+            font-size: 12px;
+      }
+  
+}

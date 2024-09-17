@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>dinoMall</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js"></script>
+      @@include('layout/style.html')
+      <link rel="stylesheet" href="css/dinoMall.css">
+</head>
+
+<body>
+      @@include('layout/header.html')
+      <section  id="app">
+            <div class="wrapMall">
+                  <div class="itemLeft">
+                        <div class="cardLeft">
+                              <span class="showImgA">
+                                    <img src="./images/dinoMall/prod3.png" id="showHat" alt="hat"
+                                          style="display: none;">
+                              </span>
+                              <span class="showImgB">
+                                    <img src="./images/dinoMall/prod3.png" id="showSticker" alt="sticker"
+                                          style="display: none;">
+                              </span>
+                              <img src="./images/dinoMall/d3.png" class="showImg_Mall" id="showImg_Mall">
+                        </div>
+                        <div class="groundButton" >
+                              <button :id="btnSelect(index)"   :class="{btnSelect:isActive}" v-for="(dino,index) in dinos">
+                                    {{dino}} 
+                              </button>
+                        </div>
+                  </div>
+
+                  <!-- 右框 -->
+                  <div class="itemRight">
+                        <div class="groundImgCard">
+                              <div class="groundTitle">
+                                    <div class="title">
+                                          <h3>{{message}}</h3>
+                                    </div>
+                                    <div class="cart" id="cart">
+                                          <p id=counter>0</p>
+                                          <img src="./images/dinoMall/cart.png" alt="">
+                                    </div>
+                              </div>
+
+                              <div class="arrow">
+                                    <button id="prePage" class="prePage"></button>
+                                    <span id=showName>帽子</span>
+                                    <button id="nextPage" class="nextPage"></button>
+                              </div>
+
+                              <!-- 帽子 -->
+                              <my-component :item-imgs="itemImgs" :small-img="smallCartImg" :hat-class="isImgClassHat" :item-image="isShopItemImage"></my-component>
+                              <next-component :crown-imgs="crownImgs" :small-img="smallCartImg" :hat-class="isImgClassHat" :item-image="isShopItemImage"></next-component>
+                              <last-component :beret-imgs="beretImgs" :small-img="smallCartImg" :hat-class="isImgClassHat" :item-image="isShopItemImage"></last-component>
+
+                              <!-- 紋身貼紙 -->
+                              <div class="btnCard-2 none" id="btnCard-2">
+                                    <secnd-component :card-secs="cardSecs" :small-img="smallCartImg" :stick-class="isImgSticks" :item-image="isShopItemImage"></secnd-component>
+                                    <middle-component :middle-cards="middleCards" :small-img="smallCartImg" :stick-class="isImgSticks" :item-image="isShopItemImage"></middle-component>
+                                    <final-component :final-cards="finalCards" :small-img="smallCartImg" :stick-class="isImgSticks" :item-image="isShopItemImage"></final-component>
+                              </div>                           
+                        </div>
+                  </div>
+            </div>   
+      </section>
+
+
+
+    <!-- 選擇恐龍 -->
+    @@include('layout/MallModalBoxA.html') 
+    <!-- 儲存造型 -->
+    @@include('layout/MallModalBoxC.html') 
+    <!-- shopping cart -->
+    @@include('layout/shoppingCart.html')
+    <!-- footer -->
+    @@include('layout/footer.html')
+    <!-- js -->
+     <script src="js/dinoMall.js"></script>
+     <script src="js/login.js"></script>
+     <script src="js/dinoMall_ADD.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/utils/Draggable.min.js"></script>   
+</body>
+</html>
+
+
+
+

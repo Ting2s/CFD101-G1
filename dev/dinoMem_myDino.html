@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恐龍收藏</title>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+
+  <!-- jq -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- tweenMax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoMem_myDino.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+    <div class="perWrap">
+      <div class="perHeader">
+
+      </div>
+
+      <div class="perBox" id="perBox">
+
+        <!-- 左側個人頭像區 -->
+        <div class="perPhoto">
+          <h1>會員中心</h1>
+          <!-- 頭貼框 -->
+          <div class="perFrame" id="perFrame">
+
+            <div class="hat_frame" id="hat_frame">
+
+              <img src="images/dinoPersonal/prod1.png" id="myHat" class="draggable ui-widget-content">
+
+            </div>
+            <div class="ticket_frame" id="ticket_frame">
+
+              <img src="images/dinoPersonal/prod2.png" id="myTicket" class="draggable ui-widget-content">
+            </div>
+
+            <div class="back_frame" id="back_frame">
+
+              <img src="images/dinoPersonal/prod4.png" alt="" id="myBack" class="draggable ui-widget-content">
+            </div>
+
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
+              <!-- 頭貼 -->
+              <img :src="member.mem_img" id="facePhoto">
+
+              <h3>{{member.mem_nicname}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側內容區 -->
+        <div class="perContent">
+          <!-- 內容板子 -->
+          <div class="conBtn">
+            <a href="dinoMem_profile.html"> <button class="dark">查看會員資料</button></a>
+            <a href="dinoMem_myDino.html"> <button class="light">恐龍收藏</button></a>
+            <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
+
+            <!-- <a href="dinoMem_arti.html">
+              <button class="dark">文章收藏</button></a> -->
+          </div>
+
+          <!-- 大板子內容 -->
+          <div class="conFrame">
+
+            <div class="switchBtn">
+              <button class="active" id="dino_btn">我的恐龍</button>
+              <button id="dinoAcc_btn">我的恐龍配件</button>
+
+
+              <!-- 我的恐龍 -->
+              <p id="dino_p">點擊後可以查看恐龍哦！</p>
+              <!-- 我的恐龍配件 -->
+              <p id="dinoAcc_p" class="none">點擊後就能給恐龍裝飾哦！
+
+                <!-- 儲存 -->
+                <!-- <button id="save" @click="updatePhoto">儲存</button>
+              </p> -->
+            </div>
+
+            <!-- 儲存跳窗 -->
+            <div id="saveBox" class="saveBox">
+              <div class="saveContent">
+                <span class="saveClose">&times;</span>
+                <p>已儲存造型！</p>
+                <img src="" id="saveImg">
+
+              </div>
+
+            </div>
+
+            <!-- 欄位 -->
+
+
+            <!-- -----我的恐龍----- -->
+            <div class="dinoCon" id="dinoCon_my">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <!-- 欄位格子 -->
+              <div class="dino" id="dino">
+
+
+                <ul v-for="obj, index in getSmallList">
+                  <li :class="{'ocean':false,'ocean':true, 'sky':false}">
+
+                    <img :src="obj.picture" alt="" id="dino_1" onclick="openModel(this)">
+
+                    <input type="button" :value="obj.value">
+                  </li>
+
+                </ul>
+
+              </div>
+            </div>
+
+
+            <!-- -----我的恐龍配件----- -->
+            <div class="dinoCon none" id="dinoCon_acc">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <div class="dinoAcc" id="dinoAcc">
+
+                <ul>
+                  <div class="acc" v-for="obj, index in getSmallList_lub">
+                    <li class="hat" id="style">
+                      <!-- :class="{'back':isBack,'ticket':isTicket}" -->
+                      <img :src="obj.img" onclick="hat(this)">
+                    </li>
+                  </div>
+
+                </ul>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
+    <!-- layout -->
+    <!-- 恐龍大圖 -->
+    @@include('layout/dinoMem_modal.html')
+
+
+  </main>
+  @@include('layout/footer.html')
+
+
+  <!-- js -->
+  <script src="js/dinoMem.js"></script>
+  <script src="js/dinoMem_myDino.js"></script>
+
+  <script src="js/login.js"></script>
+
+  <!-- canvas -->
+  <!-- <script src="js/html2canvas.js"></script> -->
+
+</body>
+
+</html>

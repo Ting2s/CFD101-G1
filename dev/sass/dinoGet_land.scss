@@ -1,0 +1,147 @@
+body {
+  height: 100vh;
+  background-image: url('../images/dinoGet/bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.WrapRange {
+  width: 100%;
+  height: 85.5vh;
+  position: relative;
+  // background-color: rgba(0, 255, 255, 0.404);
+  top: 12vh;
+}
+
+//文字
+
+.text {
+  position: absolute;
+  width: 43%;
+  left: 5%;
+  top: 4%;
+}
+
+.text img {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.text img:nth-child(2) {
+  margin-top: 4%;
+  width: 85%;
+}
+
+//恐龍
+.dino-land {
+  width: 50%;
+  position: absolute;
+  left: 47%;
+  top: 55%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+//按鈕
+.bt-1 img {
+  width: 16%;
+  position: absolute;
+  right: 7%;
+  bottom: 40%;
+  // background-color: rgb(155, 155, 235);
+}
+
+.bt-2 img {
+  width: 11%;
+  position: absolute;
+  right: 11%;
+  bottom: 25%;
+  // background-color: rgb(155, 155, 235);
+}
+
+//bt hover
+.bt-1 img:hover {
+  bottom: 39%;
+}
+
+.bt-2 img:hover {
+  bottom: 24%;
+}
+
+
+// ----------------------------RWD(1024px)
+
+@media screen and (max-width: 1024px) {
+  .text {
+    width: 43%;
+    left: 9%;
+    top: 4%;
+  }
+
+  .text img:nth-child(1) {
+    margin-top: 4%;
+    width: 100%;
+  }
+
+  .text img:nth-child(2) {
+    margin-top: 4%;
+    width: 100%;
+  }
+
+  .dino-land {
+    width: 61%;
+    left: 39%;
+    top: 57%;
+  }
+
+  .bt-1 img {
+    width: 19%;
+    right: 9%;
+    bottom: 57%;
+  }
+
+  .bt-2 img {
+    width: 14%;
+    right: 13%;
+    bottom: 45%;
+  }
+
+  //bt hover
+  .bt-1 img:hover {
+    bottom: 58%;
+  }
+
+  .bt-2 img:hover {
+    bottom: 46%;
+  }
+}
+
+// ----------------------------RWD(812px)
+
+@media screen and (max-width: 812px) {
+  .text {
+    width: 31%;
+  }
+
+  .dino-land {
+    width: 49%;
+    left: 50%;
+    top: 52%;
+  }
+
+  .bt-1 img {
+    width: 16%;
+  }
+
+  .bt-2 img {
+    width: 13%;
+    right: 11%;
+    bottom: 41%;
+  }
+  //bt hover
+
+  .bt-2 img:hover {
+    bottom: 42%;
+  }
+
+}

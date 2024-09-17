@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>明信片收藏</title>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+  <!-- js -->
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoMem_card.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+    <div class="perWrap">
+      <div class="perHeader">
+
+      </div>
+
+      <div class="perBox" id="perBox">
+
+        <!-- 左側個人頭像區 -->
+        <div class="perPhoto">
+          <h1>會員中心</h1>
+          <!-- 頭貼框 -->
+          <div class="perFrame" id="perFrame">
+
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
+              <!-- 頭貼 -->
+              <img :src="member.mem_img" id="facePhoto">
+
+              <h3>{{member.mem_nicname}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側內容區 -->
+        <div class="perContent">
+          <!-- 內容板子 -->
+          <div class="conBtn">
+            <a href="dinoMem_profile.html"> <button class="dark">查看會員資料</button></a>
+
+            <a href="dinoMem_myDino.html"> <button class="dark">恐龍收藏</button></a>
+
+            <a href="dinoMem_card.html"> <button class="light">明信片收藏</button></a>
+
+            <!-- <a href="dinoMem_arti.html">
+              <button class="dark">文章收藏</button></a> -->
+          </div>
+
+          <!-- 大板子內容 -->
+          <div class="conFrame">
+
+            <div class="switchBtn">
+              <button class="active" id="myCard_btn">我的明信片</button>
+              <button id="card_btn">明信片收藏</button>
+
+
+              <p id="card_p">點擊後可以放大顯示哦！</p>
+            </div>
+
+
+
+            <!-- -----我的明信片----- -->
+            <div class="dinoCon" id="dinoCon_my">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <!-- 欄位格子 -->
+              <div class="myCard" id="myCard">
+                <!-- 第一頁 -->
+                <ul v-for="(obj, index) in getSmallList" :key="index" id="ul_1">
+
+                  <li id="li_1" class="li">
+                    <button class="deleteCard" @click="delete_go(this,index)">
+                    </button>
+
+                    <span id="cardNO" style="display: none;">{{obj.card_no}}</span>
+
+                    <input type="button" value="我的明信片">
+                    <img :src="obj.card_img" id="cardImg" onclick="openModel(this)">
+                  </li>
+
+
+                </ul>
+
+
+              </div>
+            </div>
+
+
+
+            <!-- -----明信片收藏----- -->
+            <div class="dinoCon none" id="dinoCon_for">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <!-- 欄位格子 -->
+              <div class="card" id="card">
+
+                <ul v-for="obj, index in getSmallList_lub">
+
+                  <li>
+                    <button class="deleteCard" @click="delete_go_lub(this,index)">
+                    </button>
+                    <span id="cardNO_lub" style="display: none;">{{obj.card_no}}</span>
+
+                    <input type="button" value="珍藏明信片">
+                    <img :src="obj.card_img" onclick="openModel(this)">
+                  </li>
+
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
+    <!-- layout -->
+    <!-- 恐龍大圖 -->
+    @@include('layout/dinoMem_modal.html')
+    <!-- 刪除 -->
+    @@include('layout/dinoMem_delete_card.html')
+
+
+  </main>
+  @@include('layout/footer.html')
+
+
+  <!-- js -->
+  <script src="js/dinoMem.js"></script>
+  <script src="js/dinoMem_card.js"></script>
+
+  <script src="js/login.js"></script>
+</body>
+
+</html>

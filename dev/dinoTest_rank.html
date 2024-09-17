@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>排行榜</title>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+
+  <!-- gsap -->
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoTest_rank.css">
+
+</head>
+
+<body>
+
+  @@include('layout/header.html')
+
+  <main>
+    <div class="rankWrapper">
+      <div class="rankInWrap">
+
+        <div class="rankBox">
+          <div class="rankTitle">
+            <h1>排行榜</h1>
+          </div>
+
+
+
+          <!-- 排行榜內容 -->
+          <div class="rankContent" id="rank">
+            <ul>
+              <li class="rankLi" v-for="(rank,index) in rank_rows">
+                <div class="rankNum rankGold" :class="{'rankSili':siliBall}">
+                  {{index+1}}
+                </div>
+
+                <div class="rankPhoto">
+                  <img src="images/dinoTest/pic/rank_head.png" alt="">
+                </div>
+
+                <div class="rankNm">
+                  <span>玩家名稱</span>
+                  <span class="rankName">{{rank.mem_nicname}}</span>
+                </div>
+
+                <img src="images/dinoTest/pic/rank_icon.png" class="arrow">
+
+                <div class="rankScore">
+                  {{rank.quiz_score}} <span>題</span>
+                </div>
+              </li>
+
+            </ul>
+
+
+          </div>
+
+          <div class="rankBtn">
+            <div id="goToBoard">
+              <a href="dinoDisscus.html">
+                <button>去討論區</button>
+              </a>
+            </div>
+
+            <div id="playAgain">
+              <a href="dinoTest.html">
+                <button>再玩一次</button>
+              </a>
+            </div>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  @@include('layout/footer.html')
+
+
+  <!-- js -->
+
+  <script src="./js/dinoTest_rank.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    TweenMax.staggerFrom(".rankContent", .5,
+      {
+        top: 100,
+        opacity: 0.5,
+        delay: .2,
+        ease: Power2.easeOut,
+        rotation: 90
+      }, 0.3);
+
+    TweenMax.staggerFrom(".rankLi", 1, { top: 100, opacity: 0, delay: 1, ease: Back.easeOut }, 0.3);
+  </script>
+
+
+</body>
+
+</html>

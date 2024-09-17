@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    @@include('layout/style.html')
+
+    <link rel="stylesheet" href="css/dinoCard.css">
+    <!-- stylesheet -->
+    <!-- <link href="/static/css/literallycanvas.css" rel="stylesheet"> -->
+    <link href="css/literallycanvas.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-with-addons.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- <script src="/static/js/literallycanvas.js"></script> -->
+    <script src="js/literallycanvas.js"></script>
+    
+    <title>dinoCard</title>
+</head>
+<body>
+  @@include('layout/header.html')
+<section class="content">   
+  <div class="sectionBg">
+    <img src="images/dinoCard/background.jpg" id="background">
+    <img src="images/dinoCard/cloud.png" class="cloud animate__animated animate__infinite">
+  </div>
+
+  <div class="board">
+
+    <div class="meanBoard">
+      <img src="images/dinoCard/meanboard.png" id="">
+    </div>
+
+    <img class="titleBtn" src="images/dinoCard/titleBtn.png" alt="">
+    <h1 class="titleText">客製化明信片</h1>
+
+    <!-- <form class="addMore">
+      <a href="###" onclick="background()">
+      <button class="addmoreText1">
+        <img src="images/dinoCard/addmoreBtn.png">
+        <span>選擇背景</span>
+      </a>
+      </button>
+      
+      <button class="addmoreText2">
+        <img src="images/dinoCard/addmoreBtn.png">
+        <span>上傳頭貼</span>
+      </button>
+    </form> -->
+
+    <div id="whiteBoard" class="whiteBoard">
+      <div class="myDrawing"></div>
+      
+    </div>
+    
+  </div>
+
+  <section class="downBtn">
+    <form method="post" accept-charset="utf-8" id="myForm">
+        <button class="save" type="submit" id="save">
+          <img src="images/dinoCard/woodTitle.png">
+          <input name="hidden_data" id='hidden_data' type="hidden"/>
+          <span class="downText1">投稿</span>
+        </button>
+    </form> 
+    <form>
+      <button class="downLoad" id="download" style="visibility: hidden;" type="button">
+        <img src="images/dinoCard/woodTitle.png">
+        <a href="" id="my_download" download>
+          <span class="downText2">下載</span>
+        </a>
+      </button>
+    </form>
+    <!-- <form>
+        <button type="export" class="post" id="">
+          <img src="images/dinoCard/woodTitle.png">
+          <span class="downText3">上傳圖片</span>
+        </button>
+    </form> -->
+    <!-- <form>
+          <button type="" id="" class="share">
+            <img src="images/dinoCard/woodTitle.png">
+            <span class="downText4">上傳頭貼</span>
+          </button>
+    </form> -->
+  </section>    
+
+    <!-- <label for="file-ip-1">文章圖片上傳</label> -->
+
+    
+
+
+</section>      
+    
+
+  <script src="js/dinoCard.js"></script>
+  <script src="js/login.js"></script>
+  @@include('layout/footer.html')
+</body>
+</html>

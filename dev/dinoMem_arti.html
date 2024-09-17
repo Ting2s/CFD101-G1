@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>明信片收藏</title>
+
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+
+  <!-- vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+  <!-- css -->
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoMem_arti.css">
+</head>
+
+<body>
+  @@include('layout/header.html')
+
+  <main>
+    <div class="perWrap">
+      <div class="perHeader">
+
+      </div>
+
+      <div class="perBox" id="perBox">
+
+        <!-- 左側個人頭像區 -->
+        <div class="perPhoto">
+          <h1>會員中心</h1>
+          <!-- 頭貼框 -->
+          <div class="perFrame" id="perFrame">
+
+            <div class="myPhoto" id="myPhoto" v-for="member in memberRows">
+              <!-- 頭貼 -->
+              <img :src="member.mem_img" id="facePhoto">
+
+              <h3>{{member.mem_nicname}}</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側內容區 -->
+        <div class="perContent">
+          <!-- 內容板子 -->
+          <div class="conBtn">
+            <a href="dinoMem_profile.html"> <button class="dark">查看會員資料</button></a>
+            <a href="dinoMem_myDino.html"> <button class="dark">恐龍收藏</button></a>
+            <a href="dinoMem_card.html"> <button class="dark">明信片收藏</button></a>
+
+            <a href="dinoMem_arti.html">
+              <button class="light">文章收藏</button></a>
+          </div>
+
+          <!-- 大板子內容 -->
+          <div class="conFrame">
+
+            <div class="switchBtn">
+              <button class="active" id="myArti_btn">我的文章</button>
+              <button id="arti_btn">文章收藏</button>
+            </div>
+
+
+
+            <!-- -----我的文章----- -->
+            <div class="dinoCon" id="dinoCon_my">
+
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <!-- 欄位格子 -->
+              <div class="myArti" id="myArti">
+
+
+                <div class="arti">
+                  <!-- 一行 -->
+                  <ul v-for="obj, index in getSmallList">
+                    <li>
+                      <img src="images/dinoPersonal/green.png" alt="">
+                      <div class="artic">
+                        <span class="topic">
+                          {{obj.title}}
+                        </span>
+                      </div>
+
+                      <div class="detail">
+                        <span class="time">
+                          {{obj.time}}
+                        </span>
+                        <span class="read">
+                          {{obj.read}}
+                        </span>
+                        <span class="repo" id="repo">
+                          <img src="images/dinoPersonal/Icon awesome-reply.png">
+                          {{obj.repo}}
+                        </span>
+                      </div>
+
+                      <!-- 刪除 -->
+                      <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard" onclick="delete_go(this)">
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+
+            <!-- -----文章收藏----- -->
+            <div class="dinoCon none" id="dinoCon_for">
+              <!-- 選頁按鈕 -->
+              @@include('layout/dinoMem_pageBar.html')
+              <div class="arti" id="arti">
+                <ul v-for="obj, index in getSmallList_lub">
+                  <li>
+                    <img src="images/dinoPersonal/green.png" alt="">
+                    <div class="artic">
+                      <span class="topic">
+                        {{obj.title}}
+                      </span>
+                    </div>
+
+                    <div class="detail">
+                      <span class="time">
+                        {{obj.time}}
+                      </span>
+                      <span class="read">
+                        {{obj.read}}
+                      </span>
+                      <span class="repo" id="repo">
+                        <img src="images/dinoPersonal/Icon awesome-reply.png">
+                        {{obj.repo}}
+                      </span>
+                    </div>
+
+                    <!-- 刪除 -->
+                    <img src="images/dinoPersonal/exit.png" alt="" class="deleteCard" onclick="delete_go(this)">
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- -------------------------------- -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
+    <!-- 刪除 -->
+    @@include('layout/dinoMem_delete_arti.html')
+
+  </main>
+  @@include('layout/footer.html')
+
+
+  <!-- js -->
+  <script src="js/dinoMem.js"></script>
+  <script src="js/dinoMem_arti.js"></script>
+
+  <script src="js/login.js"></script>
+</body>
+
+</html>

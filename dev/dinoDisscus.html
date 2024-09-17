@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>討論區</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  @@include('layout/style.html')
+  <link rel="stylesheet" href="css/dinoDisscus.css">
+</head>
+
+<body>
+    @@include('layout/header.html')
+  <section class="menu" id="app">
+    <div class="menu-container">
+      <div class="menu-head">
+        <h2><img src="./images/disscus/dis1.png" alt=""></h2>
+        <p></p>
+      </div>
+      <div class="menu-btns">
+        <div v-for="item in types" :key="item.id">
+          <button type="button" class="menu-btn active-btn" @click="sel(item)">{{item}}</button>
+        </div>
+      </div>
+
+      <div class="disnoitems">
+        <!-- item -->
+        <div class="disnoitem" v-for="item in typeMenu">
+          <div class="disnoimg">
+            <img :src="item.art_picture" alt="dino image">
+          </div>
+          <div class="disnocontent">
+            <h2 class="disnoname"><a :href="'dinoArticlepg.html?art_no=' + item.art_no">{{item.art_title}}</a></h2>
+            <div class="line"></div>
+            <h3 class="disnodate"><i class="far fa-calendar-alt"></i> &nbsp;{{item.art_date}}</h3>
+            <h3 class="disnopri"><i class="fas fa-user-edit"></i> {{item.mem_nicname}}</h3>
+            <p class="category">文章類別 :&nbsp;<span>{{item.art_category}}</span></p>
+          </div>
+        </div>
+        <!-- end of item -->
+      </div>
+    </div>
+  </section>
+<script src="./js/dinoDisscus.js"></script>
+<script src="./js/login.js"></script>
+@@include('layout/footer.html')
+</body>
+</html>

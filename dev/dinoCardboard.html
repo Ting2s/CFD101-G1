@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @@include('layout/style.html')
+  
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/dinoCardboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>dinoCardboard</title>
+</head>
+<body>
+  @@include('layout/header.html')
+  <section class="boardContent" id="app">
+
+    <div class="board">
+    
+      <h1 class="titleText">明信片牆</h1>
+
+      <div class="person jsPage page pageShow" id="page1">
+        <div class="personBg">
+          <ul class="personItem">
+            <li>
+              <div class="personPart" v-for="(favRow, index) in favRows" :key="index">
+                <div class="personImg">
+                  <img :src="favRow.card_img" class="image pic">
+                </div>
+                <div class="personContent">
+                  <button class="like" @click="like(favRow, index)" name="mem_id">
+                    <i class="far fa-heart" :id="`icon-${index}`"></i>
+                  </button>
+                  <span>{{favRow.mem_id}}</span>
+                </div>
+                <p class="personDate">{{favRow.mem_nicname}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div class="imgPreview">
+        <img id="imgPreview" src="#">
+      </div>
+
+      <div class="underBtn">
+        <button class="leftBtn" id="previousPageButton">
+          <img src="images/dinoCardboard/leftBtn.png">
+        </button>
+  
+        <!-- <button class="numberBtn"> -->
+          <!-- <input id="pageInput" type="number" min="1" max="1"> -->
+          <!-- <span id="app">{{pageNo}}</span> -->
+          <!-- <span>/</span> -->
+          <!-- <span id="totalPages"></span> -->
+        <!-- </button> -->
+  
+        <button class="rightBtn" id="nextPageButton">
+          <img src="images/dinoCardboard/rightBtn.png">
+        </button>
+      </div>
+
+      
+
+    <!-- </div> -->
+
+
+    <button class="camera" value="製作明信片" onclick="location.href='dinoCard.html'">
+      <p>製作明信片</p>
+      <img src="images/dinoCardboard/camera.png">
+    </button>
+
+    <div class="imgPreview">
+      <img id="imgPreview" src="#">
+    </div>
+
+  </section>  
+
+  @@include('layout/footer.html')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/dinoCardboard.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
